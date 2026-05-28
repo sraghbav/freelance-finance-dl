@@ -8,8 +8,10 @@ class FinanceTransactionDataset(Dataset):
         self.sequence_length = sequence_length
         self.data = pd.read_csv(csv_file)
 
+        # Clean date column
         self.data["date"] = pd.to_datetime(self.data["date"], errors="coerce")
 
+        # Clean amount column
         self.data["amount"] = (
             self.data["amount"]
             .astype(str)
@@ -19,50 +21,41 @@ class FinanceTransactionDataset(Dataset):
 
         self.data["amount"] = pd.to_numeric(self.data["amount"], errors="coerce")
 
+        # Keep only usable rows
         self.data = self.data.dropna(
-            subset=["user_id", "date", "transaction_type", "category", "amount"]
+            subset=["user_id", "date", "category", "amount"]
         )
 
-        self.data = self.data.sort_values(["user_id", "date"]).reset_index(drop=True)
+        # Sort by user, category, and time
+        self.data = self.data.sort_values(
+            ["user_id", "category", "date"]
+        ).reset_index(drop=True)
 
-        self.data["transaction_type_id"] = (
-            self.data["transaction_type"].astype("category").cat.codes
-        )
-
-        self.data["category_id"] = self.data["category"].astype("category").cat.codes
-
-        if "payment_mode" in self.data.columns:
-            self.data["payment_mode_id"] = (
-                self.data["payment_mode"].astype("category").cat.codes
-            )
-        else:
-            self.data["payment_mode_id"] = 0
-
-        self.feature_cols = [
-            "transaction_type_id",
-            "category_id",
-            "payment_mode_id",
-            "amount",
-        ]
-
+        # Create sequences
         self.samples = self._create_sequences()
 
     def _create_sequences(self):
         samples = []
 
-        for user_id, user_df in self.data.groupby("user_id"):
-            user_df = user_df.sort_values("date").reset_index(drop=True)
+        grouped = self.data.groupby(["user_id", "category"])
 
-            if len(user_df) <= self.sequence_length:
+        for (user_id, category), group_df in grouped:
+            group_df = group_df.sort_values("date").reset_index(drop=True)
+
+            if len(group_df) < self.sequence_length:
                 continue
 
-            features = user_df[self.feature_cols].values.astype(float)
-            targets = user_df["amount"].values.astype(float)
+            amounts = group_df["amount"].values.astype(float)
 
-            for i in range(len(user_df) - self.sequence_length):
-                x = features[i : i + self.sequence_length]
-                y = targets[i + self.sequence_length]
-                samples.append((x, y))
+            for i in range(len(amounts) - self.sequence_length + 1):
+                sequence = amounts[i : i + self.sequence_length]
+                samples.append(
+                    {
+                        "sequence": sequence,
+                        "user_id": user_id,
+                        "category": category,
+                    }
+                )
 
         return samples
 
@@ -70,12 +63,24 @@ class FinanceTransactionDataset(Dataset):
         return len(self.samples)
 
     def __getitem__(self, idx):
-        features, target = self.samples[idx]
+        sample = self.samples[idx]
 
-        features = torch.tensor(features, dtype=torch.float32)
-        target = torch.tensor(target, dtype=torch.float32)
+        sequence = torch.tensor(
+            sample["sequence"],
+            dtype=torch.float32,
+        ).unsqueeze(-1)
 
-        return features, target
+        # Autoencoder input and target are the same
+        return sequence, sequence
+
+    def get_sample_metadata(self, idx):
+        sample = self.samples[idx]
+
+        return {
+            "user_id": sample["user_id"],
+            "category": sample["category"],
+            "sequence": sample["sequence"],
+        }
 
 
 def get_data_loader(csv_file, batch_size=32, sequence_length=5, shuffle=True):
@@ -84,8 +89,10 @@ def get_data_loader(csv_file, batch_size=32, sequence_length=5, shuffle=True):
         sequence_length=sequence_length,
     )
 
-    return DataLoader(
+    loader = DataLoader(
         dataset,
         batch_size=batch_size,
         shuffle=shuffle,
     )
+
+    return loader

@@ -1,4 +1,8 @@
+README.md
 setup.py
+freelance_finance_dl/__init__.py
+freelance_finance_dl/dataloader.py
+freelance_finance_dl/model.py
 freelance_finance_dl.egg-info/PKG-INFO
 freelance_finance_dl.egg-info/SOURCES.txt
 freelance_finance_dl.egg-info/dependency_links.txt
