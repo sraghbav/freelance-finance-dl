@@ -2,50 +2,58 @@
 
 ## Project Overview
 
-This project investigates whether deep learning models can learn financial behavior patterns from transaction histories. The goal is to model personal finance data as temporal sequences and predict future transaction behavior.
+This project investigates whether deep learning models can learn financial behavior patterns from personal finance transaction histories.
 
-Rather than treating each transaction as an independent row, transactions are grouped into sequences that capture spending and income patterns over time. This structure is intended for future sequence-based models such as LSTMs.
+The project uses transaction-level finance data and converts individual transactions into temporal sequences. Instead of treating each transaction as an independent row, the dataloader groups previous transactions together so the model can eventually learn patterns over time.
+
+Current prediction setup:
+
+```text
+previous 5 transactions → next transaction amount
+```
+
+This sequence-based structure is intended for future deep learning models such as LSTMs or other sequence models.
 
 ---
 
 ## Dataset
 
-This project uses the BudgetWise Personal Finance Dataset.
+This project uses the BudgetWise Personal Finance Dataset from Kaggle:
 
-The dataset contains transaction-level information including:
+https://www.kaggle.com/datasets/mohammedarfathr/budgetwise-personal-finance-dataset
 
-- User ID
-- Date
-- Transaction Type
-- Category
-- Payment Mode
-- Amount
-- Location
-- Notes
+The dataset contains personal finance transaction data, including:
 
-Dataset source:
+- user ID
+- date
+- transaction type
+- category
+- amount
+- payment mode
+- location
+- notes
 
-https://www.kaggle.com/datasets
+For this milestone, the dataset file is included in the `data/` folder.
 
-(Replace with the exact BudgetWise dataset URL.)
+---
+
+## Repository Link
+
+https://github.com/sraghbav/freelance-finance-dl.git
 
 ---
 
 ## Repository Structure
 
 ```text
-freelance_finance_dl/
-│
+freelance-finance-dl/
 ├── freelance_finance_dl/
 │   ├── __init__.py
 │   └── dataloader.py
-│
 ├── data/
 │   └── budgetwise_finance_dataset.csv
-│
 ├── notebooks/
 │   └── data_demo.ipynb
-│
 ├── setup.py
 ├── requirements.txt
 └── README.md
@@ -58,8 +66,8 @@ freelance_finance_dl/
 Clone the repository:
 
 ```bash
-git clone <your-github-url>
-cd freelance_finance_dl
+git clone https://github.com/sraghbav/freelance-finance-dl.git
+cd freelance-finance-dl
 ```
 
 Install the package:
@@ -68,7 +76,7 @@ Install the package:
 pip install -e .
 ```
 
-Verify installation:
+After installation, the dataloader can be imported with:
 
 ```python
 from freelance_finance_dl.dataloader import FinanceTransactionDataset
@@ -78,50 +86,44 @@ from freelance_finance_dl.dataloader import FinanceTransactionDataset
 
 ## Data Loader
 
-The data loader creates transaction sequences for deep learning models.
+The dataloader creates sequence samples from each user's transaction history.
 
 Each sample contains:
 
 ```text
-Previous 5 transactions -> Next transaction amount
+previous sequence_length transactions → next transaction amount
 ```
 
-Current feature set:
+By default:
 
-1. Transaction Type
-2. Category
-3. Payment Mode
-4. Amount
-
-Example shape:
-
-```python
-features.shape
+```text
+sequence_length = 5
 ```
 
-Output:
+Each transaction has 4 features:
+
+1. encoded transaction type
+2. encoded category
+3. encoded payment mode
+4. amount
+
+Example input shape for one sample:
 
 ```text
 torch.Size([5, 4])
 ```
 
-Meaning:
+This means:
 
 ```text
-5 transactions
+5 previous transactions
 4 features per transaction
 ```
 
-Target:
-
-```python
-target
-```
-
-Represents:
+The target is a single value:
 
 ```text
-Next transaction amount
+next transaction amount
 ```
 
 ---
@@ -129,10 +131,10 @@ Next transaction amount
 ## Example Usage
 
 ```python
-from freelance_finance_dl.dataloader import FinanceTransactionDataset
+from freelance_finance_dl.dataloader import FinanceTransactionDataset, get_data_loader
 
 dataset = FinanceTransactionDataset(
-    "data/budgetwise_finance_dataset.csv",
+    csv_file="data/budgetwise_finance_dataset.csv",
     sequence_length=5
 )
 
@@ -142,17 +144,40 @@ print(features.shape)
 print(target)
 ```
 
----
+Expected feature shape:
 
-## Running the Demo Notebook
-
-Launch Jupyter:
-
-```bash
-jupyter notebook
+```text
+torch.Size([5, 4])
 ```
 
-Open:
+A PyTorch DataLoader can also be created:
+
+```python
+loader = get_data_loader(
+    csv_file="data/budgetwise_finance_dataset.csv",
+    batch_size=32,
+    sequence_length=5,
+    shuffle=True
+)
+
+batch_features, batch_targets = next(iter(loader))
+
+print(batch_features.shape)
+print(batch_targets.shape)
+```
+
+Expected batch shapes:
+
+```text
+torch.Size([32, 5, 4])
+torch.Size([32])
+```
+
+---
+
+## Demo Notebook
+
+The notebook is located at:
 
 ```text
 notebooks/data_demo.ipynb
@@ -160,28 +185,45 @@ notebooks/data_demo.ipynb
 
 The notebook demonstrates:
 
-- Loading the raw dataset
-- Creating transaction sequences
-- Inspecting sample inputs
-- Creating PyTorch DataLoaders
-- Verifying sequence shapes
+- loading the raw dataset
+- importing the installed package
+- creating transaction sequences
+- inspecting one sample
+- creating a PyTorch DataLoader
+- verifying that the dataloader returns sequence-shaped tensors
+
+Run the notebook with:
+
+```bash
+jupyter notebook notebooks/data_demo.ipynb
+```
+
+---
+
+## Current Status
+
+This milestone includes:
+
+- installable Python package
+- sequence-based PyTorch dataset
+- PyTorch DataLoader helper function
+- runnable data demo notebook
+- dataset included in GitHub repository
 
 ---
 
 ## Future Work
 
-Planned next steps include:
+Next steps include:
 
-- LSTM-based sequence modeling
-- Transaction forecasting
-- Financial anomaly detection
-- Comparison against baseline models
-- Evaluation using MAE and MSE
+- building an LSTM or other sequence model
+- comparing against a simple baseline model
+- evaluating predictions using MAE and MSE
+- exploring anomaly detection for transactions that differ strongly from predicted behavior
 
 ---
 
 ## Author
 
-Sriraghav Bavineni
-
-DSCI 410L – Introduction to Deep Learning
+Sriraghav Bavineni  
+DSCI 410L
