@@ -2,11 +2,52 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset, DataLoader
 
+# Maps every observed spelling/casing variant to a canonical category name.
+CATEGORY_MAP = {
+    # Food
+    "food": "food", "foods": "food", "fod": "food", "foodd": "food", "FOOD": "food",
+    "Food": "food",
+    # Rent
+    "rent": "rent", "RENT": "rent", "Rent": "rent", "rentt": "rent", "rnt": "rent",
+    "Rentt": "rent", "Rnt": "rent",
+    # Travel
+    "travel": "travel", "TRAVEL": "travel", "Travel": "travel",
+    "traval": "travel", "travl": "travel", "Traval": "travel", "Travl": "travel",
+    # Entertainment
+    "entertainment": "entertainment", "Entertainment": "entertainment",
+    "Entertain": "entertainment", "Entrtnmnt": "entertainment",
+    # Utilities
+    "utilities": "utilities", "Utilities": "utilities", "Utility": "utilities",
+    "Utilties": "utilities", "Utlities": "utilities", "utility": "utilities",
+    "utilties": "utilities", "utlities": "utilities",
+    # Education
+    "education": "education", "Education": "education",
+    "Educaton": "education", "EDU": "education",
+    # Health
+    "health": "health", "Health": "health", "HEALTH": "health", "Helth": "health",
+    # Savings
+    "savings": "savings", "Savings": "savings", "SAVINGS": "savings", "Saving": "savings",
+    # Income categories
+    "Freelance": "freelance", "freelance": "freelance",
+    "Salary": "salary", "salary": "salary",
+    "Bonus": "bonus", "bonus": "bonus",
+    "Investment": "investment", "investment": "investment",
+    # Miscellaneous
+    "Others": "other", "others": "other", "OTHERS": "other",
+    "Other": "other", "other": "other", "Misc": "other", "misc": "other",
+}
+
 
 class FinanceTransactionDataset(Dataset):
     def __init__(self, csv_file, sequence_length=5):
         self.sequence_length = sequence_length
         self.data = pd.read_csv(csv_file)
+
+        # Normalize category spellings/casing to canonical names.
+        # Lowercase first so the map only needs one entry per variant.
+        lowered = self.data["category"].str.strip().str.lower()
+        lowercase_map = {k.lower(): v for k, v in CATEGORY_MAP.items()}
+        self.data["category"] = lowered.map(lowercase_map).fillna(lowered)
 
         # Clean date column
         self.data["date"] = pd.to_datetime(self.data["date"], errors="coerce")
@@ -65,10 +106,15 @@ class FinanceTransactionDataset(Dataset):
     def __getitem__(self, idx):
         sample = self.samples[idx]
 
-        sequence = torch.tensor(
-            sample["sequence"],
-            dtype=torch.float32,
-        ).unsqueeze(-1)
+        seq = sample["sequence"].astype("float32")
+
+        # Min-max normalize each sequence independently so all inputs are in [0, 1].
+        # Avoids the model being dominated by high-value categories (e.g. rent vs coffee).
+        seq_min, seq_max = seq.min(), seq.max()
+        if seq_max - seq_min > 0:
+            seq = (seq - seq_min) / (seq_max - seq_min)
+
+        sequence = torch.tensor(seq, dtype=torch.float32).unsqueeze(-1)
 
         # Autoencoder input and target are the same
         return sequence, sequence
