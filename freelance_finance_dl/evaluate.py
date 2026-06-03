@@ -119,6 +119,72 @@ def evaluate(
     return results, threshold
 
 
+def synthetic_anomaly_eval(model, dataset, val_indices, threshold, device, seed=42):
+    """
+    Inject known synthetic anomalies into validation sequences and measure
+    how often the model catches them versus falsely flagging clean sequences.
+
+    For each validation sequence (normalized to [0, 1]) we create two variants:
+      - spike: one random position set to 2.0  (far above the trained range)
+      - drop:  one random position set to -0.5 (far below the trained range)
+
+    Returns a summary dict of recall / false-positive-rate and a per-sequence DataFrame.
+    """
+    rng = np.random.default_rng(seed)
+    model.eval()
+    criterion = nn.MSELoss(reduction="none")
+
+    records = []
+
+    for idx in val_indices:
+        x, _ = dataset[idx]                     # (seq_len, 1), normalized [0, 1]
+        x_clean = x.unsqueeze(0).to(device)     # (1, seq_len, 1)
+
+        with torch.no_grad():
+            recon_clean = model(x_clean)
+            mse_clean = criterion(recon_clean, x_clean).mean().item()
+
+        seq_len = x.shape[0]
+        inject_pos = int(rng.integers(0, seq_len))
+
+        for anomaly_type, inject_val in [("spike", 2.0), ("drop", -0.5)]:
+            x_corrupt = x.clone()
+            x_corrupt[inject_pos, 0] = inject_val
+            x_corrupt = x_corrupt.unsqueeze(0).to(device)
+
+            with torch.no_grad():
+                recon_corrupt = model(x_corrupt)
+                mse_corrupt = criterion(recon_corrupt, x_corrupt).mean().item()
+
+            records.append({
+                "dataset_idx": idx,
+                "anomaly_type": anomaly_type,
+                "inject_pos": inject_pos,
+                "mse_clean": mse_clean,
+                "mse_corrupt": mse_corrupt,
+                "clean_flagged": mse_clean > threshold,
+                "anomaly_detected": mse_corrupt > threshold,
+            })
+
+    df = pd.DataFrame(records)
+
+    summary = {}
+    fp_rate = df[df["anomaly_type"] == "spike"]["clean_flagged"].mean()
+    summary["false_positive_rate"] = fp_rate
+
+    for atype in ["spike", "drop"]:
+        subset = df[df["anomaly_type"] == atype]
+        recall = subset["anomaly_detected"].mean()
+        summary[f"{atype}_recall"] = recall
+        print(f"  {atype:5s}  recall={recall:.1%}  "
+              f"(detected {subset['anomaly_detected'].sum()}/{len(subset)})")
+
+    print(f"  clean  false-positive-rate={fp_rate:.1%}  "
+          f"(wrongly flagged {df[df['anomaly_type']=='spike']['clean_flagged'].sum()}/{len(val_indices)})")
+
+    return summary, df
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate autoencoder for anomaly detection")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
