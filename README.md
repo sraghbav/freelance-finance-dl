@@ -2,56 +2,38 @@
 
 ## Project Overview
 
-This project investigates how deep learning can be used to identify unusual financial behavior in personal finance transaction data.
+This project investigates how deep learning can identify unusual financial behavior in personal finance transaction data. Rather than forecasting future spending, the model learns what *normal* spending looks like for a given user and category, then flags transactions that deviate significantly from that learned pattern.
 
-The project uses category-specific transaction sequences and a sequence autoencoder to learn normal spending patterns. Rather than forecasting future transactions, the model is trained to reconstruct transaction sequences. Sequences that cannot be reconstructed well are considered potential anomalies.
-
-This approach is designed to identify unusual financial behavior such as spending spikes, irregular transactions, or other patterns that differ significantly from a user's typical financial activity.
-
-Current project pipeline:
+The approach uses a **sequence autoencoder**: the model is trained to compress and reconstruct short sequences of transaction amounts. Sequences it cannot reconstruct accurately are treated as potential anomalies.
 
 ```text
-Transactions
-    ↓
-Group by User and Category
-    ↓
-Create Transaction Sequences
-    ↓
-Sequence Autoencoder
-    ↓
-Reconstruction Error
-    ↓
-Anomaly Detection
+Raw Transactions
+      ↓
+Category Normalization + Sequence Generation
+      ↓
+Per-Sequence Min-Max Normalization
+      ↓
+LSTM Sequence Autoencoder (Encoder → Latent → Decoder)
+      ↓
+Reconstruction Error (MSE)
+      ↓
+Anomaly Threshold (95th percentile of validation errors)
+      ↓
+Flagged Anomalies
 ```
 
 ---
 
 ## Dataset
 
-This project uses the BudgetWise Personal Finance Dataset from Kaggle:
-
+**BudgetWise Personal Finance Dataset** — Kaggle:
 https://www.kaggle.com/datasets/mohammedarfathr/budgetwise-personal-finance-dataset
 
-The dataset contains personal finance transaction data including:
+The dataset contains 15,900 transaction records with fields: `user_id`, `date`, `transaction_type`, `category`, `amount`, `payment_mode`, `location`, `notes`.
 
-- User ID
-- Date
-- Transaction Type
-- Category
-- Amount
-- Payment Mode
-- Location
-- Notes
+The raw data has significant category noise — 46 spelling/casing variants across 11 logical categories (e.g. `FOOD`, `Food`, `Fod`, `Foodd`, `Foods` all meaning food). The dataloader normalizes these to canonical names before sequence generation, which grows the usable sequence count from 47 to 1,104.
 
-The dataset is included in the repository under the `data/` directory.
-
----
-
-## Repository
-
-GitHub Repository:
-
-https://github.com/sraghbav/freelance-finance-dl.git
+The dataset is included in `data/`.
 
 ---
 
@@ -62,15 +44,20 @@ freelance-finance-dl/
 │
 ├── freelance_finance_dl/
 │   ├── __init__.py
-│   ├── dataloader.py
-│   └── model.py
+│   ├── dataloader.py      # Dataset, category normalization, sequence generation
+│   ├── model.py           # LSTM sequence autoencoder
+│   ├── train.py           # Training loop with checkpointing
+│   └── evaluate.py        # Reconstruction error scoring, anomaly threshold,
+│                          # synthetic anomaly evaluation
 │
 ├── data/
 │   └── budgetwise_finance_dataset.csv
 │
 ├── notebooks/
-│   └── data_demo.ipynb
+│   └── data_demo.ipynb    # Full walkthrough with all visualizations
 │
+├── checkpoints/           # Saved model weights (git-ignored)
+├── results/               # Anomaly CSV output (git-ignored)
 ├── README.md
 ├── requirements.txt
 └── setup.py
@@ -80,307 +67,123 @@ freelance-finance-dl/
 
 ## Installation
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/sraghbav/freelance-finance-dl.git
 cd freelance-finance-dl
-```
-
-Install the package:
-
-```bash
 pip install -e .
 ```
 
-Verify installation:
+---
 
-```python
-from freelance_finance_dl.dataloader import FinanceTransactionDataset
-from freelance_finance_dl.model import TransactionAutoencoder
+## Usage
+
+### Train
+
+```bash
+python -m freelance_finance_dl.train \
+    --csv data/budgetwise_finance_dataset.csv \
+    --output-dir checkpoints \
+    --epochs 50 \
+    --hidden-dim 64 \
+    --latent-dim 16
 ```
+
+The best model (lowest validation MSE) is saved to `checkpoints/best_model.pt`.
+
+### Evaluate
+
+```bash
+python -m freelance_finance_dl.evaluate \
+    --csv data/budgetwise_finance_dataset.csv \
+    --checkpoint checkpoints/best_model.pt \
+    --output results/anomalies.csv \
+    --threshold-percentile 95
+```
+
+Prints reconstruction error stats, anomaly counts by category, and saves a full results CSV.
 
 ---
 
-## Data Loader
+## Model
 
-The dataloader creates category-specific transaction sequences.
+`TransactionAutoencoder` in [`freelance_finance_dl/model.py`](freelance_finance_dl/model.py) is an LSTM sequence autoencoder:
 
-Transactions are grouped by:
+- **Encoder**: an LSTM reads the input sequence one timestep at a time; the final hidden state is projected to a fixed-size latent vector via a linear layer
+- **Decoder**: the latent vector is projected back to `hidden_dim`, repeated `sequence_length` times, then fed through a second LSTM; a final linear layer maps each timestep to a scalar output
 
-```text
-user_id
-+
-category
-```
+Input and output shape: `(batch, sequence_length, 1)`
 
-Example transaction history:
-
-```text
-Food:
-18
-22
-20
-25
-19
-24
-```
-
-Generated sequence:
-
-```text
-[18, 22, 20, 25, 19]
-```
-
-The autoencoder uses the same sequence as both the input and target:
-
-```text
-Input:
-[18, 22, 20, 25, 19]
-
-Target:
-[18, 22, 20, 25, 19]
-```
-
-This allows the model to learn normal spending behavior.
-
-Example sample shape:
-
-```text
-torch.Size([5, 1])
-```
-
-Example batch shape:
-
-```text
-torch.Size([32, 5, 1])
-```
-
----
-
-## Autoencoder Model
-
-The project uses a sequence autoencoder.
-
-The encoder compresses transaction sequences into a lower-dimensional representation.
-
-The decoder reconstructs the original transaction sequence.
-
-Pipeline:
-
-```text
-Transaction Sequence
-        ↓
-Encoder
-        ↓
-Latent Representation
-        ↓
-Decoder
-        ↓
-Reconstructed Sequence
-```
-
-The reconstruction error is then used as an anomaly score.
+Default hyperparameters: `hidden_dim=64`, `latent_dim=16`, `sequence_length=5`
 
 ---
 
 ## Anomaly Detection
 
-After reconstruction:
+The anomaly threshold is the **95th percentile of reconstruction errors on the validation set** — sequences the model never trained on. This ensures the threshold reflects generalization to unseen normal behavior, not memorized training patterns.
 
-```text
-Original Sequence
-vs
-Reconstructed Sequence
-```
+Any sequence whose MSE exceeds the threshold is flagged as a potential anomaly.
 
-The reconstruction error is calculated using Mean Squared Error (MSE).
+### Synthetic Evaluation
 
-Example:
+Since the dataset has no ground-truth anomaly labels, detection ability was measured by injecting known anomalies into validation sequences:
 
-```text
-Original:
-[18, 22, 20, 25, 19]
+- **Spike**: one position set to `2.0` (double the normalized maximum) — simulates an abnormally large charge
+- **Drop**: one position set to `-0.5` (below the normalized minimum) — simulates a missing or erroneous entry
 
-Reconstructed:
-[18, 21, 20, 24, 20]
-```
+| Condition | Result |
+|---|---|
+| Spike recall | 98.2% |
+| Drop recall | 30.3% |
+| False positive rate | 5.5% |
 
-Small reconstruction error:
-
-```text
-Normal behavior
-```
-
-Example:
-
-```text
-Original:
-[18, 22, 20, 25, 300]
-
-Reconstructed:
-[18, 21, 20, 24, 22]
-```
-
-Large reconstruction error:
-
-```text
-Potential anomaly
-```
-
-Anomaly threshold:
-
-```text
-mean reconstruction error
-+
-2 × standard deviations
-```
+The model detects spikes almost perfectly. Drop detection is weaker because mean MSE across all 5 positions dilutes the signal from a single corrupted step. A position-wise max error threshold would improve drop sensitivity.
 
 ---
 
-## Example Usage
+## Notebook
 
-### Create Dataset
+`notebooks/data_demo.ipynb` walks through the full pipeline and includes:
 
-```python
-from freelance_finance_dl.dataloader import FinanceTransactionDataset
-
-dataset = FinanceTransactionDataset(
-    csv_file="data/budgetwise_finance_dataset.csv",
-    sequence_length=5
-)
-
-print(len(dataset))
-```
-
-### Create DataLoader
-
-```python
-from freelance_finance_dl.dataloader import get_data_loader
-
-loader = get_data_loader(
-    csv_file="data/budgetwise_finance_dataset.csv",
-    batch_size=32,
-    sequence_length=5
-)
-
-batch_x, batch_y = next(iter(loader))
-
-print(batch_x.shape)
-print(batch_y.shape)
-```
-
-Expected output:
-
-```text
-torch.Size([32, 5, 1])
-torch.Size([32, 5, 1])
-```
-
-### Load Autoencoder
-
-```python
-from freelance_finance_dl.model import TransactionAutoencoder
-
-model = TransactionAutoencoder(
-    sequence_length=5
-)
-
-reconstructed = model(batch_x)
-
-print(reconstructed.shape)
-```
-
-Expected output:
-
-```text
-torch.Size([32, 5, 1])
-```
+- Raw data exploration and category distribution
+- Dataset and dataloader demonstration
+- Model architecture overview
+- Training (50 epochs, LSTM autoencoder)
+- Reconstruction error distribution with anomaly threshold
+- Per-category reconstruction error boxplot
+- Anomaly count by category
+- Threshold justification (validation error histogram + ECDF)
+- Qualitative anomaly inspection — original vs reconstructed sequences for the top 6 flagged cases
+- Synthetic anomaly evaluation — MSE distributions and recall/FPR bar chart
+- Written evaluation summary
 
 ---
 
-## Demo Notebook
+## Evaluation Results
 
-The demonstration notebook is located at:
-
-```text
-notebooks/data_demo.ipynb
-```
-
-The notebook demonstrates:
-
-- Loading the raw dataset
-- Creating category-specific sequences
-- Loading data using the package
-- Creating a PyTorch DataLoader
-- Running sequences through the autoencoder
-- Calculating reconstruction loss
-- Calculating anomaly scores
-- Identifying potential anomalies
+| Metric | Value |
+|---|---|
+| Final validation MSE | ~0.049 |
+| Anomaly threshold (95th pct of val errors) | ~0.138 |
+| Total sequences evaluated | 1,104 |
+| Flagged anomalies | 64 (5.8%) |
+| Spike recall (synthetic) | 98.2% |
+| Drop recall (synthetic) | 30.3% |
+| False positive rate | 5.5% |
 
 ---
 
-## Evaluation
+## Future Work
 
-The project evaluates anomaly detection using reconstruction error.
+This project is the deep learning foundation for a larger honors thesis involving LLM-based financial guidance. Planned extensions:
 
-Metrics:
-
-- Mean Squared Error (MSE)
-- Reconstruction Error Distribution
-- Number of Flagged Anomalies
-
-The model's goal is to learn normal transaction behavior and identify sequences that differ significantly from expected patterns.
-
----
-
-## Future Thesis Extension
-
-This project serves as the deep learning foundation for a larger honors thesis project.
-
-Future extensions include:
-
-### LLM Financial Guidance
-
-```text
-Transaction Sequences
-        ↓
-Autoencoder
-        ↓
-Anomaly Detection
-        ↓
-LLM Explanation Layer
-```
-
-Example:
-
-```text
-This transaction is significantly larger than your typical spending within this category and may warrant review.
-```
-
-### Tax Planning Assistance
-
-Future versions may provide:
-
-- Estimated tax set-aside recommendations
-- Potential business expense identification
-- Expense documentation reminders
-- Financial pattern summaries
-
-Example:
-
-```text
-Based on your freelance income and recorded expenses, consider setting aside approximately 25–30% of net income for tax obligations.
-```
-
-This guidance would be educational only and not professional tax advice.
+- LLM explanation layer that translates flagged anomalies into plain-language descriptions
+- Tax planning assistance using detected income/expense patterns
+- Additional input features: transaction type, day of week, payment method
 
 ---
 
 ## Author
 
-Sriraghav Bavineni
-
-DSCI 410L Deep Learning Project
-
+Sriraghav Bavineni  
+DSCI 410L — Introduction to Deep Learning  
 University of Oregon
