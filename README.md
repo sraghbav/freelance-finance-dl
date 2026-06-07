@@ -178,3 +178,26 @@ The LSTM autoencoder reliably detects sequences that contain a large spending sp
 
 **Intended use:**
 This model is a foundation for a larger honors thesis project that will add an LLM explanation layer — translating flagged anomalies into plain-language descriptions and providing tax planning guidance for freelancers. Results are educational only and not financial or tax advice.
+
+---
+
+## Generative AI Disclosure
+
+In accordance with the course syllabus policy on generative AI, this project used Claude (Anthropic) as an assistant throughout development. Specifically, AI assistance was used for:
+
+- **Code organization** — structuring the project into a clean package layout (`freelance_finance_dl/`) with separate files for the dataset, model, training loop, and evaluation
+- **Docstrings and inline comments** — drafting explanatory comments throughout the codebase
+- **Debugging** — identifying shape mismatches between tensors, fixing the category normalization fallback logic, and resolving tensor dimension issues in the model
+- **README drafting** — organizing and writing the README to match submission requirements
+- **Evaluation design** — suggesting the synthetic anomaly injection approach (spike and drop) in response to instructor feedback about the lack of ground-truth labels
+- **Running and verifying outputs** — executing the training pipeline, evaluation scripts, and notebook re-runs to confirm everything worked end-to-end
+
+All core project decisions — the choice of LSTM autoencoder for anomaly detection, the sequence generation approach, the threshold methodology, and the interpretation of results — were made by the student. The AI was used as a coding and organizational tool, not as a replacement for understanding the material.
+
+---
+
+## Author
+
+Sriraghav Bavineni
+DSCI 410L — Introduction to Deep Learning
+University of Oregon
