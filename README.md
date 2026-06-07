@@ -174,6 +174,7 @@ The LSTM autoencoder reliably detects sequences that contain a large spending sp
 - *Drop sensitivity:* detecting unusually low or missing values is harder because the MSE is averaged across all 5 positions. A position-wise max error threshold would improve this.
 - *Dataset size:* 1,104 sequences is small. The model may not learn stable representations for low-frequency categories (e.g. health, bonus) that have fewer than 5 sequences.
 - *No ground truth:* the synthetic evaluation approximates real anomaly detection performance but does not replace labeled evaluation data.
+- *Overlapping windows and sequence-level split:* the sliding window means consecutive sequences share 4 out of 5 values. Combined with a random sequence-level train/val split, sequences from the same user can appear in both sets — slightly inflating validation performance. The correct approach would be a user-level split (train on a set of users, validate on a completely separate set of users) so the model is evaluated on spending patterns it has never seen in any form.
 
 **Intended use:**
 This model is a foundation for a larger honors thesis project that will add an LLM explanation layer — translating flagged anomalies into plain-language descriptions and providing tax planning guidance for freelancers. Results are educational only and not financial or tax advice.
