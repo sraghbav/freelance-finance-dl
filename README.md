@@ -153,13 +153,17 @@ The model detects spikes nearly perfectly. Drop recall is lower because averagin
 
 ### Visualization
 
-The evaluation notebook (`notebooks/evaluation.ipynb`) includes:
+The plot below shows the top 6 anomalous sequences flagged by the model. Each panel compares the original normalized transaction amounts (blue) against the model's reconstruction (orange). The shaded red area shows where the model disagrees — a large gap means the model could not explain that spending pattern, which is what triggers the anomaly flag.
+
+![Qualitative anomaly inspection — original vs reconstructed sequences](docs/qualitative_plot.png)
+
+The full evaluation notebook (`notebooks/evaluation.ipynb`) includes all plots:
 
 - Reconstruction error distribution (normal vs. anomalous sequences)
 - Per-category reconstruction error boxplot
 - Anomaly count by category
 - Threshold justification — validation error histogram and ECDF with threshold marked
-- **Qualitative inspection** — top 6 flagged sequences plotted as original vs. reconstructed (shaded gap shows where the model disagrees with the actual transaction)
+- Qualitative inspection — top 6 flagged sequences plotted as original vs. reconstructed (above)
 - Synthetic evaluation — MSE distributions for clean/spike/drop and recall/FPR bar chart
 
 ---
