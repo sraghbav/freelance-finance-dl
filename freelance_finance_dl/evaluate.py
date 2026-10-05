@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
-from torch.utils.data import random_split, DataLoader, Subset
+from torch.utils.data import DataLoader, Subset
 
 from freelance_finance_dl.dataloader import FinanceTransactionDataset
 from freelance_finance_dl.model import TransactionAutoencoder
@@ -63,12 +63,7 @@ def evaluate(
     seq_len = hp.get("sequence_length", sequence_length)
     dataset = FinanceTransactionDataset(csv_file, sequence_length=seq_len)
 
-    n_val = int(len(dataset) * val_split)
-    n_train = len(dataset) - n_val
-    train_indices, val_indices = random_split(
-        range(len(dataset)), [n_train, n_val],
-        generator=torch.Generator().manual_seed(seed)
-    )
+    train_indices, val_indices = dataset.get_user_split(val_split, seed)
 
     # Use validation split to set the threshold, full dataset to score anomalies
     val_loader = DataLoader(Subset(dataset, list(val_indices)), batch_size=batch_size)

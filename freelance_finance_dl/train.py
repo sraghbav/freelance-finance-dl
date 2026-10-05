@@ -2,7 +2,7 @@ import argparse
 import os
 import torch
 import torch.nn as nn
-from torch.utils.data import random_split, DataLoader
+from torch.utils.data import Subset, DataLoader
 
 from freelance_finance_dl.dataloader import FinanceTransactionDataset
 from freelance_finance_dl.model import TransactionAutoencoder
@@ -27,11 +27,12 @@ def train(
     dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length)
     print(f"Total sequences: {len(dataset)}")
 
-    n_val = int(len(dataset) * val_split)
-    n_train = len(dataset) - n_val
-    train_ds, val_ds = random_split(
-        dataset, [n_train, n_val], generator=torch.Generator().manual_seed(seed)
-    )
+    train_indices, val_indices = dataset.get_user_split(val_split, seed)
+    n_train = len(train_indices)
+    n_val = len(val_indices)
+    train_ds = Subset(dataset, train_indices)
+    val_ds = Subset(dataset, val_indices)
+    print(f"Train sequences: {n_train} Val Sequences: {n_val}")
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)

@@ -1,5 +1,6 @@
 import pandas as pd
 import torch
+import random
 from torch.utils.data import Dataset, DataLoader
 
 # Maps every observed spelling/casing variant to a canonical category name.
@@ -99,6 +100,33 @@ class FinanceTransactionDataset(Dataset):
                 )
 
         return samples
+
+    def get_user_split(self, val_frac=0.15, seed=42):
+        """
+        Split by user_id (not by sequence) so no user's sequences appear in
+        both train and val — avoids the leakage caused by overlapping windows.
+
+        Returns:
+            train_indices, val_indices: lists of integer indices into self.samples
+        """
+        # TODO: implement
+        # 1. get unique user_ids in a deterministic order (sorted set)
+        unique_user_ids = sorted({s['user_id'] for s in self.samples})
+        # 2. shuffle them with the given seed
+        rng = random.Random(seed)
+        rng.shuffle(unique_user_ids)
+        # 3. split into train/val groups by val_frac
+        n_val = int(len(unique_user_ids) * val_frac)
+        val_users = set(unique_user_ids[:n_val])
+        # 4. walk self.samples and bucket each index by which group its user_id landed in
+        train_indices, val_indices = [], []
+        for idx, sample in enumerate(self.samples):
+            if sample['user_id'] in val_users:
+                val_indices.append(idx)
+            else:
+                train_indices.append(idx)
+
+        return train_indices, val_indices
 
     def __len__(self):
         return len(self.samples)
