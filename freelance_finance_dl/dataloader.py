@@ -109,7 +109,6 @@ class FinanceTransactionDataset(Dataset):
         Returns:
             train_indices, val_indices: lists of integer indices into self.samples
         """
-        # TODO: implement
         # 1. get unique user_ids in a deterministic order (sorted set)
         unique_user_ids = sorted({s['user_id'] for s in self.samples})
         # 2. shuffle them with the given seed
