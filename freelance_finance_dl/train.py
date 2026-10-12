@@ -19,12 +19,13 @@ def train(
     lr: float = 1e-3,
     val_split: float = 0.15,
     seed: int = 42,
+    clean: bool = False,
 ):
     torch.manual_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length)
+    dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length, clean=clean)
     print(f"Total sequences: {len(dataset)}")
 
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
@@ -85,6 +86,7 @@ def train(
                         "sequence_length": sequence_length,
                         "hidden_dim": hidden_dim,
                         "latent_dim": latent_dim,
+                        "clean": clean,
                     },
                 },
                 checkpoint_path,
@@ -107,6 +109,8 @@ if __name__ == "__main__":
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--val-split", type=float, default=0.15)
+    parser.add_argument("--clean", action="store_true",
+                        help="Drop corrupt amounts (<=0 or >=999999) before building sequences")
     args = parser.parse_args()
 
     train(
@@ -119,4 +123,5 @@ if __name__ == "__main__":
         batch_size=args.batch_size,
         lr=args.lr,
         val_split=args.val_split,
+        clean=args.clean,
     )

@@ -38,10 +38,14 @@ CATEGORY_MAP = {
     "Other": "other", "other": "other", "Misc": "other", "misc": "other",
 }
 
+# The raw CSV contains sentinel/corrupt amounts (999999, 999999999, and values <= 0).
+INVALID_AMOUNT_CUTOFF = 999_999
+
 
 class FinanceTransactionDataset(Dataset):
-    def __init__(self, csv_file, sequence_length=5):
+    def __init__(self, csv_file, sequence_length=5, clean=False):
         self.sequence_length = sequence_length
+        self.clean = clean
         self.data = pd.read_csv(csv_file)
 
         # Normalize category spellings/casing to canonical names.
@@ -67,6 +71,11 @@ class FinanceTransactionDataset(Dataset):
         self.data = self.data.dropna(
             subset=["user_id", "date", "category", "amount"]
         )
+
+        if clean:
+            self.data = self.data[
+                (self.data["amount"] > 0) & (self.data["amount"] < INVALID_AMOUNT_CUTOFF)
+            ]
 
         # Sort by user, category, and time
         self.data = self.data.sort_values(
