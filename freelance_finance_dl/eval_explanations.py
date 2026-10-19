@@ -118,7 +118,7 @@ def summarize(scores_path, tag=""):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Explanation quality evaluation")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--checkpoint", default="checkpoints/best_model.pt")
+    parser.add_argument("--checkpoint", default="checkpoints_logratio_l3/best_model.pt")
     parser.add_argument("--score", choices=["mean", "max"], default="mean")
     parser.add_argument("--llm", choices=["anthropic", "ollama"], default="ollama")
     parser.add_argument("--n", type=int, default=20)

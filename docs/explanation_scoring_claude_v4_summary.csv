@@ -1,0 +1,3 @@
+version,direction_correct,only_real_numbers,plain_language,no_invented_causes,all_four
+llm,1.0,0.95,0.95,1.0,0.95
+template,1.0,1.0,1.0,1.0,1.0

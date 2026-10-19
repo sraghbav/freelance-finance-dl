@@ -20,12 +20,15 @@ def train(
     val_split: float = 0.15,
     seed: int = 42,
     clean: bool = False,
+    robust: bool = True,
+    features: str = "logratio",
 ):
     torch.manual_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length, clean=clean)
+    dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length, clean=clean,
+                                      robust=robust, features=features)
     print(f"Total sequences: {len(dataset)}")
 
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
@@ -87,6 +90,8 @@ def train(
                         "hidden_dim": hidden_dim,
                         "latent_dim": latent_dim,
                         "clean": clean,
+                        "robust": robust,
+                        "features": features,
                     },
                 },
                 checkpoint_path,
@@ -111,6 +116,10 @@ if __name__ == "__main__":
     parser.add_argument("--val-split", type=float, default=0.15)
     parser.add_argument("--clean", action="store_true",
                         help="Drop corrupt amounts (<=0 or >=999999) before building sequences")
+    parser.add_argument("--legacy-parsing", action="store_true",
+                        help="Use the original date/amount parsing (drops ~69%% of rows)")
+    parser.add_argument("--features", choices=["logratio", "minmax"], default="logratio",
+                        help="logratio = relative to the user's typical amount (default)")
     args = parser.parse_args()
 
     train(
@@ -124,4 +133,6 @@ if __name__ == "__main__":
         lr=args.lr,
         val_split=args.val_split,
         clean=args.clean,
+        robust=not args.legacy_parsing,
+        features=args.features,
     )

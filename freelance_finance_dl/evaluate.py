@@ -5,7 +5,7 @@ set an anomaly threshold from the validation error distribution, and flag anomal
 Usage:
     python -m freelance_finance_dl.evaluate \
         --csv data/budgetwise_finance_dataset.csv \
-        --checkpoint checkpoints/best_model.pt \
+        --checkpoint checkpoints_logratio_l3/best_model.pt \
         --output results/anomalies.csv
 """
 
@@ -17,7 +17,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Subset
 
-from freelance_finance_dl.dataloader import FinanceTransactionDataset
+from freelance_finance_dl.dataloader import (
+    INVALID_AMOUNT_CUTOFF, FinanceTransactionDataset)
 from freelance_finance_dl.model import TransactionAutoencoder
 
 
@@ -56,6 +57,8 @@ def load_model_and_data(csv_file, checkpoint_path, val_split=0.15, seed=42,
         csv_file,
         sequence_length=hp.get("sequence_length", sequence_length),
         clean=hp.get("clean", False),
+        robust=hp.get("robust", False),
+        features=hp.get("features", "minmax"),
     )
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
     return model, dataset, train_indices, val_indices, device
@@ -89,7 +92,9 @@ def evaluate(
 
     seq_len = hp.get("sequence_length", sequence_length)
     dataset = FinanceTransactionDataset(
-        csv_file, sequence_length=seq_len, clean=hp.get("clean", False)
+        csv_file, sequence_length=seq_len, clean=hp.get("clean", False),
+        robust=hp.get("robust", False),
+        features=hp.get("features", "minmax"),
     )
 
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
@@ -216,10 +221,48 @@ def synthetic_anomaly_eval(model, dataset, val_indices, threshold, device, seed=
     return summary, df
 
 
+def raw_injection_eval(model, dataset, val_indices, threshold, device, factors=(1.5, 2, 3, 5, 10),
+                       seed=42, reduce="mean"):
+    """
+    Realistic synthetic anomalies: change one raw amount (spike = x factor, drop = / factor),
+    THEN normalize, so the corrupted sequence still lies in [0, 1] like real data.
+    Only sequences whose amounts are all valid (0 < amount < cutoff) are used.
+    Returns a DataFrame with spike/drop recall per factor and the false-positive rate.
+    """
+    rng = np.random.default_rng(seed)
+    model.eval()
+    criterion = nn.MSELoss(reduction="none")
+
+    def score(seq, scale):
+        x = torch.tensor(dataset.featurize(seq, scale)).unsqueeze(0).unsqueeze(-1).to(device)
+        with torch.no_grad():
+            err = criterion(model(x), x).squeeze(-1)
+        return (err.max() if reduce == "max" else err.mean()).item()
+
+    samples = [dataset.samples[i] for i in val_indices]
+    samples = [s for s in samples if ((s["sequence"] > 0) & (s["sequence"] < INVALID_AMOUNT_CUTOFF)).all()]
+    sequences = [s["sequence"] for s in samples]
+    scales = [s["scale"] for s in samples]
+    positions = rng.integers(0, dataset.sequence_length, size=len(sequences))
+
+    clean_flagged = np.mean([score(q, sc) > threshold for q, sc in zip(sequences, scales)])
+    rows = []
+    for factor in factors:
+        for kind in ("spike", "drop"):
+            hits = []
+            for seq, scale, pos in zip(sequences, scales, positions):
+                corrupted = seq.copy()
+                corrupted[pos] = corrupted[pos] * factor if kind == "spike" else corrupted[pos] / factor
+                hits.append(score(corrupted, scale) > threshold)
+            rows.append({"kind": kind, "factor": factor, "recall": float(np.mean(hits)),
+                         "false_positive_rate": float(clean_flagged), "n": len(sequences)})
+    return pd.DataFrame(rows)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate autoencoder for anomaly detection")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--checkpoint", default="checkpoints/best_model.pt")
+    parser.add_argument("--checkpoint", default="checkpoints_logratio_l3/best_model.pt")
     parser.add_argument("--output", default="results/anomalies.csv")
     parser.add_argument("--threshold-percentile", type=float, default=95.0,
                         help="Percentile of val errors to use as anomaly threshold")
