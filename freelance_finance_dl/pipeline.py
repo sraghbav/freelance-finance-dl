@@ -16,12 +16,14 @@ from torch.utils.data import DataLoader, Subset
 
 from freelance_finance_dl.evaluate import compute_reconstruction_errors, load_model_and_data
 from freelance_finance_dl.explain import (
-    build_facts, llm_explanation, ollama_explanation, template_explanation)
+    build_facts, grounded_explanation, llm_explanation, ollama_explanation,
+    template_explanation)
 from freelance_finance_dl.tax import tax_note
 
 
-def run(csv_file, checkpoint_path, top_n=10, backend=None, score="mean",
-        percentile=95.0, seed=42):
+def score_and_flag(csv_file, checkpoint_path, score="mean", percentile=95.0, seed=42):
+    """Score every sequence; return model, dataset, device, errors, threshold, flagged indices
+    (highest score first)."""
     model, dataset, _, val_indices, device = load_model_and_data(
         csv_file, checkpoint_path, seed=seed
     )
@@ -31,24 +33,35 @@ def run(csv_file, checkpoint_path, top_n=10, backend=None, score="mean",
     threshold = float(np.percentile(
         compute_reconstruction_errors(model, val_loader, device, score), percentile))
     errors = compute_reconstruction_errors(model, full_loader, device, score)
+    flagged = [int(i) for i in np.argsort(-errors) if errors[i] > threshold]
+    return model, dataset, device, errors, threshold, flagged
 
-    flagged = [int(i) for i in np.argsort(-errors) if errors[i] > threshold][:top_n]
 
-    client = None
+def make_generator(backend):
+    """Return generate(facts) -> text for the chosen LLM backend, or None."""
     if backend == "anthropic":
         import anthropic
         client = anthropic.Anthropic()
+        return lambda facts: llm_explanation(facts, client)
+    if backend == "ollama":
+        return ollama_explanation
+    return None
+
+
+def run(csv_file, checkpoint_path, top_n=10, backend=None, score="mean",
+        percentile=95.0, seed=42):
+    model, dataset, device, errors, threshold, flagged = score_and_flag(
+        csv_file, checkpoint_path, score, percentile, seed)
+    generate = make_generator(backend)
 
     rows = []
-    for idx in flagged:
+    for idx in flagged[:top_n]:
         facts = build_facts(dataset, model, device, idx, errors[idx], threshold)
         row = {"facts": facts, "template": template_explanation(facts)}
-        if backend == "anthropic":
-            row["llm"] = llm_explanation(facts, client)
-        elif backend == "ollama":
-            row["llm"] = ollama_explanation(facts)
+        if generate:
+            row.update(grounded_explanation(facts, generate))
         rows.append(row)
-    return rows, dataset, threshold, int((errors > threshold).sum()), len(errors)
+    return rows, dataset, threshold, len(flagged), len(errors)
 
 
 def to_markdown(rows, dataset, threshold, n_flagged, n_total):
@@ -63,8 +76,11 @@ def to_markdown(rows, dataset, threshold, n_flagged, n_total):
         lines.append(f"## {i}. {f['user_id']} - {f['category']}")
         lines.append(f"Amounts: {f['amounts_in_window']}\n")
         lines.append(f"**Template:** {r['template']}\n")
-        if "llm" in r:
-            lines.append(f"**LLM:** {r['llm']}\n")
+        if "llm_raw" in r:
+            status = "passed" if r["grounded"] else "FAILED: " + "; ".join(r["reasons"])
+            lines.append(f"**LLM (raw):** {r['llm_raw']}\n")
+            lines.append(f"**Grounding check:** {status}\n")
+            lines.append(f"**Final ({r['final_source']}):** {r['final']}\n")
         if f["user_id"] not in seen_users:
             seen_users.append(f["user_id"])
     lines.append("## Tax set-aside notes (educational only)")
