@@ -10,7 +10,7 @@ from freelance_finance_dl.model import TransactionAutoencoder
 
 def train(
     csv_file: str,
-    output_dir: str = "checkpoints",
+    output_dir: str = "checkpoints/new_run",
     sequence_length: int = 5,
     hidden_dim: int = 64,
     latent_dim: int = 16,
@@ -106,7 +106,7 @@ def train(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train transaction autoencoder")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--output-dir", default="checkpoints")
+    parser.add_argument("--output-dir", default="checkpoints/new_run")
     parser.add_argument("--sequence-length", type=int, default=5)
     parser.add_argument("--hidden-dim", type=int, default=64)
     parser.add_argument("--latent-dim", type=int, default=16)

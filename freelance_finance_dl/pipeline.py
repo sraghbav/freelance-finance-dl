@@ -2,7 +2,7 @@
 End-to-end pipeline: transactions -> anomaly flags -> plain-language explanations -> tax note.
 
 Usage:
-    python -m freelance_finance_dl.pipeline --checkpoint checkpoints_logratio_l3/best_model.pt --top-n 10
+    python -m freelance_finance_dl.pipeline --checkpoint checkpoints/primary_logratio_l3/best_model.pt --top-n 10
     python -m freelance_finance_dl.pipeline --llm ollama      # free, local
     python -m freelance_finance_dl.pipeline --llm anthropic   # needs ANTHROPIC_API_KEY
 """
@@ -92,7 +92,7 @@ def to_markdown(rows, dataset, threshold, n_flagged, n_total):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Anomaly -> explanation -> tax note pipeline")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--checkpoint", default="checkpoints_logratio_l3/best_model.pt")
+    parser.add_argument("--checkpoint", default="checkpoints/primary_logratio_l3/best_model.pt")
     parser.add_argument("--top-n", type=int, default=10)
     parser.add_argument("--score", choices=["mean", "max"], default="mean")
     parser.add_argument("--llm", choices=["anthropic", "ollama"], default=None,

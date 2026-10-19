@@ -2,7 +2,7 @@
 
 **Working title:** Explaining Unusual Spending for Freelancers: An LSTM Autoencoder with Grounded Plain-Language Explanations
 
-**Not yet checked:** the Clark Honors College thesis template and formatting rules. Download them from the CHC thesis page and map these chapters onto the template before drafting in it. Citations below are placeholders `[find source]`; none have been gathered yet.
+**Format:** the student is writing in their own format using a typical thesis structure (no CHC template constraint). Citations below are placeholders `[find source]`; none have been gathered yet.
 
 ## Research questions
 1. **Detection:** how reliably can an unsupervised LSTM autoencoder flag unusual spending sequences, and how large must an anomaly be before it is caught?
@@ -58,13 +58,28 @@
 - B. Reproducibility: commands, seeds, versions
 - C. Full sweep tables (`docs/sweep_*.csv`) and explanation scoring files (`docs/explanation_*`)
 
-## Writing schedule (from the 10/18 plan)
-- Wed 10/21 (done): data fix, evaluation fix, new features, results compiled
-- Thu 10/22: Methods 3.1–3.5
-- Fri 10/23: Methods 3.6–3.9
-- Sat 10/24: Results 4.1–4.4; email advisor
-- Sun 10/25: Results 4.5–4.8
-- Week of 10/26: Background and Limitations
+## Writing schedule (set 2026-10-19; starts Thursday 10/22)
+Chapter files live in `thesis/` (01 to 06, appendices). Tue 10/20 and Wed 10/21 are free buffer; Methods 3.1 can start any time.
+
+| Date | Claude (coding / checking) | You (writing) |
+|---|---|---|
+| Thu 10/22 | Run 5-fold user cross-validation, confidence intervals, and figures; walk you through the new code | Methods 3.1 (data) |
+| Fri 10/23 | Review your 3.1 | Methods 3.2, 3.3 (sequences/features, model) |
+| Sat 10/24 | Review | Methods 3.4, 3.5, 3.6 (split, threshold, anomaly evaluation) |
+| Sun 10/25 | Review | Methods 3.7, 3.8, 3.9 (explanation layer, its evaluation, tax note) |
+| Mon 10/26 | Hand you the final numbers/figures | Results 4.1 to 4.3 |
+| Tue 10/27 | Review | Results 4.4 to 4.8 |
+| Wed 10/28 | Draft the advisor email | Send the advisor the outline + Methods + Results + questions |
+| Thu 10/29 and Fri 10/30 | Help find and check sources | Background |
+| Sat 10/31 | Review | Discussion |
+| Sun 11/1 | Review | Introduction + Conclusion: **full first draft done** |
+| 11/2 to 11/15 | | Revise with advisor feedback |
+| 11/16 to 11/22 | | Polish figures and tables, proofread |
+| 11/23 to 11/29 | | Thanksgiving, light edits only |
+| 11/30 to 12/6 | | Near-final draft to advisor |
+| 12/7 to 12/13 | | Iterate on feedback |
+
+If a day slips: move the whole table down a day; do not skip the Methods review days.
 
 ## Questions for the advisor (for the Saturday email)
 1. The dataset looks synthetic (random amounts) and is in rupees. Is that acceptable for the thesis claims, or should I add a second dataset?

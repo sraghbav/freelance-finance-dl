@@ -3,13 +3,13 @@ Evaluate explanation quality: template baseline vs. LLM, with an automatic groun
 and a blind manual rubric.
 
 Step 1 - generate (needs the Ollama server running):
-    python -m freelance_finance_dl.eval_explanations --n 20
+    python -m freelance_finance_dl.eval_explanations --n 20 --tag _v5
 
-Step 2 - open docs/explanation_scoring_blind.csv, fill the four 1/0 columns for every row
+Step 2 - open docs/explanation_eval/explanation_scoring_blind<tag>.csv, fill the four 1/0 columns for every row
 (rows are shuffled and unlabeled), save it.
 
 Step 3 - summarize:
-    python -m freelance_finance_dl.eval_explanations --summarize
+    python -m freelance_finance_dl.eval_explanations --summarize --tag _v5 --scores <scored.csv>
 """
 
 import argparse
@@ -22,9 +22,7 @@ from freelance_finance_dl.explain import (
     LLM_HIDDEN_FIELDS, build_facts, check_grounding, strip_preamble, template_explanation)
 from freelance_finance_dl.pipeline import make_generator, score_and_flag
 
-AUTO_CSV = "docs/explanation_eval_auto.csv"
-BLIND_CSV = "docs/explanation_scoring_blind.csv"
-KEY_CSV = "docs/explanation_scoring_key.csv"
+EVAL_DIR = "docs/explanation_eval"
 CRITERIA = ["direction_correct", "only_real_numbers", "plain_language", "no_invented_causes"]
 
 
@@ -38,8 +36,9 @@ def truth_summary(f):
 
 
 def paths(tag):
-    return (f"docs/explanation_eval_auto{tag}.csv", f"docs/explanation_scoring_blind{tag}.csv",
-            f"docs/explanation_scoring_key{tag}.csv")
+    return (f"{EVAL_DIR}/explanation_eval_auto{tag}.csv",
+            f"{EVAL_DIR}/explanation_scoring_blind{tag}.csv",
+            f"{EVAL_DIR}/explanation_scoring_key{tag}.csv")
 
 
 def generate(args):
@@ -118,13 +117,14 @@ def summarize(scores_path, tag=""):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Explanation quality evaluation")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--checkpoint", default="checkpoints_logratio_l3/best_model.pt")
+    parser.add_argument("--checkpoint", default="checkpoints/primary_logratio_l3/best_model.pt")
     parser.add_argument("--score", choices=["mean", "max"], default="mean")
     parser.add_argument("--llm", choices=["anthropic", "ollama"], default="ollama")
     parser.add_argument("--n", type=int, default=20)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--summarize", action="store_true")
     parser.add_argument("--scores", default=None, help="Scored sheet to summarize")
-    parser.add_argument("--tag", default="", help="Suffix for output files, e.g. _v3")
+    parser.add_argument("--tag", required=True,
+                        help="Suffix for output files, e.g. _v5 (required so existing sheets are never overwritten)")
     args = parser.parse_args()
     summarize(args.scores or paths(args.tag)[1], args.tag) if args.summarize else generate(args)

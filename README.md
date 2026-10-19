@@ -63,11 +63,17 @@ freelance-finance-dl/
 │   ├── tax.py                 # Educational quarterly set-aside estimate
 │   ├── pipeline.py            # End-to-end report: flag -> explain -> tax note
 │   └── eval_explanations.py   # Explanation quality evaluation
-├── checkpoints_logratio_l3/   # PRIMARY model (log-ratio features, latent 3, --clean)
-├── checkpoints_logratio_l16/  # latent-size ablation
-├── checkpoints/, checkpoints_clean/, checkpoints_robust*/   # earlier models (min-max features)
-├── docs/                      # figures, sweep CSVs, explanation evaluation files
-├── thesis/outline.md          # working thesis outline
+├── checkpoints/
+│   ├── primary_logratio_l3/             # PRIMARY: log-ratio features, latent 3, --clean
+│   ├── ablation_logratio_l16/           # latent-size ablation
+│   ├── robust_minmax/, robust_minmax_clean/   # robust parsing, min-max features
+│   └── legacy_minmax_*/                 # class-project models (sequence-level and user-level split, clean)
+├── docs/
+│   ├── sweeps/                          # raw-space sensitivity sweeps (CSV + PNG), current results
+│   ├── explanation_eval/                # explanation scoring sheets, keys, summaries (v2, v3, v4)
+│   │   └── llm_runs/                    # raw LLM outputs from early prompt versions
+│   └── superseded/                      # class-project figures and sweeps (out-of-range injection)
+├── thesis/                              # outline.md and one file per chapter (your writing)
 └── notebooks/                 # original class-project notebooks (NOT updated, see below)
 ```
 
@@ -90,13 +96,13 @@ pip install -r requirements.txt
 
 ```bash
 # Train the primary model (log-ratio features, cleaned amounts, latent size 3)
-python -m freelance_finance_dl.train --output-dir checkpoints_logratio_l3 --latent-dim 3 --epochs 50 --clean
+python -m freelance_finance_dl.train --output-dir checkpoints/primary_logratio_l3 --latent-dim 3 --epochs 50 --clean
 
 # Reproduce the class-project pipeline instead
-python -m freelance_finance_dl.train --output-dir checkpoints --legacy-parsing --features minmax
+python -m freelance_finance_dl.train --output-dir checkpoints/legacy_rerun --legacy-parsing --features minmax
 
-# Raw-space sensitivity sweep -> docs/rawsweep_<tag>.csv/.png
-python -m freelance_finance_dl.sweep --checkpoint checkpoints_logratio_l3/best_model.pt --tag primary
+# Raw-space sensitivity sweep -> docs/sweeps/rawsweep_<tag>.csv/.png
+python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l3/best_model.pt --tag primary
 
 # End-to-end report (add --llm ollama for model-written explanations)
 python -m freelance_finance_dl.pipeline --top-n 10 --llm ollama
@@ -124,7 +130,7 @@ The latent size matters. With 5 inputs, a 16-dimensional latent has room to simp
 
 The class project tested the detector by overwriting one *normalized* value with 2.0 or −0.5. Normalized data only ranges from 0 to 1, so those anomalies were out of range by construction, and the 98.2% spike recall (100% after the first fix) only showed that the model could detect out-of-range numbers. A realistic anomaly changes a **raw amount** (one charge ×5, say) and is then featurized like any other sequence. `evaluate.raw_injection_eval` does this: it multiplies (spike) or divides (drop) one amount by a factor, using only sequences with valid amounts (1,070 validation sequences for the primary model).
 
-**Recall at a ~5% false-positive rate, mean-error score** (`docs/rawsweep_*.csv`):
+**Recall at a ~5% false-positive rate, mean-error score** (`docs/sweeps/rawsweep_*.csv`):
 
 | Model | Spike ×3 | ×5 | ×10 | Drop ÷3 | ÷5 | ÷10 |
 |---|---|---|---|---|---|---|
@@ -156,7 +162,7 @@ For 20 randomly chosen flagged sequences each, explanations were written two way
 
 v2 and v3 were run on flagged sequences from the earlier min-max model; v4 on the primary model. **The versions are not directly comparable:** the primary model's flags are large, clear deviations (1.5× to 8× the user's typical amount), which makes the explanation task easier. v3 stopped sending the detector's internal score fields to the model (v2 mislabeled a severity ratio as "the threshold"). The checker passed 20 of 20 v4 texts, and the one it should have rejected ("4 positions higher than the median", a window position misused as a quantity) is the same kind of misuse it cannot see.
 
-**Scoring caveats.** Scores are from Claude acting as an LLM judge (`docs/explanation_scoring_claude*.csv`), not independent humans. The student independently scored 12 of the v2 rows (`docs/explanation_scoring_human.csv`): **39/48 criterion judgements agreed (81%)**, 9/12 rows agreed on the overall verdict, and plain language was least consistent (58%). The student's rows were not repeated for v3/v4. The sheets are only weakly blind because template text is formulaic.
+**Scoring caveats.** Scores are from Claude acting as an LLM judge (`docs/explanation_eval/explanation_scoring_claude_v*.csv`), not independent humans. The student independently scored 12 of the v2 rows (`docs/explanation_eval/explanation_scoring_human_v2.csv`): **39/48 criterion judgements agreed (81%)**, 9/12 rows agreed on the overall verdict, and plain language was least consistent (58%). The student's rows were not repeated for v3/v4. The sheets are only weakly blind because template text is formulaic.
 
 **Conclusion:** with a 3B model, the checked pipeline is about as accurate as the plain template; the LLM adds phrasing variety, not accuracy. A larger model was not evaluated.
 
@@ -181,7 +187,7 @@ v2 and v3 were run on flagged sequences from the earlier min-max model; v4 on th
 
 ## Original DSCI 410L Results (superseded)
 
-Kept for the record. These used the original loader (4,977 rows, 1,104 sequences), min-max features, and the out-of-range injection described above, so the recall figures do not measure realistic detection. Weights: `checkpoints/best_model_old_split.pt` (sequence-level split) and `checkpoints/best_model.pt` (user-level split).
+Kept for the record. These used the original loader (4,977 rows, 1,104 sequences), min-max features, and the out-of-range injection described above, so the recall figures do not measure realistic detection. Weights: `checkpoints/legacy_minmax_sequence_split/` and `checkpoints/legacy_minmax_user_split/`; the figures and sweeps are in `docs/superseded/`.
 
 | | Sequence-level split | User-level split |
 |---|---|---|
@@ -191,7 +197,7 @@ Kept for the record. These used the original loader (4,977 rows, 1,104 sequences
 
 Moving to a user-level split (whole users held out) raised validation error, as expected once overlapping windows from the same user could no longer leak across the split.
 
-![Qualitative anomaly inspection — original vs reconstructed sequences](docs/qualitative_plot.png)
+![Qualitative anomaly inspection — original vs reconstructed sequences](docs/superseded/qualitative_plot.png)
 
 ---
 

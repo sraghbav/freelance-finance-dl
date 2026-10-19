@@ -4,7 +4,7 @@ model flags the sequence? One amount is multiplied (spike) or divided (drop) by 
 the sequence is featurized exactly like real data, so it stays in the training range.
 
 Usage:
-    python -m freelance_finance_dl.sweep --checkpoint checkpoints_logratio_l3/best_model.pt --tag primary
+    python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l3/best_model.pt --tag primary
 """
 
 import argparse
@@ -75,6 +75,9 @@ if __name__ == "__main__":
 
     df = run_sweep(args.csv, args.checkpoint, args.threshold_percentile)
     print(df.round(3).to_string(index=False))
-    df.to_csv(f"docs/rawsweep_{args.tag}.csv", index=False)
-    plot_sweep(df, f"docs/rawsweep_{args.tag}.png", title=args.tag)
-    print(f"\nSaved docs/rawsweep_{args.tag}.csv and docs/rawsweep_{args.tag}.png")
+    csv_path = f"docs/sweeps/rawsweep_{args.tag}.csv"
+    png_path = f"docs/sweeps/rawsweep_{args.tag}.png"
+    os.makedirs("docs/sweeps", exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    plot_sweep(df, png_path, title=args.tag)
+    print(f"\nSaved {csv_path} and {png_path}")

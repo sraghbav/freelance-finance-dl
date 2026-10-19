@@ -5,7 +5,7 @@ set an anomaly threshold from the validation error distribution, and flag anomal
 Usage:
     python -m freelance_finance_dl.evaluate \
         --csv data/budgetwise_finance_dataset.csv \
-        --checkpoint checkpoints_logratio_l3/best_model.pt \
+        --checkpoint checkpoints/primary_logratio_l3/best_model.pt \
         --output results/anomalies.csv
 """
 
@@ -262,7 +262,7 @@ def raw_injection_eval(model, dataset, val_indices, threshold, device, factors=(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate autoencoder for anomaly detection")
     parser.add_argument("--csv", default="data/budgetwise_finance_dataset.csv")
-    parser.add_argument("--checkpoint", default="checkpoints_logratio_l3/best_model.pt")
+    parser.add_argument("--checkpoint", default="checkpoints/primary_logratio_l3/best_model.pt")
     parser.add_argument("--output", default="results/anomalies.csv")
     parser.add_argument("--threshold-percentile", type=float, default=95.0,
                         help="Percentile of val errors to use as anomaly threshold")
