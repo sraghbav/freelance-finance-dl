@@ -21,6 +21,7 @@ import pandas as pd
 from freelance_finance_dl.explain import (
     LLM_HIDDEN_FIELDS, build_facts, check_grounding, strip_preamble, template_explanation)
 from freelance_finance_dl.pipeline import make_generator, score_and_flag
+from freelance_finance_dl.stats import wilson_interval
 
 EVAL_DIR = "docs/explanation_eval"
 CRITERIA = ["direction_correct", "only_real_numbers", "plain_language", "no_invented_causes"]
@@ -105,6 +106,18 @@ def summarize(scores_path, tag=""):
     print("Share of explanations meeting each criterion (manual, blind):\n")
     print(table.to_string())
     table.to_csv(scores_path.replace(".csv", "_summary.csv"))
+
+    ci_rows = []
+    for version, group in scored.groupby("version"):
+        for criterion in CRITERIA + ["all_four"]:
+            k, n = int(group[criterion].sum()), len(group)
+            lo, hi = wilson_interval(k, n)
+            ci_rows.append({"version": version, "criterion": criterion, "passed": k, "n": n,
+                            "rate": k / n, "ci_low": lo, "ci_high": hi})
+    ci = pd.DataFrame(ci_rows)
+    ci.to_csv(scores_path.replace(".csv", "_ci.csv"), index=False)
+    print("\n95% Wilson intervals (all four criteria):\n")
+    print(ci[ci.criterion == "all_four"].round(2).to_string(index=False))
 
     llm = scored[scored["version"] == "llm"].merge(
         auto[["idx", "llm_passes_check"]], on="idx")

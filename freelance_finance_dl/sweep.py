@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 from torch.utils.data import DataLoader, Subset
 
+from freelance_finance_dl.stats import wilson_interval
 from freelance_finance_dl.evaluate import (
     compute_reconstruction_errors,
     load_model_and_data,
@@ -38,6 +39,9 @@ def run_sweep(csv_file, checkpoint_path, percentile=95.0, val_split=0.15, seed=4
         threshold = float(np.percentile(val_errors, percentile))
         df = raw_injection_eval(model, dataset, val_indices, threshold, device,
                                 factors=FACTORS, seed=seed, reduce=reduce)
+        bounds = [wilson_interval(int(round(r * n)), int(n)) for r, n in zip(df["recall"], df["n"])]
+        df["recall_ci_low"] = [b[0] for b in bounds]
+        df["recall_ci_high"] = [b[1] for b in bounds]
         df.insert(0, "score", reduce)
         df.insert(1, "threshold", threshold)
         frames.append(df)
@@ -57,6 +61,7 @@ def plot_sweep(df, out_path, title=""):
            title=title, ylim=(0, 1.05), xscale="log")
     ax.set_xticks(FACTORS)
     ax.set_xticklabels([str(f) for f in FACTORS])
+    ax.minorticks_off()
     ax.grid(alpha=0.3)
     ax.legend(fontsize=8)
     fig.tight_layout()

@@ -58,28 +58,21 @@
 - B. Reproducibility: commands, seeds, versions
 - C. Full sweep tables (`docs/sweep_*.csv`) and explanation scoring files (`docs/explanation_*`)
 
-## Writing schedule (set 2026-10-19; starts Thursday 10/22)
-Chapter files live in `thesis/` (01 to 06, appendices). Tue 10/20 and Wed 10/21 are free buffer; Methods 3.1 can start any time.
+## Writing schedule (reset 2026-11-04)
+No prose existed on Nov 4; all code, numbers, and figures are final. Chapter files are in `thesis/`. Work in sessions where Claude is available to review each section right after you write it.
 
-| Date | Claude (coding / checking) | You (writing) |
+| Week | Goal | Daily breakdown |
 |---|---|---|
-| Thu 10/22 | Run 5-fold user cross-validation, confidence intervals, and figures; walk you through the new code | Methods 3.1 (data) |
-| Fri 10/23 | Review your 3.1 | Methods 3.2, 3.3 (sequences/features, model) |
-| Sat 10/24 | Review | Methods 3.4, 3.5, 3.6 (split, threshold, anomaly evaluation) |
-| Sun 10/25 | Review | Methods 3.7, 3.8, 3.9 (explanation layer, its evaluation, tax note) |
-| Mon 10/26 | Hand you the final numbers/figures | Results 4.1 to 4.3 |
-| Tue 10/27 | Review | Results 4.4 to 4.8 |
-| Wed 10/28 | Draft the advisor email | Send the advisor the outline + Methods + Results + questions |
-| Thu 10/29 and Fri 10/30 | Help find and check sources | Background |
-| Sat 10/31 | Review | Discussion |
-| Sun 11/1 | Review | Introduction + Conclusion: **full first draft done** |
-| 11/2 to 11/15 | | Revise with advisor feedback |
-| 11/16 to 11/22 | | Polish figures and tables, proofread |
-| 11/23 to 11/29 | | Thanksgiving, light edits only |
-| 11/30 to 12/6 | | Near-final draft to advisor |
-| 12/7 to 12/13 | | Iterate on feedback |
+| **Wed 11/4 to Sun 11/8** | **Methods done (3.1 to 3.9)** | Wed 3.1 · Thu 3.2, 3.3 · Fri 3.4, 3.5, 3.6 · Sat 3.7, 3.8, 3.9 · Sun buffer/review |
+| **Mon 11/9 to Sun 11/15** | **Full first draft** | Mon-Tue Results 4.1-4.8 · Wed 11/11 send advisor outline + Methods + Results + questions · Thu-Fri Background · Sat Discussion · Sun Introduction + Conclusion |
+| Mon 11/16 to Sun 11/22 | Revise the whole draft | Read-through, check every number against the README and data, fix figures and tables, apply advisor feedback |
+| Mon 11/23 to Sun 11/29 | Thanksgiving: proofreading only | |
+| **Mon 11/30** | **Near-final draft to advisor** | Revise on feedback through 12/6 |
+| 12/7 to 12/13 | Finals week: buffer only | Final fixes if the advisor has any |
 
-If a day slips: move the whole table down a day; do not skip the Methods review days.
+**Rule:** if you are a day behind, move the whole table down a day. If you are two or more days behind on 11/15, use the cut order below instead of extending.
+
+**Cut order (what to shrink first):** (1) Background to 2 pages with 6 to 8 solid sources; (2) Methods 3.9 (tax note) to one paragraph; (3) Results 4.8 (historical results) to a short paragraph; (4) Future work to a few sentences; (5) appendices to the essentials. **Do not cut:** 3.1 (data), 3.6 (anomaly evaluation), Results 4.1 to 4.3, and Limitations.
 
 ## Questions for the advisor (for the Saturday email)
 1. The dataset looks synthetic (random amounts) and is in rupees. Is that acceptable for the thesis claims, or should I add a second dataset?

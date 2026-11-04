@@ -62,6 +62,9 @@ freelance-finance-dl/
 │   ├── explain.py             # Facts, template baseline, LLM backends, grounding check
 │   ├── tax.py                 # Educational quarterly set-aside estimate
 │   ├── pipeline.py            # End-to-end report: flag -> explain -> tax note
+│   ├── crossval.py            # 5-fold user-level cross-validation of the anomaly evaluation
+│   ├── plots.py               # Thesis figures (data loss, flagged examples)
+│   ├── stats.py               # Wilson confidence intervals
 │   └── eval_explanations.py   # Explanation quality evaluation
 ├── checkpoints/
 │   ├── primary_logratio_l3/             # PRIMARY: log-ratio features, latent 3, --clean
@@ -69,7 +72,8 @@ freelance-finance-dl/
 │   ├── robust_minmax/, robust_minmax_clean/   # robust parsing, min-max features
 │   └── legacy_minmax_*/                 # class-project models (sequence-level and user-level split, clean)
 ├── docs/
-│   ├── sweeps/                          # raw-space sensitivity sweeps (CSV + PNG), current results
+│   ├── figures/                         # data-loss chart, flagged-sequence examples
+│   ├── sweeps/                          # raw-space sweeps and cross-validation (CSV + PNG)
 │   ├── explanation_eval/                # explanation scoring sheets, keys, summaries (v2, v3, v4)
 │   │   └── llm_runs/                    # raw LLM outputs from early prompt versions
 │   └── superseded/                      # class-project figures and sweeps (out-of-range injection)
@@ -103,6 +107,11 @@ python -m freelance_finance_dl.train --output-dir checkpoints/legacy_rerun --leg
 
 # Raw-space sensitivity sweep -> docs/sweeps/rawsweep_<tag>.csv/.png
 python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l3/best_model.pt --tag primary
+
+# Cross-validation (run each config, then summarize) and figures
+python -m freelance_finance_dl.crossval --config logratio_l3   # also logratio_l16, minmax_l3
+python -m freelance_finance_dl.crossval --summarize
+python -m freelance_finance_dl.plots
 
 # End-to-end report (add --llm ollama for model-written explanations)
 python -m freelance_finance_dl.pipeline --top-n 10 --llm ollama
@@ -141,6 +150,18 @@ The class project tested the detector by overwriting one *normalized* value with
 
 With min-max features every model is **at chance** (recall ≈ the 5% false-positive rate), even for a charge ten times too large, because per-sequence scaling discards absolute size. Log-ratio features recover part of the signal. Detection is still weak: spikes below ×3 are essentially undetected, and drops are poorly detected at any size. The amounts in this dataset look near-random, which limits what any detector can find.
 
+### Cross-validation across users
+
+The table above comes from one split (22 validation users). To check it does not depend on which users were held out, each configuration was re-trained 5 times, each time holding out a different fifth of the users (30 users per fold; 50 epochs, final weights, threshold calibrated on the held-out fold as before). **Recall at a ~5% false-positive rate, mean ± sd over the 5 folds** (`docs/sweeps/crossval_summary.csv`, figure `docs/sweeps/crossval_comparison.png`):
+
+| Configuration | Spike ×3 | ×5 | ×10 | Drop ÷3 | ÷5 | ÷10 |
+|---|---|---|---|---|---|---|
+| **Log-ratio, latent 3 (primary)** | 11.7 ± 1.5% | 23.7 ± 3.0% | **49.7 ± 3.5%** | 7.7 ± 1.0% | 9.5 ± 0.9% | 12.6 ± 1.1% |
+| Log-ratio, latent 16 | 9.7 ± 1.3% | 16.0 ± 1.9% | 38.1 ± 2.5% | 9.1 ± 0.8% | 13.4 ± 1.8% | 21.9 ± 2.5% |
+| Min-max, latent 3 (class-project scaling) | 2.9 ± 0.9% | 2.4 ± 0.7% | 4.0 ± 3.9% | 4.0 ± 0.9% | 4.1 ± 0.8% | 4.5 ± 0.7% |
+
+The single-split result (52% at ×10) is consistent with the cross-validated 49.7 ± 3.5%. Min-max scaling is at or *below* chance: spiked sequences are flagged slightly less often than clean ones. **Use the fold-to-fold sd as the uncertainty.** The Wilson intervals stored in the CSVs treat all sequences as independent, but overlapping windows from one user are correlated, so those intervals (for example ±1 point) are too narrow.
+
 ### Primary model
 
 Log-ratio features, latent 3, cleaned amounts: 7,281 sequences, split by user (128 train users / 22 validation users; 6,211 / 1,070 sequences). Validation MSE 0.151; anomaly threshold (95th percentile of validation error) 0.522; **349 of 7,281 sequences flagged (4.8%)**. The top flags are now large deviations from the user's own typical amount (e.g. 368 against a typical 12,405; 116 against 5,645), not just windows with high spread.
@@ -162,6 +183,8 @@ For 20 randomly chosen flagged sequences each, explanations were written two way
 
 v2 and v3 were run on flagged sequences from the earlier min-max model; v4 on the primary model. **The versions are not directly comparable:** the primary model's flags are large, clear deviations (1.5× to 8× the user's typical amount), which makes the explanation task easier. v3 stopped sending the detector's internal score fields to the model (v2 mislabeled a severity ratio as "the threshold"). The checker passed 20 of 20 v4 texts, and the one it should have rejected ("4 positions higher than the median", a window position misused as a quantity) is the same kind of misuse it cannot see.
 
+**Uncertainty.** With 20 sequences per round the 95% Wilson intervals are wide (all-four-criteria rate): LLM v2 55% (34–74%), v3 65% (43–82%), v4 95% (76–99%); template 90% (70–97%) in v2 and v3 and 100% (84–100%) in v4 (`*_ci.csv` beside each scoring file). The v4 LLM and template results are statistically indistinguishable, and v3 vs. template overlaps too; only v2 vs. template is close to separable.
+
 **Scoring caveats.** Scores are from Claude acting as an LLM judge (`docs/explanation_eval/explanation_scoring_claude_v*.csv`), not independent humans. The student independently scored 12 of the v2 rows (`docs/explanation_eval/explanation_scoring_human_v2.csv`): **39/48 criterion judgements agreed (81%)**, 9/12 rows agreed on the overall verdict, and plain language was least consistent (58%). The student's rows were not repeated for v3/v4. The sheets are only weakly blind because template text is formulaic.
 
 **Conclusion:** with a 3B model, the checked pipeline is about as accurate as the plain template; the LLM adds phrasing variety, not accuracy. A larger model was not evaluated.
@@ -175,6 +198,7 @@ v2 and v3 were run on flagged sequences from the earlier min-max model; v4 on th
 - *Data realism:* amounts look random, categories are skewed, and the dataset has 15,900 rows of which many were corrupt or duplicated. No claim here transfers to real spending.
 - *Synthetic evaluation:* injected anomalies approximate but do not replace labeled ones; the injection design itself was wrong in the class project and is now in raw space.
 - *Scaling uses full history,* including validation users' own amounts.
+- *Repeated flags:* windows overlap, so one unusual transaction can trigger up to five flagged sequences (for example two of the six highest-scoring examples in `docs/figures/primary_flagged_examples.png` are the same 237 charge); counts of flagged sequences are not counts of unusual transactions.
 - *Single feature:* only amount (no day of week, transaction type, or payment mode).
 - *Explanation evaluation:* 20 sequences per round, one small local model, LLM-judge scores, a 12-row human check on one round, weakly blind. Not statistically powered.
 - *Checker limits:* it verifies quoted numbers exist and direction is right, but cannot verify what a number is used for or catch every invented claim.
@@ -212,5 +236,5 @@ In accordance with the course syllabus policy on generative AI, the class projec
 Claude (Anthropic, via Claude Code) was used substantially more in this phase. To state it plainly:
 
 - **Student:** chose the thesis direction (explanation layer, tax note, free local model), wrote `get_user_split` in `dataloader.py` with Claude's guidance, ran commands, reviewed outputs, chose to fix the data parsing and to adopt the new features after Claude reported the problems, and independently scored 12 explanation rows.
-- **Claude:** wrote the remaining new code (robust parsing and de-duplication, log-ratio features, raw-space anomaly injection, the sweep, `explain.py` including the grounding check, `tax.py`, `pipeline.py`, `eval_explanations.py`); ran the experiments; **identified** the data-loss, scaling, and evaluation-design problems described above; scored all explanation texts as an LLM judge (Claude also wrote the checker and prompts it scored, so it is not an independent rater); and drafted this README.
+- **Claude:** wrote the remaining new code (robust parsing and de-duplication, log-ratio features, raw-space anomaly injection, the sweep, `explain.py` including the grounding check, `tax.py`, `pipeline.py`, `eval_explanations.py`, and later `crossval.py`, `plots.py`, `stats.py`); ran the experiments; **identified** the data-loss, scaling, and evaluation-design problems described above; scored all explanation texts as an LLM judge (Claude also wrote the checker and prompts it scored, so it is not an independent rater); and drafted this README.
 - The explanation layer's language model is a locally run open model (llama3.2:3b); no financial data left the student's machine.
