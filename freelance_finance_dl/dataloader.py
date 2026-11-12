@@ -80,12 +80,17 @@ def normalize_sequence(seq):
 
 class FinanceTransactionDataset(Dataset):
     def __init__(self, csv_file, sequence_length=5, clean=False, robust=True,
-                 features="logratio"):
+                 features="logratio", source="budgetwise", max_users=None):
         self.sequence_length = sequence_length
+        self.source = source
         self.features = features
         self.clean = clean
         self.robust = robust
-        self.data = pd.read_csv(csv_file)
+        if source == "sparkov":
+            from freelance_finance_dl.sparkov import load_sparkov
+            self.data = load_sparkov(csv_file)
+        else:
+            self.data = pd.read_csv(csv_file)
 
         # Normalize category spellings/casing to canonical names.
         # Lowercase first so the map only needs one entry per variant.
@@ -93,7 +98,9 @@ class FinanceTransactionDataset(Dataset):
         lowercase_map = {k.lower(): v for k, v in CATEGORY_MAP.items()}
         self.data["category"] = lowered.map(lowercase_map).fillna(lowered)
 
-        if robust:
+        if source == "sparkov":
+            pass  # dates and amounts were already parsed by load_sparkov
+        elif robust:
             self.data["date"] = parse_dates(self.data["date"])
             self.data["amount"] = parse_amounts(self.data["amount"])
         else:
@@ -122,6 +129,12 @@ class FinanceTransactionDataset(Dataset):
                 (self.data["amount"] > 0) & (self.data["amount"] < INVALID_AMOUNT_CUTOFF)
             ]
 
+        if max_users:
+            # Optional cap for very large files: keep a seeded random subset of users.
+            users = sorted(self.data["user_id"].unique())
+            random.Random(0).shuffle(users)
+            self.data = self.data[self.data["user_id"].isin(set(users[:max_users]))]
+
         # Sort by user, category, and time
         self.data = self.data.sort_values(
             ["user_id", "category", "date"]
@@ -142,6 +155,7 @@ class FinanceTransactionDataset(Dataset):
                 continue
 
             amounts = group_df["amount"].values.astype(float)
+            fraud = group_df["is_fraud"].values.astype(bool) if "is_fraud" in group_df.columns else None
             valid = amounts[(amounts > 0) & (amounts < INVALID_AMOUNT_CUTOFF)]
             if len(valid) == 0:
                 continue
@@ -157,6 +171,8 @@ class FinanceTransactionDataset(Dataset):
                         "user_id": user_id,
                         "category": category,
                         "scale": scale,
+                        "fraud": bool(fraud[i : i + self.sequence_length].any()) if fraud is not None else None,
+                        "fraud_last": bool(fraud[i + self.sequence_length - 1]) if fraud is not None else None,
                     }
                 )
 

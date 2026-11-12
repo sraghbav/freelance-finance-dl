@@ -64,6 +64,9 @@ freelance-finance-dl/
 │   ├── pipeline.py            # End-to-end report: flag -> explain -> tax note
 │   ├── crossval.py            # 5-fold user-level cross-validation of the anomaly evaluation
 │   ├── baseline.py            # Untrained one-line rule baselines on the same folds
+│   ├── structure.py           # Checks whether data has per-user / time structure (ICC, autocorrelation)
+│   ├── sparkov.py             # Loader for the Sparkov simulated card-fraud dataset (second dataset)
+│   ├── fraud_eval.py          # Evaluation on real fraud labels (needs the Sparkov files in data/sparkov/)
 │   ├── plots.py               # Thesis figures (data loss, flagged examples)
 │   ├── stats.py               # Wilson confidence intervals
 │   └── eval_explanations.py   # Explanation quality evaluation
@@ -113,6 +116,11 @@ python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l
 python -m freelance_finance_dl.crossval --config logratio_l3   # also logratio_l16, minmax_l3
 python -m freelance_finance_dl.crossval --summarize
 python -m freelance_finance_dl.baseline            # untrained rule baselines
+python -m freelance_finance_dl.structure           # per-user / time structure checks
+
+# Second dataset (download fraudTrain.csv and fraudTest.csv from Kaggle: kartik2112/fraud-detection into data/sparkov/)
+python -m freelance_finance_dl.structure --source sparkov --csv data/sparkov/fraudTrain.csv data/sparkov/fraudTest.csv
+python -m freelance_finance_dl.fraud_eval --csv data/sparkov/fraudTrain.csv data/sparkov/fraudTest.csv   # add --max-users 400 if memory is tight
 python -m freelance_finance_dl.plots
 
 # End-to-end report (add --llm ollama for model-written explanations)
