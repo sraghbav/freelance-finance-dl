@@ -73,8 +73,42 @@ def flagged_examples_figure(top_n=6):
     plt.close(fig)
 
 
+def detector_vs_rules_figure():
+    """Cross-validated recall of the autoencoders against untrained one-line rules."""
+    cv = pd.read_csv("docs/sweeps/crossval_summary.csv")
+    rules = pd.read_csv("docs/sweeps/baseline_rule_summary.csv")
+    factors = [1.5, 2, 3, 5, 10]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.2), sharey=True)
+    for ax, kind, oracle in zip(axes, ["spike", "drop"], ["spike_rule", "drop_rule"]):
+        for config, label, style in [("logratio_l3", "autoencoder, latent 3 (primary)", "o-"),
+                                     ("logratio_l16", "autoencoder, latent 16", "o--"),
+                                     ("minmax_l3", "autoencoder, min-max scaling", "o:")]:
+            sub = cv[(cv.config == config) & (cv.kind == kind)].sort_values("factor")
+            ax.errorbar(sub.factor, sub.recall_mean_over_folds, yerr=sub.recall_sd_over_folds,
+                        fmt=style, capsize=3, label=label)
+        for rule, label, style in [("two_sided", "rule: largest |log-ratio| (direction unknown)", "s-"),
+                                   (oracle, f"rule: {'largest' if kind == 'spike' else 'most negative'} "
+                                            "log-ratio (direction known)", "s--")]:
+            sub = rules[(rules.rule == rule) & (rules.kind == kind)].sort_values("factor")
+            ax.errorbar(sub.factor, sub.recall_mean, yerr=sub.recall_sd, fmt=style, capsize=3,
+                        color="black" if rule == "two_sided" else "dimgray", label=label)
+        ax.axhline(0.05, color="gray", linestyle=":")
+        ax.set(xlabel=f"{'Multiplied' if kind == 'spike' else 'Divided'} by factor",
+               title=f"{kind.capitalize()} detection at ~5% false positives", xscale="log", ylim=(0, 1))
+        ax.set_xticks(factors)
+        ax.set_xticklabels([str(f) for f in factors])
+        ax.minorticks_off()
+        ax.grid(alpha=0.3)
+    axes[0].set_ylabel("Recall (mean ± sd over 5 user folds)")
+    axes[0].legend(fontsize=7, loc="upper left")
+    fig.tight_layout()
+    fig.savefig(f"{OUT_DIR}/detector_vs_rules.png", dpi=150)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT_DIR, exist_ok=True)
     data_loss_figure()
     flagged_examples_figure()
+    detector_vs_rules_figure()
     print(f"Saved figures to {OUT_DIR}/")

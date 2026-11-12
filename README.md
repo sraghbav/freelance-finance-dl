@@ -63,6 +63,7 @@ freelance-finance-dl/
 │   ├── tax.py                 # Educational quarterly set-aside estimate
 │   ├── pipeline.py            # End-to-end report: flag -> explain -> tax note
 │   ├── crossval.py            # 5-fold user-level cross-validation of the anomaly evaluation
+│   ├── baseline.py            # Untrained one-line rule baselines on the same folds
 │   ├── plots.py               # Thesis figures (data loss, flagged examples)
 │   ├── stats.py               # Wilson confidence intervals
 │   └── eval_explanations.py   # Explanation quality evaluation
@@ -77,7 +78,7 @@ freelance-finance-dl/
 │   ├── explanation_eval/                # explanation scoring sheets, keys, summaries (v2, v3, v4)
 │   │   └── llm_runs/                    # raw LLM outputs from early prompt versions
 │   └── superseded/                      # class-project figures and sweeps (out-of-range injection)
-├── thesis/                              # outline.md and one file per chapter (your writing)
+├── thesis/                              # outline, abstract, chapters 1-6, appendices, references (first draft by Claude, to be rewritten by the author)
 └── notebooks/                 # original class-project notebooks (NOT updated, see below)
 ```
 
@@ -111,6 +112,7 @@ python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l
 # Cross-validation (run each config, then summarize) and figures
 python -m freelance_finance_dl.crossval --config logratio_l3   # also logratio_l16, minmax_l3
 python -m freelance_finance_dl.crossval --summarize
+python -m freelance_finance_dl.baseline            # untrained rule baselines
 python -m freelance_finance_dl.plots
 
 # End-to-end report (add --llm ollama for model-written explanations)
@@ -161,6 +163,19 @@ The table above comes from one split (22 validation users). To check it does not
 | Min-max, latent 3 (class-project scaling) | 2.9 ± 0.9% | 2.4 ± 0.7% | 4.0 ± 3.9% | 4.0 ± 0.9% | 4.1 ± 0.8% | 4.5 ± 0.7% |
 
 The single-split result (52% at ×10) is consistent with the cross-validated 49.7 ± 3.5%. Min-max scaling is at or *below* chance: spiked sequences are flagged slightly less often than clean ones. **Use the fold-to-fold sd as the uncertainty.** The Wilson intervals stored in the CSVs treat all sequences as independent, but overlapping windows from one user are correlated, so those intervals (for example ±1 point) are too narrow.
+
+### Comparison with untrained rules, and what the data looks like
+
+A rule with no training, computed from the same log-ratio features, was scored on the same folds and injected anomalies (`freelance_finance_dl/baseline.py`, `docs/sweeps/baseline_rule_summary.csv`, figure `docs/figures/detector_vs_rules.png`):
+
+| Recall (%), mean ± sd over 5 folds | Spike ×3 | ×5 | ×10 | Drop ÷3 | ÷5 | ÷10 |
+|---|---|---|---|---|---|---|
+| Autoencoder, latent 3 (primary) | 11.7 ± 1.5 | 23.7 ± 3.0 | 49.7 ± 3.5 | 7.7 ± 1.0 | 9.5 ± 0.9 | 12.6 ± 1.1 |
+| Rule: largest \|log-ratio\| (direction unknown) | 4.1 ± 0.4 | 6.2 ± 0.5 | 13.7 ± 1.8 | 9.1 ± 0.5 | 12.9 ± 1.1 | 22.9 ± 2.2 |
+| Rule: largest log-ratio (assumes a spike) | 19.4 ± 2.5 | 41.5 ± 4.4 | **74.4 ± 1.7** | | | |
+| Rule: most negative log-ratio (assumes a drop) | | | | 9.1 ± 0.6 | 13.0 ± 1.1 | **23.1 ± 2.3** |
+
+The direction-aware rules use knowledge a deployed detector would not have, but they show that **a one-line rule matches or beats the autoencoder** on this data. The data explain why: within a user and category the lag-1 autocorrelation of log-amount averages −0.07 (509 groups), and the share of log-amount variance explained by user is about 0 (−0.004 food, −0.004 rent, −0.007 travel). Non-rent expense amounts never exceed 10,000 (99th percentile 9,744 to 9,932) while 35% of rent amounts do (99th percentile 48,986). There is no per-user or time structure for a sequence model to exploit, and 233 of the 349 flagged windows (67%) are rent windows, although rent is 24% of windows.
 
 ### Primary model
 
@@ -236,5 +251,6 @@ In accordance with the course syllabus policy on generative AI, the class projec
 Claude (Anthropic, via Claude Code) was used substantially more in this phase. To state it plainly:
 
 - **Student:** chose the thesis direction (explanation layer, tax note, free local model), wrote `get_user_split` in `dataloader.py` with Claude's guidance, ran commands, reviewed outputs, chose to fix the data parsing and to adopt the new features after Claude reported the problems, and independently scored 12 explanation rows.
-- **Claude:** wrote the remaining new code (robust parsing and de-duplication, log-ratio features, raw-space anomaly injection, the sweep, `explain.py` including the grounding check, `tax.py`, `pipeline.py`, `eval_explanations.py`, and later `crossval.py`, `plots.py`, `stats.py`); ran the experiments; **identified** the data-loss, scaling, and evaluation-design problems described above; scored all explanation texts as an LLM judge (Claude also wrote the checker and prompts it scored, so it is not an independent rater); and drafted this README.
-- The explanation layer's language model is a locally run open model (llama3.2:3b); no financial data left the student's machine.
+- **Claude:** wrote the remaining new code (robust parsing and de-duplication, log-ratio features, raw-space anomaly injection, the sweep, `explain.py` including the grounding check, `tax.py`, `pipeline.py`, `eval_explanations.py`, and later `crossval.py`, `baseline.py`, `plots.py`, `stats.py`); ran the experiments; **identified** the data-loss, scaling, and evaluation-design problems described above; scored all explanation texts as an LLM judge (Claude also wrote the checker and prompts it scored, so it is not an independent rater); and drafted this README.
+- The explanation layer's language model is a locally run open model (llama3.2:3b), so the explanation layer sends nothing to a third party. The development process is different: working with Claude through Claude Code sent code, command output, and excerpts of the public dataset (including transaction rows) to Anthropic. The dataset is public and appears synthetic.
+- On 2026-11-12 Claude also drafted a full first draft of the thesis chapters in `thesis/`, to be rewritten by the student.

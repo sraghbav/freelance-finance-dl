@@ -1,4 +1,4 @@
-# Thesis outline (working draft, 2026-10-20)
+# Thesis outline (working draft; first full draft of every chapter written 2026-11-12, see 00_abstract.md to 06_conclusion.md)
 
 **Working title:** Explaining Unusual Spending for Freelancers: An LSTM Autoencoder with Grounded Plain-Language Explanations
 
