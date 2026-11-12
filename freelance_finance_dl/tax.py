@@ -27,8 +27,9 @@ def quarterly_summary(df, user_id, rate=DEFAULT_SET_ASIDE_RATE):
     kind = u["transaction_type"].str.lower()
     quarter = u["date"].dt.to_period("Q")
 
-    income = u[(kind == "income") & (u["category"] == "freelance")]
-    expenses = u[(kind == "expense") & u["category"].isin(BUSINESS_EXPENSE_CANDIDATES)]
+    source = u["source_category"] if "source_category" in u.columns else u["category"]
+    income = u[(kind == "income") & (source == "freelance")]
+    expenses = u[(kind == "expense") & source.isin(BUSINESS_EXPENSE_CANDIDATES)]
 
     summary = pd.DataFrame({
         "freelance_income": income.groupby(quarter[income.index])["amount"].sum(),

@@ -59,6 +59,8 @@ def load_model_and_data(csv_file, checkpoint_path, val_split=0.15, seed=42,
         clean=hp.get("clean", False),
         robust=hp.get("robust", False),
         features=hp.get("features", "minmax"),
+        group_by_type=hp.get("group_by_type", False),
+        pool_income=hp.get("pool_income", False),
     )
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
     return model, dataset, train_indices, val_indices, device
@@ -95,6 +97,8 @@ def evaluate(
         csv_file, sequence_length=seq_len, clean=hp.get("clean", False),
         robust=hp.get("robust", False),
         features=hp.get("features", "minmax"),
+        group_by_type=hp.get("group_by_type", False),
+        pool_income=hp.get("pool_income", False),
     )
 
     train_indices, val_indices = dataset.get_user_split(val_split, seed)

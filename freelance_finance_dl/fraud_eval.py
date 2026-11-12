@@ -33,7 +33,7 @@ def metrics(name, score, labels, label_name):
 
 
 def run(csv_files, latent=3, epochs=15, train_windows=150_000, val_frac=0.2, seed=42,
-        max_users=None):
+        max_users=None, tag=""):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds = FinanceTransactionDataset(csv_files, clean=True, source="sparkov", features="logratio",
                                 max_users=max_users)
@@ -64,7 +64,7 @@ def run(csv_files, latent=3, epochs=15, train_windows=150_000, val_frac=0.2, see
         for name, score in scores.items():
             rows.append(metrics(name, score, labels, label_name))
     df = pd.DataFrame(rows)
-    df.to_csv(f"{OUT_DIR}/fraud_eval_sparkov.csv", index=False)
+    df.to_csv(f"{OUT_DIR}/fraud_eval_sparkov{tag}.csv", index=False)
     print(df.round(3).to_string(index=False))
 
 
@@ -74,7 +74,10 @@ if __name__ == "__main__":
     parser.add_argument("--latent", type=int, default=3)
     parser.add_argument("--epochs", type=int, default=15)
     parser.add_argument("--train-windows", type=int, default=150_000)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--tag", default="", help="Suffix for the output CSV, e.g. _l16_s42")
     parser.add_argument("--max-users", type=int, default=None,
                         help="Use a random subset of users if memory is tight")
     args = parser.parse_args()
-    run(args.csv, args.latent, args.epochs, args.train_windows, max_users=args.max_users)
+    run(args.csv, args.latent, args.epochs, args.train_windows, seed=args.seed,
+        max_users=args.max_users, tag=args.tag)

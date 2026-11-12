@@ -80,9 +80,12 @@ def normalize_sequence(seq):
 
 class FinanceTransactionDataset(Dataset):
     def __init__(self, csv_file, sequence_length=5, clean=False, robust=True,
-                 features="logratio", source="budgetwise", max_users=None):
+                 features="logratio", source="budgetwise", max_users=None,
+                 group_by_type=True, pool_income=True):
         self.sequence_length = sequence_length
         self.source = source
+        self.group_by_type = group_by_type
+        self.pool_income = pool_income
         self.features = features
         self.clean = clean
         self.robust = robust
@@ -97,6 +100,12 @@ class FinanceTransactionDataset(Dataset):
         lowered = self.data["category"].str.strip().str.lower()
         lowercase_map = {k.lower(): v for k, v in CATEGORY_MAP.items()}
         self.data["category"] = lowered.map(lowercase_map).fillna(lowered)
+        self.data["transaction_type"] = self.data["transaction_type"].astype(str).str.strip().str.lower()
+        self.data["source_category"] = self.data["category"]
+        if pool_income:
+            # Income is spread over five categories with ~3 transactions per user each, so almost
+            # no window forms. Pool each user's income into one history.
+            self.data.loc[self.data["transaction_type"] == "income", "category"] = "income"
 
         if source == "sparkov":
             pass  # dates and amounts were already parsed by load_sparkov
@@ -146,9 +155,12 @@ class FinanceTransactionDataset(Dataset):
     def _create_sequences(self):
         samples = []
 
-        grouped = self.data.groupby(["user_id", "category"])
+        keys = ["user_id", "transaction_type", "category"] if self.group_by_type else ["user_id", "category"]
+        grouped = self.data.groupby(keys)
 
-        for (user_id, category), group_df in grouped:
+        for key, group_df in grouped:
+            user_id, category = key[0], key[-1]
+            transaction_type = key[1] if self.group_by_type else None
             group_df = group_df.sort_values("date").reset_index(drop=True)
 
             if len(group_df) < self.sequence_length:
@@ -170,6 +182,7 @@ class FinanceTransactionDataset(Dataset):
                         "sequence": sequence,
                         "user_id": user_id,
                         "category": category,
+                        "transaction_type": transaction_type,
                         "scale": scale,
                         "fraud": bool(fraud[i : i + self.sequence_length].any()) if fraud is not None else None,
                         "fraud_last": bool(fraud[i + self.sequence_length - 1]) if fraud is not None else None,
@@ -231,6 +244,7 @@ class FinanceTransactionDataset(Dataset):
         return {
             "user_id": sample["user_id"],
             "category": sample["category"],
+            "transaction_type": sample["transaction_type"],
             "sequence": sample["sequence"],
             "scale": sample["scale"],
         }

@@ -36,6 +36,7 @@ CONFIGS = {
     "minmax_l3": {"features": "minmax", "latent": 3},
 }
 FACTORS = [1.5, 2, 3, 5, 10]
+STREAMS = ("all", "expense", "income")
 OUT_DIR = "docs/sweeps"
 
 
@@ -72,17 +73,23 @@ def run_config(name, csv_file, n_folds=5, epochs=50, seed=42):
         train_idx = [i for i, s in enumerate(dataset.samples) if s["user_id"] not in held]
         val_idx = [i for i, s in enumerate(dataset.samples) if s["user_id"] in held]
         model = train_model(dataset, train_idx, cfg["latent"], epochs, seed + k, device)
-        val_loader = DataLoader(Subset(dataset, val_idx), batch_size=64)
-        threshold = float(np.percentile(
-            compute_reconstruction_errors(model, val_loader, device), 95))
-        df = raw_injection_eval(model, dataset, val_idx, threshold, device,
-                                factors=FACTORS, seed=seed)
-        df.insert(0, "fold", k)
-        df.insert(0, "config", name)
-        frames.append(df)
-        spike10 = df[(df.kind == "spike") & (df.factor == 10)].recall.iloc[0]
+        for stream in STREAMS:
+            # The threshold is calibrated within each stream, so each has a ~5% false-positive rate.
+            idx = [i for i in val_idx if stream == "all" or dataset.samples[i]["transaction_type"] == stream]
+            loader = DataLoader(Subset(dataset, idx), batch_size=256)
+            threshold = float(np.percentile(
+                compute_reconstruction_errors(model, loader, device), 95))
+            df = raw_injection_eval(model, dataset, idx, threshold, device,
+                                    factors=FACTORS, seed=seed)
+            df.insert(0, "stream", stream)
+            df.insert(0, "fold", k)
+            df.insert(0, "config", name)
+            frames.append(df)
+        sel = pd.concat(frames)
+        sel = sel[(sel.fold == k) & (sel.kind == "spike") & (sel.factor == 10)]
+        spike10 = {r.stream: r.recall for r in sel.itertuples()}
         print(f"{name} fold {k}: {len(held)} held-out users, {len(val_idx)} sequences, "
-              f"spike x10 recall {spike10:.2f}", flush=True)
+              f"spike x10 recall " + ", ".join(f"{k_}: {v:.2f}" for k_, v in spike10.items()), flush=True)
     os.makedirs(OUT_DIR, exist_ok=True)
     pd.concat(frames).to_csv(f"{OUT_DIR}/crossval_{name}.csv", index=False)
 
@@ -93,9 +100,9 @@ def summarize():
     df = pd.concat(frames)
     df["hits"] = (df["recall"] * df["n"]).round().astype(int)
     rows = []
-    for (config, kind, factor), g in df.groupby(["config", "kind", "factor"]):
+    for (config, stream, kind, factor), g in df.groupby(["config", "stream", "kind", "factor"]):
         lo, hi = wilson_interval(int(g["hits"].sum()), int(g["n"].sum()))
-        rows.append({"config": config, "kind": kind, "factor": factor,
+        rows.append({"config": config, "stream": stream, "kind": kind, "factor": factor,
                      "recall_mean_over_folds": g["recall"].mean(),
                      "recall_sd_over_folds": g["recall"].std(ddof=1),
                      "pooled_recall": g["hits"].sum() / g["n"].sum(),
@@ -104,18 +111,19 @@ def summarize():
                      "n_total": int(g["n"].sum())})
     summary = pd.DataFrame(rows)
     summary.to_csv(f"{OUT_DIR}/crossval_summary.csv", index=False)
-    print(summary.round(3).to_string(index=False))
+    print(summary[summary.stream == "all"].round(3).to_string(index=False))
+    plot_all = summary[summary.stream == "all"]
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
     labels = {"logratio_l3": "log-ratio, latent 3 (primary)", "logratio_l16": "log-ratio, latent 16",
               "minmax_l3": "min-max, latent 3 (class-project scaling)"}
     for ax, kind in zip(axes, ["spike", "drop"]):
-        for config in summary["config"].unique():
-            sub = summary[(summary.config == config) & (summary.kind == kind)].sort_values("factor")
+        for config in plot_all["config"].unique():
+            sub = plot_all[(plot_all.config == config) & (plot_all.kind == kind)].sort_values("factor")
             ax.errorbar(sub["factor"], sub["recall_mean_over_folds"],
                         yerr=sub["recall_sd_over_folds"], marker="o", capsize=3,
                         label=labels.get(config, config))
-        fpr = summary["false_positive_rate_mean"].mean()
+        fpr = plot_all["false_positive_rate_mean"].mean()
         ax.axhline(fpr, color="gray", linestyle=":", label="false-positive rate (chance)")
         ax.set(xlabel=f"{'Multiplied' if kind == 'spike' else 'Divided'} by factor",
                title=f"{kind.capitalize()} detection", xscale="log", ylim=(0, 1))

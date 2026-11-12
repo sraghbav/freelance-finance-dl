@@ -21,16 +21,17 @@ OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2:3b")
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
 SYSTEM_PROMPT = (
-    "You explain automated spending-anomaly flags to a freelancer. "
-    "Use ONLY the numbers in the facts JSON; never invent amounts, dates, causes, or currencies. "
+    "You explain one automated flag on a freelancer's transactions. "
+    "Use ONLY the numbers in the facts JSON, and write them plainly with no currency symbol of any kind. "
     "Write 2-3 sentences in plain language. "
     "Say this is an automated flag, not proof that anything is wrong. "
-    "If invalid_values is non-empty, say those values look like data-entry errors "
-    "(zero, negative, or placeholder numbers) rather than real spending. "
-    "Currency is unknown: write plain numbers with no currency symbol. "
     "State clearly whether the flagged amount is higher or lower than the user's typical amount, "
-    "using direction_vs_users_typical and times_vs_users_typical exactly as given. "
-    "Only mention data-entry errors if has_invalid_values is true. "
+    "using direction_vs_users_typical and times_vs_users_typical as given. "
+    "Do not mention ratio_to_users_typical or any other field name. "
+    "If transaction_type is expense, say the amount was spent; if it is income, say it was received or earned, never spent. "
+    "If invalid_values is non-empty, say those values look like data-entry errors "
+    "(zero, negative, or placeholder numbers) rather than real transactions; otherwise never mention data-entry errors. "
+    "Never invent causes. "
     "Do not give tax, legal, or investment advice."
 )
 
@@ -63,9 +64,10 @@ def build_facts(dataset, model, device, idx, score, threshold):
     flagged_amount = amounts[pos]
 
     data = dataset.data
-    history = data[
-        (data["user_id"] == meta["user_id"]) & (data["category"] == meta["category"])
-    ]["amount"]
+    mask = (data["user_id"] == meta["user_id"]) & (data["category"] == meta["category"])
+    if meta.get("transaction_type"):
+        mask &= data["transaction_type"] == meta["transaction_type"]
+    history = data[mask]["amount"]
     valid_history = history[(history > 0) & (history < INVALID_AMOUNT_CUTOFF)]
     typical = float(valid_history.median()) if len(valid_history) else None
 
@@ -78,6 +80,7 @@ def build_facts(dataset, model, device, idx, score, threshold):
     return {
         "user_id": meta["user_id"],
         "category": meta["category"],
+        "transaction_type": meta.get("transaction_type"),
         "amounts_in_window": amounts,
         "flagged_position": pos + 1,
         "flagged_amount": flagged_amount,
@@ -183,6 +186,11 @@ def check_grounding(text, f, hidden=()):
 
     if any(symbol in text for symbol in CURRENCY_SYMBOLS):
         reasons.append("invented currency symbol")
+
+    if f.get("transaction_type") == "income" and re.search(r"\bspen[dt]", lowered):
+        reasons.append("describes income as spending")
+    if "ratio" in lowered and "typical" in lowered and "ratio to" in lowered:
+        reasons.append("mentions the internal ratio field")
 
     direction = f["direction_vs_users_typical"]
     if direction and not f["has_invalid_values"]:

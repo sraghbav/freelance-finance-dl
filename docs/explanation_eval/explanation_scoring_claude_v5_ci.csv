@@ -1,0 +1,11 @@
+version,criterion,passed,n,rate,ci_low,ci_high
+llm,direction_correct,20,20,1.0,0.8388698745050667,1.0
+llm,only_real_numbers,19,20,0.95,0.7638641064874331,0.9911187805671268
+llm,plain_language,15,20,0.75,0.5312949900419365,0.888139947210597
+llm,no_invented_causes,20,20,1.0,0.8388698745050667,1.0
+llm,all_four,14,20,0.7,0.4810232237710206,0.854524726031006
+template,direction_correct,20,20,1.0,0.8388698745050667,1.0
+template,only_real_numbers,20,20,1.0,0.8388698745050667,1.0
+template,plain_language,20,20,1.0,0.8388698745050667,1.0
+template,no_invented_causes,20,20,1.0,0.8388698745050667,1.0
+template,all_four,20,20,1.0,0.8388698745050667,1.0

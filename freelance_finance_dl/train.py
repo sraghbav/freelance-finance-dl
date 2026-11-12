@@ -22,13 +22,16 @@ def train(
     clean: bool = False,
     robust: bool = True,
     features: str = "logratio",
+    group_by_type: bool = True,
+    pool_income: bool = True,
 ):
     torch.manual_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
     dataset = FinanceTransactionDataset(csv_file, sequence_length=sequence_length, clean=clean,
-                                      robust=robust, features=features)
+                                      robust=robust, features=features,
+                                      group_by_type=group_by_type, pool_income=pool_income)
     print(f"Total sequences: {len(dataset)}")
 
     train_indices, val_indices = dataset.get_user_split(val_split, seed)
@@ -92,6 +95,8 @@ def train(
                         "clean": clean,
                         "robust": robust,
                         "features": features,
+                        "group_by_type": group_by_type,
+                        "pool_income": pool_income,
                     },
                 },
                 checkpoint_path,
@@ -120,6 +125,8 @@ if __name__ == "__main__":
                         help="Use the original date/amount parsing (drops ~69%% of rows)")
     parser.add_argument("--features", choices=["logratio", "minmax"], default="logratio",
                         help="logratio = relative to the user's typical amount (default)")
+    parser.add_argument("--legacy-grouping", action="store_true",
+                        help="Group by user and category only and do not pool income (original behavior)")
     args = parser.parse_args()
 
     train(
@@ -135,4 +142,6 @@ if __name__ == "__main__":
         clean=args.clean,
         robust=not args.legacy_parsing,
         features=args.features,
+        group_by_type=not args.legacy_grouping,
+        pool_income=not args.legacy_grouping,
     )
