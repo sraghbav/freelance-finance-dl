@@ -45,6 +45,11 @@ INVALID_AMOUNT_CUTOFF = 999_999
 # Ratios are clipped before the log so zero/placeholder amounts stay finite.
 LOG_RATIO_CLIP = (1e-3, 1e3)
 
+# "robustz" features divide the log-ratio by the history's own variability, so an unusual value is
+# judged against how much that user's amounts in that category normally vary.
+MIN_SPREAD = 0.05
+ROBUSTZ_CLIP = 20.0
+
 # The raw dates use several formats. Each is internally consistent: slash dates are always
 # month/day/year (no first field above 12), dash dates are always day-month.
 DATE_FORMATS = [
@@ -174,6 +179,8 @@ class FinanceTransactionDataset(Dataset):
             # The user's own typical amount for this category; "logratio" features are
             # measured relative to it so absolute size is preserved.
             scale = float(np.median(valid))
+            logs = np.log(valid / scale)
+            spread = max(float(1.4826 * np.median(np.abs(logs - np.median(logs)))), MIN_SPREAD)
 
             for i in range(len(amounts) - self.sequence_length + 1):
                 sequence = amounts[i : i + self.sequence_length]
@@ -184,6 +191,7 @@ class FinanceTransactionDataset(Dataset):
                         "category": category,
                         "transaction_type": transaction_type,
                         "scale": scale,
+                        "spread": spread,
                         "fraud": bool(fraud[i : i + self.sequence_length].any()) if fraud is not None else None,
                         "fraud_last": bool(fraud[i + self.sequence_length - 1]) if fraud is not None else None,
                     }
@@ -220,18 +228,21 @@ class FinanceTransactionDataset(Dataset):
     def __len__(self):
         return len(self.samples)
 
-    def featurize(self, raw_sequence, scale):
+    def featurize(self, raw_sequence, scale, spread=None):
         """Raw amounts -> model input. "logratio": log(amount / user's typical amount);
         "minmax": per-sequence min-max to [0, 1] (original method, discards absolute size)."""
         if self.features == "minmax":
             return normalize_sequence(raw_sequence)
         ratio = np.asarray(raw_sequence, dtype="float32") / scale
-        return np.log(np.clip(ratio, *LOG_RATIO_CLIP)).astype("float32")
+        z = np.log(np.clip(ratio, *LOG_RATIO_CLIP)).astype("float32")
+        if self.features == "robustz":
+            z = np.clip(z / spread, -ROBUSTZ_CLIP, ROBUSTZ_CLIP).astype("float32")
+        return z
 
     def __getitem__(self, idx):
         sample = self.samples[idx]
 
-        seq = self.featurize(sample["sequence"], sample["scale"])
+        seq = self.featurize(sample["sequence"], sample["scale"], sample.get("spread"))
 
         sequence = torch.tensor(seq, dtype=torch.float32).unsqueeze(-1)
 

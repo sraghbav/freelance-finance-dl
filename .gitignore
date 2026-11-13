@@ -7,3 +7,4 @@ results/
 *.egg-info/
 .claude/
 data/sparkov/
+data/habitsim.csv

@@ -34,6 +34,7 @@ CONFIGS = {
     "logratio_l3": {"features": "logratio", "latent": 3},
     "logratio_l16": {"features": "logratio", "latent": 16},
     "minmax_l3": {"features": "minmax", "latent": 3},
+    "robustz_l3": {"features": "robustz", "latent": 3},
 }
 FACTORS = [1.5, 2, 3, 5, 10]
 STREAMS = ("all", "expense", "income")

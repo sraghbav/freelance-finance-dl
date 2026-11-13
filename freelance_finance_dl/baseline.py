@@ -27,8 +27,8 @@ SCORERS = {
 }
 
 
-def run(csv_file, n_folds=5, seed=42):
-    dataset = FinanceTransactionDataset(csv_file, clean=True, robust=True, features="logratio")
+def run(csv_file, n_folds=5, seed=42, features="logratio", tag=""):
+    dataset = FinanceTransactionDataset(csv_file, clean=True, robust=True, features=features)
     rows = []
     for k, held in enumerate(user_folds(dataset, n_folds, seed)):
         for stream in STREAMS:
@@ -36,7 +36,7 @@ def run(csv_file, n_folds=5, seed=42):
                        and (stream == "all" or s["transaction_type"] == stream)]
             positions = np.random.default_rng(seed).integers(0, dataset.sequence_length, size=len(samples))
             for name, score in SCORERS.items():
-                clean = np.array([score(dataset.featurize(s["sequence"], s["scale"])) for s in samples])
+                clean = np.array([score(dataset.featurize(s["sequence"], s["scale"], s["spread"])) for s in samples])
                 threshold = float(np.percentile(clean, 95))
                 fpr = float(np.mean(clean > threshold))
                 for factor in FACTORS:
@@ -45,18 +45,21 @@ def run(csv_file, n_folds=5, seed=42):
                         for s, pos in zip(samples, positions):
                             raw = s["sequence"].copy()
                             raw[pos] = raw[pos] * factor if kind == "spike" else raw[pos] / factor
-                            hits.append(score(dataset.featurize(raw, s["scale"])) > threshold)
+                            hits.append(score(dataset.featurize(raw, s["scale"], s["spread"])) > threshold)
                         rows.append({"rule": name, "stream": stream, "fold": k, "kind": kind,
                                      "factor": factor, "recall": float(np.mean(hits)),
                                      "false_positive_rate": fpr, "n": len(samples)})
     df = pd.DataFrame(rows)
-    df.to_csv(f"{OUT_DIR}/baseline_rule_folds.csv", index=False)
+    df.to_csv(f"{OUT_DIR}/baseline_rule_folds{tag}.csv", index=False)
     summary = (df.groupby(["rule", "stream", "kind", "factor"])["recall"].agg(["mean", "std"]).round(3)
                .rename(columns={"mean": "recall_mean", "std": "recall_sd"}).reset_index())
-    summary.to_csv(f"{OUT_DIR}/baseline_rule_summary.csv", index=False)
+    summary.to_csv(f"{OUT_DIR}/baseline_rule_summary{tag}.csv", index=False)
     return summary
 
 
 if __name__ == "__main__":
-    out = run("data/budgetwise_finance_dataset.csv")
+    import sys
+    feats = sys.argv[1] if len(sys.argv) > 1 else "logratio"
+    out = run("data/budgetwise_finance_dataset.csv", features=feats,
+              tag="" if feats == "logratio" else f"_{feats}")
     print(out[out.stream == "all"].to_string(index=False))

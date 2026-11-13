@@ -237,8 +237,8 @@ def raw_injection_eval(model, dataset, val_indices, threshold, device, factors=(
     model.eval()
     criterion = nn.MSELoss(reduction="none")
 
-    def score(seq, scale):
-        x = torch.tensor(dataset.featurize(seq, scale)).unsqueeze(0).unsqueeze(-1).to(device)
+    def score(seq, scale, spread):
+        x = torch.tensor(dataset.featurize(seq, scale, spread)).unsqueeze(0).unsqueeze(-1).to(device)
         with torch.no_grad():
             err = criterion(model(x), x).squeeze(-1)
         return (err.max() if reduce == "max" else err.mean()).item()
@@ -247,17 +247,18 @@ def raw_injection_eval(model, dataset, val_indices, threshold, device, factors=(
     samples = [s for s in samples if ((s["sequence"] > 0) & (s["sequence"] < INVALID_AMOUNT_CUTOFF)).all()]
     sequences = [s["sequence"] for s in samples]
     scales = [s["scale"] for s in samples]
+    spreads = [s["spread"] for s in samples]
     positions = rng.integers(0, dataset.sequence_length, size=len(sequences))
 
-    clean_flagged = np.mean([score(q, sc) > threshold for q, sc in zip(sequences, scales)])
+    clean_flagged = np.mean([score(q, sc, sp) > threshold for q, sc, sp in zip(sequences, scales, spreads)])
     rows = []
     for factor in factors:
         for kind in ("spike", "drop"):
             hits = []
-            for seq, scale, pos in zip(sequences, scales, positions):
+            for seq, scale, spread, pos in zip(sequences, scales, spreads, positions):
                 corrupted = seq.copy()
                 corrupted[pos] = corrupted[pos] * factor if kind == "spike" else corrupted[pos] / factor
-                hits.append(score(corrupted, scale) > threshold)
+                hits.append(score(corrupted, scale, spread) > threshold)
             rows.append({"kind": kind, "factor": factor, "recall": float(np.mean(hits)),
                          "false_positive_rate": float(clean_flagged), "n": len(sequences)})
     return pd.DataFrame(rows)

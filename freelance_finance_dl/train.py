@@ -123,7 +123,7 @@ if __name__ == "__main__":
                         help="Drop corrupt amounts (<=0 or >=999999) before building sequences")
     parser.add_argument("--legacy-parsing", action="store_true",
                         help="Use the original date/amount parsing (drops ~69%% of rows)")
-    parser.add_argument("--features", choices=["logratio", "minmax"], default="logratio",
+    parser.add_argument("--features", choices=["logratio", "minmax", "robustz"], default="logratio",
                         help="logratio = relative to the user's typical amount (default)")
     parser.add_argument("--legacy-grouping", action="store_true",
                         help="Group by user and category only and do not pool income (original behavior)")
