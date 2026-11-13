@@ -1,3 +1,5 @@
+> **NOTE (2026-11-12 evening): the numbers and section numbers in this outline are OUT OF DATE.** The chapter files `00_abstract.md` to `06_conclusion.md` and the README are the current versions; use this outline only for structure and the advisor questions.
+
 # Thesis outline (working draft; first full draft of every chapter written 2026-11-12, see 00_abstract.md to 06_conclusion.md)
 
 **Working title:** Explaining Unusual Spending for Freelancers: An LSTM Autoencoder with Grounded Plain-Language Explanations

@@ -1,4 +1,4 @@
-> **DRAFT written by Claude on 2026-11-12 as a scaffold for the author to rewrite in their own words.** Appendix A is a statement about what *you* did and what Claude did, so it must be rewritten by you to match the truth. `[CONFIRM]` marks facts only you can confirm.
+> **DRAFT written by Claude on 2026-11-12 (updated that evening) as a scaffold for the author to rewrite in their own words.** Appendix A is a statement about what *you* did and what Claude did, so it must be rewritten by you to match the truth. `[CONFIRM]` marks facts only you can confirm.
 
 # Appendices
 
@@ -21,26 +21,36 @@ Code and results: github.com/sraghbav/freelance-finance-dl (commit hash `[add th
 **Commands.**
 
 ```bash
-# Primary model (log-ratio features, cleaned amounts, latent size 3)
+# Primary model (log-ratio features, cleaned amounts, latent size 3, type-aware windows with pooled income)
 python -m freelance_finance_dl.train --output-dir checkpoints/primary_logratio_l3 --latent-dim 3 --epochs 50 --clean
 
-# Single-split sweep, cross-validation (run each config), untrained baselines, figures
-python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l3/best_model.pt --tag primary
+# Single-split sweep, cross-validation (run each config), untrained baselines, structure checks, figures
+python -m freelance_finance_dl.sweep --checkpoint checkpoints/primary_logratio_l3/best_model.pt --tag logratio_l3
 python -m freelance_finance_dl.crossval --config logratio_l3     # also logratio_l16, minmax_l3
 python -m freelance_finance_dl.crossval --summarize
 python -m freelance_finance_dl.baseline
+python -m freelance_finance_dl.structure
 python -m freelance_finance_dl.plots
+
+# Second dataset (download fraudTrain.csv and fraudTest.csv from Kaggle into data/sparkov/)
+python -m freelance_finance_dl.structure --source sparkov --csv data/sparkov/fraudTrain.csv data/sparkov/fraudTest.csv
+python -m freelance_finance_dl.fraud_eval --csv data/sparkov/fraudTrain.csv data/sparkov/fraudTest.csv --tag _l3_s42
+#   variants: --latent 16 --tag _l16_s42 | --seed 7 --tag _l3_s7 | --train-windows 600000 --epochs 8 --tag _l3_s42_big
 
 # End-to-end report with local-model explanations; explanation evaluation round
 python -m freelance_finance_dl.pipeline --top-n 10 --llm ollama
-python -m freelance_finance_dl.eval_explanations --n 20 --tag _v5
+python -m freelance_finance_dl.eval_explanations --n 20 --tag _v8
 ```
+
+The earlier grouping (user and category only, income not pooled) is available with `--legacy-grouping`; models trained before the fix are in `checkpoints/prefix_*`.
 
 ## C. Where the full tables are
 
 | Content | File |
 |---|---|
-| Cross-validated recall, all factors and configurations | `docs/sweeps/crossval_summary.csv` (per fold: `crossval_*.csv`) |
+| Cross-validated recall, all factors, configurations, and streams | `docs/sweeps/crossval_summary.csv` (per fold: `crossval_*.csv`) |
+| Real-fraud-label results (Sparkov) | `docs/sweeps/fraud_eval_sparkov*.csv` |
+| Every system prompt tried | `docs/explanation_eval/prompts.md` |
 | Untrained rule baselines | `docs/sweeps/baseline_rule_summary.csv` (per fold: `baseline_rule_folds.csv`) |
 | Single-split sweeps | `docs/sweeps/rawsweep_*.csv` |
 | Explanation texts, keys, and LLM-judge scores | `docs/explanation_eval/` |
