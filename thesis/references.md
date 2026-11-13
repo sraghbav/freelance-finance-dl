@@ -13,12 +13,15 @@
 - Zheng, L., et al. (2023). Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. *Advances in Neural Information Processing Systems 36 (Datasets and Benchmarks Track)*. arXiv:2306.05685. `[CHECK: full author list]`
 - Internal Revenue Service. (n.d.). *Publication 505: Tax withholding and estimated tax*. https://www.irs.gov/publications/p505 `[CHECK: cite the edition year and access date you used]`
 
+- Berka, P. (2000). Guide to the financial data set. In *PKDD 2000 Discovery Challenge*, Lyon, 87–92. `[CHECK: the dataset's preparers, Berka and Sochorová, per course pages; confirm where your copy of the data came from and its terms of use]`
+
 **From memory, NOT verified: confirm before citing**
 
 - Hinton, G. E., & Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. *Science, 313*(5786), 504–507.
 - Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. *Neural Computation, 9*(8), 1735–1780.
 - Kingma, D. P., & Ba, J. (2015). Adam: A method for stochastic optimization. *ICLR 2015*. `[Only needed if you describe the optimizer in detail; remove if unused.]`
 - Dubey, A., et al. (2024). The Llama 3 herd of models. arXiv:2407.21783. `[CHECK: this is the Llama 3 paper; confirm the right citation for the Llama 3.2 3B model you used, e.g. the model card.]`
+- Liu, F. T., Ting, K. M., & Zhou, Z.-H. (2008). Isolation forest. *2008 Eighth IEEE International Conference on Data Mining*, 413–422.
 - Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association, 22*(158), 209–212.
 
 **Still missing**

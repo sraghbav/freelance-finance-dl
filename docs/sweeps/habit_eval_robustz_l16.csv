@@ -1,42 +1,42 @@
 model,category,kind,factor,recall,false_positive_rate,n
-autoencoder,dining,spike,1.2,0.06109022556390977,0.05451127819548872,4256
-autoencoder,dining,drop,1.2,0.05897556390977444,0.05451127819548872,4256
-autoencoder,dining,spike,1.5,0.0805921052631579,0.05451127819548872,4256
-autoencoder,dining,drop,1.5,0.07307330827067669,0.05451127819548872,4256
-autoencoder,dining,spike,2.0,0.14191729323308272,0.05451127819548872,4256
-autoencoder,dining,drop,2.0,0.13063909774436092,0.05451127819548872,4256
-autoencoder,dining,spike,3.0,0.28218984962406013,0.05451127819548872,4256
-autoencoder,dining,drop,3.0,0.2899436090225564,0.05451127819548872,4256
-autoencoder,dining,spike,5.0,0.568609022556391,0.05451127819548872,4256
-autoencoder,dining,drop,5.0,0.5834116541353384,0.05451127819548872,4256
-autoencoder,dining,spike,10.0,0.9020206766917294,0.05451127819548872,4256
-autoencoder,dining,drop,10.0,0.8973214285714286,0.05451127819548872,4256
-autoencoder,groceries,spike,1.2,0.0866540164452878,0.07685009487666034,3162
-autoencoder,groceries,drop,1.2,0.08317520556609741,0.07685009487666034,3162
-autoencoder,groceries,spike,1.5,0.13567362428842505,0.07685009487666034,3162
-autoencoder,groceries,drop,1.5,0.13219481340923467,0.07685009487666034,3162
-autoencoder,groceries,spike,2.0,0.2726122707147375,0.07685009487666034,3162
-autoencoder,groceries,drop,2.0,0.27450980392156865,0.07685009487666034,3162
-autoencoder,groceries,spike,3.0,0.6113219481340924,0.07685009487666034,3162
-autoencoder,groceries,drop,3.0,0.6081593927893738,0.07685009487666034,3162
-autoencoder,groceries,spike,5.0,0.9259962049335864,0.07685009487666034,3162
-autoencoder,groceries,drop,5.0,0.9348513598987982,0.07685009487666034,3162
-autoencoder,groceries,spike,10.0,0.9990512333965844,0.07685009487666034,3162
-autoencoder,groceries,drop,10.0,0.9987349778621126,0.07685009487666034,3162
-autoencoder,income,spike,1.2,0.29366812227074235,0.04148471615720524,916
-autoencoder,income,drop,1.2,0.2609170305676856,0.04148471615720524,916
-autoencoder,income,spike,1.5,0.5054585152838428,0.04148471615720524,916
-autoencoder,income,drop,1.5,0.5021834061135371,0.04148471615720524,916
-autoencoder,income,spike,2.0,0.5851528384279476,0.04148471615720524,916
-autoencoder,income,drop,2.0,0.5917030567685589,0.04148471615720524,916
-autoencoder,income,spike,3.0,0.7740174672489083,0.04148471615720524,916
-autoencoder,income,drop,3.0,0.7794759825327511,0.04148471615720524,916
-autoencoder,income,spike,5.0,0.9454148471615721,0.04148471615720524,916
-autoencoder,income,drop,5.0,0.9465065502183406,0.04148471615720524,916
-autoencoder,income,spike,10.0,0.9989082969432315,0.04148471615720524,916
-autoencoder,income,drop,10.0,0.9967248908296943,0.04148471615720524,916
-autoencoder,rent,spike,1.2,0.5171875,0.0,640
-autoencoder,rent,drop,1.2,0.3765625,0.0,640
+autoencoder,dining,spike,1.2,0.07207421503330162,0.06137012369172217,4204
+autoencoder,dining,drop,1.2,0.06707897240723121,0.06137012369172217,4204
+autoencoder,dining,spike,1.5,0.09895337773549001,0.06137012369172217,4204
+autoencoder,dining,drop,1.5,0.08420551855375832,0.06137012369172217,4204
+autoencoder,dining,spike,2.0,0.1648430066603235,0.06137012369172217,4204
+autoencoder,dining,drop,2.0,0.13772597526165556,0.06137012369172217,4204
+autoencoder,dining,spike,3.0,0.3522835394862036,0.06137012369172217,4204
+autoencoder,dining,drop,3.0,0.29638439581351095,0.06137012369172217,4204
+autoencoder,dining,spike,5.0,0.6539010466222646,0.06137012369172217,4204
+autoencoder,dining,drop,5.0,0.5782588011417698,0.06137012369172217,4204
+autoencoder,dining,spike,10.0,0.9198382492863939,0.06137012369172217,4204
+autoencoder,dining,drop,10.0,0.8870123691722169,0.06137012369172217,4204
+autoencoder,groceries,spike,1.2,0.08223889931207004,0.06347717323327079,3198
+autoencoder,groceries,drop,1.2,0.07285803627267042,0.06347717323327079,3198
+autoencoder,groceries,spike,1.5,0.13477173233270795,0.06347717323327079,3198
+autoencoder,groceries,drop,1.5,0.11851156973108193,0.06347717323327079,3198
+autoencoder,groceries,spike,2.0,0.2804878048780488,0.06347717323327079,3198
+autoencoder,groceries,drop,2.0,0.241400875547217,0.06347717323327079,3198
+autoencoder,groceries,spike,3.0,0.607567229518449,0.06347717323327079,3198
+autoencoder,groceries,drop,3.0,0.5775484677923702,0.06347717323327079,3198
+autoencoder,groceries,spike,5.0,0.9208880550343965,0.06347717323327079,3198
+autoencoder,groceries,drop,5.0,0.8874296435272045,0.06347717323327079,3198
+autoencoder,groceries,spike,10.0,0.99906191369606,0.06347717323327079,3198
+autoencoder,groceries,drop,10.0,0.9959349593495935,0.06347717323327079,3198
+autoencoder,income,spike,1.2,0.25392156862745097,0.05588235294117647,1020
+autoencoder,income,drop,1.2,0.246078431372549,0.05588235294117647,1020
+autoencoder,income,spike,1.5,0.4284313725490196,0.05588235294117647,1020
+autoencoder,income,drop,1.5,0.41862745098039217,0.05588235294117647,1020
+autoencoder,income,spike,2.0,0.5568627450980392,0.05588235294117647,1020
+autoencoder,income,drop,2.0,0.5254901960784314,0.05588235294117647,1020
+autoencoder,income,spike,3.0,0.7715686274509804,0.05588235294117647,1020
+autoencoder,income,drop,3.0,0.7470588235294118,0.05588235294117647,1020
+autoencoder,income,spike,5.0,0.9490196078431372,0.05588235294117647,1020
+autoencoder,income,drop,5.0,0.9431372549019608,0.05588235294117647,1020
+autoencoder,income,spike,10.0,0.9970588235294118,0.05588235294117647,1020
+autoencoder,income,drop,10.0,0.9980392156862745,0.05588235294117647,1020
+autoencoder,rent,spike,1.2,0.6390625,0.0,640
+autoencoder,rent,drop,1.2,0.459375,0.0,640
 autoencoder,rent,spike,1.5,1.0,0.0,640
 autoencoder,rent,drop,1.5,1.0,0.0,640
 autoencoder,rent,spike,2.0,1.0,0.0,640
@@ -47,8 +47,8 @@ autoencoder,rent,spike,5.0,1.0,0.0,640
 autoencoder,rent,drop,5.0,1.0,0.0,640
 autoencoder,rent,spike,10.0,1.0,0.0,640
 autoencoder,rent,drop,10.0,1.0,0.0,640
-autoencoder,subscription,spike,1.2,0.6046875,0.0,640
-autoencoder,subscription,drop,1.2,0.209375,0.0,640
+autoencoder,subscription,spike,1.2,0.59375,0.0,640
+autoencoder,subscription,drop,1.2,0.2140625,0.0,640
 autoencoder,subscription,spike,1.5,1.0,0.0,640
 autoencoder,subscription,drop,1.5,1.0,0.0,640
 autoencoder,subscription,spike,2.0,1.0,0.0,640
@@ -59,54 +59,54 @@ autoencoder,subscription,spike,5.0,1.0,0.0,640
 autoencoder,subscription,drop,5.0,1.0,0.0,640
 autoencoder,subscription,spike,10.0,1.0,0.0,640
 autoencoder,subscription,drop,10.0,1.0,0.0,640
-autoencoder,utilities,spike,1.2,0.0015625,0.0,640
-autoencoder,utilities,drop,1.2,0.0,0.0,640
-autoencoder,utilities,spike,1.5,0.0140625,0.0,640
-autoencoder,utilities,drop,1.5,0.021875,0.0,640
-autoencoder,utilities,spike,2.0,0.1453125,0.0,640
-autoencoder,utilities,drop,2.0,0.2328125,0.0,640
-autoencoder,utilities,spike,3.0,0.609375,0.0,640
-autoencoder,utilities,drop,3.0,0.74375,0.0,640
-autoencoder,utilities,spike,5.0,0.9796875,0.0,640
-autoencoder,utilities,drop,5.0,0.9828125,0.0,640
+autoencoder,utilities,spike,1.2,0.0,0.0,640
+autoencoder,utilities,drop,1.2,0.0046875,0.0,640
+autoencoder,utilities,spike,1.5,0.046875,0.0,640
+autoencoder,utilities,drop,1.5,0.028125,0.0,640
+autoencoder,utilities,spike,2.0,0.21875,0.0,640
+autoencoder,utilities,drop,2.0,0.2,0.0,640
+autoencoder,utilities,spike,3.0,0.678125,0.0,640
+autoencoder,utilities,drop,3.0,0.7015625,0.0,640
+autoencoder,utilities,spike,5.0,0.990625,0.0,640
+autoencoder,utilities,drop,5.0,0.9984375,0.0,640
 autoencoder,utilities,spike,10.0,1.0,0.0,640
 autoencoder,utilities,drop,10.0,1.0,0.0,640
-rule |z| (direction unknown),dining,spike,1.2,0.05733082706766917,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,1.2,0.054276315789473686,0.048637218045112784,4256
-rule |z| (direction unknown),dining,spike,1.5,0.08317669172932331,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,1.5,0.07424812030075188,0.048637218045112784,4256
-rule |z| (direction unknown),dining,spike,2.0,0.14661654135338345,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,2.0,0.14332706766917294,0.048637218045112784,4256
-rule |z| (direction unknown),dining,spike,3.0,0.3651315789473684,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,3.0,0.3761748120300752,0.048637218045112784,4256
-rule |z| (direction unknown),dining,spike,5.0,0.7323778195488722,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,5.0,0.737312030075188,0.048637218045112784,4256
-rule |z| (direction unknown),dining,spike,10.0,0.9783834586466166,0.048637218045112784,4256
-rule |z| (direction unknown),dining,drop,10.0,0.9750939849624061,0.048637218045112784,4256
-rule |z| (direction unknown),groceries,spike,1.2,0.09013282732447818,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,1.2,0.08791903858317521,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,spike,1.5,0.140101201771031,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,1.5,0.14832384566729917,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,spike,2.0,0.33586337760910817,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,2.0,0.3349146110056926,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,spike,3.0,0.7526881720430108,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,3.0,0.765022137887413,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,spike,5.0,0.9797596457938014,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,5.0,0.9778621125869703,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,spike,10.0,1.0,0.08032890575585072,3162
-rule |z| (direction unknown),groceries,drop,10.0,1.0,0.08032890575585072,3162
-rule |z| (direction unknown),income,spike,1.2,0.48253275109170307,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,1.2,0.47270742358078605,0.056768558951965066,916
-rule |z| (direction unknown),income,spike,1.5,0.5054585152838428,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,1.5,0.509825327510917,0.056768558951965066,916
-rule |z| (direction unknown),income,spike,2.0,0.6222707423580786,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,2.0,0.6408296943231441,0.056768558951965066,916
-rule |z| (direction unknown),income,spike,3.0,0.8504366812227074,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,3.0,0.8722707423580786,0.056768558951965066,916
-rule |z| (direction unknown),income,spike,5.0,0.9879912663755459,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,5.0,0.9792576419213974,0.056768558951965066,916
-rule |z| (direction unknown),income,spike,10.0,1.0,0.056768558951965066,916
-rule |z| (direction unknown),income,drop,10.0,1.0,0.056768558951965066,916
+rule |z| (direction unknown),dining,spike,1.2,0.07088487155090391,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,1.2,0.07350142721217888,0.06446241674595624,4204
+rule |z| (direction unknown),dining,spike,1.5,0.09871550903901047,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,1.5,0.1010941960038059,0.06446241674595624,4204
+rule |z| (direction unknown),dining,spike,2.0,0.18363463368220742,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,2.0,0.1824452901998097,0.06446241674595624,4204
+rule |z| (direction unknown),dining,spike,3.0,0.42887725975261654,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,3.0,0.4193625118934348,0.06446241674595624,4204
+rule |z| (direction unknown),dining,spike,5.0,0.7799714557564225,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,5.0,0.7844909609895337,0.06446241674595624,4204
+rule |z| (direction unknown),dining,spike,10.0,0.9814462416745956,0.06446241674595624,4204
+rule |z| (direction unknown),dining,drop,10.0,0.9828734538534729,0.06446241674595624,4204
+rule |z| (direction unknown),groceries,spike,1.2,0.07066916823014384,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,1.2,0.07035647279549719,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,spike,1.5,0.12695434646654158,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,1.5,0.13070669168230145,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,spike,2.0,0.3252032520325203,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,2.0,0.34896810506566606,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,spike,3.0,0.7473420888055035,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,3.0,0.7642276422764228,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,spike,5.0,0.9787367104440275,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,5.0,0.982801751094434,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,spike,10.0,1.0,0.05597248280175109,3198
+rule |z| (direction unknown),groceries,drop,10.0,1.0,0.05597248280175109,3198
+rule |z| (direction unknown),income,spike,1.2,0.39215686274509803,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,1.2,0.39509803921568626,0.06568627450980392,1020
+rule |z| (direction unknown),income,spike,1.5,0.4392156862745098,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,1.5,0.4549019607843137,0.06568627450980392,1020
+rule |z| (direction unknown),income,spike,2.0,0.5872549019607843,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,2.0,0.611764705882353,0.06568627450980392,1020
+rule |z| (direction unknown),income,spike,3.0,0.8470588235294118,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,3.0,0.8754901960784314,0.06568627450980392,1020
+rule |z| (direction unknown),income,spike,5.0,0.9833333333333333,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,5.0,0.9862745098039216,0.06568627450980392,1020
+rule |z| (direction unknown),income,spike,10.0,1.0,0.06568627450980392,1020
+rule |z| (direction unknown),income,drop,10.0,1.0,0.06568627450980392,1020
 rule |z| (direction unknown),rent,spike,1.2,1.0,0.0,640
 rule |z| (direction unknown),rent,drop,1.2,1.0,0.0,640
 rule |z| (direction unknown),rent,spike,1.5,1.0,0.0,640
@@ -132,53 +132,53 @@ rule |z| (direction unknown),subscription,drop,5.0,1.0,0.0,640
 rule |z| (direction unknown),subscription,spike,10.0,1.0,0.0,640
 rule |z| (direction unknown),subscription,drop,10.0,1.0,0.0,640
 rule |z| (direction unknown),utilities,spike,1.2,0.0,0.0,640
-rule |z| (direction unknown),utilities,drop,1.2,0.0046875,0.0,640
-rule |z| (direction unknown),utilities,spike,1.5,0.0265625,0.0,640
-rule |z| (direction unknown),utilities,drop,1.5,0.128125,0.0,640
-rule |z| (direction unknown),utilities,spike,2.0,0.3375,0.0,640
-rule |z| (direction unknown),utilities,drop,2.0,0.4734375,0.0,640
-rule |z| (direction unknown),utilities,spike,3.0,0.8203125,0.0,640
-rule |z| (direction unknown),utilities,drop,3.0,0.9296875,0.0,640
+rule |z| (direction unknown),utilities,drop,1.2,0.01875,0.0,640
+rule |z| (direction unknown),utilities,spike,1.5,0.0375,0.0,640
+rule |z| (direction unknown),utilities,drop,1.5,0.171875,0.0,640
+rule |z| (direction unknown),utilities,spike,2.0,0.4203125,0.0,640
+rule |z| (direction unknown),utilities,drop,2.0,0.5453125,0.0,640
+rule |z| (direction unknown),utilities,spike,3.0,0.9328125,0.0,640
+rule |z| (direction unknown),utilities,drop,3.0,0.965625,0.0,640
 rule |z| (direction unknown),utilities,spike,5.0,1.0,0.0,640
 rule |z| (direction unknown),utilities,drop,5.0,1.0,0.0,640
 rule |z| (direction unknown),utilities,spike,10.0,1.0,0.0,640
 rule |z| (direction unknown),utilities,drop,10.0,1.0,0.0,640
-rule max z (spike known),dining,spike,1.2,0.07307330827067669,0.05944548872180451,4256
-rule max z (spike known),dining,drop,1.2,0.05098684210526316,0.05944548872180451,4256
-rule max z (spike known),dining,spike,1.5,0.1099624060150376,0.05944548872180451,4256
-rule max z (spike known),dining,drop,1.5,0.047462406015037595,0.05944548872180451,4256
-rule max z (spike known),dining,spike,2.0,0.19337406015037595,0.05944548872180451,4256
-rule max z (spike known),dining,drop,2.0,0.046052631578947366,0.05944548872180451,4256
-rule max z (spike known),dining,spike,3.0,0.4461936090225564,0.05944548872180451,4256
-rule max z (spike known),dining,drop,3.0,0.046052631578947366,0.05944548872180451,4256
-rule max z (spike known),dining,spike,5.0,0.7904135338345865,0.05944548872180451,4256
-rule max z (spike known),dining,drop,5.0,0.046052631578947366,0.05944548872180451,4256
-rule max z (spike known),dining,spike,10.0,0.9908364661654135,0.05944548872180451,4256
-rule max z (spike known),dining,drop,10.0,0.046052631578947366,0.05944548872180451,4256
-rule max z (spike known),groceries,spike,1.2,0.09044908285895004,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,1.2,0.055977229601518026,0.06578115117014548,3162
-rule max z (spike known),groceries,spike,1.5,0.15970904490828589,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,1.5,0.05313092979127135,0.06578115117014548,3162
-rule max z (spike known),groceries,spike,2.0,0.3946869070208729,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,2.0,0.05313092979127135,0.06578115117014548,3162
-rule max z (spike known),groceries,spike,3.0,0.8156230234029096,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,3.0,0.05313092979127135,0.06578115117014548,3162
-rule max z (spike known),groceries,spike,5.0,0.9895635673624289,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,5.0,0.05313092979127135,0.06578115117014548,3162
-rule max z (spike known),groceries,spike,10.0,1.0,0.06578115117014548,3162
-rule max z (spike known),groceries,drop,10.0,0.05313092979127135,0.06578115117014548,3162
-rule max z (spike known),income,spike,1.2,0.4868995633187773,0.056768558951965066,916
-rule max z (spike known),income,drop,1.2,0.04148471615720524,0.056768558951965066,916
-rule max z (spike known),income,spike,1.5,0.5218340611353712,0.056768558951965066,916
-rule max z (spike known),income,drop,1.5,0.04148471615720524,0.056768558951965066,916
-rule max z (spike known),income,spike,2.0,0.6637554585152838,0.056768558951965066,916
-rule max z (spike known),income,drop,2.0,0.04039301310043668,0.056768558951965066,916
-rule max z (spike known),income,spike,3.0,0.8722707423580786,0.056768558951965066,916
-rule max z (spike known),income,drop,3.0,0.04039301310043668,0.056768558951965066,916
-rule max z (spike known),income,spike,5.0,0.9934497816593887,0.056768558951965066,916
-rule max z (spike known),income,drop,5.0,0.04039301310043668,0.056768558951965066,916
-rule max z (spike known),income,spike,10.0,1.0,0.056768558951965066,916
-rule max z (spike known),income,drop,10.0,0.04039301310043668,0.056768558951965066,916
+rule max z (spike known),dining,spike,1.2,0.07611798287345385,0.05708848715509039,4204
+rule max z (spike known),dining,drop,1.2,0.04971455756422455,0.05708848715509039,4204
+rule max z (spike known),dining,spike,1.5,0.12392959086584206,0.05708848715509039,4204
+rule max z (spike known),dining,drop,1.5,0.045908658420551855,0.05708848715509039,4204
+rule max z (spike known),dining,spike,2.0,0.24000951474785917,0.05708848715509039,4204
+rule max z (spike known),dining,drop,2.0,0.044957183634633684,0.05708848715509039,4204
+rule max z (spike known),dining,spike,3.0,0.5318744053282588,0.05708848715509039,4204
+rule max z (spike known),dining,drop,3.0,0.0444814462416746,0.05708848715509039,4204
+rule max z (spike known),dining,spike,5.0,0.8480019029495718,0.05708848715509039,4204
+rule max z (spike known),dining,drop,5.0,0.0444814462416746,0.05708848715509039,4204
+rule max z (spike known),dining,spike,10.0,0.991674595623216,0.05708848715509039,4204
+rule max z (spike known),dining,drop,10.0,0.0444814462416746,0.05708848715509039,4204
+rule max z (spike known),groceries,spike,1.2,0.09443402126328955,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,1.2,0.05597248280175109,0.06660412757973734,3198
+rule max z (spike known),groceries,spike,1.5,0.18792995622263914,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,1.5,0.05378361475922452,0.06660412757973734,3198
+rule max z (spike known),groceries,spike,2.0,0.43026891807379614,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,2.0,0.05347091932457786,0.06660412757973734,3198
+rule max z (spike known),groceries,spike,3.0,0.8314571607254534,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,3.0,0.05347091932457786,0.06660412757973734,3198
+rule max z (spike known),groceries,spike,5.0,0.9856160100062539,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,5.0,0.05347091932457786,0.06660412757973734,3198
+rule max z (spike known),groceries,spike,10.0,1.0,0.06660412757973734,3198
+rule max z (spike known),groceries,drop,10.0,0.05347091932457786,0.06660412757973734,3198
+rule max z (spike known),income,spike,1.2,0.40588235294117647,0.061764705882352944,1020
+rule max z (spike known),income,drop,1.2,0.05784313725490196,0.061764705882352944,1020
+rule max z (spike known),income,spike,1.5,0.47843137254901963,0.061764705882352944,1020
+rule max z (spike known),income,drop,1.5,0.05588235294117647,0.061764705882352944,1020
+rule max z (spike known),income,spike,2.0,0.6519607843137255,0.061764705882352944,1020
+rule max z (spike known),income,drop,2.0,0.05392156862745098,0.061764705882352944,1020
+rule max z (spike known),income,spike,3.0,0.8990196078431373,0.061764705882352944,1020
+rule max z (spike known),income,drop,3.0,0.05392156862745098,0.061764705882352944,1020
+rule max z (spike known),income,spike,5.0,0.9931372549019608,0.061764705882352944,1020
+rule max z (spike known),income,drop,5.0,0.05392156862745098,0.061764705882352944,1020
+rule max z (spike known),income,spike,10.0,1.0,0.061764705882352944,1020
+rule max z (spike known),income,drop,10.0,0.05392156862745098,0.061764705882352944,1020
 rule max z (spike known),rent,spike,1.2,1.0,0.0,640
 rule max z (spike known),rent,drop,1.2,0.0,0.0,640
 rule max z (spike known),rent,spike,1.5,1.0,0.0,640
@@ -205,52 +205,52 @@ rule max z (spike known),subscription,spike,10.0,1.0,0.0,640
 rule max z (spike known),subscription,drop,10.0,0.0,0.0,640
 rule max z (spike known),utilities,spike,1.2,0.0015625,0.0,640
 rule max z (spike known),utilities,drop,1.2,0.0,0.0,640
-rule max z (spike known),utilities,spike,1.5,0.05,0.0,640
+rule max z (spike known),utilities,spike,1.5,0.1421875,0.0,640
 rule max z (spike known),utilities,drop,1.5,0.0,0.0,640
-rule max z (spike known),utilities,spike,2.0,0.396875,0.0,640
+rule max z (spike known),utilities,spike,2.0,0.4953125,0.0,640
 rule max z (spike known),utilities,drop,2.0,0.0,0.0,640
-rule max z (spike known),utilities,spike,3.0,0.88125,0.0,640
+rule max z (spike known),utilities,spike,3.0,0.9703125,0.0,640
 rule max z (spike known),utilities,drop,3.0,0.0,0.0,640
 rule max z (spike known),utilities,spike,5.0,1.0,0.0,640
 rule max z (spike known),utilities,drop,5.0,0.0,0.0,640
 rule max z (spike known),utilities,spike,10.0,1.0,0.0,640
 rule max z (spike known),utilities,drop,10.0,0.0,0.0,640
-rule min z (drop known),dining,spike,1.2,0.046522556390977444,0.05404135338345865,4256
-rule min z (drop known),dining,drop,1.2,0.07119360902255639,0.05404135338345865,4256
-rule min z (drop known),dining,spike,1.5,0.045347744360902255,0.05404135338345865,4256
-rule min z (drop known),dining,drop,1.5,0.10902255639097744,0.05404135338345865,4256
-rule min z (drop known),dining,spike,2.0,0.04487781954887218,0.05404135338345865,4256
-rule min z (drop known),dining,drop,2.0,0.2175751879699248,0.05404135338345865,4256
-rule min z (drop known),dining,spike,3.0,0.04487781954887218,0.05404135338345865,4256
-rule min z (drop known),dining,drop,3.0,0.4988251879699248,0.05404135338345865,4256
-rule min z (drop known),dining,spike,5.0,0.04487781954887218,0.05404135338345865,4256
-rule min z (drop known),dining,drop,5.0,0.8256578947368421,0.05404135338345865,4256
-rule min z (drop known),dining,spike,10.0,0.04487781954887218,0.05404135338345865,4256
-rule min z (drop known),dining,drop,10.0,0.9863721804511278,0.05404135338345865,4256
-rule min z (drop known),groceries,spike,1.2,0.0641998734977862,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,1.2,0.10436432637571158,0.07495256166982922,3162
-rule min z (drop known),groceries,spike,1.5,0.05913978494623656,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,1.5,0.19924098671726756,0.07495256166982922,3162
-rule min z (drop known),groceries,spike,2.0,0.05913978494623656,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,2.0,0.4531941808981657,0.07495256166982922,3162
-rule min z (drop known),groceries,spike,3.0,0.05913978494623656,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,3.0,0.8494623655913979,0.07495256166982922,3162
-rule min z (drop known),groceries,spike,5.0,0.05913978494623656,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,5.0,0.9886148007590133,0.07495256166982922,3162
-rule min z (drop known),groceries,spike,10.0,0.05913978494623656,0.07495256166982922,3162
-rule min z (drop known),groceries,drop,10.0,1.0,0.07495256166982922,3162
-rule min z (drop known),income,spike,1.2,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,1.2,0.47707423580786024,0.04912663755458515,916
-rule min z (drop known),income,spike,1.5,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,1.5,0.5327510917030568,0.04912663755458515,916
-rule min z (drop known),income,spike,2.0,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,2.0,0.7052401746724891,0.04912663755458515,916
-rule min z (drop known),income,spike,3.0,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,3.0,0.9093886462882096,0.04912663755458515,916
-rule min z (drop known),income,spike,5.0,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,5.0,0.9879912663755459,0.04912663755458515,916
-rule min z (drop known),income,spike,10.0,0.039301310043668124,0.04912663755458515,916
-rule min z (drop known),income,drop,10.0,1.0,0.04912663755458515,916
+rule min z (drop known),dining,spike,1.2,0.061607992388201714,0.07064700285442435,4204
+rule min z (drop known),dining,drop,1.2,0.09086584205518554,0.07064700285442435,4204
+rule min z (drop known),dining,spike,1.5,0.05922930542340628,0.07064700285442435,4204
+rule min z (drop known),dining,drop,1.5,0.1313035204567079,0.07064700285442435,4204
+rule min z (drop known),dining,spike,2.0,0.058039961941008564,0.07064700285442435,4204
+rule min z (drop known),dining,drop,2.0,0.24238820171265463,0.07064700285442435,4204
+rule min z (drop known),dining,spike,3.0,0.058039961941008564,0.07064700285442435,4204
+rule min z (drop known),dining,drop,3.0,0.5107040913415795,0.07064700285442435,4204
+rule min z (drop known),dining,spike,5.0,0.058039961941008564,0.07064700285442435,4204
+rule min z (drop known),dining,drop,5.0,0.8432445290199809,0.07064700285442435,4204
+rule min z (drop known),dining,spike,10.0,0.058039961941008564,0.07064700285442435,4204
+rule min z (drop known),dining,drop,10.0,0.9904852521408183,0.07064700285442435,4204
+rule min z (drop known),groceries,spike,1.2,0.04690431519699812,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,1.2,0.0866166353971232,0.054409005628517824,3198
+rule min z (drop known),groceries,spike,1.5,0.044715447154471545,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,1.5,0.17761100687929957,0.054409005628517824,3198
+rule min z (drop known),groceries,spike,2.0,0.044715447154471545,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,2.0,0.4337085678549093,0.054409005628517824,3198
+rule min z (drop known),groceries,spike,3.0,0.044715447154471545,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,3.0,0.8126954346466542,0.054409005628517824,3198
+rule min z (drop known),groceries,spike,5.0,0.044715447154471545,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,5.0,0.9915572232645403,0.054409005628517824,3198
+rule min z (drop known),groceries,spike,10.0,0.044715447154471545,0.054409005628517824,3198
+rule min z (drop known),groceries,drop,10.0,1.0,0.054409005628517824,3198
+rule min z (drop known),income,spike,1.2,0.03137254901960784,0.03235294117647059,1020
+rule min z (drop known),income,drop,1.2,0.37254901960784315,0.03235294117647059,1020
+rule min z (drop known),income,spike,1.5,0.026470588235294117,0.03235294117647059,1020
+rule min z (drop known),income,drop,1.5,0.45294117647058824,0.03235294117647059,1020
+rule min z (drop known),income,spike,2.0,0.026470588235294117,0.03235294117647059,1020
+rule min z (drop known),income,drop,2.0,0.653921568627451,0.03235294117647059,1020
+rule min z (drop known),income,spike,3.0,0.026470588235294117,0.03235294117647059,1020
+rule min z (drop known),income,drop,3.0,0.9107843137254902,0.03235294117647059,1020
+rule min z (drop known),income,spike,5.0,0.026470588235294117,0.03235294117647059,1020
+rule min z (drop known),income,drop,5.0,0.9911764705882353,0.03235294117647059,1020
+rule min z (drop known),income,spike,10.0,0.026470588235294117,0.03235294117647059,1020
+rule min z (drop known),income,drop,10.0,1.0,0.03235294117647059,1020
 rule min z (drop known),rent,spike,1.2,0.0,0.0,640
 rule min z (drop known),rent,drop,1.2,1.0,0.0,640
 rule min z (drop known),rent,spike,1.5,0.0,0.0,640
@@ -275,15 +275,15 @@ rule min z (drop known),subscription,spike,5.0,0.0,0.0,640
 rule min z (drop known),subscription,drop,5.0,1.0,0.0,640
 rule min z (drop known),subscription,spike,10.0,0.0,0.0,640
 rule min z (drop known),subscription,drop,10.0,1.0,0.0,640
-rule min z (drop known),utilities,spike,1.2,0.0,0.0,640
-rule min z (drop known),utilities,drop,1.2,0.025,0.0,640
-rule min z (drop known),utilities,spike,1.5,0.0,0.0,640
-rule min z (drop known),utilities,drop,1.5,0.2328125,0.0,640
-rule min z (drop known),utilities,spike,2.0,0.0,0.0,640
-rule min z (drop known),utilities,drop,2.0,0.5734375,0.0,640
-rule min z (drop known),utilities,spike,3.0,0.0,0.0,640
-rule min z (drop known),utilities,drop,3.0,0.9765625,0.0,640
-rule min z (drop known),utilities,spike,5.0,0.0,0.0,640
-rule min z (drop known),utilities,drop,5.0,1.0,0.0,640
-rule min z (drop known),utilities,spike,10.0,0.0,0.0,640
-rule min z (drop known),utilities,drop,10.0,1.0,0.0,640
+rule min z (drop known),utilities,spike,1.2,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,1.2,0.05,0.015625,640
+rule min z (drop known),utilities,spike,1.5,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,1.5,0.24375,0.015625,640
+rule min z (drop known),utilities,spike,2.0,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,2.0,0.63125,0.015625,640
+rule min z (drop known),utilities,spike,3.0,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,3.0,0.99375,0.015625,640
+rule min z (drop known),utilities,spike,5.0,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,5.0,1.0,0.015625,640
+rule min z (drop known),utilities,spike,10.0,0.0125,0.015625,640
+rule min z (drop known),utilities,drop,10.0,1.0,0.015625,640

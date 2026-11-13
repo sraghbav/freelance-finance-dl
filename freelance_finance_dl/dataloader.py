@@ -46,9 +46,10 @@ INVALID_AMOUNT_CUTOFF = 999_999
 LOG_RATIO_CLIP = (1e-3, 1e3)
 
 # "robustz" features divide the log-ratio by the history's own variability, so an unusual value is
-# judged against how much that user's amounts in that category normally vary.
+# judged against how much that user's amounts in that category normally vary, then compress it with
+# arcsinh (monotone, so rankings are preserved, and nothing saturates). An earlier version clipped
+# at +/-20, which saturated 19.8% of Berka income windows and made rule thresholds degenerate.
 MIN_SPREAD = 0.05
-ROBUSTZ_CLIP = 20.0
 
 # The raw dates use several formats. Each is internally consistent: slash dates are always
 # month/day/year (no first field above 12), dash dates are always day-month.
@@ -94,9 +95,9 @@ class FinanceTransactionDataset(Dataset):
         self.features = features
         self.clean = clean
         self.robust = robust
-        if source == "sparkov":
-            from freelance_finance_dl.sparkov import load_sparkov
-            self.data = load_sparkov(csv_file)
+        if source == "berka":
+            from freelance_finance_dl.berka import load_berka
+            self.data = load_berka(csv_file)
         else:
             self.data = pd.read_csv(csv_file)
 
@@ -112,8 +113,8 @@ class FinanceTransactionDataset(Dataset):
             # no window forms. Pool each user's income into one history.
             self.data.loc[self.data["transaction_type"] == "income", "category"] = "income"
 
-        if source == "sparkov":
-            pass  # dates and amounts were already parsed by load_sparkov
+        if source == "berka":
+            pass  # dates and amounts were already parsed by the source loader
         elif robust:
             self.data["date"] = parse_dates(self.data["date"])
             self.data["amount"] = parse_amounts(self.data["amount"])
@@ -172,7 +173,8 @@ class FinanceTransactionDataset(Dataset):
                 continue
 
             amounts = group_df["amount"].values.astype(float)
-            fraud = group_df["is_fraud"].values.astype(bool) if "is_fraud" in group_df.columns else None
+            label = group_df["is_anomaly"].values.astype(bool) if "is_anomaly" in group_df.columns else None
+            atype = group_df["anomaly_type"].fillna("").values if "anomaly_type" in group_df.columns else None
             valid = amounts[(amounts > 0) & (amounts < INVALID_AMOUNT_CUTOFF)]
             if len(valid) == 0:
                 continue
@@ -192,8 +194,9 @@ class FinanceTransactionDataset(Dataset):
                         "transaction_type": transaction_type,
                         "scale": scale,
                         "spread": spread,
-                        "fraud": bool(fraud[i : i + self.sequence_length].any()) if fraud is not None else None,
-                        "fraud_last": bool(fraud[i + self.sequence_length - 1]) if fraud is not None else None,
+                        "anomaly": bool(label[i : i + self.sequence_length].any()) if label is not None else None,
+                        "anomaly_last": bool(label[i + self.sequence_length - 1]) if label is not None else None,
+                        "anomaly_type": next((t for t in atype[i : i + self.sequence_length] if t), "") if atype is not None else None,
                     }
                 )
 
@@ -236,7 +239,7 @@ class FinanceTransactionDataset(Dataset):
         ratio = np.asarray(raw_sequence, dtype="float32") / scale
         z = np.log(np.clip(ratio, *LOG_RATIO_CLIP)).astype("float32")
         if self.features == "robustz":
-            z = np.clip(z / spread, -ROBUSTZ_CLIP, ROBUSTZ_CLIP).astype("float32")
+            z = np.arcsinh(z / spread).astype("float32")
         return z
 
     def __getitem__(self, idx):

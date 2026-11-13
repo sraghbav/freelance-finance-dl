@@ -1,0 +1,751 @@
+fold,stream,model,kind,factor,recall,fpr,n
+0,all,autoencoder,spike,1.5,0.11233333333333333,0.052,3000
+0,all,autoencoder,drop,1.5,0.08333333333333333,0.052,3000
+0,all,autoencoder,spike,2.0,0.11333333333333333,0.052,3000
+0,all,autoencoder,drop,2.0,0.09266666666666666,0.052,3000
+0,all,autoencoder,spike,3.0,0.14133333333333334,0.052,3000
+0,all,autoencoder,drop,3.0,0.101,0.052,3000
+0,all,autoencoder,spike,5.0,0.22233333333333333,0.052,3000
+0,all,autoencoder,drop,5.0,0.17133333333333334,0.052,3000
+0,all,autoencoder,spike,10.0,0.31,0.052,3000
+0,all,autoencoder,drop,10.0,0.18466666666666667,0.052,3000
+0,all,rule |z| (direction unknown),spike,1.5,0.05633333333333333,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),drop,1.5,0.059666666666666666,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),spike,2.0,0.05433333333333333,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),drop,2.0,0.060333333333333336,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),spike,3.0,0.05366666666666667,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),drop,3.0,0.061,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),spike,5.0,0.47633333333333333,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),drop,5.0,0.4676666666666667,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),spike,10.0,0.4786666666666667,0.058333333333333334,3000
+0,all,rule |z| (direction unknown),drop,10.0,0.48833333333333334,0.058333333333333334,3000
+0,all,rule max z (spike known),spike,1.5,0.05266666666666667,0.030333333333333334,3000
+0,all,rule max z (spike known),drop,1.5,0.024666666666666667,0.030333333333333334,3000
+0,all,rule max z (spike known),spike,2.0,0.4723333333333333,0.030333333333333334,3000
+0,all,rule max z (spike known),drop,2.0,0.024666666666666667,0.030333333333333334,3000
+0,all,rule max z (spike known),spike,3.0,0.4806666666666667,0.030333333333333334,3000
+0,all,rule max z (spike known),drop,3.0,0.024666666666666667,0.030333333333333334,3000
+0,all,rule max z (spike known),spike,5.0,0.487,0.030333333333333334,3000
+0,all,rule max z (spike known),drop,5.0,0.024333333333333332,0.030333333333333334,3000
+0,all,rule max z (spike known),spike,10.0,0.495,0.030333333333333334,3000
+0,all,rule max z (spike known),drop,10.0,0.024333333333333332,0.030333333333333334,3000
+0,all,rule min z (drop known),spike,1.5,0.055,0.056666666666666664,3000
+0,all,rule min z (drop known),drop,1.5,0.058333333333333334,0.056666666666666664,3000
+0,all,rule min z (drop known),spike,2.0,0.05366666666666667,0.056666666666666664,3000
+0,all,rule min z (drop known),drop,2.0,0.059,0.056666666666666664,3000
+0,all,rule min z (drop known),spike,3.0,0.052,0.056666666666666664,3000
+0,all,rule min z (drop known),drop,3.0,0.061,0.056666666666666664,3000
+0,all,rule min z (drop known),spike,5.0,0.050666666666666665,0.056666666666666664,3000
+0,all,rule min z (drop known),drop,5.0,0.468,0.056666666666666664,3000
+0,all,rule min z (drop known),spike,10.0,0.048666666666666664,0.056666666666666664,3000
+0,all,rule min z (drop known),drop,10.0,0.4876666666666667,0.056666666666666664,3000
+0,all,isolation forest,spike,1.5,0.06933333333333333,0.05633333333333333,3000
+0,all,isolation forest,drop,1.5,0.06833333333333333,0.05633333333333333,3000
+0,all,isolation forest,spike,2.0,0.07366666666666667,0.05633333333333333,3000
+0,all,isolation forest,drop,2.0,0.082,0.05633333333333333,3000
+0,all,isolation forest,spike,3.0,0.077,0.05633333333333333,3000
+0,all,isolation forest,drop,3.0,0.10433333333333333,0.05633333333333333,3000
+0,all,isolation forest,spike,5.0,0.07966666666666666,0.05633333333333333,3000
+0,all,isolation forest,drop,5.0,0.116,0.05633333333333333,3000
+0,all,isolation forest,spike,10.0,0.083,0.05633333333333333,3000
+0,all,isolation forest,drop,10.0,0.14833333333333334,0.05633333333333333,3000
+0,expense,autoencoder,spike,1.5,0.13566666666666666,0.05333333333333334,3000
+0,expense,autoencoder,drop,1.5,0.12633333333333333,0.05333333333333334,3000
+0,expense,autoencoder,spike,2.0,0.23033333333333333,0.05333333333333334,3000
+0,expense,autoencoder,drop,2.0,0.13233333333333333,0.05333333333333334,3000
+0,expense,autoencoder,spike,3.0,0.25333333333333335,0.05333333333333334,3000
+0,expense,autoencoder,drop,3.0,0.14333333333333334,0.05333333333333334,3000
+0,expense,autoencoder,spike,5.0,0.442,0.05333333333333334,3000
+0,expense,autoencoder,drop,5.0,0.16166666666666665,0.05333333333333334,3000
+0,expense,autoencoder,spike,10.0,0.5806666666666667,0.05333333333333334,3000
+0,expense,autoencoder,drop,10.0,0.18166666666666667,0.05333333333333334,3000
+0,expense,rule |z| (direction unknown),spike,1.5,0.43166666666666664,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),drop,1.5,0.43833333333333335,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),spike,2.0,0.43766666666666665,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),drop,2.0,0.446,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),spike,3.0,0.455,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),drop,3.0,0.47,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),spike,5.0,0.5066666666666667,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),drop,5.0,0.5303333333333333,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),spike,10.0,0.6346666666666667,0.05433333333333333,3000
+0,expense,rule |z| (direction unknown),drop,10.0,0.6573333333333333,0.05433333333333333,3000
+0,expense,rule max z (spike known),spike,1.5,0.4593333333333333,0.056,3000
+0,expense,rule max z (spike known),drop,1.5,0.049666666666666665,0.056,3000
+0,expense,rule max z (spike known),spike,2.0,0.49766666666666665,0.056,3000
+0,expense,rule max z (spike known),drop,2.0,0.04733333333333333,0.056,3000
+0,expense,rule max z (spike known),spike,3.0,0.5853333333333334,0.056,3000
+0,expense,rule max z (spike known),drop,3.0,0.047,0.056,3000
+0,expense,rule max z (spike known),spike,5.0,0.712,0.056,3000
+0,expense,rule max z (spike known),drop,5.0,0.04566666666666667,0.056,3000
+0,expense,rule max z (spike known),spike,10.0,0.8426666666666667,0.056,3000
+0,expense,rule max z (spike known),drop,10.0,0.04566666666666667,0.056,3000
+0,expense,rule min z (drop known),spike,1.5,0.048666666666666664,0.052,3000
+0,expense,rule min z (drop known),drop,1.5,0.43633333333333335,0.052,3000
+0,expense,rule min z (drop known),spike,2.0,0.04733333333333333,0.052,3000
+0,expense,rule min z (drop known),drop,2.0,0.449,0.052,3000
+0,expense,rule min z (drop known),spike,3.0,0.046,0.052,3000
+0,expense,rule min z (drop known),drop,3.0,0.4786666666666667,0.052,3000
+0,expense,rule min z (drop known),spike,5.0,0.04533333333333334,0.052,3000
+0,expense,rule min z (drop known),drop,5.0,0.5536666666666666,0.052,3000
+0,expense,rule min z (drop known),spike,10.0,0.04466666666666667,0.052,3000
+0,expense,rule min z (drop known),drop,10.0,0.6893333333333334,0.052,3000
+0,expense,isolation forest,spike,1.5,0.06266666666666666,0.052333333333333336,3000
+0,expense,isolation forest,drop,1.5,0.05566666666666667,0.052333333333333336,3000
+0,expense,isolation forest,spike,2.0,0.073,0.052333333333333336,3000
+0,expense,isolation forest,drop,2.0,0.06233333333333333,0.052333333333333336,3000
+0,expense,isolation forest,spike,3.0,0.08966666666666667,0.052333333333333336,3000
+0,expense,isolation forest,drop,3.0,0.152,0.052333333333333336,3000
+0,expense,isolation forest,spike,5.0,0.116,0.052333333333333336,3000
+0,expense,isolation forest,drop,5.0,0.25933333333333336,0.052333333333333336,3000
+0,expense,isolation forest,spike,10.0,0.154,0.052333333333333336,3000
+0,expense,isolation forest,drop,10.0,0.45,0.052333333333333336,3000
+0,income,autoencoder,spike,1.5,0.11033333333333334,0.04633333333333333,3000
+0,income,autoencoder,drop,1.5,0.11466666666666667,0.04633333333333333,3000
+0,income,autoencoder,spike,2.0,0.16733333333333333,0.04633333333333333,3000
+0,income,autoencoder,drop,2.0,0.13033333333333333,0.04633333333333333,3000
+0,income,autoencoder,spike,3.0,0.22366666666666668,0.04633333333333333,3000
+0,income,autoencoder,drop,3.0,0.139,0.04633333333333333,3000
+0,income,autoencoder,spike,5.0,0.265,0.04633333333333333,3000
+0,income,autoencoder,drop,5.0,0.15466666666666667,0.04633333333333333,3000
+0,income,autoencoder,spike,10.0,0.3383333333333333,0.04633333333333333,3000
+0,income,autoencoder,drop,10.0,0.17366666666666666,0.04633333333333333,3000
+0,income,rule |z| (direction unknown),spike,1.5,0.04766666666666667,0.047,3000
+0,income,rule |z| (direction unknown),drop,1.5,0.051333333333333335,0.047,3000
+0,income,rule |z| (direction unknown),spike,2.0,0.04566666666666667,0.047,3000
+0,income,rule |z| (direction unknown),drop,2.0,0.05533333333333333,0.047,3000
+0,income,rule |z| (direction unknown),spike,3.0,0.04533333333333334,0.047,3000
+0,income,rule |z| (direction unknown),drop,3.0,0.058333333333333334,0.047,3000
+0,income,rule |z| (direction unknown),spike,5.0,0.04633333333333333,0.047,3000
+0,income,rule |z| (direction unknown),drop,5.0,0.07,0.047,3000
+0,income,rule |z| (direction unknown),spike,10.0,0.04633333333333333,0.047,3000
+0,income,rule |z| (direction unknown),drop,10.0,0.08666666666666667,0.047,3000
+0,income,rule max z (spike known),spike,1.5,0.11166666666666666,0.05266666666666667,3000
+0,income,rule max z (spike known),drop,1.5,0.047,0.05266666666666667,3000
+0,income,rule max z (spike known),spike,2.0,0.6696666666666666,0.05266666666666667,3000
+0,income,rule max z (spike known),drop,2.0,0.04666666666666667,0.05266666666666667,3000
+0,income,rule max z (spike known),spike,3.0,0.689,0.05266666666666667,3000
+0,income,rule max z (spike known),drop,3.0,0.04633333333333333,0.05266666666666667,3000
+0,income,rule max z (spike known),spike,5.0,0.7103333333333334,0.05266666666666667,3000
+0,income,rule max z (spike known),drop,5.0,0.046,0.05266666666666667,3000
+0,income,rule max z (spike known),spike,10.0,0.729,0.05266666666666667,3000
+0,income,rule max z (spike known),drop,10.0,0.04566666666666667,0.05266666666666667,3000
+0,income,rule min z (drop known),spike,1.5,0.04733333333333333,0.049,3000
+0,income,rule min z (drop known),drop,1.5,0.05433333333333333,0.049,3000
+0,income,rule min z (drop known),spike,2.0,0.04566666666666667,0.049,3000
+0,income,rule min z (drop known),drop,2.0,0.057666666666666665,0.049,3000
+0,income,rule min z (drop known),spike,3.0,0.044333333333333336,0.049,3000
+0,income,rule min z (drop known),drop,3.0,0.06133333333333333,0.049,3000
+0,income,rule min z (drop known),spike,5.0,0.044,0.049,3000
+0,income,rule min z (drop known),drop,5.0,0.07366666666666667,0.049,3000
+0,income,rule min z (drop known),spike,10.0,0.042666666666666665,0.049,3000
+0,income,rule min z (drop known),drop,10.0,0.09233333333333334,0.049,3000
+0,income,isolation forest,spike,1.5,0.09833333333333333,0.042,3000
+0,income,isolation forest,drop,1.5,0.10033333333333333,0.042,3000
+0,income,isolation forest,spike,2.0,0.106,0.042,3000
+0,income,isolation forest,drop,2.0,0.114,0.042,3000
+0,income,isolation forest,spike,3.0,0.11266666666666666,0.042,3000
+0,income,isolation forest,drop,3.0,0.13,0.042,3000
+0,income,isolation forest,spike,5.0,0.11733333333333333,0.042,3000
+0,income,isolation forest,drop,5.0,0.14533333333333334,0.042,3000
+0,income,isolation forest,spike,10.0,0.12033333333333333,0.042,3000
+0,income,isolation forest,drop,10.0,0.16866666666666666,0.042,3000
+1,all,autoencoder,spike,1.5,0.099,0.05,3000
+1,all,autoencoder,drop,1.5,0.082,0.05,3000
+1,all,autoencoder,spike,2.0,0.11866666666666667,0.05,3000
+1,all,autoencoder,drop,2.0,0.08733333333333333,0.05,3000
+1,all,autoencoder,spike,3.0,0.19833333333333333,0.05,3000
+1,all,autoencoder,drop,3.0,0.165,0.05,3000
+1,all,autoencoder,spike,5.0,0.266,0.05,3000
+1,all,autoencoder,drop,5.0,0.17833333333333334,0.05,3000
+1,all,autoencoder,spike,10.0,0.361,0.05,3000
+1,all,autoencoder,drop,10.0,0.191,0.05,3000
+1,all,rule |z| (direction unknown),spike,1.5,0.04566666666666667,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),drop,1.5,0.048,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),spike,2.0,0.044,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),drop,2.0,0.049666666666666665,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),spike,3.0,0.044,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),drop,3.0,0.051666666666666666,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),spike,5.0,0.4716666666666667,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),drop,5.0,0.4666666666666667,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),spike,10.0,0.476,0.04733333333333333,3000
+1,all,rule |z| (direction unknown),drop,10.0,0.485,0.04733333333333333,3000
+1,all,rule max z (spike known),spike,1.5,0.05,0.03166666666666667,3000
+1,all,rule max z (spike known),drop,1.5,0.027333333333333334,0.03166666666666667,3000
+1,all,rule max z (spike known),spike,2.0,0.4706666666666667,0.03166666666666667,3000
+1,all,rule max z (spike known),drop,2.0,0.027333333333333334,0.03166666666666667,3000
+1,all,rule max z (spike known),spike,3.0,0.477,0.03166666666666667,3000
+1,all,rule max z (spike known),drop,3.0,0.027333333333333334,0.03166666666666667,3000
+1,all,rule max z (spike known),spike,5.0,0.486,0.03166666666666667,3000
+1,all,rule max z (spike known),drop,5.0,0.027,0.03166666666666667,3000
+1,all,rule max z (spike known),spike,10.0,0.495,0.03166666666666667,3000
+1,all,rule max z (spike known),drop,10.0,0.027,0.03166666666666667,3000
+1,all,rule min z (drop known),spike,1.5,0.04566666666666667,0.04633333333333333,3000
+1,all,rule min z (drop known),drop,1.5,0.04766666666666667,0.04633333333333333,3000
+1,all,rule min z (drop known),spike,2.0,0.044,0.04633333333333333,3000
+1,all,rule min z (drop known),drop,2.0,0.04933333333333333,0.04633333333333333,3000
+1,all,rule min z (drop known),spike,3.0,0.042666666666666665,0.04633333333333333,3000
+1,all,rule min z (drop known),drop,3.0,0.052,0.04633333333333333,3000
+1,all,rule min z (drop known),spike,5.0,0.042,0.04633333333333333,3000
+1,all,rule min z (drop known),drop,5.0,0.4643333333333333,0.04633333333333333,3000
+1,all,rule min z (drop known),spike,10.0,0.041,0.04633333333333333,3000
+1,all,rule min z (drop known),drop,10.0,0.48333333333333334,0.04633333333333333,3000
+1,all,isolation forest,spike,1.5,0.06466666666666666,0.048,3000
+1,all,isolation forest,drop,1.5,0.063,0.048,3000
+1,all,isolation forest,spike,2.0,0.071,0.048,3000
+1,all,isolation forest,drop,2.0,0.079,0.048,3000
+1,all,isolation forest,spike,3.0,0.07366666666666667,0.048,3000
+1,all,isolation forest,drop,3.0,0.09266666666666666,0.048,3000
+1,all,isolation forest,spike,5.0,0.08233333333333333,0.048,3000
+1,all,isolation forest,drop,5.0,0.121,0.048,3000
+1,all,isolation forest,spike,10.0,0.096,0.048,3000
+1,all,isolation forest,drop,10.0,0.136,0.048,3000
+1,expense,autoencoder,spike,1.5,0.052333333333333336,0.05266666666666667,3000
+1,expense,autoencoder,drop,1.5,0.14,0.05266666666666667,3000
+1,expense,autoencoder,spike,2.0,0.20533333333333334,0.05266666666666667,3000
+1,expense,autoencoder,drop,2.0,0.15133333333333332,0.05266666666666667,3000
+1,expense,autoencoder,spike,3.0,0.292,0.05266666666666667,3000
+1,expense,autoencoder,drop,3.0,0.16433333333333333,0.05266666666666667,3000
+1,expense,autoencoder,spike,5.0,0.388,0.05266666666666667,3000
+1,expense,autoencoder,drop,5.0,0.262,0.05266666666666667,3000
+1,expense,autoencoder,spike,10.0,0.429,0.05266666666666667,3000
+1,expense,autoencoder,drop,10.0,0.3636666666666667,0.05266666666666667,3000
+1,expense,rule |z| (direction unknown),spike,1.5,0.4196666666666667,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),drop,1.5,0.42333333333333334,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),spike,2.0,0.425,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),drop,2.0,0.43766666666666665,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),spike,3.0,0.44166666666666665,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),drop,3.0,0.45766666666666667,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),spike,5.0,0.482,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),drop,5.0,0.508,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),spike,10.0,0.617,0.04933333333333333,3000
+1,expense,rule |z| (direction unknown),drop,10.0,0.632,0.04933333333333333,3000
+1,expense,rule max z (spike known),spike,1.5,0.448,0.059,3000
+1,expense,rule max z (spike known),drop,1.5,0.051333333333333335,0.059,3000
+1,expense,rule max z (spike known),spike,2.0,0.4846666666666667,0.059,3000
+1,expense,rule max z (spike known),drop,2.0,0.05,0.059,3000
+1,expense,rule max z (spike known),spike,3.0,0.5806666666666667,0.059,3000
+1,expense,rule max z (spike known),drop,3.0,0.04833333333333333,0.059,3000
+1,expense,rule max z (spike known),spike,5.0,0.7126666666666667,0.059,3000
+1,expense,rule max z (spike known),drop,5.0,0.04833333333333333,0.059,3000
+1,expense,rule max z (spike known),spike,10.0,0.8326666666666667,0.059,3000
+1,expense,rule max z (spike known),drop,10.0,0.048,0.059,3000
+1,expense,rule min z (drop known),spike,1.5,0.045,0.04766666666666667,3000
+1,expense,rule min z (drop known),drop,1.5,0.43,0.04766666666666667,3000
+1,expense,rule min z (drop known),spike,2.0,0.043,0.04766666666666667,3000
+1,expense,rule min z (drop known),drop,2.0,0.45,0.04766666666666667,3000
+1,expense,rule min z (drop known),spike,3.0,0.04033333333333333,0.04766666666666667,3000
+1,expense,rule min z (drop known),drop,3.0,0.48,0.04766666666666667,3000
+1,expense,rule min z (drop known),spike,5.0,0.04,0.04766666666666667,3000
+1,expense,rule min z (drop known),drop,5.0,0.5446666666666666,0.04766666666666667,3000
+1,expense,rule min z (drop known),spike,10.0,0.04,0.04766666666666667,3000
+1,expense,rule min z (drop known),drop,10.0,0.6846666666666666,0.04766666666666667,3000
+1,expense,isolation forest,spike,1.5,0.058666666666666666,0.050333333333333334,3000
+1,expense,isolation forest,drop,1.5,0.057,0.050333333333333334,3000
+1,expense,isolation forest,spike,2.0,0.07266666666666667,0.050333333333333334,3000
+1,expense,isolation forest,drop,2.0,0.06866666666666667,0.050333333333333334,3000
+1,expense,isolation forest,spike,3.0,0.24166666666666667,0.050333333333333334,3000
+1,expense,isolation forest,drop,3.0,0.23366666666666666,0.050333333333333334,3000
+1,expense,isolation forest,spike,5.0,0.285,0.050333333333333334,3000
+1,expense,isolation forest,drop,5.0,0.4086666666666667,0.050333333333333334,3000
+1,expense,isolation forest,spike,10.0,0.339,0.050333333333333334,3000
+1,expense,isolation forest,drop,10.0,0.5286666666666666,0.050333333333333334,3000
+1,income,autoencoder,spike,1.5,0.11133333333333334,0.051666666666666666,3000
+1,income,autoencoder,drop,1.5,0.10666666666666667,0.051666666666666666,3000
+1,income,autoencoder,spike,2.0,0.20433333333333334,0.051666666666666666,3000
+1,income,autoencoder,drop,2.0,0.122,0.051666666666666666,3000
+1,income,autoencoder,spike,3.0,0.24366666666666667,0.051666666666666666,3000
+1,income,autoencoder,drop,3.0,0.138,0.051666666666666666,3000
+1,income,autoencoder,spike,5.0,0.344,0.051666666666666666,3000
+1,income,autoencoder,drop,5.0,0.15233333333333332,0.051666666666666666,3000
+1,income,autoencoder,spike,10.0,0.4003333333333333,0.051666666666666666,3000
+1,income,autoencoder,drop,10.0,0.16833333333333333,0.051666666666666666,3000
+1,income,rule |z| (direction unknown),spike,1.5,0.056666666666666664,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),drop,1.5,0.06166666666666667,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),spike,2.0,0.056,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),drop,2.0,0.06433333333333334,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),spike,3.0,0.05533333333333333,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),drop,3.0,0.06766666666666667,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),spike,5.0,0.05633333333333333,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),drop,5.0,0.07566666666666666,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),spike,10.0,0.057666666666666665,0.058333333333333334,3000
+1,income,rule |z| (direction unknown),drop,10.0,0.09,0.058333333333333334,3000
+1,income,rule max z (spike known),spike,1.5,0.12666666666666668,0.057666666666666665,3000
+1,income,rule max z (spike known),drop,1.5,0.052,0.057666666666666665,3000
+1,income,rule max z (spike known),spike,2.0,0.7233333333333334,0.057666666666666665,3000
+1,income,rule max z (spike known),drop,2.0,0.051333333333333335,0.057666666666666665,3000
+1,income,rule max z (spike known),spike,3.0,0.7356666666666667,0.057666666666666665,3000
+1,income,rule max z (spike known),drop,3.0,0.050666666666666665,0.057666666666666665,3000
+1,income,rule max z (spike known),spike,5.0,0.75,0.057666666666666665,3000
+1,income,rule max z (spike known),drop,5.0,0.05,0.057666666666666665,3000
+1,income,rule max z (spike known),spike,10.0,0.7666666666666667,0.057666666666666665,3000
+1,income,rule max z (spike known),drop,10.0,0.05,0.057666666666666665,3000
+1,income,rule min z (drop known),spike,1.5,0.05466666666666667,0.05633333333333333,3000
+1,income,rule min z (drop known),drop,1.5,0.06066666666666667,0.05633333333333333,3000
+1,income,rule min z (drop known),spike,2.0,0.05366666666666667,0.05633333333333333,3000
+1,income,rule min z (drop known),drop,2.0,0.064,0.05633333333333333,3000
+1,income,rule min z (drop known),spike,3.0,0.052,0.05633333333333333,3000
+1,income,rule min z (drop known),drop,3.0,0.068,0.05633333333333333,3000
+1,income,rule min z (drop known),spike,5.0,0.050666666666666665,0.05633333333333333,3000
+1,income,rule min z (drop known),drop,5.0,0.07666666666666666,0.05633333333333333,3000
+1,income,rule min z (drop known),spike,10.0,0.048666666666666664,0.05633333333333333,3000
+1,income,rule min z (drop known),drop,10.0,0.09133333333333334,0.05633333333333333,3000
+1,income,isolation forest,spike,1.5,0.11033333333333334,0.053,3000
+1,income,isolation forest,drop,1.5,0.103,0.053,3000
+1,income,isolation forest,spike,2.0,0.121,0.053,3000
+1,income,isolation forest,drop,2.0,0.11866666666666667,0.053,3000
+1,income,isolation forest,spike,3.0,0.12466666666666666,0.053,3000
+1,income,isolation forest,drop,3.0,0.128,0.053,3000
+1,income,isolation forest,spike,5.0,0.13,0.053,3000
+1,income,isolation forest,drop,5.0,0.14833333333333334,0.053,3000
+1,income,isolation forest,spike,10.0,0.131,0.053,3000
+1,income,isolation forest,drop,10.0,0.162,0.053,3000
+2,all,autoencoder,spike,1.5,0.103,0.050666666666666665,3000
+2,all,autoencoder,drop,1.5,0.08733333333333333,0.050666666666666665,3000
+2,all,autoencoder,spike,2.0,0.127,0.050666666666666665,3000
+2,all,autoencoder,drop,2.0,0.095,0.050666666666666665,3000
+2,all,autoencoder,spike,3.0,0.21066666666666667,0.050666666666666665,3000
+2,all,autoencoder,drop,3.0,0.23466666666666666,0.050666666666666665,3000
+2,all,autoencoder,spike,5.0,0.217,0.050666666666666665,3000
+2,all,autoencoder,drop,5.0,0.24833333333333332,0.050666666666666665,3000
+2,all,autoencoder,spike,10.0,0.238,0.050666666666666665,3000
+2,all,autoencoder,drop,10.0,0.2633333333333333,0.050666666666666665,3000
+2,all,rule |z| (direction unknown),spike,1.5,0.052333333333333336,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),drop,1.5,0.05633333333333333,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),spike,2.0,0.051333333333333335,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),drop,2.0,0.05633333333333333,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),spike,3.0,0.050333333333333334,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),drop,3.0,0.06133333333333333,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),spike,5.0,0.4836666666666667,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),drop,5.0,0.4806666666666667,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),spike,10.0,0.48966666666666664,0.05366666666666667,3000
+2,all,rule |z| (direction unknown),drop,10.0,0.49833333333333335,0.05366666666666667,3000
+2,all,rule max z (spike known),spike,1.5,0.05266666666666667,0.03333333333333333,3000
+2,all,rule max z (spike known),drop,1.5,0.029333333333333333,0.03333333333333333,3000
+2,all,rule max z (spike known),spike,2.0,0.47633333333333333,0.03333333333333333,3000
+2,all,rule max z (spike known),drop,2.0,0.029333333333333333,0.03333333333333333,3000
+2,all,rule max z (spike known),spike,3.0,0.4836666666666667,0.03333333333333333,3000
+2,all,rule max z (spike known),drop,3.0,0.029,0.03333333333333333,3000
+2,all,rule max z (spike known),spike,5.0,0.492,0.03333333333333333,3000
+2,all,rule max z (spike known),drop,5.0,0.029,0.03333333333333333,3000
+2,all,rule max z (spike known),spike,10.0,0.505,0.03333333333333333,3000
+2,all,rule max z (spike known),drop,10.0,0.029,0.03333333333333333,3000
+2,all,rule min z (drop known),spike,1.5,0.05333333333333334,0.05533333333333333,3000
+2,all,rule min z (drop known),drop,1.5,0.05733333333333333,0.05533333333333333,3000
+2,all,rule min z (drop known),spike,2.0,0.052333333333333336,0.05533333333333333,3000
+2,all,rule min z (drop known),drop,2.0,0.059666666666666666,0.05533333333333333,3000
+2,all,rule min z (drop known),spike,3.0,0.051,0.05533333333333333,3000
+2,all,rule min z (drop known),drop,3.0,0.06466666666666666,0.05533333333333333,3000
+2,all,rule min z (drop known),spike,5.0,0.050333333333333334,0.05533333333333333,3000
+2,all,rule min z (drop known),drop,5.0,0.48033333333333333,0.05533333333333333,3000
+2,all,rule min z (drop known),spike,10.0,0.049666666666666665,0.05533333333333333,3000
+2,all,rule min z (drop known),drop,10.0,0.49733333333333335,0.05533333333333333,3000
+2,all,isolation forest,spike,1.5,0.06933333333333333,0.05,3000
+2,all,isolation forest,drop,1.5,0.06566666666666666,0.05,3000
+2,all,isolation forest,spike,2.0,0.073,0.05,3000
+2,all,isolation forest,drop,2.0,0.07833333333333334,0.05,3000
+2,all,isolation forest,spike,3.0,0.07766666666666666,0.05,3000
+2,all,isolation forest,drop,3.0,0.09566666666666666,0.05,3000
+2,all,isolation forest,spike,5.0,0.08266666666666667,0.05,3000
+2,all,isolation forest,drop,5.0,0.114,0.05,3000
+2,all,isolation forest,spike,10.0,0.09233333333333334,0.05,3000
+2,all,isolation forest,drop,10.0,0.14166666666666666,0.05,3000
+2,expense,autoencoder,spike,1.5,0.14233333333333334,0.04833333333333333,3000
+2,expense,autoencoder,drop,1.5,0.27566666666666667,0.04833333333333333,3000
+2,expense,autoencoder,spike,2.0,0.235,0.04833333333333333,3000
+2,expense,autoencoder,drop,2.0,0.3586666666666667,0.04833333333333333,3000
+2,expense,autoencoder,spike,3.0,0.334,0.04833333333333333,3000
+2,expense,autoencoder,drop,3.0,0.4623333333333333,0.04833333333333333,3000
+2,expense,autoencoder,spike,5.0,0.5203333333333333,0.04833333333333333,3000
+2,expense,autoencoder,drop,5.0,0.492,0.04833333333333333,3000
+2,expense,autoencoder,spike,10.0,0.576,0.04833333333333333,3000
+2,expense,autoencoder,drop,10.0,0.549,0.04833333333333333,3000
+2,expense,rule |z| (direction unknown),spike,1.5,0.44133333333333336,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),drop,1.5,0.44466666666666665,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),spike,2.0,0.4483333333333333,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),drop,2.0,0.4583333333333333,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),spike,3.0,0.462,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),drop,3.0,0.4816666666666667,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),spike,5.0,0.502,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),drop,5.0,0.5263333333333333,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),spike,10.0,0.6153333333333333,0.051333333333333335,3000
+2,expense,rule |z| (direction unknown),drop,10.0,0.638,0.051333333333333335,3000
+2,expense,rule max z (spike known),spike,1.5,0.4686666666666667,0.04533333333333334,3000
+2,expense,rule max z (spike known),drop,1.5,0.03966666666666667,0.04533333333333334,3000
+2,expense,rule max z (spike known),spike,2.0,0.5143333333333333,0.04533333333333334,3000
+2,expense,rule max z (spike known),drop,2.0,0.039,0.04533333333333334,3000
+2,expense,rule max z (spike known),spike,3.0,0.6106666666666667,0.04533333333333334,3000
+2,expense,rule max z (spike known),drop,3.0,0.03766666666666667,0.04533333333333334,3000
+2,expense,rule max z (spike known),spike,5.0,0.729,0.04533333333333334,3000
+2,expense,rule max z (spike known),drop,5.0,0.037333333333333336,0.04533333333333334,3000
+2,expense,rule max z (spike known),spike,10.0,0.855,0.04533333333333334,3000
+2,expense,rule max z (spike known),drop,10.0,0.037333333333333336,0.04533333333333334,3000
+2,expense,rule min z (drop known),spike,1.5,0.048,0.052333333333333336,3000
+2,expense,rule min z (drop known),drop,1.5,0.451,0.052333333333333336,3000
+2,expense,rule min z (drop known),spike,2.0,0.04733333333333333,0.052333333333333336,3000
+2,expense,rule min z (drop known),drop,2.0,0.47,0.052333333333333336,3000
+2,expense,rule min z (drop known),spike,3.0,0.04466666666666667,0.052333333333333336,3000
+2,expense,rule min z (drop known),drop,3.0,0.49833333333333335,0.052333333333333336,3000
+2,expense,rule min z (drop known),spike,5.0,0.044333333333333336,0.052333333333333336,3000
+2,expense,rule min z (drop known),drop,5.0,0.5563333333333333,0.052333333333333336,3000
+2,expense,rule min z (drop known),spike,10.0,0.044333333333333336,0.052333333333333336,3000
+2,expense,rule min z (drop known),drop,10.0,0.692,0.052333333333333336,3000
+2,expense,isolation forest,spike,1.5,0.04933333333333333,0.048666666666666664,3000
+2,expense,isolation forest,drop,1.5,0.05733333333333333,0.048666666666666664,3000
+2,expense,isolation forest,spike,2.0,0.058333333333333334,0.048666666666666664,3000
+2,expense,isolation forest,drop,2.0,0.14966666666666667,0.048666666666666664,3000
+2,expense,isolation forest,spike,3.0,0.071,0.048666666666666664,3000
+2,expense,isolation forest,drop,3.0,0.17166666666666666,0.048666666666666664,3000
+2,expense,isolation forest,spike,5.0,0.184,0.048666666666666664,3000
+2,expense,isolation forest,drop,5.0,0.281,0.048666666666666664,3000
+2,expense,isolation forest,spike,10.0,0.21566666666666667,0.048666666666666664,3000
+2,expense,isolation forest,drop,10.0,0.562,0.048666666666666664,3000
+2,income,autoencoder,spike,1.5,0.135,0.053,3000
+2,income,autoencoder,drop,1.5,0.124,0.053,3000
+2,income,autoencoder,spike,2.0,0.21566666666666667,0.053,3000
+2,income,autoencoder,drop,2.0,0.13933333333333334,0.053,3000
+2,income,autoencoder,spike,3.0,0.30866666666666664,0.053,3000
+2,income,autoencoder,drop,3.0,0.14733333333333334,0.053,3000
+2,income,autoencoder,spike,5.0,0.3233333333333333,0.053,3000
+2,income,autoencoder,drop,5.0,0.15633333333333332,0.053,3000
+2,income,autoencoder,spike,10.0,0.35033333333333333,0.053,3000
+2,income,autoencoder,drop,10.0,0.18166666666666667,0.053,3000
+2,income,rule |z| (direction unknown),spike,1.5,0.051666666666666666,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),drop,1.5,0.058,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),spike,2.0,0.050333333333333334,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),drop,2.0,0.059666666666666666,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),spike,3.0,0.05,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),drop,3.0,0.067,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),spike,5.0,0.049,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),drop,5.0,0.07666666666666666,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),spike,10.0,0.050666666666666665,0.05333333333333334,3000
+2,income,rule |z| (direction unknown),drop,10.0,0.09233333333333334,0.05333333333333334,3000
+2,income,rule max z (spike known),spike,1.5,0.128,0.049,3000
+2,income,rule max z (spike known),drop,1.5,0.041,0.049,3000
+2,income,rule max z (spike known),spike,2.0,0.6763333333333333,0.049,3000
+2,income,rule max z (spike known),drop,2.0,0.04033333333333333,0.049,3000
+2,income,rule max z (spike known),spike,3.0,0.685,0.049,3000
+2,income,rule max z (spike known),drop,3.0,0.04033333333333333,0.049,3000
+2,income,rule max z (spike known),spike,5.0,0.697,0.049,3000
+2,income,rule max z (spike known),drop,5.0,0.04033333333333333,0.049,3000
+2,income,rule max z (spike known),spike,10.0,0.718,0.049,3000
+2,income,rule max z (spike known),drop,10.0,0.03966666666666667,0.049,3000
+2,income,rule min z (drop known),spike,1.5,0.04833333333333333,0.053,3000
+2,income,rule min z (drop known),drop,1.5,0.05566666666666667,0.053,3000
+2,income,rule min z (drop known),spike,2.0,0.047,0.053,3000
+2,income,rule min z (drop known),drop,2.0,0.060333333333333336,0.053,3000
+2,income,rule min z (drop known),spike,3.0,0.046,0.053,3000
+2,income,rule min z (drop known),drop,3.0,0.06633333333333333,0.053,3000
+2,income,rule min z (drop known),spike,5.0,0.04566666666666667,0.053,3000
+2,income,rule min z (drop known),drop,5.0,0.07966666666666666,0.053,3000
+2,income,rule min z (drop known),spike,10.0,0.043666666666666666,0.053,3000
+2,income,rule min z (drop known),drop,10.0,0.09266666666666666,0.053,3000
+2,income,isolation forest,spike,1.5,0.09133333333333334,0.049,3000
+2,income,isolation forest,drop,1.5,0.09333333333333334,0.049,3000
+2,income,isolation forest,spike,2.0,0.10466666666666667,0.049,3000
+2,income,isolation forest,drop,2.0,0.11433333333333333,0.049,3000
+2,income,isolation forest,spike,3.0,0.11066666666666666,0.049,3000
+2,income,isolation forest,drop,3.0,0.12833333333333333,0.049,3000
+2,income,isolation forest,spike,5.0,0.11366666666666667,0.049,3000
+2,income,isolation forest,drop,5.0,0.14233333333333334,0.049,3000
+2,income,isolation forest,spike,10.0,0.12033333333333333,0.049,3000
+2,income,isolation forest,drop,10.0,0.15533333333333332,0.049,3000
+3,all,autoencoder,spike,1.5,0.086,0.051,3000
+3,all,autoencoder,drop,1.5,0.092,0.051,3000
+3,all,autoencoder,spike,2.0,0.19033333333333333,0.051,3000
+3,all,autoencoder,drop,2.0,0.10366666666666667,0.051,3000
+3,all,autoencoder,spike,3.0,0.20666666666666667,0.051,3000
+3,all,autoencoder,drop,3.0,0.237,0.051,3000
+3,all,autoencoder,spike,5.0,0.22066666666666668,0.051,3000
+3,all,autoencoder,drop,5.0,0.25633333333333336,0.051,3000
+3,all,autoencoder,spike,10.0,0.37,0.051,3000
+3,all,autoencoder,drop,10.0,0.327,0.051,3000
+3,all,rule |z| (direction unknown),spike,1.5,0.05366666666666667,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),drop,1.5,0.056666666666666664,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),spike,2.0,0.052333333333333336,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),drop,2.0,0.057666666666666665,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),spike,3.0,0.05266666666666667,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),drop,3.0,0.06,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),spike,5.0,0.483,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),drop,5.0,0.476,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),spike,10.0,0.4886666666666667,0.05566666666666667,3000
+3,all,rule |z| (direction unknown),drop,10.0,0.49866666666666665,0.05566666666666667,3000
+3,all,rule max z (spike known),spike,1.5,0.06,0.037333333333333336,3000
+3,all,rule max z (spike known),drop,1.5,0.03333333333333333,0.037333333333333336,3000
+3,all,rule max z (spike known),spike,2.0,0.48433333333333334,0.037333333333333336,3000
+3,all,rule max z (spike known),drop,2.0,0.03333333333333333,0.037333333333333336,3000
+3,all,rule max z (spike known),spike,3.0,0.49066666666666664,0.037333333333333336,3000
+3,all,rule max z (spike known),drop,3.0,0.033,0.037333333333333336,3000
+3,all,rule max z (spike known),spike,5.0,0.499,0.037333333333333336,3000
+3,all,rule max z (spike known),drop,5.0,0.032,0.037333333333333336,3000
+3,all,rule max z (spike known),spike,10.0,0.5053333333333333,0.037333333333333336,3000
+3,all,rule max z (spike known),drop,10.0,0.032,0.037333333333333336,3000
+3,all,rule min z (drop known),spike,1.5,0.05433333333333333,0.056,3000
+3,all,rule min z (drop known),drop,1.5,0.057666666666666665,0.056,3000
+3,all,rule min z (drop known),spike,2.0,0.05333333333333334,0.056,3000
+3,all,rule min z (drop known),drop,2.0,0.058666666666666666,0.056,3000
+3,all,rule min z (drop known),spike,3.0,0.051666666666666666,0.056,3000
+3,all,rule min z (drop known),drop,3.0,0.06266666666666666,0.056,3000
+3,all,rule min z (drop known),spike,5.0,0.050333333333333334,0.056,3000
+3,all,rule min z (drop known),drop,5.0,0.47933333333333333,0.056,3000
+3,all,rule min z (drop known),spike,10.0,0.048,0.056,3000
+3,all,rule min z (drop known),drop,10.0,0.49733333333333335,0.056,3000
+3,all,isolation forest,spike,1.5,0.07733333333333334,0.057,3000
+3,all,isolation forest,drop,1.5,0.07466666666666667,0.057,3000
+3,all,isolation forest,spike,2.0,0.08133333333333333,0.057,3000
+3,all,isolation forest,drop,2.0,0.08366666666666667,0.057,3000
+3,all,isolation forest,spike,3.0,0.084,0.057,3000
+3,all,isolation forest,drop,3.0,0.10466666666666667,0.057,3000
+3,all,isolation forest,spike,5.0,0.089,0.057,3000
+3,all,isolation forest,drop,5.0,0.13133333333333333,0.057,3000
+3,all,isolation forest,spike,10.0,0.093,0.057,3000
+3,all,isolation forest,drop,10.0,0.15233333333333332,0.057,3000
+3,expense,autoencoder,spike,1.5,0.21733333333333332,0.04933333333333333,3000
+3,expense,autoencoder,drop,1.5,0.438,0.04933333333333333,3000
+3,expense,autoencoder,spike,2.0,0.2946666666666667,0.04933333333333333,3000
+3,expense,autoencoder,drop,2.0,0.4483333333333333,0.04933333333333333,3000
+3,expense,autoencoder,spike,3.0,0.38666666666666666,0.04933333333333333,3000
+3,expense,autoencoder,drop,3.0,0.466,0.04933333333333333,3000
+3,expense,autoencoder,spike,5.0,0.4826666666666667,0.04933333333333333,3000
+3,expense,autoencoder,drop,5.0,0.49,0.04933333333333333,3000
+3,expense,autoencoder,spike,10.0,0.521,0.04933333333333333,3000
+3,expense,autoencoder,drop,10.0,0.46166666666666667,0.04933333333333333,3000
+3,expense,rule |z| (direction unknown),spike,1.5,0.42933333333333334,0.045,3000
+3,expense,rule |z| (direction unknown),drop,1.5,0.43666666666666665,0.045,3000
+3,expense,rule |z| (direction unknown),spike,2.0,0.43733333333333335,0.045,3000
+3,expense,rule |z| (direction unknown),drop,2.0,0.449,0.045,3000
+3,expense,rule |z| (direction unknown),spike,3.0,0.45466666666666666,0.045,3000
+3,expense,rule |z| (direction unknown),drop,3.0,0.4746666666666667,0.045,3000
+3,expense,rule |z| (direction unknown),spike,5.0,0.5153333333333333,0.045,3000
+3,expense,rule |z| (direction unknown),drop,5.0,0.5376666666666666,0.045,3000
+3,expense,rule |z| (direction unknown),spike,10.0,0.6493333333333333,0.045,3000
+3,expense,rule |z| (direction unknown),drop,10.0,0.6623333333333333,0.045,3000
+3,expense,rule max z (spike known),spike,1.5,0.4583333333333333,0.051,3000
+3,expense,rule max z (spike known),drop,1.5,0.046,0.051,3000
+3,expense,rule max z (spike known),spike,2.0,0.49766666666666665,0.051,3000
+3,expense,rule max z (spike known),drop,2.0,0.04466666666666667,0.051,3000
+3,expense,rule max z (spike known),spike,3.0,0.5833333333333334,0.051,3000
+3,expense,rule max z (spike known),drop,3.0,0.044333333333333336,0.051,3000
+3,expense,rule max z (spike known),spike,5.0,0.7106666666666667,0.051,3000
+3,expense,rule max z (spike known),drop,5.0,0.044333333333333336,0.051,3000
+3,expense,rule max z (spike known),spike,10.0,0.833,0.051,3000
+3,expense,rule max z (spike known),drop,10.0,0.044333333333333336,0.051,3000
+3,expense,rule min z (drop known),spike,1.5,0.041,0.04633333333333333,3000
+3,expense,rule min z (drop known),drop,1.5,0.44333333333333336,0.04633333333333333,3000
+3,expense,rule min z (drop known),spike,2.0,0.03966666666666667,0.04633333333333333,3000
+3,expense,rule min z (drop known),drop,2.0,0.459,0.04633333333333333,3000
+3,expense,rule min z (drop known),spike,3.0,0.039,0.04633333333333333,3000
+3,expense,rule min z (drop known),drop,3.0,0.495,0.04633333333333333,3000
+3,expense,rule min z (drop known),spike,5.0,0.03866666666666667,0.04633333333333333,3000
+3,expense,rule min z (drop known),drop,5.0,0.5626666666666666,0.04633333333333333,3000
+3,expense,rule min z (drop known),spike,10.0,0.03866666666666667,0.04633333333333333,3000
+3,expense,rule min z (drop known),drop,10.0,0.7086666666666667,0.04633333333333333,3000
+3,expense,isolation forest,spike,1.5,0.06,0.050666666666666665,3000
+3,expense,isolation forest,drop,1.5,0.059,0.050666666666666665,3000
+3,expense,isolation forest,spike,2.0,0.073,0.050666666666666665,3000
+3,expense,isolation forest,drop,2.0,0.06766666666666667,0.050666666666666665,3000
+3,expense,isolation forest,spike,3.0,0.09466666666666666,0.050666666666666665,3000
+3,expense,isolation forest,drop,3.0,0.092,0.050666666666666665,3000
+3,expense,isolation forest,spike,5.0,0.12766666666666668,0.050666666666666665,3000
+3,expense,isolation forest,drop,5.0,0.20166666666666666,0.050666666666666665,3000
+3,expense,isolation forest,spike,10.0,0.175,0.050666666666666665,3000
+3,expense,isolation forest,drop,10.0,0.3873333333333333,0.050666666666666665,3000
+3,income,autoencoder,spike,1.5,0.11266666666666666,0.04933333333333333,3000
+3,income,autoencoder,drop,1.5,0.11866666666666667,0.04933333333333333,3000
+3,income,autoencoder,spike,2.0,0.13033333333333333,0.04933333333333333,3000
+3,income,autoencoder,drop,2.0,0.146,0.04933333333333333,3000
+3,income,autoencoder,spike,3.0,0.19766666666666666,0.04933333333333333,3000
+3,income,autoencoder,drop,3.0,0.15266666666666667,0.04933333333333333,3000
+3,income,autoencoder,spike,5.0,0.26066666666666666,0.04933333333333333,3000
+3,income,autoencoder,drop,5.0,0.173,0.04933333333333333,3000
+3,income,autoencoder,spike,10.0,0.29233333333333333,0.04933333333333333,3000
+3,income,autoencoder,drop,10.0,0.242,0.04933333333333333,3000
+3,income,rule |z| (direction unknown),spike,1.5,0.050666666666666665,0.052,3000
+3,income,rule |z| (direction unknown),drop,1.5,0.055,0.052,3000
+3,income,rule |z| (direction unknown),spike,2.0,0.049,0.052,3000
+3,income,rule |z| (direction unknown),drop,2.0,0.058,0.052,3000
+3,income,rule |z| (direction unknown),spike,3.0,0.047,0.052,3000
+3,income,rule |z| (direction unknown),drop,3.0,0.06333333333333334,0.052,3000
+3,income,rule |z| (direction unknown),spike,5.0,0.04733333333333333,0.052,3000
+3,income,rule |z| (direction unknown),drop,5.0,0.07566666666666666,0.052,3000
+3,income,rule |z| (direction unknown),spike,10.0,0.048666666666666664,0.052,3000
+3,income,rule |z| (direction unknown),drop,10.0,0.088,0.052,3000
+3,income,rule max z (spike known),spike,1.5,0.12133333333333333,0.049,3000
+3,income,rule max z (spike known),drop,1.5,0.045,0.049,3000
+3,income,rule max z (spike known),spike,2.0,0.677,0.049,3000
+3,income,rule max z (spike known),drop,2.0,0.04466666666666667,0.049,3000
+3,income,rule max z (spike known),spike,3.0,0.6963333333333334,0.049,3000
+3,income,rule max z (spike known),drop,3.0,0.04466666666666667,0.049,3000
+3,income,rule max z (spike known),spike,5.0,0.71,0.049,3000
+3,income,rule max z (spike known),drop,5.0,0.044333333333333336,0.049,3000
+3,income,rule max z (spike known),spike,10.0,0.7286666666666667,0.049,3000
+3,income,rule max z (spike known),drop,10.0,0.043666666666666666,0.049,3000
+3,income,rule min z (drop known),spike,1.5,0.049666666666666665,0.053,3000
+3,income,rule min z (drop known),drop,1.5,0.057,0.053,3000
+3,income,rule min z (drop known),spike,2.0,0.049,0.053,3000
+3,income,rule min z (drop known),drop,2.0,0.06,0.053,3000
+3,income,rule min z (drop known),spike,3.0,0.04533333333333334,0.053,3000
+3,income,rule min z (drop known),drop,3.0,0.06833333333333333,0.053,3000
+3,income,rule min z (drop known),spike,5.0,0.043666666666666666,0.053,3000
+3,income,rule min z (drop known),drop,5.0,0.077,0.053,3000
+3,income,rule min z (drop known),spike,10.0,0.042666666666666665,0.053,3000
+3,income,rule min z (drop known),drop,10.0,0.09066666666666667,0.053,3000
+3,income,isolation forest,spike,1.5,0.107,0.051666666666666666,3000
+3,income,isolation forest,drop,1.5,0.10266666666666667,0.051666666666666666,3000
+3,income,isolation forest,spike,2.0,0.12266666666666666,0.051666666666666666,3000
+3,income,isolation forest,drop,2.0,0.12833333333333333,0.051666666666666666,3000
+3,income,isolation forest,spike,3.0,0.126,0.051666666666666666,3000
+3,income,isolation forest,drop,3.0,0.14266666666666666,0.051666666666666666,3000
+3,income,isolation forest,spike,5.0,0.131,0.051666666666666666,3000
+3,income,isolation forest,drop,5.0,0.16,0.051666666666666666,3000
+3,income,isolation forest,spike,10.0,0.132,0.051666666666666666,3000
+3,income,isolation forest,drop,10.0,0.16933333333333334,0.051666666666666666,3000
+4,all,autoencoder,spike,1.5,0.10466666666666667,0.053,3000
+4,all,autoencoder,drop,1.5,0.095,0.053,3000
+4,all,autoencoder,spike,2.0,0.11766666666666667,0.053,3000
+4,all,autoencoder,drop,2.0,0.10566666666666667,0.053,3000
+4,all,autoencoder,spike,3.0,0.12133333333333333,0.053,3000
+4,all,autoencoder,drop,3.0,0.111,0.053,3000
+4,all,autoencoder,spike,5.0,0.148,0.053,3000
+4,all,autoencoder,drop,5.0,0.12533333333333332,0.053,3000
+4,all,autoencoder,spike,10.0,0.2853333333333333,0.053,3000
+4,all,autoencoder,drop,10.0,0.127,0.053,3000
+4,all,rule |z| (direction unknown),spike,1.5,0.046,0.046,3000
+4,all,rule |z| (direction unknown),drop,1.5,0.04833333333333333,0.046,3000
+4,all,rule |z| (direction unknown),spike,2.0,0.046,0.046,3000
+4,all,rule |z| (direction unknown),drop,2.0,0.049,0.046,3000
+4,all,rule |z| (direction unknown),spike,3.0,0.04566666666666667,0.046,3000
+4,all,rule |z| (direction unknown),drop,3.0,0.050666666666666665,0.046,3000
+4,all,rule |z| (direction unknown),spike,5.0,0.45766666666666667,0.046,3000
+4,all,rule |z| (direction unknown),drop,5.0,0.445,0.046,3000
+4,all,rule |z| (direction unknown),spike,10.0,0.462,0.046,3000
+4,all,rule |z| (direction unknown),drop,10.0,0.4673333333333333,0.046,3000
+4,all,rule max z (spike known),spike,1.5,0.058,0.03666666666666667,3000
+4,all,rule max z (spike known),drop,1.5,0.030333333333333334,0.03666666666666667,3000
+4,all,rule max z (spike known),spike,2.0,0.45566666666666666,0.03666666666666667,3000
+4,all,rule max z (spike known),drop,2.0,0.030333333333333334,0.03666666666666667,3000
+4,all,rule max z (spike known),spike,3.0,0.458,0.03666666666666667,3000
+4,all,rule max z (spike known),drop,3.0,0.029666666666666668,0.03666666666666667,3000
+4,all,rule max z (spike known),spike,5.0,0.4663333333333333,0.03666666666666667,3000
+4,all,rule max z (spike known),drop,5.0,0.029666666666666668,0.03666666666666667,3000
+4,all,rule max z (spike known),spike,10.0,0.476,0.03666666666666667,3000
+4,all,rule max z (spike known),drop,10.0,0.029666666666666668,0.03666666666666667,3000
+4,all,rule min z (drop known),spike,1.5,0.042666666666666665,0.04466666666666667,3000
+4,all,rule min z (drop known),drop,1.5,0.046,0.04466666666666667,3000
+4,all,rule min z (drop known),spike,2.0,0.042333333333333334,0.04466666666666667,3000
+4,all,rule min z (drop known),drop,2.0,0.04733333333333333,0.04466666666666667,3000
+4,all,rule min z (drop known),spike,3.0,0.041666666666666664,0.04466666666666667,3000
+4,all,rule min z (drop known),drop,3.0,0.04833333333333333,0.04466666666666667,3000
+4,all,rule min z (drop known),spike,5.0,0.03966666666666667,0.04466666666666667,3000
+4,all,rule min z (drop known),drop,5.0,0.44366666666666665,0.04466666666666667,3000
+4,all,rule min z (drop known),spike,10.0,0.038,0.04466666666666667,3000
+4,all,rule min z (drop known),drop,10.0,0.4653333333333333,0.04466666666666667,3000
+4,all,isolation forest,spike,1.5,0.06633333333333333,0.050666666666666665,3000
+4,all,isolation forest,drop,1.5,0.06333333333333334,0.050666666666666665,3000
+4,all,isolation forest,spike,2.0,0.06866666666666667,0.050666666666666665,3000
+4,all,isolation forest,drop,2.0,0.069,0.050666666666666665,3000
+4,all,isolation forest,spike,3.0,0.07166666666666667,0.050666666666666665,3000
+4,all,isolation forest,drop,3.0,0.08566666666666667,0.050666666666666665,3000
+4,all,isolation forest,spike,5.0,0.079,0.050666666666666665,3000
+4,all,isolation forest,drop,5.0,0.11833333333333333,0.050666666666666665,3000
+4,all,isolation forest,spike,10.0,0.08866666666666667,0.050666666666666665,3000
+4,all,isolation forest,drop,10.0,0.13366666666666666,0.050666666666666665,3000
+4,expense,autoencoder,spike,1.5,0.139,0.056,3000
+4,expense,autoencoder,drop,1.5,0.06266666666666666,0.056,3000
+4,expense,autoencoder,spike,2.0,0.14566666666666667,0.056,3000
+4,expense,autoencoder,drop,2.0,0.13333333333333333,0.056,3000
+4,expense,autoencoder,spike,3.0,0.293,0.056,3000
+4,expense,autoencoder,drop,3.0,0.29433333333333334,0.056,3000
+4,expense,autoencoder,spike,5.0,0.3253333333333333,0.056,3000
+4,expense,autoencoder,drop,5.0,0.3903333333333333,0.056,3000
+4,expense,autoencoder,spike,10.0,0.45,0.056,3000
+4,expense,autoencoder,drop,10.0,0.4216666666666667,0.056,3000
+4,expense,rule |z| (direction unknown),spike,1.5,0.411,0.05,3000
+4,expense,rule |z| (direction unknown),drop,1.5,0.416,0.05,3000
+4,expense,rule |z| (direction unknown),spike,2.0,0.42,0.05,3000
+4,expense,rule |z| (direction unknown),drop,2.0,0.428,0.05,3000
+4,expense,rule |z| (direction unknown),spike,3.0,0.431,0.05,3000
+4,expense,rule |z| (direction unknown),drop,3.0,0.44966666666666666,0.05,3000
+4,expense,rule |z| (direction unknown),spike,5.0,0.4723333333333333,0.05,3000
+4,expense,rule |z| (direction unknown),drop,5.0,0.505,0.05,3000
+4,expense,rule |z| (direction unknown),spike,10.0,0.6033333333333334,0.05,3000
+4,expense,rule |z| (direction unknown),drop,10.0,0.623,0.05,3000
+4,expense,rule max z (spike known),spike,1.5,0.43333333333333335,0.04766666666666667,3000
+4,expense,rule max z (spike known),drop,1.5,0.043666666666666666,0.04766666666666667,3000
+4,expense,rule max z (spike known),spike,2.0,0.476,0.04766666666666667,3000
+4,expense,rule max z (spike known),drop,2.0,0.042666666666666665,0.04766666666666667,3000
+4,expense,rule max z (spike known),spike,3.0,0.5693333333333334,0.04766666666666667,3000
+4,expense,rule max z (spike known),drop,3.0,0.041666666666666664,0.04766666666666667,3000
+4,expense,rule max z (spike known),spike,5.0,0.709,0.04766666666666667,3000
+4,expense,rule max z (spike known),drop,5.0,0.041666666666666664,0.04766666666666667,3000
+4,expense,rule max z (spike known),spike,10.0,0.8423333333333334,0.04766666666666667,3000
+4,expense,rule max z (spike known),drop,10.0,0.041666666666666664,0.04766666666666667,3000
+4,expense,rule min z (drop known),spike,1.5,0.04466666666666667,0.048,3000
+4,expense,rule min z (drop known),drop,1.5,0.4166666666666667,0.048,3000
+4,expense,rule min z (drop known),spike,2.0,0.044333333333333336,0.048,3000
+4,expense,rule min z (drop known),drop,2.0,0.43,0.048,3000
+4,expense,rule min z (drop known),spike,3.0,0.044333333333333336,0.048,3000
+4,expense,rule min z (drop known),drop,3.0,0.46366666666666667,0.048,3000
+4,expense,rule min z (drop known),spike,5.0,0.043333333333333335,0.048,3000
+4,expense,rule min z (drop known),drop,5.0,0.535,0.048,3000
+4,expense,rule min z (drop known),spike,10.0,0.042666666666666665,0.048,3000
+4,expense,rule min z (drop known),drop,10.0,0.6716666666666666,0.048,3000
+4,expense,isolation forest,spike,1.5,0.059666666666666666,0.051666666666666666,3000
+4,expense,isolation forest,drop,1.5,0.058333333333333334,0.051666666666666666,3000
+4,expense,isolation forest,spike,2.0,0.07,0.051666666666666666,3000
+4,expense,isolation forest,drop,2.0,0.06733333333333333,0.051666666666666666,3000
+4,expense,isolation forest,spike,3.0,0.08733333333333333,0.051666666666666666,3000
+4,expense,isolation forest,drop,3.0,0.08066666666666666,0.051666666666666666,3000
+4,expense,isolation forest,spike,5.0,0.121,0.051666666666666666,3000
+4,expense,isolation forest,drop,5.0,0.4046666666666667,0.051666666666666666,3000
+4,expense,isolation forest,spike,10.0,0.17166666666666666,0.051666666666666666,3000
+4,expense,isolation forest,drop,10.0,0.521,0.051666666666666666,3000
+4,income,autoencoder,spike,1.5,0.169,0.051333333333333335,3000
+4,income,autoencoder,drop,1.5,0.10966666666666666,0.051333333333333335,3000
+4,income,autoencoder,spike,2.0,0.18933333333333333,0.051333333333333335,3000
+4,income,autoencoder,drop,2.0,0.124,0.051333333333333335,3000
+4,income,autoencoder,spike,3.0,0.25033333333333335,0.051333333333333335,3000
+4,income,autoencoder,drop,3.0,0.143,0.051333333333333335,3000
+4,income,autoencoder,spike,5.0,0.2773333333333333,0.051333333333333335,3000
+4,income,autoencoder,drop,5.0,0.149,0.051333333333333335,3000
+4,income,autoencoder,spike,10.0,0.32866666666666666,0.051333333333333335,3000
+4,income,autoencoder,drop,10.0,0.17166666666666666,0.051333333333333335,3000
+4,income,rule |z| (direction unknown),spike,1.5,0.04466666666666667,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),drop,1.5,0.049666666666666665,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),spike,2.0,0.043333333333333335,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),drop,2.0,0.051,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),spike,3.0,0.042333333333333334,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),drop,3.0,0.05733333333333333,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),spike,5.0,0.042333333333333334,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),drop,5.0,0.06633333333333333,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),spike,10.0,0.043,0.04733333333333333,3000
+4,income,rule |z| (direction unknown),drop,10.0,0.08366666666666667,0.04733333333333333,3000
+4,income,rule max z (spike known),spike,1.5,0.104,0.04066666666666666,3000
+4,income,rule max z (spike known),drop,1.5,0.034666666666666665,0.04066666666666666,3000
+4,income,rule max z (spike known),spike,2.0,0.674,0.04066666666666666,3000
+4,income,rule max z (spike known),drop,2.0,0.034666666666666665,0.04066666666666666,3000
+4,income,rule max z (spike known),spike,3.0,0.6846666666666666,0.04066666666666666,3000
+4,income,rule max z (spike known),drop,3.0,0.033666666666666664,0.04066666666666666,3000
+4,income,rule max z (spike known),spike,5.0,0.7046666666666667,0.04066666666666666,3000
+4,income,rule max z (spike known),drop,5.0,0.033666666666666664,0.04066666666666666,3000
+4,income,rule max z (spike known),spike,10.0,0.7196666666666667,0.04066666666666666,3000
+4,income,rule max z (spike known),drop,10.0,0.033666666666666664,0.04066666666666666,3000
+4,income,rule min z (drop known),spike,1.5,0.043,0.04666666666666667,3000
+4,income,rule min z (drop known),drop,1.5,0.049,0.04666666666666667,3000
+4,income,rule min z (drop known),spike,2.0,0.042,0.04666666666666667,3000
+4,income,rule min z (drop known),drop,2.0,0.052333333333333336,0.04666666666666667,3000
+4,income,rule min z (drop known),spike,3.0,0.04066666666666666,0.04666666666666667,3000
+4,income,rule min z (drop known),drop,3.0,0.06066666666666667,0.04666666666666667,3000
+4,income,rule min z (drop known),spike,5.0,0.03866666666666667,0.04666666666666667,3000
+4,income,rule min z (drop known),drop,5.0,0.06733333333333333,0.04666666666666667,3000
+4,income,rule min z (drop known),spike,10.0,0.038,0.04666666666666667,3000
+4,income,rule min z (drop known),drop,10.0,0.08633333333333333,0.04666666666666667,3000
+4,income,isolation forest,spike,1.5,0.119,0.054,3000
+4,income,isolation forest,drop,1.5,0.113,0.054,3000
+4,income,isolation forest,spike,2.0,0.12533333333333332,0.054,3000
+4,income,isolation forest,drop,2.0,0.12233333333333334,0.054,3000
+4,income,isolation forest,spike,3.0,0.12633333333333333,0.054,3000
+4,income,isolation forest,drop,3.0,0.13533333333333333,0.054,3000
+4,income,isolation forest,spike,5.0,0.13066666666666665,0.054,3000
+4,income,isolation forest,drop,5.0,0.155,0.054,3000
+4,income,isolation forest,spike,10.0,0.13433333333333333,0.054,3000
+4,income,isolation forest,drop,10.0,0.16966666666666666,0.054,3000

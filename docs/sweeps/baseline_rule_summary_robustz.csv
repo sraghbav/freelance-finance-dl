@@ -46,7 +46,7 @@ spike_rule,expense,drop,5.0,0.042,0.003
 spike_rule,expense,drop,10.0,0.042,0.003
 spike_rule,expense,spike,1.5,0.088,0.01
 spike_rule,expense,spike,2.0,0.158,0.026
-spike_rule,expense,spike,3.0,0.309,0.057
+spike_rule,expense,spike,3.0,0.31,0.056
 spike_rule,expense,spike,5.0,0.507,0.051
 spike_rule,expense,spike,10.0,0.703,0.039
 spike_rule,income,drop,1.5,0.041,0.009

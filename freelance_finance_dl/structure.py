@@ -7,7 +7,7 @@ Does the data have structure a sequence model could use?
                          history (near 0: one transaction does not predict the next)
 
     python -m freelance_finance_dl.structure
-    python -m freelance_finance_dl.structure --source sparkov --csv data/sparkov/fraudTrain.csv data/sparkov/fraudTest.csv
+    python -m freelance_finance_dl.structure --source berka --csv data/berka/trans.csv
 """
 
 import argparse
@@ -21,8 +21,9 @@ def lag1_autocorr(data, min_len=10):
     values = []
     for _, g in data.groupby(["user_id", "category"]):
         a = np.log(g.sort_values("date")["amount"].values)
-        if len(a) >= min_len and a.std() > 0:
+        if len(a) >= min_len and a.std() > 1e-9:
             values.append(np.corrcoef(a[:-1], a[1:])[0, 1])
+    values = [v for v in values if np.isfinite(v)]
     return len(values), float(np.mean(values)), float(np.std(values))
 
 
@@ -51,10 +52,10 @@ def report(data, top_categories=3):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Structure checks")
-    parser.add_argument("--source", choices=["budgetwise", "sparkov"], default="budgetwise")
+    parser.add_argument("--source", choices=["budgetwise", "berka"], default="budgetwise")
     parser.add_argument("--csv", nargs="+", default=["data/budgetwise_finance_dataset.csv"])
     args = parser.parse_args()
-    ds = FinanceTransactionDataset(args.csv if args.source == "sparkov" else args.csv[0],
+    ds = FinanceTransactionDataset(args.csv[0],
                                    clean=True, source=args.source)
     expense = ds.data[ds.data["transaction_type"].str.lower() == "expense"]
     report(expense)

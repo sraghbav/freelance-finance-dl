@@ -141,10 +141,73 @@ def detector_by_stream_figure():
     plt.close(fig)
 
 
+def berka_figure():
+    """Berka: injected-anomaly recall by stream, autoencoders vs rules vs Isolation Forest."""
+    va = pd.read_csv("docs/sweeps/cv_berka_robustz_l16_summary.csv")
+    lr = pd.read_csv("docs/sweeps/cv_berka_logratio_l16_summary.csv")
+    factors = [1.5, 2, 3, 5, 10]
+    lines = [(va, "autoencoder", "autoencoder, variability-aware", "o-", "tab:blue"),
+             (lr, "autoencoder", "autoencoder, log-ratio", "o--", "tab:cyan"),
+             (va, "isolation forest", "isolation forest, variability-aware", "^-", "tab:green"),
+             (va, "rule |z| (direction unknown)", "rule |z|, variability-aware", "s-", "black"),
+             (va, "SPIKE_OR_DROP", "rule (direction known), variability-aware", "s--", "dimgray"),
+             (lr, "SPIKE_OR_DROP", "rule (direction known), log-ratio", "s:", "tab:red")]
+    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5), sharey=True)
+    for r, stream in enumerate(["expense", "income"]):
+        for c, kind in enumerate(["spike", "drop"]):
+            ax = axes[r, c]
+            for df, model, label, style, color in lines:
+                m = model if model != "SPIKE_OR_DROP" else (
+                    "rule max z (spike known)" if kind == "spike" else "rule min z (drop known)")
+                sub = df[(df.stream == stream) & (df.model == m) & (df.kind == kind)].sort_values("factor")
+                ax.errorbar(sub.factor, sub.recall_mean, yerr=sub.recall_sd, fmt=style, capsize=2,
+                            color=color, label=label, markersize=4)
+            ax.axhline(0.05, color="gray", linestyle=":")
+            ax.set(title=f"{stream.capitalize()}: {kind} detection", xscale="log", ylim=(0, 1),
+                   xlabel=f"{'Multiplied' if kind == 'spike' else 'Divided'} by factor")
+            ax.set_xticks(factors)
+            ax.set_xticklabels([str(f) for f in factors])
+            ax.minorticks_off()
+            ax.grid(alpha=0.3)
+        axes[r, 0].set_ylabel("Recall (mean ± sd, 5 account folds)")
+    axes[0, 0].legend(fontsize=6.5, loc="upper left")
+    fig.tight_layout()
+    fig.savefig(f"{OUT_DIR}/berka_detection.png", dpi=150)
+    plt.close(fig)
+
+
+def simulation_figure():
+    """Simulation study: detection quality by habit level (3 seeds)."""
+    d = pd.read_csv("docs/sweeps/sim_summary.csv")
+    d = d[d.group == "overall"]
+    levels = ["strong", "default", "weak", "none"]
+    names = [("autoencoder (robustz, latent 16)", "autoencoder, variability-aware", "o-"),
+             ("autoencoder (logratio, latent 16)", "autoencoder, log-ratio", "o--"),
+             ("isolation forest (robustz)", "isolation forest", "^-"),
+             ("rule |z| (robustz)", "rule |z|, variability-aware", "s-"),
+             ("rule |z| (logratio)", "rule |z|, log-ratio", "s--")]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.2))
+    for ax, (col, title) in zip(axes, [("average_precision", "Average precision"), ("auroc", "AUROC")]):
+        for key, label, style in names:
+            sub = d[d.score == key].set_index("level").loc[levels]
+            ax.errorbar(range(4), sub[f"{col}_mean"], yerr=sub[f"{col}_std"], fmt=style, capsize=3, label=label)
+        ax.set_xticks(range(4))
+        ax.set_xticklabels(["strong habits", "default", "weak", "no habits"])
+        ax.set(title=f"{title} on labeled anomalies (simulated data)", ylim=(0, 1))
+        ax.grid(alpha=0.3)
+    axes[0].set_ylabel("Mean ± sd over 3 data seeds")
+    axes[0].legend(fontsize=7)
+    fig.tight_layout()
+    fig.savefig(f"{OUT_DIR}/simulation_levels.png", dpi=150)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT_DIR, exist_ok=True)
     data_loss_figure()
     flagged_examples_figure()
     detector_vs_rules_figure()
     detector_by_stream_figure()
+    berka_figure()
+    simulation_figure()
     print(f"Saved figures to {OUT_DIR}/")

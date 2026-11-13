@@ -24,7 +24,7 @@ Evaluating generated text is itself difficult. A practical option is to use a st
 
 ## 2.4 Small open models
 
-Running a model on the user's own machine keeps financial data off third-party servers and removes per-request cost. The explanation model used here is Llama 3.2 with 3 billion parameters, from the Llama 3 family of open models (Dubey et al., 2024) `[CHECK: confirm the best citation for the 3.2 release]`, served locally with Ollama. A model this small is much weaker than frontier models, which matters for the results in Section 4.7.
+Running a model on the user's own machine keeps financial data off third-party servers and removes per-request cost. The explanation model used here is Llama 3.2 with 3 billion parameters, from the Llama 3 family of open models (Dubey et al., 2024) `[CHECK: confirm the best citation for the 3.2 release]`, served locally with Ollama. A model this small is much weaker than frontier models, which matters for the results in Section 4.8.
 
 ## 2.5 Freelancer finances and estimated tax
 

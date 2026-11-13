@@ -8,10 +8,11 @@ People with irregular income, such as freelancers, cannot rely on a steady paych
 
 ## 1.2 Research questions
 
-1. **Detection.** How well does an unsupervised LSTM autoencoder detect an unusually large or small transaction in a user's history for a spending category, as a function of how large the anomaly is, and does it beat simple rules that need no training?
-2. **Explanation.** Can a small language model, run locally and for free, turn a flag into a faithful plain-language explanation, and does a deterministic verification step with a template fallback make that safe to show?
+1. **Detection.** How well does an unsupervised LSTM autoencoder detect an unusually large or small transaction in a user's history, as a function of how large the anomaly is, and does it beat simple rules that need no training?
+2. **What matters.** How much does the way an amount is scaled (relative to the user's typical amount, and to how much that history normally varies) matter compared with the choice of model?
+3. **Explanation.** Can a small language model, run locally and for free, turn a flag into a faithful plain-language explanation, and does a deterministic verification step with a template fallback make that safe to show?
 
-A methodological question runs through both: with no labeled anomalies, how should such a system be evaluated, and which evaluations are misleading?
+A methodological question runs through all three: with no labeled anomalies in real data, how should such a system be evaluated, and which evaluations are misleading?
 
 ## 1.3 What counts as unusual
 
@@ -27,15 +28,18 @@ The work began as a course project (DSCI 410L) and is extended here. Most of wha
 
 ## 1.5 Findings and contributions
 
-1. **A data audit.** The original loader kept only 31% of the 15,900 rows because of mixed date formats and amounts written with currency text; a corrected loader keeps 86% after cleaning. Windows also mixed income with expenses and contained almost no income, which was corrected by grouping by transaction type and pooling each user's income (Section 4.1).
+Three datasets are used: the original BudgetWise data (synthetic-looking, rupees), real anonymized bank data (Berka, 4,500 accounts), and a simulation with habits and labeled anomalies that I built (Chapter 3).
+
+1. **A data audit.** The original loader kept only 31% of the 15,900 BudgetWise rows because of mixed date formats and amounts written with currency text; a corrected loader keeps 86% after cleaning. Windows also mixed income with expenses and contained almost no income, which was corrected by grouping by transaction type and pooling each user's income (Section 4.1).
 2. **A corrected evaluation.** The course project tested the detector by overwriting a normalized value with a number outside the possible range. Re-testing by changing one raw amount and processing it like real data showed that the course-project detector performed at chance (Sections 4.1 and 4.2).
-3. **A detector evaluated with uncertainty.** Using amounts relative to each user's typical amount, the autoencoder detects a charge ten times too large about 41% of the time at a 5% false-positive rate (41.0 ± 3.7%, five-fold cross-validation over users), and is weak for smaller or downward changes (Section 4.3).
-4. **Negative results.** A one-line untrained rule that knows the anomaly is a spike does better than the autoencoder (73.6 ± 4.1%). For unexpectedly low income, a one-line rule catches 94.7 ± 1.4% of tenfold drops against 8.3 ± 0.9% for the autoencoder (Sections 4.4 and 4.5). On a second, simulated dataset with real fraud labels, the best autoencoder at most ties the rule (Section 4.8), and neither dataset has the time structure a sequence model could use (Section 4.6). For this definition of unusual, the learned detector is not justified on this evidence.
-5. **A verification-first explanation design.** Facts are computed in code, a model only phrases them, and a check rejects unsupported text. In the final round the checked pipeline was fully correct for 95% of 20 sampled windows against 100% for a plain template, which are statistically indistinguishable, and the model was brittle to prompt wording (Section 4.9).
+3. **Input scaling matters more than the model.** With min-max scaling every detector was at chance. Scaling relative to the user's typical amount made detection possible, and scaling by how much each history normally varies was the largest effect found: on real bank expenses, a one-line rule caught 43 ± 1% of 50% changes at a 5% false-positive rate with variability-aware scaling and only 5% to 7% with log-ratio scaling (Section 4.6), and in the simulation steady categories such as rent went from 0% to 100% (Section 4.7).
+4. **The deep model was not needed.** On all three datasets a one-line rule using the same features matched or beat the autoencoder: BudgetWise tenfold spikes 73.6 ± 4.1% against 41.0 ± 3.7%; Berka expenses ×1.5, 43 ± 1% against 14 ± 6%; and in the simulation a rule was best or tied at every habit level (Sections 4.3, 4.6, and 4.7). No detector found anomalies that break a pattern in a sequence without being large in amount (seasonal and duplicate anomalies), and the real and synthetic data showed no sequence dependence (Sections 4.5 to 4.7).
+5. **Income is dataset-dependent.** For unexpectedly low income a one-line rule caught 94.7 ± 1.4% of tenfold drops on BudgetWise but no method did well on Berka (at most 19%) (Sections 4.4 and 4.6).
+6. **A verification-first explanation design.** Facts are computed in code, a model only phrases them, and a check rejects unsupported text. In the final round the checked pipeline was fully correct for 95% of 20 sampled windows against 100% for a plain template, which are statistically indistinguishable, and the model was brittle to prompt wording (Section 4.8).
 
 ## 1.6 Scope and disclaimers
 
-This is an educational prototype. The dataset appears to be synthetic and its amounts are in rupees, so nothing here describes how real people spend money, and the tax module applies a flat placeholder rate rather than any jurisdiction's rules. Results are not financial or tax advice. The use of generative AI in this work, which was substantial, is described in Appendix A.
+This is an educational prototype. BudgetWise appears synthetic and the simulation is synthetic by construction; the real bank data are from one bank in the 1990s. Nothing here describes how people spend money today, and the tax module applies a flat placeholder rate rather than any jurisdiction's rules. Results are not financial or tax advice. The use of generative AI in this work, which was substantial, is described in Appendix A.
 
 ## 1.7 Outline
 
