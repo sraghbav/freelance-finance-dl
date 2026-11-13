@@ -76,7 +76,7 @@ def run(csv_file, features, latent, epochs, train_windows, seed=42, tag=""):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate on synthetic data with habits")
-    parser.add_argument("--csv", default="data/habitsim.csv")
+    parser.add_argument("--csv", default="data/sim/clean_default_s7.csv")
     parser.add_argument("--features", choices=["logratio", "robustz"], default="robustz")
     parser.add_argument("--latent", type=int, default=3)
     parser.add_argument("--epochs", type=int, default=15)
