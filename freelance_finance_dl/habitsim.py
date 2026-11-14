@@ -14,6 +14,10 @@ that is nearly constant; a fixed subscription; utilities with a yearly cycle; vo
 and dining. With probability `anomaly_rate` per transaction (4x for utilities, so seasonal anomalies are frequent enough to evaluate) an anomaly replaces the normal amount:
   spike (x U(2,10)), drop (/ U(2,10)), seasonal (utilities: the opposite season's amount),
   duplicate (groceries, dining: the previous amount repeated).
+With timing=True two TIMING anomalies are added, drawn from a separate random generator so the rest
+of the data is identical to timing=False:
+  late           a salaried paycheck arrives 7-20 days after the usual pay day (rate x8)
+  double_charge  a grocery, dining, or subscription charge is repeated 0-3 days later (an extra row)
 
     python -m freelance_finance_dl.habitsim --level default --seed 7 --out data/sim/default_s7.csv
 """
@@ -32,9 +36,10 @@ LEVELS = {
 }
 
 
-def simulate(n_users=100, years=3, seed=7, level="default", anomaly_rate=0.01):
+def simulate(n_users=100, years=3, seed=7, level="default", anomaly_rate=0.01, timing=False):
     cfg = LEVELS[level]
     rng = np.random.default_rng(seed)
+    trng = np.random.default_rng(seed + 1000)  # timing anomalies only; leaves rng untouched
     months = pd.date_range("2021-01-01", periods=12 * years, freq="MS")
     rows, last = [], {}
     n = cfg["noise"]
@@ -72,6 +77,9 @@ def simulate(n_users=100, years=3, seed=7, level="default", anomaly_rate=0.01):
                         amount = last[(user, category)]
                 last[(user, category)] = amount
                 rows.append((user, date, kind, category, round(float(amount), 2), int(bool(atype)), atype))
+                if timing and category in ("groceries", "dining", "subscription") and trng.random() < anomaly_rate:
+                    rows.append((user, date + pd.Timedelta(days=int(trng.integers(0, 4))), kind, category,
+                                 round(float(amount), 2), 1, "double_charge"))
 
             if not cfg["habits"]:
                 add(day(pay_day if False else rng.integers(1, 28)), "Income", "income", 45_000 * draw(0.5))
@@ -88,7 +96,13 @@ def simulate(n_users=100, years=3, seed=7, level="default", anomaly_rate=0.01):
                 for _ in range(int(rng.integers(1, 4))):
                     add(day(rng.integers(1, 28)), "Income", "income", income / 2 * draw(0.35 * n))
             else:
-                add(day(pay_day), "Income", "income", income * (1 + rng.normal(0, 0.02 * n)))
+                pay = day(pay_day)
+                late = timing and trng.random() < 8 * anomaly_rate
+                if late:
+                    pay = pay + pd.Timedelta(days=int(trng.integers(7, 21)))
+                add(pay, "Income", "income", income * (1 + rng.normal(0, 0.02 * n)))
+                if late:
+                    rows[-1] = rows[-1][:5] + (1, rows[-1][6] or "late")
             add(day(rent_day), "Expense", "rent", rent * (1 + rng.normal(0, 0.01 * n)))
             add(day(10), "Expense", "subscription", subscription)
             add(day(15), "Expense", "utilities", utilities * season * (1 + rng.normal(0, 0.08 * n)))
@@ -110,9 +124,10 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--level", choices=list(LEVELS), default="default")
     parser.add_argument("--anomaly-rate", type=float, default=0.01)
+    parser.add_argument("--timing", action="store_true", help="add late-paycheck and double-charge anomalies")
     parser.add_argument("--out", default="data/sim/default_s7.csv")
     args = parser.parse_args()
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    out = simulate(args.users, args.years, args.seed, args.level, args.anomaly_rate)
+    out = simulate(args.users, args.years, args.seed, args.level, args.anomaly_rate, args.timing)
     out.to_csv(args.out, index=False)
     print(f"wrote {len(out):,} rows ({int(out.is_anomaly.sum())} anomalies) to {args.out}")

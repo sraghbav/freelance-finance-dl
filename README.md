@@ -206,6 +206,10 @@ For 20 randomly chosen flagged windows per round, explanations were written by a
 
 With 20 windows per round, the v7 language-model result and the template are statistically indistinguishable. Most v7 texts omit the size of the difference, so they pass partly by saying less. A 3-billion-parameter model is brittle to wording (all prompts: `docs/explanation_eval/prompts.md`). **Scoring caveats:** scores are from Claude acting as an LLM judge (which also wrote the prompts and the checker); the author scored 12 round-v2 texts: **39/48 judgments agreed (81%)**, plain language least consistent (58%); the sheets are only weakly blind.
 
+### Follow-up: improved context models (2026-11-13)
+
+A forecast model (previous 12 transactions plus dates, category, and stream; predicts the next amount and its uncertainty) and a masked fill-in model were tested against the rules and the original autoencoder on the simulation (with new late-paycheck and double-charge anomalies) and on Berka. They **beat every rule on seasonal anomalies** (simulation AUROC 0.93–0.94 vs 0.55–0.56) and on **Berka income** (×1.5 spike 63 ± 4% vs 4 ± 0%; halving 67 ± 4% vs 6 ± 1%), **tie the rule** on expenses and simple amount anomalies, and **lose to a simple timing rule** on late payments. Details, caveats, and tables: [docs/context_models.md](docs/context_models.md).
+
 ---
 
 ## Limitations

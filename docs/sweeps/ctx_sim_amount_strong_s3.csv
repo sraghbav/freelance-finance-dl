@@ -1,0 +1,239 @@
+data,level,seed,unit,score,group,auroc,average_precision,recall_at_5pct,n_pos,n_neg
+amount,strong,3,transaction,rule |z|,overall,0.9067509665878007,0.7403250017675816,0.7538461538461538,130,10664
+amount,strong,3,transaction,rule |z|,expense,0.8959191164735548,0.7135551467523046,0.7288135593220338,118,9558
+amount,strong,3,transaction,rule |z|,income,0.9999999999999999,1.0,1.0,12,1106
+amount,strong,3,transaction,rule |z|,type:spike,1.0,1.0,1.0,44,10664
+amount,strong,3,transaction,rule |z|,type:drop,0.9992570257949104,0.9558671531619293,1.0,52,10664
+amount,strong,3,transaction,rule |z|,type:seasonal,0.6378313328332083,0.0008476023865362549,0.0,6,10664
+amount,strong,3,transaction,rule |z|,type:duplicate,0.6460454399314114,0.004467960277375938,0.07142857142857142,28,10664
+amount,strong,3,transaction,rule z (spike known),overall,0.44598072595071847,0.34622407503236646,0.3384615384615385,130,10664
+amount,strong,3,transaction,rule z (spike known),expense,0.4234504062618589,0.31309677979686507,0.3050847457627119,118,9558
+amount,strong,3,transaction,rule z (spike known),income,0.6666666666666666,0.6698011317978694,0.6666666666666666,12,1106
+amount,strong,3,transaction,rule z (spike known),type:spike,1.0,1.0,1.0,44,10664
+amount,strong,3,transaction,rule z (spike known),type:drop,0.0003949304633850767,0.0024769354435861804,0.0,52,10664
+amount,strong,3,transaction,rule z (spike known),type:seasonal,0.45070642660665167,0.0006613046820867823,0.0,6,10664
+amount,strong,3,transaction,rule z (spike known),type:duplicate,0.40188283678062375,0.0023235852340579006,0.0,28,10664
+amount,strong,3,transaction,rule -z (drop known),overall,0.5540192740492815,0.40369729987107655,0.4461538461538462,130,10664
+amount,strong,3,transaction,rule -z (drop known),expense,0.5765495937381411,0.4108910507420145,0.4576271186440678,118,9558
+amount,strong,3,transaction,rule -z (drop known),income,0.3333333333333333,0.3384150293162129,0.3333333333333333,12,1106
+amount,strong,3,transaction,rule -z (drop known),type:spike,0.0,0.002104051148661834,0.0,44,10664
+amount,strong,3,transaction,rule -z (drop known),type:drop,0.9996050695366149,0.9652736011304507,1.0,52,10664
+amount,strong,3,transaction,rule -z (drop known),type:seasonal,0.5492935733933484,0.0009736713333373449,0.0,6,10664
+amount,strong,3,transaction,rule -z (drop known),type:duplicate,0.5981171632193762,0.005902956395595632,0.21428571428571427,28,10664
+amount,strong,3,transaction,rule timing |gap z|,overall,0.48204058226094987,0.016109382005981887,0.06923076923076923,130,10664
+amount,strong,3,transaction,rule timing |gap z|,expense,0.4680004504169016,0.012171262047924618,0.0423728813559322,118,9558
+amount,strong,3,transaction,rule timing |gap z|,income,0.6100437010247137,0.05593005025291432,0.3333333333333333,12,1106
+amount,strong,3,transaction,rule timing |gap z|,type:spike,0.5003846842392417,0.014673619218527046,0.09090909090909091,44,10664
+amount,strong,3,transaction,rule timing |gap z|,type:drop,0.39784735847423397,0.004233595325242986,0.038461538461538464,52,10664
+amount,strong,3,transaction,rule timing |gap z|,type:seasonal,0.2582208052013003,0.0005208792069657742,0.0,6,10664
+amount,strong,3,transaction,rule timing |gap z|,type:duplicate,0.6575343612688886,0.004869136661237488,0.10714285714285714,28,10664
+amount,strong,3,transaction,rule timing gap z (late known),overall,0.4694150701136822,0.011420046451921018,0.05384615384615385,130,10664
+amount,strong,3,transaction,rule timing gap z (late known),expense,0.4700636790194389,0.011529527195171314,0.05084745762711865,118,9558
+amount,strong,3,transaction,rule timing gap z (late known),income,0.4633438818565401,0.01575754732942975,0.08333333333333333,12,1106
+amount,strong,3,transaction,rule timing gap z (late known),type:spike,0.4594802820023188,0.003986424122903762,0.06818181818181818,44,10664
+amount,strong,3,transaction,rule timing gap z (late known),type:drop,0.4660567185065497,0.0044938959659546395,0.0,52,10664
+amount,strong,3,transaction,rule timing gap z (late known),type:seasonal,0.48946611652913224,0.0007748935290682723,0.0,6,10664
+amount,strong,3,transaction,rule timing gap z (late known),type:duplicate,0.4869671658986175,0.0039244725163459365,0.14285714285714285,28,10664
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",overall,0.8495181487679612,0.3244908426303516,0.6,130,10664
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",expense,0.8343458847145527,0.31365092250013843,0.5677966101694916,118,9558
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",income,0.9821428571428571,0.4462951535969768,0.9166666666666666,12,1106
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",type:spike,0.962869978858351,0.25057789103677497,0.8863636363636364,44,10664
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",type:drop,0.9285951295516187,0.3566520275747853,0.7115384615384616,52,10664
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",type:seasonal,0.40447611902975744,0.0005214503541544402,0.0,6,10664
+amount,strong,3,transaction,"autoencoder (window 5, latent 16)",type:duplicate,0.6199027435430285,0.00375592308973624,0.07142857142857142,28,10664
+amount,strong,3,transaction,forecast |r|,overall,0.9272664319926135,0.7976544776351231,0.8,130,10664
+amount,strong,3,transaction,forecast |r|,expense,0.9194188203333086,0.7767790368803016,0.7796610169491526,118,9558
+amount,strong,3,transaction,forecast |r|,income,1.0,1.0,1.0,12,1106
+amount,strong,3,transaction,forecast |r|,type:spike,1.0,0.9999999999999999,1.0,44,10664
+amount,strong,3,transaction,forecast |r|,type:drop,0.9999477032719719,0.9920782726045885,1.0,52,10664
+amount,strong,3,transaction,forecast |r|,type:seasonal,0.9997186796699175,0.875,1.0,6,10664
+amount,strong,3,transaction,forecast |r|,type:duplicate,0.6624658396742042,0.00483595431372742,0.07142857142857142,28,10664
+amount,strong,3,transaction,forecast r (spike known),overall,0.44758425183218886,0.3678608654987009,0.36153846153846153,130,10664
+amount,strong,3,transaction,forecast r (spike known),expense,0.42495948021180235,0.3369088930315708,0.3305084745762712,118,9558
+amount,strong,3,transaction,forecast r (spike known),income,0.6666666666666666,0.6698011317978694,0.6666666666666666,12,1106
+amount,strong,3,transaction,forecast r (spike known),type:spike,1.0,1.0,1.0,44,10664
+amount,strong,3,transaction,forecast r (spike known),type:drop,2.885336718795061e-05,0.0024768736937045436,0.0,52,10664
+amount,strong,3,transaction,forecast r (spike known),type:seasonal,0.49987496874218557,0.3790221996025265,0.5,6,10664
+amount,strong,3,transaction,forecast r (spike known),type:duplicate,0.3994715196656307,0.0023575270942639602,0.0,28,10664
+amount,strong,3,transaction,forecast -r (drop known),overall,0.5524157481678111,0.4397403752321124,0.46153846153846156,130,10664
+amount,strong,3,transaction,forecast -r (drop known),expense,0.5750405197881978,0.4505408502814338,0.4745762711864407,118,9558
+amount,strong,3,transaction,forecast -r (drop known),income,0.3333333333333333,0.3384150293162129,0.3333333333333333,12,1106
+amount,strong,3,transaction,forecast -r (drop known),type:spike,0.0,0.002104051148661834,0.0,44,10664
+amount,strong,3,transaction,forecast -r (drop known),type:drop,0.9999711466328121,0.9949956293706296,1.0,52,10664
+amount,strong,3,transaction,forecast -r (drop known),type:seasonal,0.5001250312578145,0.5002343677131006,0.5,6,10664
+amount,strong,3,transaction,forecast -r (drop known),type:duplicate,0.6005284803343693,0.006491408528403153,0.17857142857142858,28,10664
+amount,strong,3,transaction,forecast timing |r_gap|,overall,0.5124188499047839,0.014057158102495016,0.06923076923076923,130,10664
+amount,strong,3,transaction,forecast timing |r_gap|,expense,0.5000571887601477,0.013148629683122286,0.05084745762711865,118,9558
+amount,strong,3,transaction,forecast timing |r_gap|,income,0.6216094032549728,0.03944091179869472,0.25,12,1106
+amount,strong,3,transaction,forecast timing |r_gap|,type:spike,0.5443942661801814,0.0058015641009995225,0.09090909090909091,44,10664
+amount,strong,3,transaction,forecast timing |r_gap|,type:drop,0.454355776444111,0.004527504870389168,0.038461538461538464,52,10664
+amount,strong,3,transaction,forecast timing |r_gap|,type:seasonal,0.4387346836709177,0.0012111204260301617,0.16666666666666666,6,10664
+amount,strong,3,transaction,forecast timing |r_gap|,type:duplicate,0.5857926535205229,0.00437110284536374,0.07142857142857142,28,10664
+amount,strong,3,transaction,forecast timing r_gap (late known),overall,0.4619795573893473,0.011760216562520983,0.07692307692307693,130,10664
+amount,strong,3,transaction,forecast timing r_gap (late known),expense,0.4668327357329559,0.011896022194486084,0.07627118644067797,118,9558
+amount,strong,3,transaction,forecast timing r_gap (late known),income,0.43437311633514164,0.015921403799060537,0.08333333333333333,12,1106
+amount,strong,3,transaction,forecast timing r_gap (late known),type:spike,0.45519867182704765,0.003961933184291856,0.06818181818181818,44,10664
+amount,strong,3,transaction,forecast timing r_gap (late known),type:drop,0.4624491459403312,0.0044415077644936185,0.038461538461538464,52,10664
+amount,strong,3,transaction,forecast timing r_gap (late known),type:seasonal,0.3227525631407852,0.0004562384574026718,0.0,6,10664
+amount,strong,3,transaction,forecast timing r_gap (late known),type:duplicate,0.501597497588683,0.0048883604560850495,0.17857142857142858,28,10664
+amount,strong,3,transaction,masked |r|,overall,0.9275174562871488,0.79745887423977,0.8,130,10664
+amount,strong,3,transaction,masked |r|,expense,0.919657328495785,0.7770219950341488,0.7796610169491526,118,9558
+amount,strong,3,transaction,masked |r|,income,1.0,1.0,1.0,12,1106
+amount,strong,3,transaction,masked |r|,type:spike,1.0,1.0,1.0,44,10664
+amount,strong,3,transaction,masked |r|,type:drop,0.9999422932656241,0.9912179487179489,1.0,52,10664
+amount,strong,3,transaction,masked |r|,type:seasonal,0.9999062265566392,0.9166666666666666,1.0,6,10664
+amount,strong,3,transaction,masked |r|,type:duplicate,0.6636011681491802,0.004709686076587456,0.07142857142857142,28,10664
+amount,strong,3,transaction,masked r (spike known),overall,0.4474839863812107,0.36867924668070184,0.36153846153846153,130,10664
+amount,strong,3,transaction,masked r (spike known),expense,0.4249213543717039,0.3380077805040753,0.3305084745762712,118,9558
+amount,strong,3,transaction,masked r (spike known),income,0.6666666666666666,0.6698011317978694,0.6666666666666666,12,1106
+amount,strong,3,transaction,masked r (spike known),type:spike,1.0,1.0,1.0,44,10664
+amount,strong,3,transaction,masked r (spike known),type:drop,3.426337353569189e-05,0.0024768745399754793,0.0,52,10664
+amount,strong,3,transaction,masked r (spike known),type:seasonal,0.49996874218554643,0.43356765414798104,0.5,6,10664
+amount,strong,3,transaction,masked r (spike known),type:duplicate,0.39897586003643765,0.0023613463281750556,0.0,28,10664
+amount,strong,3,transaction,masked -r (drop known),overall,0.5525160136187893,0.43856762522969184,0.46153846153846156,130,10664
+amount,strong,3,transaction,masked -r (drop known),expense,0.5750786456282961,0.44929153194430627,0.4745762711864407,118,9558
+amount,strong,3,transaction,masked -r (drop known),income,0.3333333333333333,0.3384150293162129,0.3333333333333333,12,1106
+amount,strong,3,transaction,masked -r (drop known),type:spike,0.0,0.002104051148661834,0.0,44,10664
+amount,strong,3,transaction,masked -r (drop known),type:drop,0.9999657366264643,0.9941295546558704,1.0,52,10664
+amount,strong,3,transaction,masked -r (drop known),type:seasonal,0.5000312578144537,0.5002343325326654,0.5,6,10664
+amount,strong,3,transaction,masked -r (drop known),type:duplicate,0.6010241399635623,0.006200072857367643,0.17857142857142858,28,10664
+amount,strong,3,transaction,rule amount+timing,overall,0.9056238819320215,0.5957831012657112,0.7538461538461538,130,10664
+amount,strong,3,transaction,rule amount+timing,expense,0.8959111366465575,0.621225760378815,0.7288135593220338,118,9558
+amount,strong,3,transaction,rule amount+timing,income,0.9931057866184448,0.4526555889407552,1.0,12,1106
+amount,strong,3,transaction,rule amount+timing,type:spike,0.9986051200300075,0.6575211253789015,1.0,44,10664
+amount,strong,3,transaction,rule amount+timing,type:drop,0.9979351809106123,0.6697597571825025,1.0,52,10664
+amount,strong,3,transaction,rule amount+timing,type:seasonal,0.43526506626656664,0.0005419721169435163,0.0,6,10664
+amount,strong,3,transaction,rule amount+timing,type:duplicate,0.6888664130318294,0.005017469739515078,0.07142857142857142,28,10664
+amount,strong,3,transaction,forecast amount+timing,overall,0.9326511916440648,0.40977559376027134,0.8076923076923077,130,10664
+amount,strong,3,transaction,forecast amount+timing,expense,0.9259777948014087,0.40971506537955643,0.788135593220339,118,9558
+amount,strong,3,transaction,forecast amount+timing,income,0.9934825195901146,0.44800338550338553,1.0,12,1106
+amount,strong,3,transaction,forecast amount+timing,type:spike,0.9943309691059129,0.29654268089986924,1.0,44,10664
+amount,strong,3,transaction,forecast amount+timing,type:drop,0.9954465779906516,0.3888024652223668,1.0,52,10664
+amount,strong,3,transaction,forecast amount+timing,type:seasonal,0.9928497749437359,0.04179517543240094,1.0,6,10664
+amount,strong,3,transaction,forecast amount+timing,type:duplicate,0.7062061274247133,0.005101362097354343,0.10714285714285714,28,10664
+amount,strong,3,transaction,hybrid rule+forecast,overall,0.9277194298574644,0.4228955439735958,0.8076923076923077,130,10664
+amount,strong,3,transaction,hybrid rule+forecast,expense,0.9205528424143765,0.4289281544974337,0.788135593220339,118,9558
+amount,strong,3,transaction,hybrid rule+forecast,income,0.9909584086799277,0.39107131797349187,1.0,12,1106
+amount,strong,3,transaction,hybrid rule+forecast,type:spike,0.9945430249607856,0.31367565282331156,1.0,44,10664
+amount,strong,3,transaction,hybrid rule+forecast,type:drop,0.9956783065958799,0.40863810044996596,1.0,52,10664
+amount,strong,3,transaction,hybrid rule+forecast,type:seasonal,0.9915603900975244,0.03620310985769354,1.0,6,10664
+amount,strong,3,transaction,hybrid rule+forecast,type:duplicate,0.6828213749866038,0.004812759526039666,0.10714285714285714,28,10664
+amount,strong,3,window,rule |z|,overall,0.8777217793287813,0.7555886812139634,0.7049742710120068,583,9731
+amount,strong,3,window,rule |z|,expense,0.8623739873634118,0.726719883931265,0.6717557251908397,524,8752
+amount,strong,3,window,rule |z|,income,1.0,1.0,1.0,59,979
+amount,strong,3,window,rule |z|,type:spike,1.0,1.0,1.0,203,9731
+amount,strong,3,window,rule |z|,type:drop,0.9962005212955782,0.9546222754048116,0.9454545454545454,220,9731
+amount,strong,3,window,rule |z|,type:seasonal,0.34045832905148493,0.0021809904544772083,0.0,26,9731
+amount,strong,3,window,rule |z|,type:duplicate,0.6022072097635346,0.018368035546773877,0.0,134,9731
+amount,strong,3,window,rule z (spike known),overall,0.6397943443642561,0.4100388134950722,0.35506003430531735,583,9731
+amount,strong,3,window,rule z (spike known),expense,0.6195977451609752,0.37659250605292716,0.32061068702290074,524,8752
+amount,strong,3,window,rule z (spike known),income,0.8171170859230277,0.6932692114608768,0.6610169491525424,59,979
+amount,strong,3,window,rule z (spike known),type:spike,1.0,1.0,1.0,203,9731
+amount,strong,3,window,rule z (spike known),type:drop,0.4027372688969647,0.017876113705011316,0.013636363636363636,220,9731
+amount,strong,3,window,rule z (spike known),type:seasonal,0.4237350102369114,0.002427450079192951,0.0,26,9731
+amount,strong,3,window,rule z (spike known),type:duplicate,0.5252298010512642,0.015278267131771045,0.007462686567164179,134,9731
+amount,strong,3,window,rule -z (drop known),overall,0.6915419290051616,0.43716431106129877,0.3876500857632933,583,9731
+amount,strong,3,window,rule -z (drop known),expense,0.6964840969828489,0.4416454059700141,0.3931297709923664,524,8752
+amount,strong,3,window,rule -z (drop known),income,0.6634840117033984,0.40283510682681034,0.3389830508474576,59,979
+amount,strong,3,window,rule -z (drop known),type:spike,0.4026502574424431,0.017557149790373365,0.03940886699507389,203,9731
+amount,strong,3,window,rule -z (drop known),type:drop,0.997960127427808,0.9637909107480839,0.9772727272727273,220,9731
+amount,strong,3,window,rule -z (drop known),type:seasonal,0.5225449198833229,0.002990631247411681,0.0,26,9731
+amount,strong,3,window,rule -z (drop known),type:duplicate,0.6589070626724562,0.022483490105040665,0.022388059701492536,134,9731
+amount,strong,3,window,rule timing |gap z|,overall,0.5143941494468791,0.06506578059643801,0.048027444253859346,583,9731
+amount,strong,3,window,rule timing |gap z|,expense,0.4977297446516042,0.061493025403772765,0.022900763358778626,524,8752
+amount,strong,3,window,rule timing |gap z|,income,0.6457038486175793,0.11736495825946544,0.2711864406779661,59,979
+amount,strong,3,window,rule timing |gap z|,type:spike,0.5721539966983785,0.04157366148925527,0.10344827586206896,203,9731
+amount,strong,3,window,rule timing |gap z|,type:drop,0.43601890864248277,0.020628682417225243,0.01818181818181818,220,9731
+amount,strong,3,window,rule timing |gap z|,type:seasonal,0.2986964736014166,0.0029199345321579253,0.0,26,9731
+amount,strong,3,window,rule timing |gap z|,type:duplicate,0.5974198476326619,0.01744039532523061,0.022388059701492536,134,9731
+amount,strong,3,window,rule timing gap z (late known),overall,0.4735152620940697,0.05949805702103263,0.048027444253859346,583,9731
+amount,strong,3,window,rule timing gap z (late known),expense,0.4671158042829033,0.05993705781736698,0.05343511450381679,524,8752
+amount,strong,3,window,rule timing gap z (late known),income,0.5606637696715777,0.06929754386193099,0.0,59,979
+amount,strong,3,window,rule timing gap z (late known),type:spike,0.48668619358274534,0.03413394664585225,0.07881773399014778,203,9731
+amount,strong,3,window,rule timing gap z (late known),type:drop,0.393524443904672,0.018101869408167357,0.0,220,9731
+amount,strong,3,window,rule timing gap z (late known),type:seasonal,0.11370876580002054,0.002688172043010753,0.0,26,9731
+amount,strong,3,window,rule timing gap z (late known),type:duplicate,0.6547036935352013,0.023052791371683996,0.08955223880597014,134,9731
+amount,strong,3,window,forecast |r|,overall,0.9107179527224007,0.8084084801602995,0.7530017152658662,583,9731
+amount,strong,3,window,forecast |r|,expense,0.8994331284801206,0.7854656447352466,0.7251908396946565,524,8752
+amount,strong,3,window,forecast |r|,income,1.0,1.0,1.0,59,979
+amount,strong,3,window,forecast |r|,type:spike,1.0,1.0,1.0,203,9731
+amount,strong,3,window,forecast |r|,type:drop,0.999661344718379,0.9894151690526958,0.9772727272727273,220,9731
+amount,strong,3,window,forecast |r|,type:seasonal,0.9982213860540856,0.8507957559681697,0.8076923076923077,26,9731
+amount,strong,3,window,forecast |r|,type:duplicate,0.6124575713560447,0.018817816866773085,0.0,134,9731
+amount,strong,3,window,forecast r (spike known),overall,0.6527602807106359,0.4352457824502203,0.38078902229845624,583,9731
+amount,strong,3,window,forecast r (spike known),expense,0.6340268353056924,0.4042611690527309,0.34923664122137404,524,8752
+amount,strong,3,window,forecast r (spike known),income,0.8183636017381971,0.6933563369722334,0.6610169491525424,59,979
+amount,strong,3,window,forecast r (spike known),type:spike,1.0,1.0,1.0,203,9731
+amount,strong,3,window,forecast r (spike known),type:drop,0.4012429816612326,0.01797301086150651,0.013636363636363636,220,9731
+amount,strong,3,window,forecast r (spike known),type:seasonal,0.7036275819545782,0.4384011671080062,0.5769230769230769,26,9731
+amount,strong,3,window,forecast r (spike known),type:duplicate,0.5297870937164961,0.015381363543754013,0.007462686567164179,134,9731
+amount,strong,3,window,forecast -r (drop known),overall,0.6878818960747363,0.4672384541579129,0.4219554030874786,583,9731
+amount,strong,3,window,forecast -r (drop known),expense,0.6926723183010732,0.4750083093252068,0.4312977099236641,524,8752
+amount,strong,3,window,forecast -r (drop known),income,0.64975502501688,0.4033689463027073,0.3389830508474576,59,979
+amount,strong,3,window,forecast -r (drop known),type:spike,0.39057949481444965,0.017641399444780582,0.03940886699507389,203,9731
+amount,strong,3,window,forecast -r (drop known),type:drop,0.9998131557066918,0.993195634153081,1.0,220,9731
+amount,strong,3,window,forecast -r (drop known),type:seasonal,0.4703900302759618,0.4243387035530992,0.4230769230769231,26,9731
+amount,strong,3,window,forecast -r (drop known),type:duplicate,0.6683468128476926,0.0234864993585261,0.05223880597014925,134,9731
+amount,strong,3,window,forecast timing |r_gap|,overall,0.559576360530518,0.06950670574645032,0.03945111492281304,583,9731
+amount,strong,3,window,forecast timing |r_gap|,expense,0.5473100150718003,0.07491080628577648,0.04389312977099236,524,8752
+amount,strong,3,window,forecast timing |r_gap|,income,0.6596405879399595,0.09726370686847206,0.0,59,979
+amount,strong,3,window,forecast timing |r_gap|,type:spike,0.5349960741989063,0.023696453421302957,0.014778325123152709,203,9731
+amount,strong,3,window,forecast timing |r_gap|,type:drop,0.5651341542025953,0.0281533099413288,0.022727272727272728,220,9731
+amount,strong,3,window,forecast timing |r_gap|,type:seasonal,0.7711753871449689,0.030769182233741643,0.3076923076923077,26,9731
+amount,strong,3,window,forecast timing |r_gap|,type:duplicate,0.5466323965415958,0.018893515845063446,0.05223880597014925,134,9731
+amount,strong,3,window,forecast timing r_gap (late known),overall,0.45438275899571545,0.05182281624902017,0.04288164665523156,583,9731
+amount,strong,3,window,forecast timing r_gap (late known),expense,0.45180817994055006,0.051651452765378025,0.04770992366412214,524,8752
+amount,strong,3,window,forecast timing r_gap (late known),income,0.48112913557590764,0.06120740882467694,0.0,59,979
+amount,strong,3,window,forecast timing r_gap (late known),type:spike,0.45719180942728865,0.019489179100432463,0.03940886699507389,203,9731
+amount,strong,3,window,forecast timing r_gap (late known),type:drop,0.41420857428461993,0.018640509590436775,0.03636363636363636,220,9731
+amount,strong,3,window,forecast timing r_gap (late known),type:seasonal,0.06579290609708863,0.0014967052164824668,0.0,26,9731
+amount,strong,3,window,forecast timing r_gap (late known),type:duplicate,0.5914829050718047,0.01859751356805999,0.06716417910447761,134,9731
+amount,strong,3,window,masked |r|,overall,0.9109746873574982,0.8092201913588808,0.7615780445969125,583,9731
+amount,strong,3,window,masked |r|,expense,0.8999770608593718,0.7872498958258377,0.7347328244274809,524,8752
+amount,strong,3,window,masked |r|,income,1.0,1.0,1.0,59,979
+amount,strong,3,window,masked |r|,type:spike,1.0,1.0,1.0,203,9731
+amount,strong,3,window,masked |r|,type:drop,0.9996263114133837,0.9882645339734892,0.9772727272727273,220,9731
+amount,strong,3,window,masked |r|,type:seasonal,0.9994071286846953,0.8969780219780219,1.0,26,9731
+amount,strong,3,window,masked |r|,type:duplicate,0.6134020065124997,0.018760605339953728,0.0,134,9731
+amount,strong,3,window,masked r (spike known),overall,0.6580603129853435,0.4356259499159425,0.38078902229845624,583,9731
+amount,strong,3,window,masked r (spike known),expense,0.6392882281214676,0.40549648198198834,0.34923664122137404,524,8752
+amount,strong,3,window,masked r (spike known),income,0.8197659320302626,0.694962093288898,0.6610169491525424,59,979
+amount,strong,3,window,masked r (spike known),type:spike,1.0,0.9999999999999999,1.0,203,9731
+amount,strong,3,window,masked r (spike known),type:drop,0.4129814743883185,0.018060376058079128,0.013636363636363636,220,9731
+amount,strong,3,window,masked r (spike known),type:seasonal,0.7158427072875742,0.5013941294309862,0.5769230769230769,26,9731
+amount,strong,3,window,masked r (spike known),type:duplicate,0.5312039381757332,0.015326578788102306,0.007462686567164179,134,9731
+amount,strong,3,window,masked -r (drop known),overall,0.6891981788674522,0.4685345266884845,0.42538593481989706,583,9731
+amount,strong,3,window,masked -r (drop known),expense,0.6926486595866419,0.47487273155442217,0.42938931297709926,524,8752
+amount,strong,3,window,masked -r (drop known),income,0.6635705753016741,0.4141080311512581,0.3898305084745763,59,979
+amount,strong,3,window,masked -r (drop known),type:spike,0.3928451199330969,0.018028365394659632,0.054187192118226604,203,9731
+amount,strong,3,window,masked -r (drop known),type:drop,0.9997781224016965,0.9920336555674902,1.0,220,9731
+amount,strong,3,window,masked -r (drop known),type:seasonal,0.4726943234547797,0.42435622649320887,0.4230769230769231,26,9731
+amount,strong,3,window,masked -r (drop known),type:duplicate,0.6702517880231972,0.023195094147417744,0.04477611940298507,134,9731
+amount,strong,3,window,rule amount+timing,overall,0.8669945372721756,0.6358872399147559,0.6415094339622641,583,9731
+amount,strong,3,window,rule amount+timing,expense,0.8535058943997098,0.6510975477373063,0.6583969465648855,524,8752
+amount,strong,3,window,rule amount+timing,income,0.9719360814390332,0.5383308796910248,0.4915254237288136,59,979
+amount,strong,3,window,rule amount+timing,type:spike,0.9939538613329095,0.7101427796649221,0.8768472906403941,203,9731
+amount,strong,3,window,rule amount+timing,type:drop,0.9907549443671116,0.7103996770521043,0.8772727272727273,220,9731
+amount,strong,3,window,rule amount+timing,type:seasonal,0.2929258594657834,0.002102933249398209,0.0,26,9731
+amount,strong,3,window,rule amount+timing,type:duplicate,0.5828583677031552,0.01776856923642133,0.022388059701492536,134,9731
+amount,strong,3,window,forecast amount+timing,overall,0.8779268673809172,0.43321808710693976,0.4099485420240137,583,9731
+amount,strong,3,window,forecast amount+timing,expense,0.8663275002791073,0.4345580550063097,0.44656488549618323,524,8752
+amount,strong,3,window,forecast amount+timing,income,0.9683090666712834,0.47747524799656316,0.0847457627118644,59,979
+amount,strong,3,window,forecast amount+timing,type:spike,0.9712436968238725,0.2969794373353541,0.3793103448275862,203,9731
+amount,strong,3,window,forecast amount+timing,type:drop,0.976901607795144,0.3879930646907331,0.65,220,9731
+amount,strong,3,window,forecast amount+timing,type:seasonal,0.9680699271954024,0.08778049382683459,0.46153846153846156,26,9731
+amount,strong,3,window,forecast amount+timing,type:duplicate,0.5565725478046004,0.030844323216112267,0.05223880597014925,134,9731
+amount,strong,3,window,hybrid rule+forecast,overall,0.8815380740196006,0.4646216437864923,0.47684391080617494,583,9731
+amount,strong,3,window,hybrid rule+forecast,expense,0.8719047423838564,0.4700447564736107,0.5114503816793893,524,8752
+amount,strong,3,window,hybrid rule+forecast,income,0.9600768684752687,0.45665077559412864,0.1694915254237288,59,979
+amount,strong,3,window,hybrid rule+forecast,type:spike,0.9742795484240351,0.3362874964846797,0.5960591133004927,203,9731
+amount,strong,3,window,hybrid rule+forecast,type:drop,0.9790381722891228,0.42500296912154023,0.65,220,9731
+amount,strong,3,window,hybrid rule+forecast,type:seasonal,0.9629415903180162,0.06884946475514751,0.2692307692307692,26,9731
+amount,strong,3,window,hybrid rule+forecast,type:duplicate,0.5651721609811389,0.031098301538366836,0.05223880597014925,134,9731
+amount,strong,3,window,"autoencoder (window 5, latent 16)",overall,0.8472042012468156,0.5772564724669265,0.5283018867924528,583,9731
+amount,strong,3,window,"autoencoder (window 5, latent 16)",expense,0.830366363369943,0.5436281453192573,0.49236641221374045,524,8752
+amount,strong,3,window,"autoencoder (window 5, latent 16)",income,0.9839164834403836,0.8597010969421031,0.847457627118644,59,979
+amount,strong,3,window,"autoencoder (window 5, latent 16)",type:spike,0.9728327477114681,0.7040869607287531,0.8029556650246306,203,9731
+amount,strong,3,window,"autoencoder (window 5, latent 16)",type:drop,0.926947618202371,0.6088798617826512,0.6363636363636364,220,9731
+amount,strong,3,window,"autoencoder (window 5, latent 16)",type:seasonal,0.5094227014379106,0.0025674086620677684,0.0,26,9731
+amount,strong,3,window,"autoencoder (window 5, latent 16)",type:duplicate,0.5915039947728218,0.01900116420869962,0.03731343283582089,134,9731

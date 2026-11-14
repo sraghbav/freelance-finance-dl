@@ -1,0 +1,2381 @@
+fold,stream,kind,factor,score,recall,fpr,n
+0,expense,spike,1.5,rule |z|,0.449,0.051,3000
+0,expense,spike,1.5,rule z (spike known),0.5286666666666666,0.050666666666666665,3000
+0,expense,spike,1.5,rule -z (drop known),0.027,0.051333333333333335,3000
+0,expense,spike,1.5,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,spike,1.5,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,spike,1.5,"autoencoder (window 5, latent 16)",0.061,0.050666666666666665,3000
+0,expense,spike,1.5,forecast |r|,0.4683333333333333,0.05266666666666667,3000
+0,expense,spike,1.5,forecast r (spike known),0.51,0.04766666666666667,3000
+0,expense,spike,1.5,forecast -r (drop known),0.024666666666666667,0.04833333333333333,3000
+0,expense,spike,1.5,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,spike,1.5,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,spike,1.5,masked |r|,0.43366666666666664,0.054,3000
+0,expense,spike,1.5,masked r (spike known),0.521,0.044333333333333336,3000
+0,expense,spike,1.5,masked -r (drop known),0.024666666666666667,0.05333333333333334,3000
+0,expense,spike,1.5,rule amount+timing,0.44266666666666665,0.051,3000
+0,expense,spike,1.5,forecast amount+timing,0.4543333333333333,0.04633333333333333,3000
+0,expense,spike,1.5,hybrid rule+forecast,0.45066666666666666,0.045,3000
+0,expense,drop,1.5,rule |z|,0.4713333333333333,0.051,3000
+0,expense,drop,1.5,rule z (spike known),0.018,0.050666666666666665,3000
+0,expense,drop,1.5,rule -z (drop known),0.49166666666666664,0.051333333333333335,3000
+0,expense,drop,1.5,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,drop,1.5,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,drop,1.5,"autoencoder (window 5, latent 16)",0.404,0.050666666666666665,3000
+0,expense,drop,1.5,forecast |r|,0.44066666666666665,0.05266666666666667,3000
+0,expense,drop,1.5,forecast r (spike known),0.018666666666666668,0.04766666666666667,3000
+0,expense,drop,1.5,forecast -r (drop known),0.47933333333333333,0.04833333333333333,3000
+0,expense,drop,1.5,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,drop,1.5,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,drop,1.5,masked |r|,0.4846666666666667,0.054,3000
+0,expense,drop,1.5,masked r (spike known),0.015666666666666666,0.044333333333333336,3000
+0,expense,drop,1.5,masked -r (drop known),0.489,0.05333333333333334,3000
+0,expense,drop,1.5,rule amount+timing,0.45766666666666667,0.051,3000
+0,expense,drop,1.5,forecast amount+timing,0.43733333333333335,0.04633333333333333,3000
+0,expense,drop,1.5,hybrid rule+forecast,0.43933333333333335,0.045,3000
+0,expense,spike,2.0,rule |z|,0.4856666666666667,0.051,3000
+0,expense,spike,2.0,rule z (spike known),0.6143333333333333,0.050666666666666665,3000
+0,expense,spike,2.0,rule -z (drop known),0.016666666666666666,0.051333333333333335,3000
+0,expense,spike,2.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,spike,2.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,spike,2.0,"autoencoder (window 5, latent 16)",0.086,0.050666666666666665,3000
+0,expense,spike,2.0,forecast |r|,0.513,0.05266666666666667,3000
+0,expense,spike,2.0,forecast r (spike known),0.58,0.04766666666666667,3000
+0,expense,spike,2.0,forecast -r (drop known),0.015666666666666666,0.04833333333333333,3000
+0,expense,spike,2.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,spike,2.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,spike,2.0,masked |r|,0.444,0.054,3000
+0,expense,spike,2.0,masked r (spike known),0.598,0.044333333333333336,3000
+0,expense,spike,2.0,masked -r (drop known),0.015,0.05333333333333334,3000
+0,expense,spike,2.0,rule amount+timing,0.45866666666666667,0.051,3000
+0,expense,spike,2.0,forecast amount+timing,0.48433333333333334,0.04633333333333333,3000
+0,expense,spike,2.0,hybrid rule+forecast,0.47833333333333333,0.045,3000
+0,expense,drop,2.0,rule |z|,0.517,0.051,3000
+0,expense,drop,2.0,rule z (spike known),0.009333333333333334,0.050666666666666665,3000
+0,expense,drop,2.0,rule -z (drop known),0.5536666666666666,0.051333333333333335,3000
+0,expense,drop,2.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,drop,2.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,drop,2.0,"autoencoder (window 5, latent 16)",0.42433333333333334,0.050666666666666665,3000
+0,expense,drop,2.0,forecast |r|,0.4633333333333333,0.05266666666666667,3000
+0,expense,drop,2.0,forecast r (spike known),0.007666666666666666,0.04766666666666667,3000
+0,expense,drop,2.0,forecast -r (drop known),0.544,0.04833333333333333,3000
+0,expense,drop,2.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,drop,2.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,drop,2.0,masked |r|,0.5383333333333333,0.054,3000
+0,expense,drop,2.0,masked r (spike known),0.008666666666666666,0.044333333333333336,3000
+0,expense,drop,2.0,masked -r (drop known),0.5506666666666666,0.05333333333333334,3000
+0,expense,drop,2.0,rule amount+timing,0.4826666666666667,0.051,3000
+0,expense,drop,2.0,forecast amount+timing,0.44966666666666666,0.04633333333333333,3000
+0,expense,drop,2.0,hybrid rule+forecast,0.46,0.045,3000
+0,expense,spike,3.0,rule |z|,0.5653333333333334,0.051,3000
+0,expense,spike,3.0,rule z (spike known),0.72,0.050666666666666665,3000
+0,expense,spike,3.0,rule -z (drop known),0.008666666666666666,0.051333333333333335,3000
+0,expense,spike,3.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,spike,3.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,spike,3.0,"autoencoder (window 5, latent 16)",0.4246666666666667,0.050666666666666665,3000
+0,expense,spike,3.0,forecast |r|,0.6073333333333333,0.05266666666666667,3000
+0,expense,spike,3.0,forecast r (spike known),0.6853333333333333,0.04766666666666667,3000
+0,expense,spike,3.0,forecast -r (drop known),0.006333333333333333,0.04833333333333333,3000
+0,expense,spike,3.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,spike,3.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,spike,3.0,masked |r|,0.48033333333333333,0.054,3000
+0,expense,spike,3.0,masked r (spike known),0.7156666666666667,0.044333333333333336,3000
+0,expense,spike,3.0,masked -r (drop known),0.006666666666666667,0.05333333333333334,3000
+0,expense,spike,3.0,rule amount+timing,0.5076666666666667,0.051,3000
+0,expense,spike,3.0,forecast amount+timing,0.5536666666666666,0.04633333333333333,3000
+0,expense,spike,3.0,hybrid rule+forecast,0.5313333333333333,0.045,3000
+0,expense,drop,3.0,rule |z|,0.6093333333333333,0.051,3000
+0,expense,drop,3.0,rule z (spike known),0.005333333333333333,0.050666666666666665,3000
+0,expense,drop,3.0,rule -z (drop known),0.654,0.051333333333333335,3000
+0,expense,drop,3.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,drop,3.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,drop,3.0,"autoencoder (window 5, latent 16)",0.4533333333333333,0.050666666666666665,3000
+0,expense,drop,3.0,forecast |r|,0.533,0.05266666666666667,3000
+0,expense,drop,3.0,forecast r (spike known),0.0026666666666666666,0.04766666666666667,3000
+0,expense,drop,3.0,forecast -r (drop known),0.6393333333333333,0.04833333333333333,3000
+0,expense,drop,3.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,drop,3.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,drop,3.0,masked |r|,0.639,0.054,3000
+0,expense,drop,3.0,masked r (spike known),0.004,0.044333333333333336,3000
+0,expense,drop,3.0,masked -r (drop known),0.6573333333333333,0.05333333333333334,3000
+0,expense,drop,3.0,rule amount+timing,0.5373333333333333,0.051,3000
+0,expense,drop,3.0,forecast amount+timing,0.4846666666666667,0.04633333333333333,3000
+0,expense,drop,3.0,hybrid rule+forecast,0.48633333333333334,0.045,3000
+0,expense,spike,5.0,rule |z|,0.6966666666666667,0.051,3000
+0,expense,spike,5.0,rule z (spike known),0.83,0.050666666666666665,3000
+0,expense,spike,5.0,rule -z (drop known),0.006,0.051333333333333335,3000
+0,expense,spike,5.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,spike,5.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,spike,5.0,"autoencoder (window 5, latent 16)",0.4716666666666667,0.050666666666666665,3000
+0,expense,spike,5.0,forecast |r|,0.7166666666666667,0.05266666666666667,3000
+0,expense,spike,5.0,forecast r (spike known),0.7953333333333333,0.04766666666666667,3000
+0,expense,spike,5.0,forecast -r (drop known),0.003,0.04833333333333333,3000
+0,expense,spike,5.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,spike,5.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,spike,5.0,masked |r|,0.5753333333333334,0.054,3000
+0,expense,spike,5.0,masked r (spike known),0.8356666666666667,0.044333333333333336,3000
+0,expense,spike,5.0,masked -r (drop known),0.004666666666666667,0.05333333333333334,3000
+0,expense,spike,5.0,rule amount+timing,0.6016666666666667,0.051,3000
+0,expense,spike,5.0,forecast amount+timing,0.646,0.04633333333333333,3000
+0,expense,spike,5.0,hybrid rule+forecast,0.6313333333333333,0.045,3000
+0,expense,drop,5.0,rule |z|,0.7346666666666667,0.051,3000
+0,expense,drop,5.0,rule z (spike known),0.002,0.050666666666666665,3000
+0,expense,drop,5.0,rule -z (drop known),0.7806666666666666,0.051333333333333335,3000
+0,expense,drop,5.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,drop,5.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,drop,5.0,"autoencoder (window 5, latent 16)",0.502,0.050666666666666665,3000
+0,expense,drop,5.0,forecast |r|,0.6356666666666667,0.05266666666666667,3000
+0,expense,drop,5.0,forecast r (spike known),0.0003333333333333333,0.04766666666666667,3000
+0,expense,drop,5.0,forecast -r (drop known),0.7633333333333333,0.04833333333333333,3000
+0,expense,drop,5.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,drop,5.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,drop,5.0,masked |r|,0.7573333333333333,0.054,3000
+0,expense,drop,5.0,masked r (spike known),0.002,0.044333333333333336,3000
+0,expense,drop,5.0,masked -r (drop known),0.774,0.05333333333333334,3000
+0,expense,drop,5.0,rule amount+timing,0.6403333333333333,0.051,3000
+0,expense,drop,5.0,forecast amount+timing,0.5646666666666667,0.04633333333333333,3000
+0,expense,drop,5.0,hybrid rule+forecast,0.5553333333333333,0.045,3000
+0,expense,spike,10.0,rule |z|,0.8396666666666667,0.051,3000
+0,expense,spike,10.0,rule z (spike known),0.929,0.050666666666666665,3000
+0,expense,spike,10.0,rule -z (drop known),0.002,0.051333333333333335,3000
+0,expense,spike,10.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,spike,10.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,spike,10.0,"autoencoder (window 5, latent 16)",0.49866666666666665,0.050666666666666665,3000
+0,expense,spike,10.0,forecast |r|,0.838,0.05266666666666667,3000
+0,expense,spike,10.0,forecast r (spike known),0.898,0.04766666666666667,3000
+0,expense,spike,10.0,forecast -r (drop known),0.0003333333333333333,0.04833333333333333,3000
+0,expense,spike,10.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,spike,10.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,spike,10.0,masked |r|,0.7076666666666667,0.054,3000
+0,expense,spike,10.0,masked r (spike known),0.9373333333333334,0.044333333333333336,3000
+0,expense,spike,10.0,masked -r (drop known),0.0013333333333333333,0.05333333333333334,3000
+0,expense,spike,10.0,rule amount+timing,0.7616666666666667,0.051,3000
+0,expense,spike,10.0,forecast amount+timing,0.7723333333333333,0.04633333333333333,3000
+0,expense,spike,10.0,hybrid rule+forecast,0.7653333333333333,0.045,3000
+0,expense,drop,10.0,rule |z|,0.8663333333333333,0.051,3000
+0,expense,drop,10.0,rule z (spike known),0.0,0.050666666666666665,3000
+0,expense,drop,10.0,rule -z (drop known),0.901,0.051333333333333335,3000
+0,expense,drop,10.0,rule timing |gap z|,0.051666666666666666,0.051666666666666666,3000
+0,expense,drop,10.0,rule timing gap z (late known),0.04733333333333333,0.04733333333333333,3000
+0,expense,drop,10.0,"autoencoder (window 5, latent 16)",0.5666666666666667,0.050666666666666665,3000
+0,expense,drop,10.0,forecast |r|,0.7753333333333333,0.05266666666666667,3000
+0,expense,drop,10.0,forecast r (spike known),0.0,0.04766666666666667,3000
+0,expense,drop,10.0,forecast -r (drop known),0.877,0.04833333333333333,3000
+0,expense,drop,10.0,forecast timing |r_gap|,0.04766666666666667,0.04766666666666667,3000
+0,expense,drop,10.0,forecast timing r_gap (late known),0.052333333333333336,0.052333333333333336,3000
+0,expense,drop,10.0,masked |r|,0.8933333333333333,0.054,3000
+0,expense,drop,10.0,masked r (spike known),0.0,0.044333333333333336,3000
+0,expense,drop,10.0,masked -r (drop known),0.903,0.05333333333333334,3000
+0,expense,drop,10.0,rule amount+timing,0.789,0.051,3000
+0,expense,drop,10.0,forecast amount+timing,0.6933333333333334,0.04633333333333333,3000
+0,expense,drop,10.0,hybrid rule+forecast,0.699,0.045,3000
+0,expense,late,3.0,rule |z|,0.051,0.051,3000
+0,expense,late,3.0,rule z (spike known),0.050666666666666665,0.050666666666666665,3000
+0,expense,late,3.0,rule -z (drop known),0.051333333333333335,0.051333333333333335,3000
+0,expense,late,3.0,rule timing |gap z|,0.042666666666666665,0.051666666666666666,3000
+0,expense,late,3.0,rule timing gap z (late known),0.43633333333333335,0.04733333333333333,3000
+0,expense,late,3.0,"autoencoder (window 5, latent 16)",0.050666666666666665,0.050666666666666665,3000
+0,expense,late,3.0,forecast |r|,0.049,0.05266666666666667,3000
+0,expense,late,3.0,forecast r (spike known),0.04633333333333333,0.04766666666666667,3000
+0,expense,late,3.0,forecast -r (drop known),0.051,0.04833333333333333,3000
+0,expense,late,3.0,forecast timing |r_gap|,0.02033333333333333,0.04766666666666667,3000
+0,expense,late,3.0,forecast timing r_gap (late known),0.09466666666666666,0.052333333333333336,3000
+0,expense,late,3.0,masked |r|,0.05633333333333333,0.054,3000
+0,expense,late,3.0,masked r (spike known),0.04666666666666667,0.044333333333333336,3000
+0,expense,late,3.0,masked -r (drop known),0.05433333333333333,0.05333333333333334,3000
+0,expense,late,3.0,rule amount+timing,0.06066666666666667,0.051,3000
+0,expense,late,3.0,forecast amount+timing,0.033666666666666664,0.04633333333333333,3000
+0,expense,late,3.0,hybrid rule+forecast,0.043333333333333335,0.045,3000
+0,expense,late,7.0,rule |z|,0.051,0.051,3000
+0,expense,late,7.0,rule z (spike known),0.050666666666666665,0.050666666666666665,3000
+0,expense,late,7.0,rule -z (drop known),0.051333333333333335,0.051333333333333335,3000
+0,expense,late,7.0,rule timing |gap z|,0.43233333333333335,0.051666666666666666,3000
+0,expense,late,7.0,rule timing gap z (late known),0.492,0.04733333333333333,3000
+0,expense,late,7.0,"autoencoder (window 5, latent 16)",0.050666666666666665,0.050666666666666665,3000
+0,expense,late,7.0,forecast |r|,0.057,0.05266666666666667,3000
+0,expense,late,7.0,forecast r (spike known),0.045,0.04766666666666667,3000
+0,expense,late,7.0,forecast -r (drop known),0.05433333333333333,0.04833333333333333,3000
+0,expense,late,7.0,forecast timing |r_gap|,0.23366666666666666,0.04766666666666667,3000
+0,expense,late,7.0,forecast timing r_gap (late known),0.4096666666666667,0.052333333333333336,3000
+0,expense,late,7.0,masked |r|,0.05533333333333333,0.054,3000
+0,expense,late,7.0,masked r (spike known),0.042666666666666665,0.044333333333333336,3000
+0,expense,late,7.0,masked -r (drop known),0.053,0.05333333333333334,3000
+0,expense,late,7.0,rule amount+timing,0.286,0.051,3000
+0,expense,late,7.0,forecast amount+timing,0.14733333333333334,0.04633333333333333,3000
+0,expense,late,7.0,hybrid rule+forecast,0.08566666666666667,0.045,3000
+0,expense,late,14.0,rule |z|,0.051,0.051,3000
+0,expense,late,14.0,rule z (spike known),0.050666666666666665,0.050666666666666665,3000
+0,expense,late,14.0,rule -z (drop known),0.051333333333333335,0.051333333333333335,3000
+0,expense,late,14.0,rule timing |gap z|,0.43233333333333335,0.051666666666666666,3000
+0,expense,late,14.0,rule timing gap z (late known),0.5626666666666666,0.04733333333333333,3000
+0,expense,late,14.0,"autoencoder (window 5, latent 16)",0.050666666666666665,0.050666666666666665,3000
+0,expense,late,14.0,forecast |r|,0.04833333333333333,0.05266666666666667,3000
+0,expense,late,14.0,forecast r (spike known),0.044333333333333336,0.04766666666666667,3000
+0,expense,late,14.0,forecast -r (drop known),0.05366666666666667,0.04833333333333333,3000
+0,expense,late,14.0,forecast timing |r_gap|,0.388,0.04766666666666667,3000
+0,expense,late,14.0,forecast timing r_gap (late known),0.48733333333333334,0.052333333333333336,3000
+0,expense,late,14.0,masked |r|,0.05333333333333334,0.054,3000
+0,expense,late,14.0,masked r (spike known),0.04,0.044333333333333336,3000
+0,expense,late,14.0,masked -r (drop known),0.052333333333333336,0.05333333333333334,3000
+0,expense,late,14.0,rule amount+timing,0.45266666666666666,0.051,3000
+0,expense,late,14.0,forecast amount+timing,0.364,0.04633333333333333,3000
+0,expense,late,14.0,hybrid rule+forecast,0.3486666666666667,0.045,3000
+0,expense,late,30.0,rule |z|,0.051,0.051,3000
+0,expense,late,30.0,rule z (spike known),0.050666666666666665,0.050666666666666665,3000
+0,expense,late,30.0,rule -z (drop known),0.051333333333333335,0.051333333333333335,3000
+0,expense,late,30.0,rule timing |gap z|,0.44533333333333336,0.051666666666666666,3000
+0,expense,late,30.0,rule timing gap z (late known),0.7593333333333333,0.04733333333333333,3000
+0,expense,late,30.0,"autoencoder (window 5, latent 16)",0.050666666666666665,0.050666666666666665,3000
+0,expense,late,30.0,forecast |r|,0.049,0.05266666666666667,3000
+0,expense,late,30.0,forecast r (spike known),0.03866666666666667,0.04766666666666667,3000
+0,expense,late,30.0,forecast -r (drop known),0.057666666666666665,0.04833333333333333,3000
+0,expense,late,30.0,forecast timing |r_gap|,0.4613333333333333,0.04766666666666667,3000
+0,expense,late,30.0,forecast timing r_gap (late known),0.682,0.052333333333333336,3000
+0,expense,late,30.0,masked |r|,0.058333333333333334,0.054,3000
+0,expense,late,30.0,masked r (spike known),0.04,0.044333333333333336,3000
+0,expense,late,30.0,masked -r (drop known),0.058333333333333334,0.05333333333333334,3000
+0,expense,late,30.0,rule amount+timing,0.4563333333333333,0.051,3000
+0,expense,late,30.0,forecast amount+timing,0.423,0.04633333333333333,3000
+0,expense,late,30.0,hybrid rule+forecast,0.429,0.045,3000
+0,income,spike,1.5,rule |z|,0.046,0.051,3000
+0,income,spike,1.5,rule z (spike known),0.08166666666666667,0.023333333333333334,3000
+0,income,spike,1.5,rule -z (drop known),0.04,0.052,3000
+0,income,spike,1.5,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,spike,1.5,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,spike,1.5,"autoencoder (window 5, latent 16)",0.222,0.05,3000
+0,income,spike,1.5,forecast |r|,0.5753333333333334,0.04466666666666667,3000
+0,income,spike,1.5,forecast r (spike known),0.636,0.050333333333333334,3000
+0,income,spike,1.5,forecast -r (drop known),0.03666666666666667,0.05466666666666667,3000
+0,income,spike,1.5,forecast timing |r_gap|,0.048,0.048,3000
+0,income,spike,1.5,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,spike,1.5,masked |r|,0.4093333333333333,0.052333333333333336,3000
+0,income,spike,1.5,masked r (spike known),0.626,0.047,3000
+0,income,spike,1.5,masked -r (drop known),0.03933333333333333,0.053,3000
+0,income,spike,1.5,rule amount+timing,0.048,0.04933333333333333,3000
+0,income,spike,1.5,forecast amount+timing,0.4866666666666667,0.044333333333333336,3000
+0,income,spike,1.5,hybrid rule+forecast,0.391,0.052,3000
+0,income,drop,1.5,rule |z|,0.064,0.051,3000
+0,income,drop,1.5,rule z (spike known),0.006333333333333333,0.023333333333333334,3000
+0,income,drop,1.5,rule -z (drop known),0.066,0.052,3000
+0,income,drop,1.5,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,drop,1.5,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,drop,1.5,"autoencoder (window 5, latent 16)",0.14866666666666667,0.05,3000
+0,income,drop,1.5,forecast |r|,0.5616666666666666,0.04466666666666667,3000
+0,income,drop,1.5,forecast r (spike known),0.007,0.050333333333333334,3000
+0,income,drop,1.5,forecast -r (drop known),0.6383333333333333,0.05466666666666667,3000
+0,income,drop,1.5,forecast timing |r_gap|,0.048,0.048,3000
+0,income,drop,1.5,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,drop,1.5,masked |r|,0.467,0.052333333333333336,3000
+0,income,drop,1.5,masked r (spike known),0.01,0.047,3000
+0,income,drop,1.5,masked -r (drop known),0.5716666666666667,0.053,3000
+0,income,drop,1.5,rule amount+timing,0.05466666666666667,0.04933333333333333,3000
+0,income,drop,1.5,forecast amount+timing,0.483,0.044333333333333336,3000
+0,income,drop,1.5,hybrid rule+forecast,0.4216666666666667,0.052,3000
+0,income,spike,2.0,rule |z|,0.10333333333333333,0.051,3000
+0,income,spike,2.0,rule z (spike known),0.645,0.023333333333333334,3000
+0,income,spike,2.0,rule -z (drop known),0.033666666666666664,0.052,3000
+0,income,spike,2.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,spike,2.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,spike,2.0,"autoencoder (window 5, latent 16)",0.2653333333333333,0.05,3000
+0,income,spike,2.0,forecast |r|,0.6356666666666667,0.04466666666666667,3000
+0,income,spike,2.0,forecast r (spike known),0.685,0.050333333333333334,3000
+0,income,spike,2.0,forecast -r (drop known),0.027333333333333334,0.05466666666666667,3000
+0,income,spike,2.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,spike,2.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,spike,2.0,masked |r|,0.5516666666666666,0.052333333333333336,3000
+0,income,spike,2.0,masked r (spike known),0.6596666666666666,0.047,3000
+0,income,spike,2.0,masked -r (drop known),0.033,0.053,3000
+0,income,spike,2.0,rule amount+timing,0.04566666666666667,0.04933333333333333,3000
+0,income,spike,2.0,forecast amount+timing,0.566,0.044333333333333336,3000
+0,income,spike,2.0,hybrid rule+forecast,0.5006666666666667,0.052,3000
+0,income,drop,2.0,rule |z|,0.071,0.051,3000
+0,income,drop,2.0,rule z (spike known),0.005,0.023333333333333334,3000
+0,income,drop,2.0,rule -z (drop known),0.07133333333333333,0.052,3000
+0,income,drop,2.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,drop,2.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,drop,2.0,"autoencoder (window 5, latent 16)",0.19333333333333333,0.05,3000
+0,income,drop,2.0,forecast |r|,0.635,0.04466666666666667,3000
+0,income,drop,2.0,forecast r (spike known),0.004333333333333333,0.050333333333333334,3000
+0,income,drop,2.0,forecast -r (drop known),0.7163333333333334,0.05466666666666667,3000
+0,income,drop,2.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,drop,2.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,drop,2.0,masked |r|,0.573,0.052333333333333336,3000
+0,income,drop,2.0,masked r (spike known),0.007,0.047,3000
+0,income,drop,2.0,masked -r (drop known),0.654,0.053,3000
+0,income,drop,2.0,rule amount+timing,0.062,0.04933333333333333,3000
+0,income,drop,2.0,forecast amount+timing,0.569,0.044333333333333336,3000
+0,income,drop,2.0,hybrid rule+forecast,0.5116666666666667,0.052,3000
+0,income,spike,3.0,rule |z|,0.6556666666666666,0.051,3000
+0,income,spike,3.0,rule z (spike known),0.6693333333333333,0.023333333333333334,3000
+0,income,spike,3.0,rule -z (drop known),0.024666666666666667,0.052,3000
+0,income,spike,3.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,spike,3.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,spike,3.0,"autoencoder (window 5, latent 16)",0.308,0.05,3000
+0,income,spike,3.0,forecast |r|,0.6796666666666666,0.04466666666666667,3000
+0,income,spike,3.0,forecast r (spike known),0.7386666666666667,0.050333333333333334,3000
+0,income,spike,3.0,forecast -r (drop known),0.022333333333333334,0.05466666666666667,3000
+0,income,spike,3.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,spike,3.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,spike,3.0,masked |r|,0.611,0.052333333333333336,3000
+0,income,spike,3.0,masked r (spike known),0.7083333333333334,0.047,3000
+0,income,spike,3.0,masked -r (drop known),0.026,0.053,3000
+0,income,spike,3.0,rule amount+timing,0.043333333333333335,0.04933333333333333,3000
+0,income,spike,3.0,forecast amount+timing,0.6246666666666667,0.044333333333333336,3000
+0,income,spike,3.0,hybrid rule+forecast,0.5653333333333334,0.052,3000
+0,income,drop,3.0,rule |z|,0.6303333333333333,0.051,3000
+0,income,drop,3.0,rule z (spike known),0.0033333333333333335,0.023333333333333334,3000
+0,income,drop,3.0,rule -z (drop known),0.6313333333333333,0.052,3000
+0,income,drop,3.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,drop,3.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,drop,3.0,"autoencoder (window 5, latent 16)",0.427,0.05,3000
+0,income,drop,3.0,forecast |r|,0.673,0.04466666666666667,3000
+0,income,drop,3.0,forecast r (spike known),0.0036666666666666666,0.050333333333333334,3000
+0,income,drop,3.0,forecast -r (drop known),0.7706666666666667,0.05466666666666667,3000
+0,income,drop,3.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,drop,3.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,drop,3.0,masked |r|,0.628,0.052333333333333336,3000
+0,income,drop,3.0,masked r (spike known),0.006,0.047,3000
+0,income,drop,3.0,masked -r (drop known),0.6916666666666667,0.053,3000
+0,income,drop,3.0,rule amount+timing,0.069,0.04933333333333333,3000
+0,income,drop,3.0,forecast amount+timing,0.633,0.044333333333333336,3000
+0,income,drop,3.0,hybrid rule+forecast,0.5873333333333334,0.052,3000
+0,income,spike,5.0,rule |z|,0.6733333333333333,0.051,3000
+0,income,spike,5.0,rule z (spike known),0.6873333333333334,0.023333333333333334,3000
+0,income,spike,5.0,rule -z (drop known),0.016666666666666666,0.052,3000
+0,income,spike,5.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,spike,5.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,spike,5.0,"autoencoder (window 5, latent 16)",0.33566666666666667,0.05,3000
+0,income,spike,5.0,forecast |r|,0.7326666666666667,0.04466666666666667,3000
+0,income,spike,5.0,forecast r (spike known),0.7863333333333333,0.050333333333333334,3000
+0,income,spike,5.0,forecast -r (drop known),0.014333333333333333,0.05466666666666667,3000
+0,income,spike,5.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,spike,5.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,spike,5.0,masked |r|,0.6416666666666667,0.052333333333333336,3000
+0,income,spike,5.0,masked r (spike known),0.7873333333333333,0.047,3000
+0,income,spike,5.0,masked -r (drop known),0.019666666666666666,0.053,3000
+0,income,spike,5.0,rule amount+timing,0.106,0.04933333333333333,3000
+0,income,spike,5.0,forecast amount+timing,0.6703333333333333,0.044333333333333336,3000
+0,income,spike,5.0,hybrid rule+forecast,0.6126666666666667,0.052,3000
+0,income,drop,5.0,rule |z|,0.705,0.051,3000
+0,income,drop,5.0,rule z (spike known),0.002,0.023333333333333334,3000
+0,income,drop,5.0,rule -z (drop known),0.7123333333333334,0.052,3000
+0,income,drop,5.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,drop,5.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,drop,5.0,"autoencoder (window 5, latent 16)",0.33266666666666667,0.05,3000
+0,income,drop,5.0,forecast |r|,0.7143333333333334,0.04466666666666667,3000
+0,income,drop,5.0,forecast r (spike known),0.0023333333333333335,0.050333333333333334,3000
+0,income,drop,5.0,forecast -r (drop known),0.8173333333333334,0.05466666666666667,3000
+0,income,drop,5.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,drop,5.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,drop,5.0,masked |r|,0.658,0.052333333333333336,3000
+0,income,drop,5.0,masked r (spike known),0.004333333333333333,0.047,3000
+0,income,drop,5.0,masked -r (drop known),0.729,0.053,3000
+0,income,drop,5.0,rule amount+timing,0.08266666666666667,0.04933333333333333,3000
+0,income,drop,5.0,forecast amount+timing,0.6653333333333333,0.044333333333333336,3000
+0,income,drop,5.0,hybrid rule+forecast,0.6436666666666667,0.052,3000
+0,income,spike,10.0,rule |z|,0.695,0.051,3000
+0,income,spike,10.0,rule z (spike known),0.7083333333333334,0.023333333333333334,3000
+0,income,spike,10.0,rule -z (drop known),0.009,0.052,3000
+0,income,spike,10.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,spike,10.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,spike,10.0,"autoencoder (window 5, latent 16)",0.36566666666666664,0.05,3000
+0,income,spike,10.0,forecast |r|,0.781,0.04466666666666667,3000
+0,income,spike,10.0,forecast r (spike known),0.849,0.050333333333333334,3000
+0,income,spike,10.0,forecast -r (drop known),0.006,0.05466666666666667,3000
+0,income,spike,10.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,spike,10.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,spike,10.0,masked |r|,0.6746666666666666,0.052333333333333336,3000
+0,income,spike,10.0,masked r (spike known),0.8676666666666667,0.047,3000
+0,income,spike,10.0,masked -r (drop known),0.011333333333333334,0.053,3000
+0,income,spike,10.0,rule amount+timing,0.6486666666666666,0.04933333333333333,3000
+0,income,spike,10.0,forecast amount+timing,0.7156666666666667,0.044333333333333336,3000
+0,income,spike,10.0,hybrid rule+forecast,0.6643333333333333,0.052,3000
+0,income,drop,10.0,rule |z|,0.7166666666666667,0.051,3000
+0,income,drop,10.0,rule z (spike known),0.001,0.023333333333333334,3000
+0,income,drop,10.0,rule -z (drop known),0.7203333333333334,0.052,3000
+0,income,drop,10.0,rule timing |gap z|,0.049666666666666665,0.049666666666666665,3000
+0,income,drop,10.0,rule timing gap z (late known),0.050666666666666665,0.050666666666666665,3000
+0,income,drop,10.0,"autoencoder (window 5, latent 16)",0.23333333333333334,0.05,3000
+0,income,drop,10.0,forecast |r|,0.7693333333333333,0.04466666666666667,3000
+0,income,drop,10.0,forecast r (spike known),0.0013333333333333333,0.050333333333333334,3000
+0,income,drop,10.0,forecast -r (drop known),0.8576666666666667,0.05466666666666667,3000
+0,income,drop,10.0,forecast timing |r_gap|,0.048,0.048,3000
+0,income,drop,10.0,forecast timing r_gap (late known),0.05566666666666667,0.05566666666666667,3000
+0,income,drop,10.0,masked |r|,0.688,0.052333333333333336,3000
+0,income,drop,10.0,masked r (spike known),0.002,0.047,3000
+0,income,drop,10.0,masked -r (drop known),0.7666666666666667,0.053,3000
+0,income,drop,10.0,rule amount+timing,0.631,0.04933333333333333,3000
+0,income,drop,10.0,forecast amount+timing,0.704,0.044333333333333336,3000
+0,income,drop,10.0,hybrid rule+forecast,0.6946666666666667,0.052,3000
+0,income,late,3.0,rule |z|,0.051,0.051,3000
+0,income,late,3.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+0,income,late,3.0,rule -z (drop known),0.052,0.052,3000
+0,income,late,3.0,rule timing |gap z|,0.03933333333333333,0.049666666666666665,3000
+0,income,late,3.0,rule timing gap z (late known),0.5656666666666667,0.050666666666666665,3000
+0,income,late,3.0,"autoencoder (window 5, latent 16)",0.05,0.05,3000
+0,income,late,3.0,forecast |r|,0.07433333333333333,0.04466666666666667,3000
+0,income,late,3.0,forecast r (spike known),0.06366666666666666,0.050333333333333334,3000
+0,income,late,3.0,forecast -r (drop known),0.06366666666666666,0.05466666666666667,3000
+0,income,late,3.0,forecast timing |r_gap|,0.019666666666666666,0.048,3000
+0,income,late,3.0,forecast timing r_gap (late known),0.10733333333333334,0.05566666666666667,3000
+0,income,late,3.0,masked |r|,0.058333333333333334,0.052333333333333336,3000
+0,income,late,3.0,masked r (spike known),0.050666666666666665,0.047,3000
+0,income,late,3.0,masked -r (drop known),0.053,0.053,3000
+0,income,late,3.0,rule amount+timing,0.044333333333333336,0.04933333333333333,3000
+0,income,late,3.0,forecast amount+timing,0.04666666666666667,0.044333333333333336,3000
+0,income,late,3.0,hybrid rule+forecast,0.049,0.052,3000
+0,income,late,7.0,rule |z|,0.051,0.051,3000
+0,income,late,7.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+0,income,late,7.0,rule -z (drop known),0.052,0.052,3000
+0,income,late,7.0,rule timing |gap z|,0.029333333333333333,0.049666666666666665,3000
+0,income,late,7.0,rule timing gap z (late known),0.648,0.050666666666666665,3000
+0,income,late,7.0,"autoencoder (window 5, latent 16)",0.05,0.05,3000
+0,income,late,7.0,forecast |r|,0.07533333333333334,0.04466666666666667,3000
+0,income,late,7.0,forecast r (spike known),0.05733333333333333,0.050333333333333334,3000
+0,income,late,7.0,forecast -r (drop known),0.068,0.05466666666666667,3000
+0,income,late,7.0,forecast timing |r_gap|,0.011666666666666667,0.048,3000
+0,income,late,7.0,forecast timing r_gap (late known),0.43,0.05566666666666667,3000
+0,income,late,7.0,masked |r|,0.068,0.052333333333333336,3000
+0,income,late,7.0,masked r (spike known),0.051333333333333335,0.047,3000
+0,income,late,7.0,masked -r (drop known),0.05266666666666667,0.053,3000
+0,income,late,7.0,rule amount+timing,0.039,0.04933333333333333,3000
+0,income,late,7.0,forecast amount+timing,0.05466666666666667,0.044333333333333336,3000
+0,income,late,7.0,hybrid rule+forecast,0.04933333333333333,0.052,3000
+0,income,late,14.0,rule |z|,0.051,0.051,3000
+0,income,late,14.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+0,income,late,14.0,rule -z (drop known),0.052,0.052,3000
+0,income,late,14.0,rule timing |gap z|,0.014666666666666666,0.049666666666666665,3000
+0,income,late,14.0,rule timing gap z (late known),0.7353333333333333,0.050666666666666665,3000
+0,income,late,14.0,"autoencoder (window 5, latent 16)",0.05,0.05,3000
+0,income,late,14.0,forecast |r|,0.067,0.04466666666666667,3000
+0,income,late,14.0,forecast r (spike known),0.035333333333333335,0.050333333333333334,3000
+0,income,late,14.0,forecast -r (drop known),0.06933333333333333,0.05466666666666667,3000
+0,income,late,14.0,forecast timing |r_gap|,0.012333333333333333,0.048,3000
+0,income,late,14.0,forecast timing r_gap (late known),0.7176666666666667,0.05566666666666667,3000
+0,income,late,14.0,masked |r|,0.06266666666666666,0.052333333333333336,3000
+0,income,late,14.0,masked r (spike known),0.04666666666666667,0.047,3000
+0,income,late,14.0,masked -r (drop known),0.057,0.053,3000
+0,income,late,14.0,rule amount+timing,0.024666666666666667,0.04933333333333333,3000
+0,income,late,14.0,forecast amount+timing,0.047,0.044333333333333336,3000
+0,income,late,14.0,hybrid rule+forecast,0.043666666666666666,0.052,3000
+0,income,late,30.0,rule |z|,0.051,0.051,3000
+0,income,late,30.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+0,income,late,30.0,rule -z (drop known),0.052,0.052,3000
+0,income,late,30.0,rule timing |gap z|,0.509,0.049666666666666665,3000
+0,income,late,30.0,rule timing gap z (late known),0.9446666666666667,0.050666666666666665,3000
+0,income,late,30.0,"autoencoder (window 5, latent 16)",0.05,0.05,3000
+0,income,late,30.0,forecast |r|,0.07333333333333333,0.04466666666666667,3000
+0,income,late,30.0,forecast r (spike known),0.049666666666666665,0.050333333333333334,3000
+0,income,late,30.0,forecast -r (drop known),0.07766666666666666,0.05466666666666667,3000
+0,income,late,30.0,forecast timing |r_gap|,0.519,0.048,3000
+0,income,late,30.0,forecast timing r_gap (late known),0.882,0.05566666666666667,3000
+0,income,late,30.0,masked |r|,0.059,0.052333333333333336,3000
+0,income,late,30.0,masked r (spike known),0.04766666666666667,0.047,3000
+0,income,late,30.0,masked -r (drop known),0.06166666666666667,0.053,3000
+0,income,late,30.0,rule amount+timing,0.024666666666666667,0.04933333333333333,3000
+0,income,late,30.0,forecast amount+timing,0.25633333333333336,0.044333333333333336,3000
+0,income,late,30.0,hybrid rule+forecast,0.13233333333333333,0.052,3000
+1,expense,spike,1.5,rule |z|,0.44866666666666666,0.051333333333333335,3000
+1,expense,spike,1.5,rule z (spike known),0.5363333333333333,0.054,3000
+1,expense,spike,1.5,rule -z (drop known),0.027,0.04833333333333333,3000
+1,expense,spike,1.5,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,1.5,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,spike,1.5,"autoencoder (window 5, latent 16)",0.4196666666666667,0.057,3000
+1,expense,spike,1.5,forecast |r|,0.458,0.049666666666666665,3000
+1,expense,spike,1.5,forecast r (spike known),0.5426666666666666,0.052,3000
+1,expense,spike,1.5,forecast -r (drop known),0.023666666666666666,0.055,3000
+1,expense,spike,1.5,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,spike,1.5,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,1.5,masked |r|,0.4666666666666667,0.05566666666666667,3000
+1,expense,spike,1.5,masked r (spike known),0.5306666666666666,0.054,3000
+1,expense,spike,1.5,masked -r (drop known),0.022333333333333334,0.05333333333333334,3000
+1,expense,spike,1.5,rule amount+timing,0.44066666666666665,0.059333333333333335,3000
+1,expense,spike,1.5,forecast amount+timing,0.44766666666666666,0.05566666666666667,3000
+1,expense,spike,1.5,hybrid rule+forecast,0.446,0.059,3000
+1,expense,drop,1.5,rule |z|,0.467,0.051333333333333335,3000
+1,expense,drop,1.5,rule z (spike known),0.019666666666666666,0.054,3000
+1,expense,drop,1.5,rule -z (drop known),0.48733333333333334,0.04833333333333333,3000
+1,expense,drop,1.5,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,1.5,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,drop,1.5,"autoencoder (window 5, latent 16)",0.051,0.057,3000
+1,expense,drop,1.5,forecast |r|,0.46,0.049666666666666665,3000
+1,expense,drop,1.5,forecast r (spike known),0.017,0.052,3000
+1,expense,drop,1.5,forecast -r (drop known),0.4876666666666667,0.055,3000
+1,expense,drop,1.5,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,drop,1.5,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,1.5,masked |r|,0.45766666666666667,0.05566666666666667,3000
+1,expense,drop,1.5,masked r (spike known),0.021333333333333333,0.054,3000
+1,expense,drop,1.5,masked -r (drop known),0.49133333333333334,0.05333333333333334,3000
+1,expense,drop,1.5,rule amount+timing,0.45266666666666666,0.059333333333333335,3000
+1,expense,drop,1.5,forecast amount+timing,0.4513333333333333,0.05566666666666667,3000
+1,expense,drop,1.5,hybrid rule+forecast,0.4503333333333333,0.059,3000
+1,expense,spike,2.0,rule |z|,0.488,0.051333333333333335,3000
+1,expense,spike,2.0,rule z (spike known),0.6283333333333333,0.054,3000
+1,expense,spike,2.0,rule -z (drop known),0.017,0.04833333333333333,3000
+1,expense,spike,2.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,2.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,spike,2.0,"autoencoder (window 5, latent 16)",0.44766666666666666,0.057,3000
+1,expense,spike,2.0,forecast |r|,0.5283333333333333,0.049666666666666665,3000
+1,expense,spike,2.0,forecast r (spike known),0.6283333333333333,0.052,3000
+1,expense,spike,2.0,forecast -r (drop known),0.014666666666666666,0.055,3000
+1,expense,spike,2.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,spike,2.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,2.0,masked |r|,0.5143333333333333,0.05566666666666667,3000
+1,expense,spike,2.0,masked r (spike known),0.6146666666666667,0.054,3000
+1,expense,spike,2.0,masked -r (drop known),0.014,0.05333333333333334,3000
+1,expense,spike,2.0,rule amount+timing,0.46066666666666667,0.059333333333333335,3000
+1,expense,spike,2.0,forecast amount+timing,0.48333333333333334,0.05566666666666667,3000
+1,expense,spike,2.0,hybrid rule+forecast,0.4643333333333333,0.059,3000
+1,expense,drop,2.0,rule |z|,0.5066666666666667,0.051333333333333335,3000
+1,expense,drop,2.0,rule z (spike known),0.012666666666666666,0.054,3000
+1,expense,drop,2.0,rule -z (drop known),0.544,0.04833333333333333,3000
+1,expense,drop,2.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,2.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,drop,2.0,"autoencoder (window 5, latent 16)",0.04733333333333333,0.057,3000
+1,expense,drop,2.0,forecast |r|,0.495,0.049666666666666665,3000
+1,expense,drop,2.0,forecast r (spike known),0.007666666666666666,0.052,3000
+1,expense,drop,2.0,forecast -r (drop known),0.5383333333333333,0.055,3000
+1,expense,drop,2.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,drop,2.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,2.0,masked |r|,0.489,0.05566666666666667,3000
+1,expense,drop,2.0,masked r (spike known),0.008666666666666666,0.054,3000
+1,expense,drop,2.0,masked -r (drop known),0.5456666666666666,0.05333333333333334,3000
+1,expense,drop,2.0,rule amount+timing,0.4776666666666667,0.059333333333333335,3000
+1,expense,drop,2.0,forecast amount+timing,0.473,0.05566666666666667,3000
+1,expense,drop,2.0,hybrid rule+forecast,0.4673333333333333,0.059,3000
+1,expense,spike,3.0,rule |z|,0.5786666666666667,0.051333333333333335,3000
+1,expense,spike,3.0,rule z (spike known),0.741,0.054,3000
+1,expense,spike,3.0,rule -z (drop known),0.009,0.04833333333333333,3000
+1,expense,spike,3.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,3.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,spike,3.0,"autoencoder (window 5, latent 16)",0.484,0.057,3000
+1,expense,spike,3.0,forecast |r|,0.6276666666666667,0.049666666666666665,3000
+1,expense,spike,3.0,forecast r (spike known),0.7356666666666667,0.052,3000
+1,expense,spike,3.0,forecast -r (drop known),0.008333333333333333,0.055,3000
+1,expense,spike,3.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,spike,3.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,3.0,masked |r|,0.6043333333333333,0.05566666666666667,3000
+1,expense,spike,3.0,masked r (spike known),0.7266666666666667,0.054,3000
+1,expense,spike,3.0,masked -r (drop known),0.007666666666666666,0.05333333333333334,3000
+1,expense,spike,3.0,rule amount+timing,0.5096666666666667,0.059333333333333335,3000
+1,expense,spike,3.0,forecast amount+timing,0.5656666666666667,0.05566666666666667,3000
+1,expense,spike,3.0,hybrid rule+forecast,0.5196666666666667,0.059,3000
+1,expense,drop,3.0,rule |z|,0.596,0.051333333333333335,3000
+1,expense,drop,3.0,rule z (spike known),0.005,0.054,3000
+1,expense,drop,3.0,rule -z (drop known),0.64,0.04833333333333333,3000
+1,expense,drop,3.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,3.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,drop,3.0,"autoencoder (window 5, latent 16)",0.042,0.057,3000
+1,expense,drop,3.0,forecast |r|,0.568,0.049666666666666665,3000
+1,expense,drop,3.0,forecast r (spike known),0.0016666666666666668,0.052,3000
+1,expense,drop,3.0,forecast -r (drop known),0.6383333333333333,0.055,3000
+1,expense,drop,3.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,drop,3.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,3.0,masked |r|,0.5666666666666667,0.05566666666666667,3000
+1,expense,drop,3.0,masked r (spike known),0.002,0.054,3000
+1,expense,drop,3.0,masked -r (drop known),0.647,0.05333333333333334,3000
+1,expense,drop,3.0,rule amount+timing,0.5273333333333333,0.059333333333333335,3000
+1,expense,drop,3.0,forecast amount+timing,0.5226666666666666,0.05566666666666667,3000
+1,expense,drop,3.0,hybrid rule+forecast,0.507,0.059,3000
+1,expense,spike,5.0,rule |z|,0.716,0.051333333333333335,3000
+1,expense,spike,5.0,rule z (spike known),0.8286666666666667,0.054,3000
+1,expense,spike,5.0,rule -z (drop known),0.0036666666666666666,0.04833333333333333,3000
+1,expense,spike,5.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,5.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,spike,5.0,"autoencoder (window 5, latent 16)",0.521,0.057,3000
+1,expense,spike,5.0,forecast |r|,0.737,0.049666666666666665,3000
+1,expense,spike,5.0,forecast r (spike known),0.8423333333333334,0.052,3000
+1,expense,spike,5.0,forecast -r (drop known),0.0036666666666666666,0.055,3000
+1,expense,spike,5.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,spike,5.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,5.0,masked |r|,0.7213333333333334,0.05566666666666667,3000
+1,expense,spike,5.0,masked r (spike known),0.8373333333333334,0.054,3000
+1,expense,spike,5.0,masked -r (drop known),0.0023333333333333335,0.05333333333333334,3000
+1,expense,spike,5.0,rule amount+timing,0.607,0.059333333333333335,3000
+1,expense,spike,5.0,forecast amount+timing,0.6703333333333333,0.05566666666666667,3000
+1,expense,spike,5.0,hybrid rule+forecast,0.6186666666666667,0.059,3000
+1,expense,drop,5.0,rule |z|,0.7196666666666667,0.051333333333333335,3000
+1,expense,drop,5.0,rule z (spike known),0.001,0.054,3000
+1,expense,drop,5.0,rule -z (drop known),0.764,0.04833333333333333,3000
+1,expense,drop,5.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,5.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,drop,5.0,"autoencoder (window 5, latent 16)",0.043666666666666666,0.057,3000
+1,expense,drop,5.0,forecast |r|,0.6906666666666667,0.049666666666666665,3000
+1,expense,drop,5.0,forecast r (spike known),0.0,0.052,3000
+1,expense,drop,5.0,forecast -r (drop known),0.7736666666666666,0.055,3000
+1,expense,drop,5.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,drop,5.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,5.0,masked |r|,0.681,0.05566666666666667,3000
+1,expense,drop,5.0,masked r (spike known),0.001,0.054,3000
+1,expense,drop,5.0,masked -r (drop known),0.7806666666666666,0.05333333333333334,3000
+1,expense,drop,5.0,rule amount+timing,0.628,0.059333333333333335,3000
+1,expense,drop,5.0,forecast amount+timing,0.6153333333333333,0.05566666666666667,3000
+1,expense,drop,5.0,hybrid rule+forecast,0.5876666666666667,0.059,3000
+1,expense,spike,10.0,rule |z|,0.8333333333333334,0.051333333333333335,3000
+1,expense,spike,10.0,rule z (spike known),0.9163333333333333,0.054,3000
+1,expense,spike,10.0,rule -z (drop known),0.0006666666666666666,0.04833333333333333,3000
+1,expense,spike,10.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,10.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,spike,10.0,"autoencoder (window 5, latent 16)",0.576,0.057,3000
+1,expense,spike,10.0,forecast |r|,0.862,0.049666666666666665,3000
+1,expense,spike,10.0,forecast r (spike known),0.924,0.052,3000
+1,expense,spike,10.0,forecast -r (drop known),0.0006666666666666666,0.055,3000
+1,expense,spike,10.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,spike,10.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,spike,10.0,masked |r|,0.8556666666666667,0.05566666666666667,3000
+1,expense,spike,10.0,masked r (spike known),0.925,0.054,3000
+1,expense,spike,10.0,masked -r (drop known),0.0006666666666666666,0.05333333333333334,3000
+1,expense,spike,10.0,rule amount+timing,0.7703333333333333,0.059333333333333335,3000
+1,expense,spike,10.0,forecast amount+timing,0.7923333333333333,0.05566666666666667,3000
+1,expense,spike,10.0,hybrid rule+forecast,0.753,0.059,3000
+1,expense,drop,10.0,rule |z|,0.8556666666666667,0.051333333333333335,3000
+1,expense,drop,10.0,rule z (spike known),0.001,0.054,3000
+1,expense,drop,10.0,rule -z (drop known),0.8933333333333333,0.04833333333333333,3000
+1,expense,drop,10.0,rule timing |gap z|,0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,10.0,rule timing gap z (late known),0.05466666666666667,0.05466666666666667,3000
+1,expense,drop,10.0,"autoencoder (window 5, latent 16)",0.04466666666666667,0.057,3000
+1,expense,drop,10.0,forecast |r|,0.8403333333333334,0.049666666666666665,3000
+1,expense,drop,10.0,forecast r (spike known),0.0,0.052,3000
+1,expense,drop,10.0,forecast -r (drop known),0.9013333333333333,0.055,3000
+1,expense,drop,10.0,forecast timing |r_gap|,0.056666666666666664,0.056666666666666664,3000
+1,expense,drop,10.0,forecast timing r_gap (late known),0.05366666666666667,0.05366666666666667,3000
+1,expense,drop,10.0,masked |r|,0.8403333333333334,0.05566666666666667,3000
+1,expense,drop,10.0,masked r (spike known),0.001,0.054,3000
+1,expense,drop,10.0,masked -r (drop known),0.9126666666666666,0.05333333333333334,3000
+1,expense,drop,10.0,rule amount+timing,0.7763333333333333,0.059333333333333335,3000
+1,expense,drop,10.0,forecast amount+timing,0.7613333333333333,0.05566666666666667,3000
+1,expense,drop,10.0,hybrid rule+forecast,0.734,0.059,3000
+1,expense,late,3.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+1,expense,late,3.0,rule z (spike known),0.054,0.054,3000
+1,expense,late,3.0,rule -z (drop known),0.04833333333333333,0.04833333333333333,3000
+1,expense,late,3.0,rule timing |gap z|,0.048,0.05366666666666667,3000
+1,expense,late,3.0,rule timing gap z (late known),0.43033333333333335,0.05466666666666667,3000
+1,expense,late,3.0,"autoencoder (window 5, latent 16)",0.057,0.057,3000
+1,expense,late,3.0,forecast |r|,0.09833333333333333,0.049666666666666665,3000
+1,expense,late,3.0,forecast r (spike known),0.05533333333333333,0.052,3000
+1,expense,late,3.0,forecast -r (drop known),0.10966666666666666,0.055,3000
+1,expense,late,3.0,forecast timing |r_gap|,0.25266666666666665,0.056666666666666664,3000
+1,expense,late,3.0,forecast timing r_gap (late known),0.3453333333333333,0.05366666666666667,3000
+1,expense,late,3.0,masked |r|,0.058333333333333334,0.05566666666666667,3000
+1,expense,late,3.0,masked r (spike known),0.05433333333333333,0.054,3000
+1,expense,late,3.0,masked -r (drop known),0.058,0.05333333333333334,3000
+1,expense,late,3.0,rule amount+timing,0.06566666666666666,0.059333333333333335,3000
+1,expense,late,3.0,forecast amount+timing,0.25766666666666665,0.05566666666666667,3000
+1,expense,late,3.0,hybrid rule+forecast,0.22466666666666665,0.059,3000
+1,expense,late,7.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+1,expense,late,7.0,rule z (spike known),0.054,0.054,3000
+1,expense,late,7.0,rule -z (drop known),0.04833333333333333,0.04833333333333333,3000
+1,expense,late,7.0,rule timing |gap z|,0.425,0.05366666666666667,3000
+1,expense,late,7.0,rule timing gap z (late known),0.48833333333333334,0.05466666666666667,3000
+1,expense,late,7.0,"autoencoder (window 5, latent 16)",0.057,0.057,3000
+1,expense,late,7.0,forecast |r|,0.11566666666666667,0.049666666666666665,3000
+1,expense,late,7.0,forecast r (spike known),0.081,0.052,3000
+1,expense,late,7.0,forecast -r (drop known),0.10333333333333333,0.055,3000
+1,expense,late,7.0,forecast timing |r_gap|,0.377,0.056666666666666664,3000
+1,expense,late,7.0,forecast timing r_gap (late known),0.437,0.05366666666666667,3000
+1,expense,late,7.0,masked |r|,0.06266666666666666,0.05566666666666667,3000
+1,expense,late,7.0,masked r (spike known),0.05433333333333333,0.054,3000
+1,expense,late,7.0,masked -r (drop known),0.066,0.05333333333333334,3000
+1,expense,late,7.0,rule amount+timing,0.29033333333333333,0.059333333333333335,3000
+1,expense,late,7.0,forecast amount+timing,0.38033333333333336,0.05566666666666667,3000
+1,expense,late,7.0,hybrid rule+forecast,0.38266666666666665,0.059,3000
+1,expense,late,14.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+1,expense,late,14.0,rule z (spike known),0.054,0.054,3000
+1,expense,late,14.0,rule -z (drop known),0.04833333333333333,0.04833333333333333,3000
+1,expense,late,14.0,rule timing |gap z|,0.4256666666666667,0.05366666666666667,3000
+1,expense,late,14.0,rule timing gap z (late known),0.5483333333333333,0.05466666666666667,3000
+1,expense,late,14.0,"autoencoder (window 5, latent 16)",0.057,0.057,3000
+1,expense,late,14.0,forecast |r|,0.268,0.049666666666666665,3000
+1,expense,late,14.0,forecast r (spike known),0.26466666666666666,0.052,3000
+1,expense,late,14.0,forecast -r (drop known),0.065,0.055,3000
+1,expense,late,14.0,forecast timing |r_gap|,0.408,0.056666666666666664,3000
+1,expense,late,14.0,forecast timing r_gap (late known),0.5113333333333333,0.05366666666666667,3000
+1,expense,late,14.0,masked |r|,0.11,0.05566666666666667,3000
+1,expense,late,14.0,masked r (spike known),0.111,0.054,3000
+1,expense,late,14.0,masked -r (drop known),0.05733333333333333,0.05333333333333334,3000
+1,expense,late,14.0,rule amount+timing,0.447,0.059333333333333335,3000
+1,expense,late,14.0,forecast amount+timing,0.406,0.05566666666666667,3000
+1,expense,late,14.0,hybrid rule+forecast,0.42,0.059,3000
+1,expense,late,30.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+1,expense,late,30.0,rule z (spike known),0.054,0.054,3000
+1,expense,late,30.0,rule -z (drop known),0.04833333333333333,0.04833333333333333,3000
+1,expense,late,30.0,rule timing |gap z|,0.44133333333333336,0.05366666666666667,3000
+1,expense,late,30.0,rule timing gap z (late known),0.7613333333333333,0.05466666666666667,3000
+1,expense,late,30.0,"autoencoder (window 5, latent 16)",0.057,0.057,3000
+1,expense,late,30.0,forecast |r|,0.179,0.049666666666666665,3000
+1,expense,late,30.0,forecast r (spike known),0.041666666666666664,0.052,3000
+1,expense,late,30.0,forecast -r (drop known),0.25266666666666665,0.055,3000
+1,expense,late,30.0,forecast timing |r_gap|,0.5123333333333333,0.056666666666666664,3000
+1,expense,late,30.0,forecast timing r_gap (late known),0.7693333333333333,0.05366666666666667,3000
+1,expense,late,30.0,masked |r|,0.059666666666666666,0.05566666666666667,3000
+1,expense,late,30.0,masked r (spike known),0.046,0.054,3000
+1,expense,late,30.0,masked -r (drop known),0.06666666666666667,0.05333333333333334,3000
+1,expense,late,30.0,rule amount+timing,0.452,0.059333333333333335,3000
+1,expense,late,30.0,forecast amount+timing,0.44866666666666666,0.05566666666666667,3000
+1,expense,late,30.0,hybrid rule+forecast,0.43766666666666665,0.059,3000
+1,income,spike,1.5,rule |z|,0.044,0.050333333333333334,3000
+1,income,spike,1.5,rule z (spike known),0.089,0.023333333333333334,3000
+1,income,spike,1.5,rule -z (drop known),0.042666666666666665,0.052,3000
+1,income,spike,1.5,rule timing |gap z|,0.045,0.045,3000
+1,income,spike,1.5,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,spike,1.5,"autoencoder (window 5, latent 16)",0.105,0.050333333333333334,3000
+1,income,spike,1.5,forecast |r|,0.6916666666666667,0.050666666666666665,3000
+1,income,spike,1.5,forecast r (spike known),0.732,0.049666666666666665,3000
+1,income,spike,1.5,forecast -r (drop known),0.034666666666666665,0.045,3000
+1,income,spike,1.5,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,spike,1.5,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,spike,1.5,masked |r|,0.6376666666666667,0.05,3000
+1,income,spike,1.5,masked r (spike known),0.6986666666666667,0.04533333333333334,3000
+1,income,spike,1.5,masked -r (drop known),0.035,0.04733333333333333,3000
+1,income,spike,1.5,rule amount+timing,0.034,0.04,3000
+1,income,spike,1.5,forecast amount+timing,0.64,0.04733333333333333,3000
+1,income,spike,1.5,hybrid rule+forecast,0.582,0.044333333333333336,3000
+1,income,drop,1.5,rule |z|,0.059,0.050333333333333334,3000
+1,income,drop,1.5,rule z (spike known),0.007333333333333333,0.023333333333333334,3000
+1,income,drop,1.5,rule -z (drop known),0.059666666666666666,0.052,3000
+1,income,drop,1.5,rule timing |gap z|,0.045,0.045,3000
+1,income,drop,1.5,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,drop,1.5,"autoencoder (window 5, latent 16)",0.09966666666666667,0.050333333333333334,3000
+1,income,drop,1.5,forecast |r|,0.6393333333333333,0.050666666666666665,3000
+1,income,drop,1.5,forecast r (spike known),0.007333333333333333,0.049666666666666665,3000
+1,income,drop,1.5,forecast -r (drop known),0.6896666666666667,0.045,3000
+1,income,drop,1.5,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,drop,1.5,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,drop,1.5,masked |r|,0.6036666666666667,0.05,3000
+1,income,drop,1.5,masked r (spike known),0.007666666666666666,0.04533333333333334,3000
+1,income,drop,1.5,masked -r (drop known),0.66,0.04733333333333333,3000
+1,income,drop,1.5,rule amount+timing,0.045,0.04,3000
+1,income,drop,1.5,forecast amount+timing,0.6103333333333333,0.04733333333333333,3000
+1,income,drop,1.5,hybrid rule+forecast,0.5856666666666667,0.044333333333333336,3000
+1,income,spike,2.0,rule |z|,0.11366666666666667,0.050333333333333334,3000
+1,income,spike,2.0,rule z (spike known),0.704,0.023333333333333334,3000
+1,income,spike,2.0,rule -z (drop known),0.034666666666666665,0.052,3000
+1,income,spike,2.0,rule timing |gap z|,0.045,0.045,3000
+1,income,spike,2.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,spike,2.0,"autoencoder (window 5, latent 16)",0.16,0.050333333333333334,3000
+1,income,spike,2.0,forecast |r|,0.7333333333333333,0.050666666666666665,3000
+1,income,spike,2.0,forecast r (spike known),0.7683333333333333,0.049666666666666665,3000
+1,income,spike,2.0,forecast -r (drop known),0.02666666666666667,0.045,3000
+1,income,spike,2.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,spike,2.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,spike,2.0,masked |r|,0.6716666666666666,0.05,3000
+1,income,spike,2.0,masked r (spike known),0.739,0.04533333333333334,3000
+1,income,spike,2.0,masked -r (drop known),0.029333333333333333,0.04733333333333333,3000
+1,income,spike,2.0,rule amount+timing,0.033666666666666664,0.04,3000
+1,income,spike,2.0,forecast amount+timing,0.6713333333333333,0.04733333333333333,3000
+1,income,spike,2.0,hybrid rule+forecast,0.633,0.044333333333333336,3000
+1,income,drop,2.0,rule |z|,0.06333333333333334,0.050333333333333334,3000
+1,income,drop,2.0,rule z (spike known),0.006,0.023333333333333334,3000
+1,income,drop,2.0,rule -z (drop known),0.674,0.052,3000
+1,income,drop,2.0,rule timing |gap z|,0.045,0.045,3000
+1,income,drop,2.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,drop,2.0,"autoencoder (window 5, latent 16)",0.107,0.050333333333333334,3000
+1,income,drop,2.0,forecast |r|,0.7046666666666667,0.050666666666666665,3000
+1,income,drop,2.0,forecast r (spike known),0.005333333333333333,0.049666666666666665,3000
+1,income,drop,2.0,forecast -r (drop known),0.7813333333333333,0.045,3000
+1,income,drop,2.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,drop,2.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,drop,2.0,masked |r|,0.6473333333333333,0.05,3000
+1,income,drop,2.0,masked r (spike known),0.005666666666666667,0.04533333333333334,3000
+1,income,drop,2.0,masked -r (drop known),0.7233333333333334,0.04733333333333333,3000
+1,income,drop,2.0,rule amount+timing,0.051333333333333335,0.04,3000
+1,income,drop,2.0,forecast amount+timing,0.656,0.04733333333333333,3000
+1,income,drop,2.0,hybrid rule+forecast,0.6213333333333333,0.044333333333333336,3000
+1,income,spike,3.0,rule |z|,0.7216666666666667,0.050333333333333334,3000
+1,income,spike,3.0,rule z (spike known),0.7193333333333334,0.023333333333333334,3000
+1,income,spike,3.0,rule -z (drop known),0.025666666666666667,0.052,3000
+1,income,spike,3.0,rule timing |gap z|,0.045,0.045,3000
+1,income,spike,3.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,spike,3.0,"autoencoder (window 5, latent 16)",0.21933333333333332,0.050333333333333334,3000
+1,income,spike,3.0,forecast |r|,0.778,0.050666666666666665,3000
+1,income,spike,3.0,forecast r (spike known),0.8063333333333333,0.049666666666666665,3000
+1,income,spike,3.0,forecast -r (drop known),0.02,0.045,3000
+1,income,spike,3.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,spike,3.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,spike,3.0,masked |r|,0.7106666666666667,0.05,3000
+1,income,spike,3.0,masked r (spike known),0.7826666666666666,0.04533333333333334,3000
+1,income,spike,3.0,masked -r (drop known),0.021,0.04733333333333333,3000
+1,income,spike,3.0,rule amount+timing,0.03166666666666667,0.04,3000
+1,income,spike,3.0,forecast amount+timing,0.71,0.04733333333333333,3000
+1,income,spike,3.0,hybrid rule+forecast,0.6626666666666666,0.044333333333333336,3000
+1,income,drop,3.0,rule |z|,0.6763333333333333,0.050333333333333334,3000
+1,income,drop,3.0,rule z (spike known),0.005,0.023333333333333334,3000
+1,income,drop,3.0,rule -z (drop known),0.7543333333333333,0.052,3000
+1,income,drop,3.0,rule timing |gap z|,0.045,0.045,3000
+1,income,drop,3.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,drop,3.0,"autoencoder (window 5, latent 16)",0.117,0.050333333333333334,3000
+1,income,drop,3.0,forecast |r|,0.7573333333333333,0.050666666666666665,3000
+1,income,drop,3.0,forecast r (spike known),0.0033333333333333335,0.049666666666666665,3000
+1,income,drop,3.0,forecast -r (drop known),0.8163333333333334,0.045,3000
+1,income,drop,3.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,drop,3.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,drop,3.0,masked |r|,0.697,0.05,3000
+1,income,drop,3.0,masked r (spike known),0.0036666666666666666,0.04533333333333334,3000
+1,income,drop,3.0,masked -r (drop known),0.7866666666666666,0.04733333333333333,3000
+1,income,drop,3.0,rule amount+timing,0.058666666666666666,0.04,3000
+1,income,drop,3.0,forecast amount+timing,0.705,0.04733333333333333,3000
+1,income,drop,3.0,hybrid rule+forecast,0.67,0.044333333333333336,3000
+1,income,spike,5.0,rule |z|,0.725,0.050333333333333334,3000
+1,income,spike,5.0,rule z (spike known),0.7426666666666667,0.023333333333333334,3000
+1,income,spike,5.0,rule -z (drop known),0.016666666666666666,0.052,3000
+1,income,spike,5.0,rule timing |gap z|,0.045,0.045,3000
+1,income,spike,5.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,spike,5.0,"autoencoder (window 5, latent 16)",0.25133333333333335,0.050333333333333334,3000
+1,income,spike,5.0,forecast |r|,0.813,0.050666666666666665,3000
+1,income,spike,5.0,forecast r (spike known),0.852,0.049666666666666665,3000
+1,income,spike,5.0,forecast -r (drop known),0.014,0.045,3000
+1,income,spike,5.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,spike,5.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,spike,5.0,masked |r|,0.7453333333333333,0.05,3000
+1,income,spike,5.0,masked r (spike known),0.8296666666666667,0.04533333333333334,3000
+1,income,spike,5.0,masked -r (drop known),0.015,0.04733333333333333,3000
+1,income,spike,5.0,rule amount+timing,0.032,0.04,3000
+1,income,spike,5.0,forecast amount+timing,0.7463333333333333,0.04733333333333333,3000
+1,income,spike,5.0,hybrid rule+forecast,0.6986666666666667,0.044333333333333336,3000
+1,income,drop,5.0,rule |z|,0.756,0.050333333333333334,3000
+1,income,drop,5.0,rule z (spike known),0.003,0.023333333333333334,3000
+1,income,drop,5.0,rule -z (drop known),0.7666666666666667,0.052,3000
+1,income,drop,5.0,rule timing |gap z|,0.045,0.045,3000
+1,income,drop,5.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,drop,5.0,"autoencoder (window 5, latent 16)",0.12333333333333334,0.050333333333333334,3000
+1,income,drop,5.0,forecast |r|,0.792,0.050666666666666665,3000
+1,income,drop,5.0,forecast r (spike known),0.002,0.049666666666666665,3000
+1,income,drop,5.0,forecast -r (drop known),0.8606666666666667,0.045,3000
+1,income,drop,5.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,drop,5.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,drop,5.0,masked |r|,0.7433333333333333,0.05,3000
+1,income,drop,5.0,masked r (spike known),0.002,0.04533333333333334,3000
+1,income,drop,5.0,masked -r (drop known),0.826,0.04733333333333333,3000
+1,income,drop,5.0,rule amount+timing,0.06933333333333333,0.04,3000
+1,income,drop,5.0,forecast amount+timing,0.7513333333333333,0.04733333333333333,3000
+1,income,drop,5.0,hybrid rule+forecast,0.718,0.044333333333333336,3000
+1,income,spike,10.0,rule |z|,0.7416666666666667,0.050333333333333334,3000
+1,income,spike,10.0,rule z (spike known),0.761,0.023333333333333334,3000
+1,income,spike,10.0,rule -z (drop known),0.008333333333333333,0.052,3000
+1,income,spike,10.0,rule timing |gap z|,0.045,0.045,3000
+1,income,spike,10.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,spike,10.0,"autoencoder (window 5, latent 16)",0.283,0.050333333333333334,3000
+1,income,spike,10.0,forecast |r|,0.8556666666666667,0.050666666666666665,3000
+1,income,spike,10.0,forecast r (spike known),0.8956666666666667,0.049666666666666665,3000
+1,income,spike,10.0,forecast -r (drop known),0.007,0.045,3000
+1,income,spike,10.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,spike,10.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,spike,10.0,masked |r|,0.792,0.05,3000
+1,income,spike,10.0,masked r (spike known),0.879,0.04533333333333334,3000
+1,income,spike,10.0,masked -r (drop known),0.007666666666666666,0.04733333333333333,3000
+1,income,spike,10.0,rule amount+timing,0.707,0.04,3000
+1,income,spike,10.0,forecast amount+timing,0.7983333333333333,0.04733333333333333,3000
+1,income,spike,10.0,hybrid rule+forecast,0.7353333333333333,0.044333333333333336,3000
+1,income,drop,10.0,rule |z|,0.7646666666666667,0.050333333333333334,3000
+1,income,drop,10.0,rule z (spike known),0.002,0.023333333333333334,3000
+1,income,drop,10.0,rule -z (drop known),0.776,0.052,3000
+1,income,drop,10.0,rule timing |gap z|,0.045,0.045,3000
+1,income,drop,10.0,rule timing gap z (late known),0.04833333333333333,0.04833333333333333,3000
+1,income,drop,10.0,"autoencoder (window 5, latent 16)",0.13266666666666665,0.050333333333333334,3000
+1,income,drop,10.0,forecast |r|,0.8346666666666667,0.050666666666666665,3000
+1,income,drop,10.0,forecast r (spike known),0.0016666666666666668,0.049666666666666665,3000
+1,income,drop,10.0,forecast -r (drop known),0.8993333333333333,0.045,3000
+1,income,drop,10.0,forecast timing |r_gap|,0.050333333333333334,0.050333333333333334,3000
+1,income,drop,10.0,forecast timing r_gap (late known),0.044333333333333336,0.044333333333333336,3000
+1,income,drop,10.0,masked |r|,0.7846666666666666,0.05,3000
+1,income,drop,10.0,masked r (spike known),0.0016666666666666668,0.04533333333333334,3000
+1,income,drop,10.0,masked -r (drop known),0.8603333333333333,0.04733333333333333,3000
+1,income,drop,10.0,rule amount+timing,0.6736666666666666,0.04,3000
+1,income,drop,10.0,forecast amount+timing,0.7846666666666666,0.04733333333333333,3000
+1,income,drop,10.0,hybrid rule+forecast,0.7706666666666667,0.044333333333333336,3000
+1,income,late,3.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+1,income,late,3.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+1,income,late,3.0,rule -z (drop known),0.052,0.052,3000
+1,income,late,3.0,rule timing |gap z|,0.033,0.045,3000
+1,income,late,3.0,rule timing gap z (late known),0.632,0.04833333333333333,3000
+1,income,late,3.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+1,income,late,3.0,forecast |r|,0.15,0.050666666666666665,3000
+1,income,late,3.0,forecast r (spike known),0.08066666666666666,0.049666666666666665,3000
+1,income,late,3.0,forecast -r (drop known),0.13466666666666666,0.045,3000
+1,income,late,3.0,forecast timing |r_gap|,0.192,0.050333333333333334,3000
+1,income,late,3.0,forecast timing r_gap (late known),0.219,0.044333333333333336,3000
+1,income,late,3.0,masked |r|,0.058333333333333334,0.05,3000
+1,income,late,3.0,masked r (spike known),0.052333333333333336,0.04533333333333334,3000
+1,income,late,3.0,masked -r (drop known),0.052,0.04733333333333333,3000
+1,income,late,3.0,rule amount+timing,0.034,0.04,3000
+1,income,late,3.0,forecast amount+timing,0.20233333333333334,0.04733333333333333,3000
+1,income,late,3.0,hybrid rule+forecast,0.18633333333333332,0.044333333333333336,3000
+1,income,late,7.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+1,income,late,7.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+1,income,late,7.0,rule -z (drop known),0.052,0.052,3000
+1,income,late,7.0,rule timing |gap z|,0.019333333333333334,0.045,3000
+1,income,late,7.0,rule timing gap z (late known),0.717,0.04833333333333333,3000
+1,income,late,7.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+1,income,late,7.0,forecast |r|,0.22166666666666668,0.050666666666666665,3000
+1,income,late,7.0,forecast r (spike known),0.19733333333333333,0.049666666666666665,3000
+1,income,late,7.0,forecast -r (drop known),0.062,0.045,3000
+1,income,late,7.0,forecast timing |r_gap|,0.20766666666666667,0.050333333333333334,3000
+1,income,late,7.0,forecast timing r_gap (late known),0.31366666666666665,0.044333333333333336,3000
+1,income,late,7.0,masked |r|,0.059666666666666666,0.05,3000
+1,income,late,7.0,masked r (spike known),0.048666666666666664,0.04533333333333334,3000
+1,income,late,7.0,masked -r (drop known),0.05266666666666667,0.04733333333333333,3000
+1,income,late,7.0,rule amount+timing,0.030333333333333334,0.04,3000
+1,income,late,7.0,forecast amount+timing,0.23033333333333333,0.04733333333333333,3000
+1,income,late,7.0,hybrid rule+forecast,0.223,0.044333333333333336,3000
+1,income,late,14.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+1,income,late,14.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+1,income,late,14.0,rule -z (drop known),0.052,0.052,3000
+1,income,late,14.0,rule timing |gap z|,0.008666666666666666,0.045,3000
+1,income,late,14.0,rule timing gap z (late known),0.7866666666666666,0.04833333333333333,3000
+1,income,late,14.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+1,income,late,14.0,forecast |r|,0.22533333333333333,0.050666666666666665,3000
+1,income,late,14.0,forecast r (spike known),0.20733333333333334,0.049666666666666665,3000
+1,income,late,14.0,forecast -r (drop known),0.06066666666666667,0.045,3000
+1,income,late,14.0,forecast timing |r_gap|,0.2866666666666667,0.050333333333333334,3000
+1,income,late,14.0,forecast timing r_gap (late known),0.665,0.044333333333333336,3000
+1,income,late,14.0,masked |r|,0.05366666666666667,0.05,3000
+1,income,late,14.0,masked r (spike known),0.030333333333333334,0.04533333333333334,3000
+1,income,late,14.0,masked -r (drop known),0.053,0.04733333333333333,3000
+1,income,late,14.0,rule amount+timing,0.021666666666666667,0.04,3000
+1,income,late,14.0,forecast amount+timing,0.242,0.04733333333333333,3000
+1,income,late,14.0,hybrid rule+forecast,0.23133333333333334,0.044333333333333336,3000
+1,income,late,30.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+1,income,late,30.0,rule z (spike known),0.023333333333333334,0.023333333333333334,3000
+1,income,late,30.0,rule -z (drop known),0.052,0.052,3000
+1,income,late,30.0,rule timing |gap z|,0.5756666666666667,0.045,3000
+1,income,late,30.0,rule timing gap z (late known),0.9653333333333334,0.04833333333333333,3000
+1,income,late,30.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+1,income,late,30.0,forecast |r|,0.13466666666666666,0.050666666666666665,3000
+1,income,late,30.0,forecast r (spike known),0.10033333333333333,0.049666666666666665,3000
+1,income,late,30.0,forecast -r (drop known),0.12033333333333333,0.045,3000
+1,income,late,30.0,forecast timing |r_gap|,0.6633333333333333,0.050333333333333334,3000
+1,income,late,30.0,forecast timing r_gap (late known),0.8903333333333333,0.044333333333333336,3000
+1,income,late,30.0,masked |r|,0.06766666666666667,0.05,3000
+1,income,late,30.0,masked r (spike known),0.062,0.04533333333333334,3000
+1,income,late,30.0,masked -r (drop known),0.059666666666666666,0.04733333333333333,3000
+1,income,late,30.0,rule amount+timing,0.022,0.04,3000
+1,income,late,30.0,forecast amount+timing,0.48133333333333334,0.04733333333333333,3000
+1,income,late,30.0,hybrid rule+forecast,0.37033333333333335,0.044333333333333336,3000
+2,expense,spike,1.5,rule |z|,0.467,0.04766666666666667,3000
+2,expense,spike,1.5,rule z (spike known),0.5533333333333333,0.048,3000
+2,expense,spike,1.5,rule -z (drop known),0.023333333333333334,0.04766666666666667,3000
+2,expense,spike,1.5,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,spike,1.5,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,spike,1.5,"autoencoder (window 5, latent 16)",0.44033333333333335,0.043,3000
+2,expense,spike,1.5,forecast |r|,0.47933333333333333,0.043666666666666666,3000
+2,expense,spike,1.5,forecast r (spike known),0.544,0.04833333333333333,3000
+2,expense,spike,1.5,forecast -r (drop known),0.021666666666666667,0.044,3000
+2,expense,spike,1.5,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,spike,1.5,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,spike,1.5,masked |r|,0.48333333333333334,0.043333333333333335,3000
+2,expense,spike,1.5,masked r (spike known),0.5556666666666666,0.051333333333333335,3000
+2,expense,spike,1.5,masked -r (drop known),0.017333333333333333,0.047,3000
+2,expense,spike,1.5,rule amount+timing,0.457,0.044,3000
+2,expense,spike,1.5,forecast amount+timing,0.478,0.05633333333333333,3000
+2,expense,spike,1.5,hybrid rule+forecast,0.4653333333333333,0.04733333333333333,3000
+2,expense,drop,1.5,rule |z|,0.48433333333333334,0.04766666666666667,3000
+2,expense,drop,1.5,rule z (spike known),0.017333333333333333,0.048,3000
+2,expense,drop,1.5,rule -z (drop known),0.5033333333333333,0.04766666666666667,3000
+2,expense,drop,1.5,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,drop,1.5,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,drop,1.5,"autoencoder (window 5, latent 16)",0.046,0.043,3000
+2,expense,drop,1.5,forecast |r|,0.47633333333333333,0.043666666666666666,3000
+2,expense,drop,1.5,forecast r (spike known),0.012333333333333333,0.04833333333333333,3000
+2,expense,drop,1.5,forecast -r (drop known),0.506,0.044,3000
+2,expense,drop,1.5,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,drop,1.5,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,drop,1.5,masked |r|,0.48233333333333334,0.043333333333333335,3000
+2,expense,drop,1.5,masked r (spike known),0.015333333333333332,0.051333333333333335,3000
+2,expense,drop,1.5,masked -r (drop known),0.5063333333333333,0.047,3000
+2,expense,drop,1.5,rule amount+timing,0.468,0.044,3000
+2,expense,drop,1.5,forecast amount+timing,0.477,0.05633333333333333,3000
+2,expense,drop,1.5,hybrid rule+forecast,0.4673333333333333,0.04733333333333333,3000
+2,expense,spike,2.0,rule |z|,0.498,0.04766666666666667,3000
+2,expense,spike,2.0,rule z (spike known),0.6453333333333333,0.048,3000
+2,expense,spike,2.0,rule -z (drop known),0.012666666666666666,0.04766666666666667,3000
+2,expense,spike,2.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,spike,2.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,spike,2.0,"autoencoder (window 5, latent 16)",0.5113333333333333,0.043,3000
+2,expense,spike,2.0,forecast |r|,0.5346666666666666,0.043666666666666666,3000
+2,expense,spike,2.0,forecast r (spike known),0.6353333333333333,0.04833333333333333,3000
+2,expense,spike,2.0,forecast -r (drop known),0.013,0.044,3000
+2,expense,spike,2.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,spike,2.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,spike,2.0,masked |r|,0.5323333333333333,0.043333333333333335,3000
+2,expense,spike,2.0,masked r (spike known),0.6493333333333333,0.051333333333333335,3000
+2,expense,spike,2.0,masked -r (drop known),0.011,0.047,3000
+2,expense,spike,2.0,rule amount+timing,0.47333333333333333,0.044,3000
+2,expense,spike,2.0,forecast amount+timing,0.5033333333333333,0.05633333333333333,3000
+2,expense,spike,2.0,hybrid rule+forecast,0.4746666666666667,0.04733333333333333,3000
+2,expense,drop,2.0,rule |z|,0.5203333333333333,0.04766666666666667,3000
+2,expense,drop,2.0,rule z (spike known),0.01,0.048,3000
+2,expense,drop,2.0,rule -z (drop known),0.5476666666666666,0.04766666666666667,3000
+2,expense,drop,2.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,drop,2.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,drop,2.0,"autoencoder (window 5, latent 16)",0.41833333333333333,0.043,3000
+2,expense,drop,2.0,forecast |r|,0.509,0.043666666666666666,3000
+2,expense,drop,2.0,forecast r (spike known),0.006666666666666667,0.04833333333333333,3000
+2,expense,drop,2.0,forecast -r (drop known),0.5563333333333333,0.044,3000
+2,expense,drop,2.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,drop,2.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,drop,2.0,masked |r|,0.514,0.043333333333333335,3000
+2,expense,drop,2.0,masked r (spike known),0.009,0.051333333333333335,3000
+2,expense,drop,2.0,masked -r (drop known),0.5556666666666666,0.047,3000
+2,expense,drop,2.0,rule amount+timing,0.492,0.044,3000
+2,expense,drop,2.0,forecast amount+timing,0.49533333333333335,0.05633333333333333,3000
+2,expense,drop,2.0,hybrid rule+forecast,0.482,0.04733333333333333,3000
+2,expense,spike,3.0,rule |z|,0.589,0.04766666666666667,3000
+2,expense,spike,3.0,rule z (spike known),0.7516666666666667,0.048,3000
+2,expense,spike,3.0,rule -z (drop known),0.007333333333333333,0.04766666666666667,3000
+2,expense,spike,3.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,spike,3.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,spike,3.0,"autoencoder (window 5, latent 16)",0.5606666666666666,0.043,3000
+2,expense,spike,3.0,forecast |r|,0.6233333333333333,0.043666666666666666,3000
+2,expense,spike,3.0,forecast r (spike known),0.744,0.04833333333333333,3000
+2,expense,spike,3.0,forecast -r (drop known),0.006333333333333333,0.044,3000
+2,expense,spike,3.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,spike,3.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,spike,3.0,masked |r|,0.6323333333333333,0.043333333333333335,3000
+2,expense,spike,3.0,masked r (spike known),0.757,0.051333333333333335,3000
+2,expense,spike,3.0,masked -r (drop known),0.005666666666666667,0.047,3000
+2,expense,spike,3.0,rule amount+timing,0.5086666666666667,0.044,3000
+2,expense,spike,3.0,forecast amount+timing,0.565,0.05633333333333333,3000
+2,expense,spike,3.0,hybrid rule+forecast,0.5086666666666667,0.04733333333333333,3000
+2,expense,drop,3.0,rule |z|,0.602,0.04766666666666667,3000
+2,expense,drop,3.0,rule z (spike known),0.004,0.048,3000
+2,expense,drop,3.0,rule -z (drop known),0.645,0.04766666666666667,3000
+2,expense,drop,3.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,drop,3.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,drop,3.0,"autoencoder (window 5, latent 16)",0.428,0.043,3000
+2,expense,drop,3.0,forecast |r|,0.5766666666666667,0.043666666666666666,3000
+2,expense,drop,3.0,forecast r (spike known),0.0026666666666666666,0.04833333333333333,3000
+2,expense,drop,3.0,forecast -r (drop known),0.6426666666666667,0.044,3000
+2,expense,drop,3.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,drop,3.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,drop,3.0,masked |r|,0.5936666666666667,0.043333333333333335,3000
+2,expense,drop,3.0,masked r (spike known),0.0023333333333333335,0.051333333333333335,3000
+2,expense,drop,3.0,masked -r (drop known),0.652,0.047,3000
+2,expense,drop,3.0,rule amount+timing,0.524,0.044,3000
+2,expense,drop,3.0,forecast amount+timing,0.5333333333333333,0.05633333333333333,3000
+2,expense,drop,3.0,hybrid rule+forecast,0.5076666666666667,0.04733333333333333,3000
+2,expense,spike,5.0,rule |z|,0.7143333333333334,0.04766666666666667,3000
+2,expense,spike,5.0,rule z (spike known),0.8426666666666667,0.048,3000
+2,expense,spike,5.0,rule -z (drop known),0.004666666666666667,0.04766666666666667,3000
+2,expense,spike,5.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,spike,5.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,spike,5.0,"autoencoder (window 5, latent 16)",0.634,0.043,3000
+2,expense,spike,5.0,forecast |r|,0.7396666666666667,0.043666666666666666,3000
+2,expense,spike,5.0,forecast r (spike known),0.853,0.04833333333333333,3000
+2,expense,spike,5.0,forecast -r (drop known),0.0026666666666666666,0.044,3000
+2,expense,spike,5.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,spike,5.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,spike,5.0,masked |r|,0.7576666666666667,0.043333333333333335,3000
+2,expense,spike,5.0,masked r (spike known),0.8586666666666667,0.051333333333333335,3000
+2,expense,spike,5.0,masked -r (drop known),0.0033333333333333335,0.047,3000
+2,expense,spike,5.0,rule amount+timing,0.6073333333333333,0.044,3000
+2,expense,spike,5.0,forecast amount+timing,0.6553333333333333,0.05633333333333333,3000
+2,expense,spike,5.0,hybrid rule+forecast,0.5966666666666667,0.04733333333333333,3000
+2,expense,drop,5.0,rule |z|,0.7286666666666667,0.04766666666666667,3000
+2,expense,drop,5.0,rule z (spike known),0.001,0.048,3000
+2,expense,drop,5.0,rule -z (drop known),0.772,0.04766666666666667,3000
+2,expense,drop,5.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,drop,5.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,drop,5.0,"autoencoder (window 5, latent 16)",0.43633333333333335,0.043,3000
+2,expense,drop,5.0,forecast |r|,0.6933333333333334,0.043666666666666666,3000
+2,expense,drop,5.0,forecast r (spike known),0.0006666666666666666,0.04833333333333333,3000
+2,expense,drop,5.0,forecast -r (drop known),0.7756666666666666,0.044,3000
+2,expense,drop,5.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,drop,5.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,drop,5.0,masked |r|,0.7193333333333334,0.043333333333333335,3000
+2,expense,drop,5.0,masked r (spike known),0.0006666666666666666,0.051333333333333335,3000
+2,expense,drop,5.0,masked -r (drop known),0.7833333333333333,0.047,3000
+2,expense,drop,5.0,rule amount+timing,0.6166666666666667,0.044,3000
+2,expense,drop,5.0,forecast amount+timing,0.6143333333333333,0.05633333333333333,3000
+2,expense,drop,5.0,hybrid rule+forecast,0.5666666666666667,0.04733333333333333,3000
+2,expense,spike,10.0,rule |z|,0.8433333333333334,0.04766666666666667,3000
+2,expense,spike,10.0,rule z (spike known),0.9313333333333333,0.048,3000
+2,expense,spike,10.0,rule -z (drop known),0.0003333333333333333,0.04766666666666667,3000
+2,expense,spike,10.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,spike,10.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,spike,10.0,"autoencoder (window 5, latent 16)",0.722,0.043,3000
+2,expense,spike,10.0,forecast |r|,0.864,0.043666666666666666,3000
+2,expense,spike,10.0,forecast r (spike known),0.9356666666666666,0.04833333333333333,3000
+2,expense,spike,10.0,forecast -r (drop known),0.0003333333333333333,0.044,3000
+2,expense,spike,10.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,spike,10.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,spike,10.0,masked |r|,0.8843333333333333,0.043333333333333335,3000
+2,expense,spike,10.0,masked r (spike known),0.937,0.051333333333333335,3000
+2,expense,spike,10.0,masked -r (drop known),0.0,0.047,3000
+2,expense,spike,10.0,rule amount+timing,0.7556666666666667,0.044,3000
+2,expense,spike,10.0,forecast amount+timing,0.7833333333333333,0.05633333333333333,3000
+2,expense,spike,10.0,hybrid rule+forecast,0.732,0.04733333333333333,3000
+2,expense,drop,10.0,rule |z|,0.869,0.04766666666666667,3000
+2,expense,drop,10.0,rule z (spike known),0.0,0.048,3000
+2,expense,drop,10.0,rule -z (drop known),0.9003333333333333,0.04766666666666667,3000
+2,expense,drop,10.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,drop,10.0,rule timing gap z (late known),0.04933333333333333,0.04933333333333333,3000
+2,expense,drop,10.0,"autoencoder (window 5, latent 16)",0.4533333333333333,0.043,3000
+2,expense,drop,10.0,forecast |r|,0.8403333333333334,0.043666666666666666,3000
+2,expense,drop,10.0,forecast r (spike known),0.0,0.04833333333333333,3000
+2,expense,drop,10.0,forecast -r (drop known),0.9053333333333333,0.044,3000
+2,expense,drop,10.0,forecast timing |r_gap|,0.059333333333333335,0.059333333333333335,3000
+2,expense,drop,10.0,forecast timing r_gap (late known),0.05466666666666667,0.05466666666666667,3000
+2,expense,drop,10.0,masked |r|,0.8683333333333333,0.043333333333333335,3000
+2,expense,drop,10.0,masked r (spike known),0.0,0.051333333333333335,3000
+2,expense,drop,10.0,masked -r (drop known),0.9186666666666666,0.047,3000
+2,expense,drop,10.0,rule amount+timing,0.767,0.044,3000
+2,expense,drop,10.0,forecast amount+timing,0.7433333333333333,0.05633333333333333,3000
+2,expense,drop,10.0,hybrid rule+forecast,0.7013333333333334,0.04733333333333333,3000
+2,expense,late,3.0,rule |z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,late,3.0,rule z (spike known),0.048,0.048,3000
+2,expense,late,3.0,rule -z (drop known),0.04766666666666667,0.04766666666666667,3000
+2,expense,late,3.0,rule timing |gap z|,0.044333333333333336,0.04766666666666667,3000
+2,expense,late,3.0,rule timing gap z (late known),0.4563333333333333,0.04933333333333333,3000
+2,expense,late,3.0,"autoencoder (window 5, latent 16)",0.043,0.043,3000
+2,expense,late,3.0,forecast |r|,0.09933333333333333,0.043666666666666666,3000
+2,expense,late,3.0,forecast r (spike known),0.049,0.04833333333333333,3000
+2,expense,late,3.0,forecast -r (drop known),0.11166666666666666,0.044,3000
+2,expense,late,3.0,forecast timing |r_gap|,0.181,0.059333333333333335,3000
+2,expense,late,3.0,forecast timing r_gap (late known),0.292,0.05466666666666667,3000
+2,expense,late,3.0,masked |r|,0.195,0.043333333333333335,3000
+2,expense,late,3.0,masked r (spike known),0.04833333333333333,0.051333333333333335,3000
+2,expense,late,3.0,masked -r (drop known),0.23266666666666666,0.047,3000
+2,expense,late,3.0,rule amount+timing,0.05333333333333334,0.044,3000
+2,expense,late,3.0,forecast amount+timing,0.152,0.05633333333333333,3000
+2,expense,late,3.0,hybrid rule+forecast,0.097,0.04733333333333333,3000
+2,expense,late,7.0,rule |z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,late,7.0,rule z (spike known),0.048,0.048,3000
+2,expense,late,7.0,rule -z (drop known),0.04766666666666667,0.04766666666666667,3000
+2,expense,late,7.0,rule timing |gap z|,0.425,0.04766666666666667,3000
+2,expense,late,7.0,rule timing gap z (late known),0.521,0.04933333333333333,3000
+2,expense,late,7.0,"autoencoder (window 5, latent 16)",0.043,0.043,3000
+2,expense,late,7.0,forecast |r|,0.18433333333333332,0.043666666666666666,3000
+2,expense,late,7.0,forecast r (spike known),0.09466666666666666,0.04833333333333333,3000
+2,expense,late,7.0,forecast -r (drop known),0.157,0.044,3000
+2,expense,late,7.0,forecast timing |r_gap|,0.36233333333333334,0.059333333333333335,3000
+2,expense,late,7.0,forecast timing r_gap (late known),0.4726666666666667,0.05466666666666667,3000
+2,expense,late,7.0,masked |r|,0.329,0.043333333333333335,3000
+2,expense,late,7.0,masked r (spike known),0.056,0.051333333333333335,3000
+2,expense,late,7.0,masked -r (drop known),0.334,0.047,3000
+2,expense,late,7.0,rule amount+timing,0.05533333333333333,0.044,3000
+2,expense,late,7.0,forecast amount+timing,0.37533333333333335,0.05633333333333333,3000
+2,expense,late,7.0,hybrid rule+forecast,0.3506666666666667,0.04733333333333333,3000
+2,expense,late,14.0,rule |z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,late,14.0,rule z (spike known),0.048,0.048,3000
+2,expense,late,14.0,rule -z (drop known),0.04766666666666667,0.04766666666666667,3000
+2,expense,late,14.0,rule timing |gap z|,0.4493333333333333,0.04766666666666667,3000
+2,expense,late,14.0,rule timing gap z (late known),0.5976666666666667,0.04933333333333333,3000
+2,expense,late,14.0,"autoencoder (window 5, latent 16)",0.043,0.043,3000
+2,expense,late,14.0,forecast |r|,0.19366666666666665,0.043666666666666666,3000
+2,expense,late,14.0,forecast r (spike known),0.209,0.04833333333333333,3000
+2,expense,late,14.0,forecast -r (drop known),0.08833333333333333,0.044,3000
+2,expense,late,14.0,forecast timing |r_gap|,0.436,0.059333333333333335,3000
+2,expense,late,14.0,forecast timing r_gap (late known),0.5736666666666667,0.05466666666666667,3000
+2,expense,late,14.0,masked |r|,0.331,0.043333333333333335,3000
+2,expense,late,14.0,masked r (spike known),0.22566666666666665,0.051333333333333335,3000
+2,expense,late,14.0,masked -r (drop known),0.194,0.047,3000
+2,expense,late,14.0,rule amount+timing,0.46,0.044,3000
+2,expense,late,14.0,forecast amount+timing,0.42533333333333334,0.05633333333333333,3000
+2,expense,late,14.0,hybrid rule+forecast,0.421,0.04733333333333333,3000
+2,expense,late,30.0,rule |z|,0.04766666666666667,0.04766666666666667,3000
+2,expense,late,30.0,rule z (spike known),0.048,0.048,3000
+2,expense,late,30.0,rule -z (drop known),0.04766666666666667,0.04766666666666667,3000
+2,expense,late,30.0,rule timing |gap z|,0.46366666666666667,0.04766666666666667,3000
+2,expense,late,30.0,rule timing gap z (late known),0.7843333333333333,0.04933333333333333,3000
+2,expense,late,30.0,"autoencoder (window 5, latent 16)",0.043,0.043,3000
+2,expense,late,30.0,forecast |r|,0.285,0.043666666666666666,3000
+2,expense,late,30.0,forecast r (spike known),0.04133333333333333,0.04833333333333333,3000
+2,expense,late,30.0,forecast -r (drop known),0.3333333333333333,0.044,3000
+2,expense,late,30.0,forecast timing |r_gap|,0.553,0.059333333333333335,3000
+2,expense,late,30.0,forecast timing r_gap (late known),0.7906666666666666,0.05466666666666667,3000
+2,expense,late,30.0,masked |r|,0.236,0.043333333333333335,3000
+2,expense,late,30.0,masked r (spike known),0.043333333333333335,0.051333333333333335,3000
+2,expense,late,30.0,masked -r (drop known),0.26266666666666666,0.047,3000
+2,expense,late,30.0,rule amount+timing,0.462,0.044,3000
+2,expense,late,30.0,forecast amount+timing,0.4756666666666667,0.05633333333333333,3000
+2,expense,late,30.0,hybrid rule+forecast,0.458,0.04733333333333333,3000
+2,income,spike,1.5,rule |z|,0.036,0.04566666666666667,3000
+2,income,spike,1.5,rule z (spike known),0.09866666666666667,0.02666666666666667,3000
+2,income,spike,1.5,rule -z (drop known),0.035333333333333335,0.04566666666666667,3000
+2,income,spike,1.5,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,spike,1.5,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,spike,1.5,"autoencoder (window 5, latent 16)",0.14733333333333334,0.045,3000
+2,income,spike,1.5,forecast |r|,0.6153333333333333,0.046,3000
+2,income,spike,1.5,forecast r (spike known),0.6706666666666666,0.052,3000
+2,income,spike,1.5,forecast -r (drop known),0.029333333333333333,0.041666666666666664,3000
+2,income,spike,1.5,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,spike,1.5,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,spike,1.5,masked |r|,0.6106666666666667,0.048,3000
+2,income,spike,1.5,masked r (spike known),0.7003333333333334,0.05433333333333333,3000
+2,income,spike,1.5,masked -r (drop known),0.029666666666666668,0.042666666666666665,3000
+2,income,spike,1.5,rule amount+timing,0.041,0.043666666666666666,3000
+2,income,spike,1.5,forecast amount+timing,0.5736666666666667,0.04733333333333333,3000
+2,income,spike,1.5,hybrid rule+forecast,0.5246666666666666,0.045,3000
+2,income,drop,1.5,rule |z|,0.055,0.04566666666666667,3000
+2,income,drop,1.5,rule z (spike known),0.005666666666666667,0.02666666666666667,3000
+2,income,drop,1.5,rule -z (drop known),0.05433333333333333,0.04566666666666667,3000
+2,income,drop,1.5,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,drop,1.5,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,drop,1.5,"autoencoder (window 5, latent 16)",0.08633333333333333,0.045,3000
+2,income,drop,1.5,forecast |r|,0.581,0.046,3000
+2,income,drop,1.5,forecast r (spike known),0.004666666666666667,0.052,3000
+2,income,drop,1.5,forecast -r (drop known),0.6276666666666667,0.041666666666666664,3000
+2,income,drop,1.5,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,drop,1.5,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,drop,1.5,masked |r|,0.6063333333333333,0.048,3000
+2,income,drop,1.5,masked r (spike known),0.009,0.05433333333333333,3000
+2,income,drop,1.5,masked -r (drop known),0.6413333333333333,0.042666666666666665,3000
+2,income,drop,1.5,rule amount+timing,0.049,0.043666666666666666,3000
+2,income,drop,1.5,forecast amount+timing,0.567,0.04733333333333333,3000
+2,income,drop,1.5,hybrid rule+forecast,0.5296666666666666,0.045,3000
+2,income,spike,2.0,rule |z|,0.11666666666666667,0.04566666666666667,3000
+2,income,spike,2.0,rule z (spike known),0.67,0.02666666666666667,3000
+2,income,spike,2.0,rule -z (drop known),0.02666666666666667,0.04566666666666667,3000
+2,income,spike,2.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,spike,2.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,spike,2.0,"autoencoder (window 5, latent 16)",0.228,0.045,3000
+2,income,spike,2.0,forecast |r|,0.659,0.046,3000
+2,income,spike,2.0,forecast r (spike known),0.72,0.052,3000
+2,income,spike,2.0,forecast -r (drop known),0.02266666666666667,0.041666666666666664,3000
+2,income,spike,2.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,spike,2.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,spike,2.0,masked |r|,0.6643333333333333,0.048,3000
+2,income,spike,2.0,masked r (spike known),0.7396666666666667,0.05433333333333333,3000
+2,income,spike,2.0,masked -r (drop known),0.026,0.042666666666666665,3000
+2,income,spike,2.0,rule amount+timing,0.03933333333333333,0.043666666666666666,3000
+2,income,spike,2.0,forecast amount+timing,0.6116666666666667,0.04733333333333333,3000
+2,income,spike,2.0,hybrid rule+forecast,0.571,0.045,3000
+2,income,drop,2.0,rule |z|,0.058333333333333334,0.04566666666666667,3000
+2,income,drop,2.0,rule z (spike known),0.004666666666666667,0.02666666666666667,3000
+2,income,drop,2.0,rule -z (drop known),0.062,0.04566666666666667,3000
+2,income,drop,2.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,drop,2.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,drop,2.0,"autoencoder (window 5, latent 16)",0.15733333333333333,0.045,3000
+2,income,drop,2.0,forecast |r|,0.6266666666666667,0.046,3000
+2,income,drop,2.0,forecast r (spike known),0.0033333333333333335,0.052,3000
+2,income,drop,2.0,forecast -r (drop known),0.7073333333333334,0.041666666666666664,3000
+2,income,drop,2.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,drop,2.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,drop,2.0,masked |r|,0.6443333333333333,0.048,3000
+2,income,drop,2.0,masked r (spike known),0.005,0.05433333333333333,3000
+2,income,drop,2.0,masked -r (drop known),0.6993333333333334,0.042666666666666665,3000
+2,income,drop,2.0,rule amount+timing,0.052333333333333336,0.043666666666666666,3000
+2,income,drop,2.0,forecast amount+timing,0.5943333333333334,0.04733333333333333,3000
+2,income,drop,2.0,hybrid rule+forecast,0.569,0.045,3000
+2,income,spike,3.0,rule |z|,0.6796666666666666,0.04566666666666667,3000
+2,income,spike,3.0,rule z (spike known),0.6786666666666666,0.02666666666666667,3000
+2,income,spike,3.0,rule -z (drop known),0.02,0.04566666666666667,3000
+2,income,spike,3.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,spike,3.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,spike,3.0,"autoencoder (window 5, latent 16)",0.434,0.045,3000
+2,income,spike,3.0,forecast |r|,0.702,0.046,3000
+2,income,spike,3.0,forecast r (spike known),0.7903333333333333,0.052,3000
+2,income,spike,3.0,forecast -r (drop known),0.017333333333333333,0.041666666666666664,3000
+2,income,spike,3.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,spike,3.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,spike,3.0,masked |r|,0.6956666666666667,0.048,3000
+2,income,spike,3.0,masked r (spike known),0.796,0.05433333333333333,3000
+2,income,spike,3.0,masked -r (drop known),0.018333333333333333,0.042666666666666665,3000
+2,income,spike,3.0,rule amount+timing,0.03866666666666667,0.043666666666666666,3000
+2,income,spike,3.0,forecast amount+timing,0.6406666666666667,0.04733333333333333,3000
+2,income,spike,3.0,hybrid rule+forecast,0.6006666666666667,0.045,3000
+2,income,drop,3.0,rule |z|,0.631,0.04566666666666667,3000
+2,income,drop,3.0,rule z (spike known),0.004,0.02666666666666667,3000
+2,income,drop,3.0,rule -z (drop known),0.6316666666666667,0.04566666666666667,3000
+2,income,drop,3.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,drop,3.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,drop,3.0,"autoencoder (window 5, latent 16)",0.18333333333333332,0.045,3000
+2,income,drop,3.0,forecast |r|,0.6813333333333333,0.046,3000
+2,income,drop,3.0,forecast r (spike known),0.003,0.052,3000
+2,income,drop,3.0,forecast -r (drop known),0.7793333333333333,0.041666666666666664,3000
+2,income,drop,3.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,drop,3.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,drop,3.0,masked |r|,0.683,0.048,3000
+2,income,drop,3.0,masked r (spike known),0.0033333333333333335,0.05433333333333333,3000
+2,income,drop,3.0,masked -r (drop known),0.7376666666666667,0.042666666666666665,3000
+2,income,drop,3.0,rule amount+timing,0.064,0.043666666666666666,3000
+2,income,drop,3.0,forecast amount+timing,0.6396666666666667,0.04733333333333333,3000
+2,income,drop,3.0,hybrid rule+forecast,0.6036666666666667,0.045,3000
+2,income,spike,5.0,rule |z|,0.6856666666666666,0.04566666666666667,3000
+2,income,spike,5.0,rule z (spike known),0.6956666666666667,0.02666666666666667,3000
+2,income,spike,5.0,rule -z (drop known),0.011666666666666667,0.04566666666666667,3000
+2,income,spike,5.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,spike,5.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,spike,5.0,"autoencoder (window 5, latent 16)",0.655,0.045,3000
+2,income,spike,5.0,forecast |r|,0.7593333333333333,0.046,3000
+2,income,spike,5.0,forecast r (spike known),0.849,0.052,3000
+2,income,spike,5.0,forecast -r (drop known),0.011,0.041666666666666664,3000
+2,income,spike,5.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,spike,5.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,spike,5.0,masked |r|,0.7386666666666667,0.048,3000
+2,income,spike,5.0,masked r (spike known),0.843,0.05433333333333333,3000
+2,income,spike,5.0,masked -r (drop known),0.01,0.042666666666666665,3000
+2,income,spike,5.0,rule amount+timing,0.03966666666666667,0.043666666666666666,3000
+2,income,spike,5.0,forecast amount+timing,0.6873333333333334,0.04733333333333333,3000
+2,income,spike,5.0,hybrid rule+forecast,0.6293333333333333,0.045,3000
+2,income,drop,5.0,rule |z|,0.7206666666666667,0.04566666666666667,3000
+2,income,drop,5.0,rule z (spike known),0.003,0.02666666666666667,3000
+2,income,drop,5.0,rule -z (drop known),0.7203333333333334,0.04566666666666667,3000
+2,income,drop,5.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,drop,5.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,drop,5.0,"autoencoder (window 5, latent 16)",0.21033333333333334,0.045,3000
+2,income,drop,5.0,forecast |r|,0.7446666666666667,0.046,3000
+2,income,drop,5.0,forecast r (spike known),0.0023333333333333335,0.052,3000
+2,income,drop,5.0,forecast -r (drop known),0.8386666666666667,0.041666666666666664,3000
+2,income,drop,5.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,drop,5.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,drop,5.0,masked |r|,0.715,0.048,3000
+2,income,drop,5.0,masked r (spike known),0.0023333333333333335,0.05433333333333333,3000
+2,income,drop,5.0,masked -r (drop known),0.7886666666666666,0.042666666666666665,3000
+2,income,drop,5.0,rule amount+timing,0.073,0.043666666666666666,3000
+2,income,drop,5.0,forecast amount+timing,0.674,0.04733333333333333,3000
+2,income,drop,5.0,hybrid rule+forecast,0.643,0.045,3000
+2,income,spike,10.0,rule |z|,0.702,0.04566666666666667,3000
+2,income,spike,10.0,rule z (spike known),0.716,0.02666666666666667,3000
+2,income,spike,10.0,rule -z (drop known),0.006,0.04566666666666667,3000
+2,income,spike,10.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,spike,10.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,spike,10.0,"autoencoder (window 5, latent 16)",0.6933333333333334,0.045,3000
+2,income,spike,10.0,forecast |r|,0.816,0.046,3000
+2,income,spike,10.0,forecast r (spike known),0.9083333333333333,0.052,3000
+2,income,spike,10.0,forecast -r (drop known),0.005333333333333333,0.041666666666666664,3000
+2,income,spike,10.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,spike,10.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,spike,10.0,masked |r|,0.791,0.048,3000
+2,income,spike,10.0,masked r (spike known),0.8986666666666666,0.05433333333333333,3000
+2,income,spike,10.0,masked -r (drop known),0.005666666666666667,0.042666666666666665,3000
+2,income,spike,10.0,rule amount+timing,0.6756666666666666,0.043666666666666666,3000
+2,income,spike,10.0,forecast amount+timing,0.747,0.04733333333333333,3000
+2,income,spike,10.0,hybrid rule+forecast,0.6733333333333333,0.045,3000
+2,income,drop,10.0,rule |z|,0.723,0.04566666666666667,3000
+2,income,drop,10.0,rule z (spike known),0.002,0.02666666666666667,3000
+2,income,drop,10.0,rule -z (drop known),0.7226666666666667,0.04566666666666667,3000
+2,income,drop,10.0,rule timing |gap z|,0.04666666666666667,0.04666666666666667,3000
+2,income,drop,10.0,rule timing gap z (late known),0.051333333333333335,0.051333333333333335,3000
+2,income,drop,10.0,"autoencoder (window 5, latent 16)",0.287,0.045,3000
+2,income,drop,10.0,forecast |r|,0.809,0.046,3000
+2,income,drop,10.0,forecast r (spike known),0.0016666666666666668,0.052,3000
+2,income,drop,10.0,forecast -r (drop known),0.8973333333333333,0.041666666666666664,3000
+2,income,drop,10.0,forecast timing |r_gap|,0.05433333333333333,0.05433333333333333,3000
+2,income,drop,10.0,forecast timing r_gap (late known),0.043333333333333335,0.043333333333333335,3000
+2,income,drop,10.0,masked |r|,0.7616666666666667,0.048,3000
+2,income,drop,10.0,masked r (spike known),0.002,0.05433333333333333,3000
+2,income,drop,10.0,masked -r (drop known),0.8423333333333334,0.042666666666666665,3000
+2,income,drop,10.0,rule amount+timing,0.63,0.043666666666666666,3000
+2,income,drop,10.0,forecast amount+timing,0.7233333333333334,0.04733333333333333,3000
+2,income,drop,10.0,hybrid rule+forecast,0.6906666666666667,0.045,3000
+2,income,late,3.0,rule |z|,0.04566666666666667,0.04566666666666667,3000
+2,income,late,3.0,rule z (spike known),0.02666666666666667,0.02666666666666667,3000
+2,income,late,3.0,rule -z (drop known),0.04566666666666667,0.04566666666666667,3000
+2,income,late,3.0,rule timing |gap z|,0.03866666666666667,0.04666666666666667,3000
+2,income,late,3.0,rule timing gap z (late known),0.587,0.051333333333333335,3000
+2,income,late,3.0,"autoencoder (window 5, latent 16)",0.045,0.045,3000
+2,income,late,3.0,forecast |r|,0.07666666666666666,0.046,3000
+2,income,late,3.0,forecast r (spike known),0.093,0.052,3000
+2,income,late,3.0,forecast -r (drop known),0.04766666666666667,0.041666666666666664,3000
+2,income,late,3.0,forecast timing |r_gap|,0.022333333333333334,0.05433333333333333,3000
+2,income,late,3.0,forecast timing r_gap (late known),0.11833333333333333,0.043333333333333335,3000
+2,income,late,3.0,masked |r|,0.05366666666666667,0.048,3000
+2,income,late,3.0,masked r (spike known),0.06366666666666666,0.05433333333333333,3000
+2,income,late,3.0,masked -r (drop known),0.042,0.042666666666666665,3000
+2,income,late,3.0,rule amount+timing,0.03666666666666667,0.043666666666666666,3000
+2,income,late,3.0,forecast amount+timing,0.04933333333333333,0.04733333333333333,3000
+2,income,late,3.0,hybrid rule+forecast,0.041666666666666664,0.045,3000
+2,income,late,7.0,rule |z|,0.04566666666666667,0.04566666666666667,3000
+2,income,late,7.0,rule z (spike known),0.02666666666666667,0.02666666666666667,3000
+2,income,late,7.0,rule -z (drop known),0.04566666666666667,0.04566666666666667,3000
+2,income,late,7.0,rule timing |gap z|,0.026,0.04666666666666667,3000
+2,income,late,7.0,rule timing gap z (late known),0.6773333333333333,0.051333333333333335,3000
+2,income,late,7.0,"autoencoder (window 5, latent 16)",0.045,0.045,3000
+2,income,late,7.0,forecast |r|,0.118,0.046,3000
+2,income,late,7.0,forecast r (spike known),0.10833333333333334,0.052,3000
+2,income,late,7.0,forecast -r (drop known),0.05266666666666667,0.041666666666666664,3000
+2,income,late,7.0,forecast timing |r_gap|,0.102,0.05433333333333333,3000
+2,income,late,7.0,forecast timing r_gap (late known),0.29833333333333334,0.043333333333333335,3000
+2,income,late,7.0,masked |r|,0.08433333333333333,0.048,3000
+2,income,late,7.0,masked r (spike known),0.06933333333333333,0.05433333333333333,3000
+2,income,late,7.0,masked -r (drop known),0.08366666666666667,0.042666666666666665,3000
+2,income,late,7.0,rule amount+timing,0.028666666666666667,0.043666666666666666,3000
+2,income,late,7.0,forecast amount+timing,0.12466666666666666,0.04733333333333333,3000
+2,income,late,7.0,hybrid rule+forecast,0.08466666666666667,0.045,3000
+2,income,late,14.0,rule |z|,0.04566666666666667,0.04566666666666667,3000
+2,income,late,14.0,rule z (spike known),0.02666666666666667,0.02666666666666667,3000
+2,income,late,14.0,rule -z (drop known),0.04566666666666667,0.04566666666666667,3000
+2,income,late,14.0,rule timing |gap z|,0.010666666666666666,0.04666666666666667,3000
+2,income,late,14.0,rule timing gap z (late known),0.757,0.051333333333333335,3000
+2,income,late,14.0,"autoencoder (window 5, latent 16)",0.045,0.045,3000
+2,income,late,14.0,forecast |r|,0.13233333333333333,0.046,3000
+2,income,late,14.0,forecast r (spike known),0.12033333333333333,0.052,3000
+2,income,late,14.0,forecast -r (drop known),0.050666666666666665,0.041666666666666664,3000
+2,income,late,14.0,forecast timing |r_gap|,0.232,0.05433333333333333,3000
+2,income,late,14.0,forecast timing r_gap (late known),0.675,0.043333333333333335,3000
+2,income,late,14.0,masked |r|,0.05533333333333333,0.048,3000
+2,income,late,14.0,masked r (spike known),0.05633333333333333,0.05433333333333333,3000
+2,income,late,14.0,masked -r (drop known),0.05366666666666667,0.042666666666666665,3000
+2,income,late,14.0,rule amount+timing,0.017333333333333333,0.043666666666666666,3000
+2,income,late,14.0,forecast amount+timing,0.19366666666666665,0.04733333333333333,3000
+2,income,late,14.0,hybrid rule+forecast,0.15133333333333332,0.045,3000
+2,income,late,30.0,rule |z|,0.04566666666666667,0.04566666666666667,3000
+2,income,late,30.0,rule z (spike known),0.02666666666666667,0.02666666666666667,3000
+2,income,late,30.0,rule -z (drop known),0.04566666666666667,0.04566666666666667,3000
+2,income,late,30.0,rule timing |gap z|,0.5246666666666666,0.04666666666666667,3000
+2,income,late,30.0,rule timing gap z (late known),0.941,0.051333333333333335,3000
+2,income,late,30.0,"autoencoder (window 5, latent 16)",0.045,0.045,3000
+2,income,late,30.0,forecast |r|,0.1,0.046,3000
+2,income,late,30.0,forecast r (spike known),0.07933333333333334,0.052,3000
+2,income,late,30.0,forecast -r (drop known),0.07633333333333334,0.041666666666666664,3000
+2,income,late,30.0,forecast timing |r_gap|,0.5436666666666666,0.05433333333333333,3000
+2,income,late,30.0,forecast timing r_gap (late known),0.9016666666666666,0.043333333333333335,3000
+2,income,late,30.0,masked |r|,0.068,0.048,3000
+2,income,late,30.0,masked r (spike known),0.07166666666666667,0.05433333333333333,3000
+2,income,late,30.0,masked -r (drop known),0.062,0.042666666666666665,3000
+2,income,late,30.0,rule amount+timing,0.019,0.043666666666666666,3000
+2,income,late,30.0,forecast amount+timing,0.4103333333333333,0.04733333333333333,3000
+2,income,late,30.0,hybrid rule+forecast,0.32966666666666666,0.045,3000
+3,expense,spike,1.5,rule |z|,0.4513333333333333,0.051333333333333335,3000
+3,expense,spike,1.5,rule z (spike known),0.533,0.050333333333333334,3000
+3,expense,spike,1.5,rule -z (drop known),0.027333333333333334,0.04733333333333333,3000
+3,expense,spike,1.5,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,spike,1.5,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,spike,1.5,"autoencoder (window 5, latent 16)",0.41933333333333334,0.051,3000
+3,expense,spike,1.5,forecast |r|,0.467,0.051666666666666666,3000
+3,expense,spike,1.5,forecast r (spike known),0.5336666666666666,0.04566666666666667,3000
+3,expense,spike,1.5,forecast -r (drop known),0.026333333333333334,0.05266666666666667,3000
+3,expense,spike,1.5,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,spike,1.5,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,spike,1.5,masked |r|,0.47533333333333333,0.05333333333333334,3000
+3,expense,spike,1.5,masked r (spike known),0.5373333333333333,0.05,3000
+3,expense,spike,1.5,masked -r (drop known),0.027333333333333334,0.050666666666666665,3000
+3,expense,spike,1.5,rule amount+timing,0.439,0.049666666666666665,3000
+3,expense,spike,1.5,forecast amount+timing,0.44333333333333336,0.05333333333333334,3000
+3,expense,spike,1.5,hybrid rule+forecast,0.43433333333333335,0.048,3000
+3,expense,drop,1.5,rule |z|,0.47,0.051333333333333335,3000
+3,expense,drop,1.5,rule z (spike known),0.019,0.050333333333333334,3000
+3,expense,drop,1.5,rule -z (drop known),0.4886666666666667,0.04733333333333333,3000
+3,expense,drop,1.5,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,drop,1.5,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,drop,1.5,"autoencoder (window 5, latent 16)",0.044,0.051,3000
+3,expense,drop,1.5,forecast |r|,0.4623333333333333,0.051666666666666666,3000
+3,expense,drop,1.5,forecast r (spike known),0.017,0.04566666666666667,3000
+3,expense,drop,1.5,forecast -r (drop known),0.49766666666666665,0.05266666666666667,3000
+3,expense,drop,1.5,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,drop,1.5,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,drop,1.5,masked |r|,0.459,0.05333333333333334,3000
+3,expense,drop,1.5,masked r (spike known),0.015,0.05,3000
+3,expense,drop,1.5,masked -r (drop known),0.491,0.050666666666666665,3000
+3,expense,drop,1.5,rule amount+timing,0.444,0.049666666666666665,3000
+3,expense,drop,1.5,forecast amount+timing,0.445,0.05333333333333334,3000
+3,expense,drop,1.5,hybrid rule+forecast,0.436,0.048,3000
+3,expense,spike,2.0,rule |z|,0.49733333333333335,0.051333333333333335,3000
+3,expense,spike,2.0,rule z (spike known),0.6203333333333333,0.050333333333333334,3000
+3,expense,spike,2.0,rule -z (drop known),0.019,0.04733333333333333,3000
+3,expense,spike,2.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,spike,2.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,spike,2.0,"autoencoder (window 5, latent 16)",0.457,0.051,3000
+3,expense,spike,2.0,forecast |r|,0.522,0.051666666666666666,3000
+3,expense,spike,2.0,forecast r (spike known),0.6316666666666667,0.04566666666666667,3000
+3,expense,spike,2.0,forecast -r (drop known),0.017666666666666667,0.05266666666666667,3000
+3,expense,spike,2.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,spike,2.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,spike,2.0,masked |r|,0.5373333333333333,0.05333333333333334,3000
+3,expense,spike,2.0,masked r (spike known),0.624,0.05,3000
+3,expense,spike,2.0,masked -r (drop known),0.01633333333333333,0.050666666666666665,3000
+3,expense,spike,2.0,rule amount+timing,0.449,0.049666666666666665,3000
+3,expense,spike,2.0,forecast amount+timing,0.4696666666666667,0.05333333333333334,3000
+3,expense,spike,2.0,hybrid rule+forecast,0.45066666666666666,0.048,3000
+3,expense,drop,2.0,rule |z|,0.5133333333333333,0.051333333333333335,3000
+3,expense,drop,2.0,rule z (spike known),0.014,0.050333333333333334,3000
+3,expense,drop,2.0,rule -z (drop known),0.5523333333333333,0.04733333333333333,3000
+3,expense,drop,2.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,drop,2.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,drop,2.0,"autoencoder (window 5, latent 16)",0.041,0.051,3000
+3,expense,drop,2.0,forecast |r|,0.5,0.051666666666666666,3000
+3,expense,drop,2.0,forecast r (spike known),0.007666666666666666,0.04566666666666667,3000
+3,expense,drop,2.0,forecast -r (drop known),0.552,0.05266666666666667,3000
+3,expense,drop,2.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,drop,2.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,drop,2.0,masked |r|,0.4876666666666667,0.05333333333333334,3000
+3,expense,drop,2.0,masked r (spike known),0.008333333333333333,0.05,3000
+3,expense,drop,2.0,masked -r (drop known),0.5426666666666666,0.050666666666666665,3000
+3,expense,drop,2.0,rule amount+timing,0.464,0.049666666666666665,3000
+3,expense,drop,2.0,forecast amount+timing,0.464,0.05333333333333334,3000
+3,expense,drop,2.0,hybrid rule+forecast,0.4503333333333333,0.048,3000
+3,expense,spike,3.0,rule |z|,0.5883333333333334,0.051333333333333335,3000
+3,expense,spike,3.0,rule z (spike known),0.7293333333333333,0.050333333333333334,3000
+3,expense,spike,3.0,rule -z (drop known),0.009666666666666667,0.04733333333333333,3000
+3,expense,spike,3.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,spike,3.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,spike,3.0,"autoencoder (window 5, latent 16)",0.482,0.051,3000
+3,expense,spike,3.0,forecast |r|,0.6353333333333333,0.051666666666666666,3000
+3,expense,spike,3.0,forecast r (spike known),0.7466666666666667,0.04566666666666667,3000
+3,expense,spike,3.0,forecast -r (drop known),0.012,0.05266666666666667,3000
+3,expense,spike,3.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,spike,3.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,spike,3.0,masked |r|,0.6306666666666667,0.05333333333333334,3000
+3,expense,spike,3.0,masked r (spike known),0.7276666666666667,0.05,3000
+3,expense,spike,3.0,masked -r (drop known),0.011,0.050666666666666665,3000
+3,expense,spike,3.0,rule amount+timing,0.49366666666666664,0.049666666666666665,3000
+3,expense,spike,3.0,forecast amount+timing,0.5473333333333333,0.05333333333333334,3000
+3,expense,spike,3.0,hybrid rule+forecast,0.48733333333333334,0.048,3000
+3,expense,drop,3.0,rule |z|,0.6013333333333334,0.051333333333333335,3000
+3,expense,drop,3.0,rule z (spike known),0.005,0.050333333333333334,3000
+3,expense,drop,3.0,rule -z (drop known),0.6526666666666666,0.04733333333333333,3000
+3,expense,drop,3.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,drop,3.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,drop,3.0,"autoencoder (window 5, latent 16)",0.042,0.051,3000
+3,expense,drop,3.0,forecast |r|,0.5823333333333334,0.051666666666666666,3000
+3,expense,drop,3.0,forecast r (spike known),0.0033333333333333335,0.04566666666666667,3000
+3,expense,drop,3.0,forecast -r (drop known),0.6496666666666666,0.05266666666666667,3000
+3,expense,drop,3.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,drop,3.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,drop,3.0,masked |r|,0.5596666666666666,0.05333333333333334,3000
+3,expense,drop,3.0,masked r (spike known),0.001,0.05,3000
+3,expense,drop,3.0,masked -r (drop known),0.64,0.050666666666666665,3000
+3,expense,drop,3.0,rule amount+timing,0.5203333333333333,0.049666666666666665,3000
+3,expense,drop,3.0,forecast amount+timing,0.5163333333333333,0.05333333333333334,3000
+3,expense,drop,3.0,hybrid rule+forecast,0.48133333333333334,0.048,3000
+3,expense,spike,5.0,rule |z|,0.7186666666666667,0.051333333333333335,3000
+3,expense,spike,5.0,rule z (spike known),0.8303333333333334,0.050333333333333334,3000
+3,expense,spike,5.0,rule -z (drop known),0.005,0.04733333333333333,3000
+3,expense,spike,5.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,spike,5.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,spike,5.0,"autoencoder (window 5, latent 16)",0.523,0.051,3000
+3,expense,spike,5.0,forecast |r|,0.7633333333333333,0.051666666666666666,3000
+3,expense,spike,5.0,forecast r (spike known),0.849,0.04566666666666667,3000
+3,expense,spike,5.0,forecast -r (drop known),0.004666666666666667,0.05266666666666667,3000
+3,expense,spike,5.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,spike,5.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,spike,5.0,masked |r|,0.747,0.05333333333333334,3000
+3,expense,spike,5.0,masked r (spike known),0.837,0.05,3000
+3,expense,spike,5.0,masked -r (drop known),0.004333333333333333,0.050666666666666665,3000
+3,expense,spike,5.0,rule amount+timing,0.593,0.049666666666666665,3000
+3,expense,spike,5.0,forecast amount+timing,0.6713333333333333,0.05333333333333334,3000
+3,expense,spike,5.0,hybrid rule+forecast,0.587,0.048,3000
+3,expense,drop,5.0,rule |z|,0.7273333333333334,0.051333333333333335,3000
+3,expense,drop,5.0,rule z (spike known),0.0023333333333333335,0.050333333333333334,3000
+3,expense,drop,5.0,rule -z (drop known),0.7736666666666666,0.04733333333333333,3000
+3,expense,drop,5.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,drop,5.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,drop,5.0,"autoencoder (window 5, latent 16)",0.049666666666666665,0.051,3000
+3,expense,drop,5.0,forecast |r|,0.7036666666666667,0.051666666666666666,3000
+3,expense,drop,5.0,forecast r (spike known),0.0003333333333333333,0.04566666666666667,3000
+3,expense,drop,5.0,forecast -r (drop known),0.7883333333333333,0.05266666666666667,3000
+3,expense,drop,5.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,drop,5.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,drop,5.0,masked |r|,0.6753333333333333,0.05333333333333334,3000
+3,expense,drop,5.0,masked r (spike known),0.0003333333333333333,0.05,3000
+3,expense,drop,5.0,masked -r (drop known),0.7646666666666667,0.050666666666666665,3000
+3,expense,drop,5.0,rule amount+timing,0.6066666666666667,0.049666666666666665,3000
+3,expense,drop,5.0,forecast amount+timing,0.616,0.05333333333333334,3000
+3,expense,drop,5.0,hybrid rule+forecast,0.5576666666666666,0.048,3000
+3,expense,spike,10.0,rule |z|,0.8413333333333334,0.051333333333333335,3000
+3,expense,spike,10.0,rule z (spike known),0.925,0.050333333333333334,3000
+3,expense,spike,10.0,rule -z (drop known),0.001,0.04733333333333333,3000
+3,expense,spike,10.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,spike,10.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,spike,10.0,"autoencoder (window 5, latent 16)",0.5703333333333334,0.051,3000
+3,expense,spike,10.0,forecast |r|,0.8796666666666667,0.051666666666666666,3000
+3,expense,spike,10.0,forecast r (spike known),0.9276666666666666,0.04566666666666667,3000
+3,expense,spike,10.0,forecast -r (drop known),0.0023333333333333335,0.05266666666666667,3000
+3,expense,spike,10.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,spike,10.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,spike,10.0,masked |r|,0.872,0.05333333333333334,3000
+3,expense,spike,10.0,masked r (spike known),0.923,0.05,3000
+3,expense,spike,10.0,masked -r (drop known),0.002,0.050666666666666665,3000
+3,expense,spike,10.0,rule amount+timing,0.7443333333333333,0.049666666666666665,3000
+3,expense,spike,10.0,forecast amount+timing,0.8193333333333334,0.05333333333333334,3000
+3,expense,spike,10.0,hybrid rule+forecast,0.743,0.048,3000
+3,expense,drop,10.0,rule |z|,0.865,0.051333333333333335,3000
+3,expense,drop,10.0,rule z (spike known),0.002,0.050333333333333334,3000
+3,expense,drop,10.0,rule -z (drop known),0.9036666666666666,0.04733333333333333,3000
+3,expense,drop,10.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,drop,10.0,rule timing gap z (late known),0.04533333333333334,0.04533333333333334,3000
+3,expense,drop,10.0,"autoencoder (window 5, latent 16)",0.07166666666666667,0.051,3000
+3,expense,drop,10.0,forecast |r|,0.871,0.051666666666666666,3000
+3,expense,drop,10.0,forecast r (spike known),0.0,0.04566666666666667,3000
+3,expense,drop,10.0,forecast -r (drop known),0.924,0.05266666666666667,3000
+3,expense,drop,10.0,forecast timing |r_gap|,0.052,0.052,3000
+3,expense,drop,10.0,forecast timing r_gap (late known),0.04833333333333333,0.04833333333333333,3000
+3,expense,drop,10.0,masked |r|,0.8233333333333334,0.05333333333333334,3000
+3,expense,drop,10.0,masked r (spike known),0.0,0.05,3000
+3,expense,drop,10.0,masked -r (drop known),0.9063333333333333,0.050666666666666665,3000
+3,expense,drop,10.0,rule amount+timing,0.757,0.049666666666666665,3000
+3,expense,drop,10.0,forecast amount+timing,0.7753333333333333,0.05333333333333334,3000
+3,expense,drop,10.0,hybrid rule+forecast,0.694,0.048,3000
+3,expense,late,3.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+3,expense,late,3.0,rule z (spike known),0.050333333333333334,0.050333333333333334,3000
+3,expense,late,3.0,rule -z (drop known),0.04733333333333333,0.04733333333333333,3000
+3,expense,late,3.0,rule timing |gap z|,0.041666666666666664,0.041666666666666664,3000
+3,expense,late,3.0,rule timing gap z (late known),0.427,0.04533333333333334,3000
+3,expense,late,3.0,"autoencoder (window 5, latent 16)",0.051,0.051,3000
+3,expense,late,3.0,forecast |r|,0.07733333333333334,0.051666666666666666,3000
+3,expense,late,3.0,forecast r (spike known),0.06566666666666666,0.04566666666666667,3000
+3,expense,late,3.0,forecast -r (drop known),0.066,0.05266666666666667,3000
+3,expense,late,3.0,forecast timing |r_gap|,0.19133333333333333,0.052,3000
+3,expense,late,3.0,forecast timing r_gap (late known),0.358,0.04833333333333333,3000
+3,expense,late,3.0,masked |r|,0.112,0.05333333333333334,3000
+3,expense,late,3.0,masked r (spike known),0.048666666666666664,0.05,3000
+3,expense,late,3.0,masked -r (drop known),0.139,0.050666666666666665,3000
+3,expense,late,3.0,rule amount+timing,0.057666666666666665,0.049666666666666665,3000
+3,expense,late,3.0,forecast amount+timing,0.183,0.05333333333333334,3000
+3,expense,late,3.0,hybrid rule+forecast,0.12966666666666668,0.048,3000
+3,expense,late,7.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+3,expense,late,7.0,rule z (spike known),0.050333333333333334,0.050333333333333334,3000
+3,expense,late,7.0,rule -z (drop known),0.04733333333333333,0.04733333333333333,3000
+3,expense,late,7.0,rule timing |gap z|,0.3993333333333333,0.041666666666666664,3000
+3,expense,late,7.0,rule timing gap z (late known),0.4826666666666667,0.04533333333333334,3000
+3,expense,late,7.0,"autoencoder (window 5, latent 16)",0.051,0.051,3000
+3,expense,late,7.0,forecast |r|,0.23566666666666666,0.051666666666666666,3000
+3,expense,late,7.0,forecast r (spike known),0.25333333333333335,0.04566666666666667,3000
+3,expense,late,7.0,forecast -r (drop known),0.06666666666666667,0.05266666666666667,3000
+3,expense,late,7.0,forecast timing |r_gap|,0.36766666666666664,0.052,3000
+3,expense,late,7.0,forecast timing r_gap (late known),0.4633333333333333,0.04833333333333333,3000
+3,expense,late,7.0,masked |r|,0.134,0.05333333333333334,3000
+3,expense,late,7.0,masked r (spike known),0.06266666666666666,0.05,3000
+3,expense,late,7.0,masked -r (drop known),0.151,0.050666666666666665,3000
+3,expense,late,7.0,rule amount+timing,0.06466666666666666,0.049666666666666665,3000
+3,expense,late,7.0,forecast amount+timing,0.3873333333333333,0.05333333333333334,3000
+3,expense,late,7.0,hybrid rule+forecast,0.394,0.048,3000
+3,expense,late,14.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+3,expense,late,14.0,rule z (spike known),0.050333333333333334,0.050333333333333334,3000
+3,expense,late,14.0,rule -z (drop known),0.04733333333333333,0.04733333333333333,3000
+3,expense,late,14.0,rule timing |gap z|,0.42633333333333334,0.041666666666666664,3000
+3,expense,late,14.0,rule timing gap z (late known),0.5423333333333333,0.04533333333333334,3000
+3,expense,late,14.0,"autoencoder (window 5, latent 16)",0.051,0.051,3000
+3,expense,late,14.0,forecast |r|,0.37433333333333335,0.051666666666666666,3000
+3,expense,late,14.0,forecast r (spike known),0.37566666666666665,0.04566666666666667,3000
+3,expense,late,14.0,forecast -r (drop known),0.062,0.05266666666666667,3000
+3,expense,late,14.0,forecast timing |r_gap|,0.392,0.052,3000
+3,expense,late,14.0,forecast timing r_gap (late known),0.551,0.04833333333333333,3000
+3,expense,late,14.0,masked |r|,0.159,0.05333333333333334,3000
+3,expense,late,14.0,masked r (spike known),0.245,0.05,3000
+3,expense,late,14.0,masked -r (drop known),0.058333333333333334,0.050666666666666665,3000
+3,expense,late,14.0,rule amount+timing,0.44533333333333336,0.049666666666666665,3000
+3,expense,late,14.0,forecast amount+timing,0.41,0.05333333333333334,3000
+3,expense,late,14.0,hybrid rule+forecast,0.42233333333333334,0.048,3000
+3,expense,late,30.0,rule |z|,0.051333333333333335,0.051333333333333335,3000
+3,expense,late,30.0,rule z (spike known),0.050333333333333334,0.050333333333333334,3000
+3,expense,late,30.0,rule -z (drop known),0.04733333333333333,0.04733333333333333,3000
+3,expense,late,30.0,rule timing |gap z|,0.44133333333333336,0.041666666666666664,3000
+3,expense,late,30.0,rule timing gap z (late known),0.7416666666666667,0.04533333333333334,3000
+3,expense,late,30.0,"autoencoder (window 5, latent 16)",0.051,0.051,3000
+3,expense,late,30.0,forecast |r|,0.068,0.051666666666666666,3000
+3,expense,late,30.0,forecast r (spike known),0.035666666666666666,0.04566666666666667,3000
+3,expense,late,30.0,forecast -r (drop known),0.087,0.05266666666666667,3000
+3,expense,late,30.0,forecast timing |r_gap|,0.4246666666666667,0.052,3000
+3,expense,late,30.0,forecast timing r_gap (late known),0.7826666666666666,0.04833333333333333,3000
+3,expense,late,30.0,masked |r|,0.10533333333333333,0.05333333333333334,3000
+3,expense,late,30.0,masked r (spike known),0.048666666666666664,0.05,3000
+3,expense,late,30.0,masked -r (drop known),0.14866666666666667,0.050666666666666665,3000
+3,expense,late,30.0,rule amount+timing,0.448,0.049666666666666665,3000
+3,expense,late,30.0,forecast amount+timing,0.42433333333333334,0.05333333333333334,3000
+3,expense,late,30.0,hybrid rule+forecast,0.43,0.048,3000
+3,income,spike,1.5,rule |z|,0.03666666666666667,0.043,3000
+3,income,spike,1.5,rule z (spike known),0.08233333333333333,0.01633333333333333,3000
+3,income,spike,1.5,rule -z (drop known),0.034333333333333334,0.043333333333333335,3000
+3,income,spike,1.5,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,spike,1.5,rule timing gap z (late known),0.047,0.047,3000
+3,income,spike,1.5,"autoencoder (window 5, latent 16)",0.152,0.043666666666666666,3000
+3,income,spike,1.5,forecast |r|,0.652,0.04566666666666667,3000
+3,income,spike,1.5,forecast r (spike known),0.7093333333333334,0.051666666666666666,3000
+3,income,spike,1.5,forecast -r (drop known),0.02666666666666667,0.048,3000
+3,income,spike,1.5,forecast timing |r_gap|,0.041,0.041,3000
+3,income,spike,1.5,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,spike,1.5,masked |r|,0.5966666666666667,0.04133333333333333,3000
+3,income,spike,1.5,masked r (spike known),0.651,0.04633333333333333,3000
+3,income,spike,1.5,masked -r (drop known),0.028,0.042333333333333334,3000
+3,income,spike,1.5,rule amount+timing,0.04566666666666667,0.048,3000
+3,income,spike,1.5,forecast amount+timing,0.6046666666666667,0.03933333333333333,3000
+3,income,spike,1.5,hybrid rule+forecast,0.5793333333333334,0.048,3000
+3,income,drop,1.5,rule |z|,0.051333333333333335,0.043,3000
+3,income,drop,1.5,rule z (spike known),0.005666666666666667,0.01633333333333333,3000
+3,income,drop,1.5,rule -z (drop known),0.052,0.043333333333333335,3000
+3,income,drop,1.5,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,drop,1.5,rule timing gap z (late known),0.047,0.047,3000
+3,income,drop,1.5,"autoencoder (window 5, latent 16)",0.191,0.043666666666666666,3000
+3,income,drop,1.5,forecast |r|,0.6256666666666667,0.04566666666666667,3000
+3,income,drop,1.5,forecast r (spike known),0.006,0.051666666666666666,3000
+3,income,drop,1.5,forecast -r (drop known),0.657,0.048,3000
+3,income,drop,1.5,forecast timing |r_gap|,0.041,0.041,3000
+3,income,drop,1.5,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,drop,1.5,masked |r|,0.5623333333333334,0.04133333333333333,3000
+3,income,drop,1.5,masked r (spike known),0.004333333333333333,0.04633333333333333,3000
+3,income,drop,1.5,masked -r (drop known),0.632,0.042333333333333334,3000
+3,income,drop,1.5,rule amount+timing,0.052333333333333336,0.048,3000
+3,income,drop,1.5,forecast amount+timing,0.5986666666666667,0.03933333333333333,3000
+3,income,drop,1.5,hybrid rule+forecast,0.5813333333333334,0.048,3000
+3,income,spike,2.0,rule |z|,0.10033333333333333,0.043,3000
+3,income,spike,2.0,rule z (spike known),0.6793333333333333,0.01633333333333333,3000
+3,income,spike,2.0,rule -z (drop known),0.029333333333333333,0.043333333333333335,3000
+3,income,spike,2.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,spike,2.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,spike,2.0,"autoencoder (window 5, latent 16)",0.21533333333333332,0.043666666666666666,3000
+3,income,spike,2.0,forecast |r|,0.7006666666666667,0.04566666666666667,3000
+3,income,spike,2.0,forecast r (spike known),0.7623333333333333,0.051666666666666666,3000
+3,income,spike,2.0,forecast -r (drop known),0.019666666666666666,0.048,3000
+3,income,spike,2.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,spike,2.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,spike,2.0,masked |r|,0.635,0.04133333333333333,3000
+3,income,spike,2.0,masked r (spike known),0.6886666666666666,0.04633333333333333,3000
+3,income,spike,2.0,masked -r (drop known),0.023333333333333334,0.042333333333333334,3000
+3,income,spike,2.0,rule amount+timing,0.041666666666666664,0.048,3000
+3,income,spike,2.0,forecast amount+timing,0.632,0.03933333333333333,3000
+3,income,spike,2.0,hybrid rule+forecast,0.604,0.048,3000
+3,income,drop,2.0,rule |z|,0.058333333333333334,0.043,3000
+3,income,drop,2.0,rule z (spike known),0.005333333333333333,0.01633333333333333,3000
+3,income,drop,2.0,rule -z (drop known),0.05733333333333333,0.043333333333333335,3000
+3,income,drop,2.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,drop,2.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,drop,2.0,"autoencoder (window 5, latent 16)",0.20166666666666666,0.043666666666666666,3000
+3,income,drop,2.0,forecast |r|,0.6996666666666667,0.04566666666666667,3000
+3,income,drop,2.0,forecast r (spike known),0.005,0.051666666666666666,3000
+3,income,drop,2.0,forecast -r (drop known),0.751,0.048,3000
+3,income,drop,2.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,drop,2.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,drop,2.0,masked |r|,0.6066666666666667,0.04133333333333333,3000
+3,income,drop,2.0,masked r (spike known),0.0036666666666666666,0.04633333333333333,3000
+3,income,drop,2.0,masked -r (drop known),0.6923333333333334,0.042333333333333334,3000
+3,income,drop,2.0,rule amount+timing,0.057,0.048,3000
+3,income,drop,2.0,forecast amount+timing,0.6556666666666666,0.03933333333333333,3000
+3,income,drop,2.0,hybrid rule+forecast,0.6283333333333333,0.048,3000
+3,income,spike,3.0,rule |z|,0.6933333333333334,0.043,3000
+3,income,spike,3.0,rule z (spike known),0.6933333333333334,0.01633333333333333,3000
+3,income,spike,3.0,rule -z (drop known),0.021333333333333333,0.043333333333333335,3000
+3,income,spike,3.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,spike,3.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,spike,3.0,"autoencoder (window 5, latent 16)",0.26866666666666666,0.043666666666666666,3000
+3,income,spike,3.0,forecast |r|,0.7516666666666667,0.04566666666666667,3000
+3,income,spike,3.0,forecast r (spike known),0.821,0.051666666666666666,3000
+3,income,spike,3.0,forecast -r (drop known),0.012,0.048,3000
+3,income,spike,3.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,spike,3.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,spike,3.0,masked |r|,0.6626666666666666,0.04133333333333333,3000
+3,income,spike,3.0,masked r (spike known),0.7363333333333333,0.04633333333333333,3000
+3,income,spike,3.0,masked -r (drop known),0.016666666666666666,0.042333333333333334,3000
+3,income,spike,3.0,rule amount+timing,0.038,0.048,3000
+3,income,spike,3.0,forecast amount+timing,0.6733333333333333,0.03933333333333333,3000
+3,income,spike,3.0,hybrid rule+forecast,0.6216666666666667,0.048,3000
+3,income,drop,3.0,rule |z|,0.654,0.043,3000
+3,income,drop,3.0,rule z (spike known),0.004666666666666667,0.01633333333333333,3000
+3,income,drop,3.0,rule -z (drop known),0.6543333333333333,0.043333333333333335,3000
+3,income,drop,3.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,drop,3.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,drop,3.0,"autoencoder (window 5, latent 16)",0.169,0.043666666666666666,3000
+3,income,drop,3.0,forecast |r|,0.7463333333333333,0.04566666666666667,3000
+3,income,drop,3.0,forecast r (spike known),0.004666666666666667,0.051666666666666666,3000
+3,income,drop,3.0,forecast -r (drop known),0.807,0.048,3000
+3,income,drop,3.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,drop,3.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,drop,3.0,masked |r|,0.6536666666666666,0.04133333333333333,3000
+3,income,drop,3.0,masked r (spike known),0.0036666666666666666,0.04633333333333333,3000
+3,income,drop,3.0,masked -r (drop known),0.749,0.042333333333333334,3000
+3,income,drop,3.0,rule amount+timing,0.06266666666666666,0.048,3000
+3,income,drop,3.0,forecast amount+timing,0.694,0.03933333333333333,3000
+3,income,drop,3.0,hybrid rule+forecast,0.6623333333333333,0.048,3000
+3,income,spike,5.0,rule |z|,0.6996666666666667,0.043,3000
+3,income,spike,5.0,rule z (spike known),0.7093333333333334,0.01633333333333333,3000
+3,income,spike,5.0,rule -z (drop known),0.014333333333333333,0.043333333333333335,3000
+3,income,spike,5.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,spike,5.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,spike,5.0,"autoencoder (window 5, latent 16)",0.424,0.043666666666666666,3000
+3,income,spike,5.0,forecast |r|,0.812,0.04566666666666667,3000
+3,income,spike,5.0,forecast r (spike known),0.8713333333333333,0.051666666666666666,3000
+3,income,spike,5.0,forecast -r (drop known),0.01,0.048,3000
+3,income,spike,5.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,spike,5.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,spike,5.0,masked |r|,0.7033333333333334,0.04133333333333333,3000
+3,income,spike,5.0,masked r (spike known),0.794,0.04633333333333333,3000
+3,income,spike,5.0,masked -r (drop known),0.012333333333333333,0.042333333333333334,3000
+3,income,spike,5.0,rule amount+timing,0.038,0.048,3000
+3,income,spike,5.0,forecast amount+timing,0.7223333333333334,0.03933333333333333,3000
+3,income,spike,5.0,hybrid rule+forecast,0.6593333333333333,0.048,3000
+3,income,drop,5.0,rule |z|,0.728,0.043,3000
+3,income,drop,5.0,rule z (spike known),0.004,0.01633333333333333,3000
+3,income,drop,5.0,rule -z (drop known),0.729,0.043333333333333335,3000
+3,income,drop,5.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,drop,5.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,drop,5.0,"autoencoder (window 5, latent 16)",0.17566666666666667,0.043666666666666666,3000
+3,income,drop,5.0,forecast |r|,0.8016666666666666,0.04566666666666667,3000
+3,income,drop,5.0,forecast r (spike known),0.0033333333333333335,0.051666666666666666,3000
+3,income,drop,5.0,forecast -r (drop known),0.8683333333333333,0.048,3000
+3,income,drop,5.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,drop,5.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,drop,5.0,masked |r|,0.6953333333333334,0.04133333333333333,3000
+3,income,drop,5.0,masked r (spike known),0.0023333333333333335,0.04633333333333333,3000
+3,income,drop,5.0,masked -r (drop known),0.806,0.042333333333333334,3000
+3,income,drop,5.0,rule amount+timing,0.07266666666666667,0.048,3000
+3,income,drop,5.0,forecast amount+timing,0.729,0.03933333333333333,3000
+3,income,drop,5.0,hybrid rule+forecast,0.7,0.048,3000
+3,income,spike,10.0,rule |z|,0.709,0.043,3000
+3,income,spike,10.0,rule z (spike known),0.7243333333333334,0.01633333333333333,3000
+3,income,spike,10.0,rule -z (drop known),0.005666666666666667,0.043333333333333335,3000
+3,income,spike,10.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,spike,10.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,spike,10.0,"autoencoder (window 5, latent 16)",0.428,0.043666666666666666,3000
+3,income,spike,10.0,forecast |r|,0.8643333333333333,0.04566666666666667,3000
+3,income,spike,10.0,forecast r (spike known),0.9176666666666666,0.051666666666666666,3000
+3,income,spike,10.0,forecast -r (drop known),0.005,0.048,3000
+3,income,spike,10.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,spike,10.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,spike,10.0,masked |r|,0.747,0.04133333333333333,3000
+3,income,spike,10.0,masked r (spike known),0.856,0.04633333333333333,3000
+3,income,spike,10.0,masked -r (drop known),0.005,0.042333333333333334,3000
+3,income,spike,10.0,rule amount+timing,0.6816666666666666,0.048,3000
+3,income,spike,10.0,forecast amount+timing,0.7783333333333333,0.03933333333333333,3000
+3,income,spike,10.0,hybrid rule+forecast,0.715,0.048,3000
+3,income,drop,10.0,rule |z|,0.7323333333333333,0.043,3000
+3,income,drop,10.0,rule z (spike known),0.0026666666666666666,0.01633333333333333,3000
+3,income,drop,10.0,rule -z (drop known),0.7343333333333333,0.043333333333333335,3000
+3,income,drop,10.0,rule timing |gap z|,0.04766666666666667,0.04766666666666667,3000
+3,income,drop,10.0,rule timing gap z (late known),0.047,0.047,3000
+3,income,drop,10.0,"autoencoder (window 5, latent 16)",0.221,0.043666666666666666,3000
+3,income,drop,10.0,forecast |r|,0.8666666666666667,0.04566666666666667,3000
+3,income,drop,10.0,forecast r (spike known),0.0026666666666666666,0.051666666666666666,3000
+3,income,drop,10.0,forecast -r (drop known),0.916,0.048,3000
+3,income,drop,10.0,forecast timing |r_gap|,0.041,0.041,3000
+3,income,drop,10.0,forecast timing r_gap (late known),0.044,0.044,3000
+3,income,drop,10.0,masked |r|,0.7463333333333333,0.04133333333333333,3000
+3,income,drop,10.0,masked r (spike known),0.0013333333333333333,0.04633333333333333,3000
+3,income,drop,10.0,masked -r (drop known),0.8693333333333333,0.042333333333333334,3000
+3,income,drop,10.0,rule amount+timing,0.6533333333333333,0.048,3000
+3,income,drop,10.0,forecast amount+timing,0.7826666666666666,0.03933333333333333,3000
+3,income,drop,10.0,hybrid rule+forecast,0.7493333333333333,0.048,3000
+3,income,late,3.0,rule |z|,0.043,0.043,3000
+3,income,late,3.0,rule z (spike known),0.01633333333333333,0.01633333333333333,3000
+3,income,late,3.0,rule -z (drop known),0.043333333333333335,0.043333333333333335,3000
+3,income,late,3.0,rule timing |gap z|,0.038,0.04766666666666667,3000
+3,income,late,3.0,rule timing gap z (late known),0.601,0.047,3000
+3,income,late,3.0,"autoencoder (window 5, latent 16)",0.043666666666666666,0.043666666666666666,3000
+3,income,late,3.0,forecast |r|,0.15766666666666668,0.04566666666666667,3000
+3,income,late,3.0,forecast r (spike known),0.15733333333333333,0.051666666666666666,3000
+3,income,late,3.0,forecast -r (drop known),0.057,0.048,3000
+3,income,late,3.0,forecast timing |r_gap|,0.117,0.041,3000
+3,income,late,3.0,forecast timing r_gap (late known),0.333,0.044,3000
+3,income,late,3.0,masked |r|,0.06266666666666666,0.04133333333333333,3000
+3,income,late,3.0,masked r (spike known),0.05366666666666667,0.04633333333333333,3000
+3,income,late,3.0,masked -r (drop known),0.049666666666666665,0.042333333333333334,3000
+3,income,late,3.0,rule amount+timing,0.042333333333333334,0.048,3000
+3,income,late,3.0,forecast amount+timing,0.15433333333333332,0.03933333333333333,3000
+3,income,late,3.0,hybrid rule+forecast,0.11366666666666667,0.048,3000
+3,income,late,7.0,rule |z|,0.043,0.043,3000
+3,income,late,7.0,rule z (spike known),0.01633333333333333,0.01633333333333333,3000
+3,income,late,7.0,rule -z (drop known),0.043333333333333335,0.043333333333333335,3000
+3,income,late,7.0,rule timing |gap z|,0.028333333333333332,0.04766666666666667,3000
+3,income,late,7.0,rule timing gap z (late known),0.6933333333333334,0.047,3000
+3,income,late,7.0,"autoencoder (window 5, latent 16)",0.043666666666666666,0.043666666666666666,3000
+3,income,late,7.0,forecast |r|,0.20633333333333334,0.04566666666666667,3000
+3,income,late,7.0,forecast r (spike known),0.21366666666666667,0.051666666666666666,3000
+3,income,late,7.0,forecast -r (drop known),0.05433333333333333,0.048,3000
+3,income,late,7.0,forecast timing |r_gap|,0.294,0.041,3000
+3,income,late,7.0,forecast timing r_gap (late known),0.5323333333333333,0.044,3000
+3,income,late,7.0,masked |r|,0.06666666666666667,0.04133333333333333,3000
+3,income,late,7.0,masked r (spike known),0.058666666666666666,0.04633333333333333,3000
+3,income,late,7.0,masked -r (drop known),0.060333333333333336,0.042333333333333334,3000
+3,income,late,7.0,rule amount+timing,0.033666666666666664,0.048,3000
+3,income,late,7.0,forecast amount+timing,0.2773333333333333,0.03933333333333333,3000
+3,income,late,7.0,hybrid rule+forecast,0.254,0.048,3000
+3,income,late,14.0,rule |z|,0.043,0.043,3000
+3,income,late,14.0,rule z (spike known),0.01633333333333333,0.01633333333333333,3000
+3,income,late,14.0,rule -z (drop known),0.043333333333333335,0.043333333333333335,3000
+3,income,late,14.0,rule timing |gap z|,0.014333333333333333,0.04766666666666667,3000
+3,income,late,14.0,rule timing gap z (late known),0.7613333333333333,0.047,3000
+3,income,late,14.0,"autoencoder (window 5, latent 16)",0.043666666666666666,0.043666666666666666,3000
+3,income,late,14.0,forecast |r|,0.13333333333333333,0.04566666666666667,3000
+3,income,late,14.0,forecast r (spike known),0.11433333333333333,0.051666666666666666,3000
+3,income,late,14.0,forecast -r (drop known),0.05433333333333333,0.048,3000
+3,income,late,14.0,forecast timing |r_gap|,0.422,0.041,3000
+3,income,late,14.0,forecast timing r_gap (late known),0.6996666666666667,0.044,3000
+3,income,late,14.0,masked |r|,0.05433333333333333,0.04133333333333333,3000
+3,income,late,14.0,masked r (spike known),0.036333333333333336,0.04633333333333333,3000
+3,income,late,14.0,masked -r (drop known),0.054,0.042333333333333334,3000
+3,income,late,14.0,rule amount+timing,0.024666666666666667,0.048,3000
+3,income,late,14.0,forecast amount+timing,0.38266666666666665,0.03933333333333333,3000
+3,income,late,14.0,hybrid rule+forecast,0.3383333333333333,0.048,3000
+3,income,late,30.0,rule |z|,0.043,0.043,3000
+3,income,late,30.0,rule z (spike known),0.01633333333333333,0.01633333333333333,3000
+3,income,late,30.0,rule -z (drop known),0.043333333333333335,0.043333333333333335,3000
+3,income,late,30.0,rule timing |gap z|,0.545,0.04766666666666667,3000
+3,income,late,30.0,rule timing gap z (late known),0.9636666666666667,0.047,3000
+3,income,late,30.0,"autoencoder (window 5, latent 16)",0.043666666666666666,0.043666666666666666,3000
+3,income,late,30.0,forecast |r|,0.07666666666666666,0.04566666666666667,3000
+3,income,late,30.0,forecast r (spike known),0.06333333333333334,0.051666666666666666,3000
+3,income,late,30.0,forecast -r (drop known),0.07266666666666667,0.048,3000
+3,income,late,30.0,forecast timing |r_gap|,0.5723333333333334,0.041,3000
+3,income,late,30.0,forecast timing r_gap (late known),0.8993333333333333,0.044,3000
+3,income,late,30.0,masked |r|,0.056666666666666664,0.04133333333333333,3000
+3,income,late,30.0,masked r (spike known),0.056,0.04633333333333333,3000
+3,income,late,30.0,masked -r (drop known),0.05566666666666667,0.042333333333333334,3000
+3,income,late,30.0,rule amount+timing,0.024666666666666667,0.048,3000
+3,income,late,30.0,forecast amount+timing,0.519,0.03933333333333333,3000
+3,income,late,30.0,hybrid rule+forecast,0.4713333333333333,0.048,3000
+4,expense,spike,1.5,rule |z|,0.44366666666666665,0.050333333333333334,3000
+4,expense,spike,1.5,rule z (spike known),0.5376666666666666,0.052333333333333336,3000
+4,expense,spike,1.5,rule -z (drop known),0.024666666666666667,0.049666666666666665,3000
+4,expense,spike,1.5,rule timing |gap z|,0.059,0.059,3000
+4,expense,spike,1.5,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,spike,1.5,"autoencoder (window 5, latent 16)",0.41433333333333333,0.053,3000
+4,expense,spike,1.5,forecast |r|,0.4603333333333333,0.04933333333333333,3000
+4,expense,spike,1.5,forecast r (spike known),0.5403333333333333,0.052,3000
+4,expense,spike,1.5,forecast -r (drop known),0.02266666666666667,0.051333333333333335,3000
+4,expense,spike,1.5,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,spike,1.5,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,spike,1.5,masked |r|,0.43333333333333335,0.051333333333333335,3000
+4,expense,spike,1.5,masked r (spike known),0.5306666666666666,0.05266666666666667,3000
+4,expense,spike,1.5,masked -r (drop known),0.023666666666666666,0.048666666666666664,3000
+4,expense,spike,1.5,rule amount+timing,0.44133333333333336,0.05333333333333334,3000
+4,expense,spike,1.5,forecast amount+timing,0.43933333333333335,0.049,3000
+4,expense,spike,1.5,hybrid rule+forecast,0.43566666666666665,0.04733333333333333,3000
+4,expense,drop,1.5,rule |z|,0.4686666666666667,0.050333333333333334,3000
+4,expense,drop,1.5,rule z (spike known),0.022,0.052333333333333336,3000
+4,expense,drop,1.5,rule -z (drop known),0.48033333333333333,0.049666666666666665,3000
+4,expense,drop,1.5,rule timing |gap z|,0.059,0.059,3000
+4,expense,drop,1.5,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,drop,1.5,"autoencoder (window 5, latent 16)",0.101,0.053,3000
+4,expense,drop,1.5,forecast |r|,0.463,0.04933333333333333,3000
+4,expense,drop,1.5,forecast r (spike known),0.015666666666666666,0.052,3000
+4,expense,drop,1.5,forecast -r (drop known),0.4846666666666667,0.051333333333333335,3000
+4,expense,drop,1.5,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,drop,1.5,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,drop,1.5,masked |r|,0.4706666666666667,0.051333333333333335,3000
+4,expense,drop,1.5,masked r (spike known),0.02033333333333333,0.05266666666666667,3000
+4,expense,drop,1.5,masked -r (drop known),0.48133333333333334,0.048666666666666664,3000
+4,expense,drop,1.5,rule amount+timing,0.45366666666666666,0.05333333333333334,3000
+4,expense,drop,1.5,forecast amount+timing,0.451,0.049,3000
+4,expense,drop,1.5,hybrid rule+forecast,0.44666666666666666,0.04733333333333333,3000
+4,expense,spike,2.0,rule |z|,0.47933333333333333,0.050333333333333334,3000
+4,expense,spike,2.0,rule z (spike known),0.629,0.052333333333333336,3000
+4,expense,spike,2.0,rule -z (drop known),0.012666666666666666,0.049666666666666665,3000
+4,expense,spike,2.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,spike,2.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,spike,2.0,"autoencoder (window 5, latent 16)",0.144,0.053,3000
+4,expense,spike,2.0,forecast |r|,0.5156666666666667,0.04933333333333333,3000
+4,expense,spike,2.0,forecast r (spike known),0.6256666666666667,0.052,3000
+4,expense,spike,2.0,forecast -r (drop known),0.014666666666666666,0.051333333333333335,3000
+4,expense,spike,2.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,spike,2.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,spike,2.0,masked |r|,0.4583333333333333,0.051333333333333335,3000
+4,expense,spike,2.0,masked r (spike known),0.6223333333333333,0.05266666666666667,3000
+4,expense,spike,2.0,masked -r (drop known),0.014333333333333333,0.048666666666666664,3000
+4,expense,spike,2.0,rule amount+timing,0.45566666666666666,0.05333333333333334,3000
+4,expense,spike,2.0,forecast amount+timing,0.4686666666666667,0.049,3000
+4,expense,spike,2.0,hybrid rule+forecast,0.45466666666666666,0.04733333333333333,3000
+4,expense,drop,2.0,rule |z|,0.5003333333333333,0.050333333333333334,3000
+4,expense,drop,2.0,rule z (spike known),0.012333333333333333,0.052333333333333336,3000
+4,expense,drop,2.0,rule -z (drop known),0.5353333333333333,0.049666666666666665,3000
+4,expense,drop,2.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,drop,2.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,drop,2.0,"autoencoder (window 5, latent 16)",0.4096666666666667,0.053,3000
+4,expense,drop,2.0,forecast |r|,0.49666666666666665,0.04933333333333333,3000
+4,expense,drop,2.0,forecast r (spike known),0.009333333333333334,0.052,3000
+4,expense,drop,2.0,forecast -r (drop known),0.5403333333333333,0.051333333333333335,3000
+4,expense,drop,2.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,drop,2.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,drop,2.0,masked |r|,0.5056666666666667,0.051333333333333335,3000
+4,expense,drop,2.0,masked r (spike known),0.012666666666666666,0.05266666666666667,3000
+4,expense,drop,2.0,masked -r (drop known),0.525,0.048666666666666664,3000
+4,expense,drop,2.0,rule amount+timing,0.4786666666666667,0.05333333333333334,3000
+4,expense,drop,2.0,forecast amount+timing,0.479,0.049,3000
+4,expense,drop,2.0,hybrid rule+forecast,0.468,0.04733333333333333,3000
+4,expense,spike,3.0,rule |z|,0.567,0.050333333333333334,3000
+4,expense,spike,3.0,rule z (spike known),0.7306666666666667,0.052333333333333336,3000
+4,expense,spike,3.0,rule -z (drop known),0.008333333333333333,0.049666666666666665,3000
+4,expense,spike,3.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,spike,3.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,spike,3.0,"autoencoder (window 5, latent 16)",0.177,0.053,3000
+4,expense,spike,3.0,forecast |r|,0.606,0.04933333333333333,3000
+4,expense,spike,3.0,forecast r (spike known),0.731,0.052,3000
+4,expense,spike,3.0,forecast -r (drop known),0.008333333333333333,0.051333333333333335,3000
+4,expense,spike,3.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,spike,3.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,spike,3.0,masked |r|,0.5253333333333333,0.051333333333333335,3000
+4,expense,spike,3.0,masked r (spike known),0.728,0.05266666666666667,3000
+4,expense,spike,3.0,masked -r (drop known),0.007333333333333333,0.048666666666666664,3000
+4,expense,spike,3.0,rule amount+timing,0.51,0.05333333333333334,3000
+4,expense,spike,3.0,forecast amount+timing,0.5396666666666666,0.049,3000
+4,expense,spike,3.0,hybrid rule+forecast,0.5116666666666667,0.04733333333333333,3000
+4,expense,drop,3.0,rule |z|,0.5863333333333334,0.050333333333333334,3000
+4,expense,drop,3.0,rule z (spike known),0.006666666666666667,0.052333333333333336,3000
+4,expense,drop,3.0,rule -z (drop known),0.629,0.049666666666666665,3000
+4,expense,drop,3.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,drop,3.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,drop,3.0,"autoencoder (window 5, latent 16)",0.43866666666666665,0.053,3000
+4,expense,drop,3.0,forecast |r|,0.5786666666666667,0.04933333333333333,3000
+4,expense,drop,3.0,forecast r (spike known),0.003,0.052,3000
+4,expense,drop,3.0,forecast -r (drop known),0.6353333333333333,0.051333333333333335,3000
+4,expense,drop,3.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,drop,3.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,drop,3.0,masked |r|,0.5856666666666667,0.051333333333333335,3000
+4,expense,drop,3.0,masked r (spike known),0.006333333333333333,0.05266666666666667,3000
+4,expense,drop,3.0,masked -r (drop known),0.6213333333333333,0.048666666666666664,3000
+4,expense,drop,3.0,rule amount+timing,0.5233333333333333,0.05333333333333334,3000
+4,expense,drop,3.0,forecast amount+timing,0.518,0.049,3000
+4,expense,drop,3.0,hybrid rule+forecast,0.5106666666666667,0.04733333333333333,3000
+4,expense,spike,5.0,rule |z|,0.6963333333333334,0.050333333333333334,3000
+4,expense,spike,5.0,rule z (spike known),0.827,0.052333333333333336,3000
+4,expense,spike,5.0,rule -z (drop known),0.004666666666666667,0.049666666666666665,3000
+4,expense,spike,5.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,spike,5.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,spike,5.0,"autoencoder (window 5, latent 16)",0.237,0.053,3000
+4,expense,spike,5.0,forecast |r|,0.7266666666666667,0.04933333333333333,3000
+4,expense,spike,5.0,forecast r (spike known),0.8326666666666667,0.052,3000
+4,expense,spike,5.0,forecast -r (drop known),0.004666666666666667,0.051333333333333335,3000
+4,expense,spike,5.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,spike,5.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,spike,5.0,masked |r|,0.6476666666666666,0.051333333333333335,3000
+4,expense,spike,5.0,masked r (spike known),0.8203333333333334,0.05266666666666667,3000
+4,expense,spike,5.0,masked -r (drop known),0.005,0.048666666666666664,3000
+4,expense,spike,5.0,rule amount+timing,0.6106666666666667,0.05333333333333334,3000
+4,expense,spike,5.0,forecast amount+timing,0.6403333333333333,0.049,3000
+4,expense,spike,5.0,hybrid rule+forecast,0.6143333333333333,0.04733333333333333,3000
+4,expense,drop,5.0,rule |z|,0.7173333333333334,0.050333333333333334,3000
+4,expense,drop,5.0,rule z (spike known),0.0033333333333333335,0.052333333333333336,3000
+4,expense,drop,5.0,rule -z (drop known),0.7563333333333333,0.049666666666666665,3000
+4,expense,drop,5.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,drop,5.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,drop,5.0,"autoencoder (window 5, latent 16)",0.47533333333333333,0.053,3000
+4,expense,drop,5.0,forecast |r|,0.692,0.04933333333333333,3000
+4,expense,drop,5.0,forecast r (spike known),0.0006666666666666666,0.052,3000
+4,expense,drop,5.0,forecast -r (drop known),0.7613333333333333,0.051333333333333335,3000
+4,expense,drop,5.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,drop,5.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,drop,5.0,masked |r|,0.71,0.051333333333333335,3000
+4,expense,drop,5.0,masked r (spike known),0.002,0.05266666666666667,3000
+4,expense,drop,5.0,masked -r (drop known),0.745,0.048666666666666664,3000
+4,expense,drop,5.0,rule amount+timing,0.6226666666666667,0.05333333333333334,3000
+4,expense,drop,5.0,forecast amount+timing,0.6073333333333333,0.049,3000
+4,expense,drop,5.0,hybrid rule+forecast,0.5916666666666667,0.04733333333333333,3000
+4,expense,spike,10.0,rule |z|,0.827,0.050333333333333334,3000
+4,expense,spike,10.0,rule z (spike known),0.9183333333333333,0.052333333333333336,3000
+4,expense,spike,10.0,rule -z (drop known),0.0023333333333333335,0.049666666666666665,3000
+4,expense,spike,10.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,spike,10.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,spike,10.0,"autoencoder (window 5, latent 16)",0.3396666666666667,0.053,3000
+4,expense,spike,10.0,forecast |r|,0.8523333333333334,0.04933333333333333,3000
+4,expense,spike,10.0,forecast r (spike known),0.933,0.052,3000
+4,expense,spike,10.0,forecast -r (drop known),0.0006666666666666666,0.051333333333333335,3000
+4,expense,spike,10.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,spike,10.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,spike,10.0,masked |r|,0.785,0.051333333333333335,3000
+4,expense,spike,10.0,masked r (spike known),0.918,0.05266666666666667,3000
+4,expense,spike,10.0,masked -r (drop known),0.001,0.048666666666666664,3000
+4,expense,spike,10.0,rule amount+timing,0.7683333333333333,0.05333333333333334,3000
+4,expense,spike,10.0,forecast amount+timing,0.7793333333333333,0.049,3000
+4,expense,spike,10.0,hybrid rule+forecast,0.7616666666666667,0.04733333333333333,3000
+4,expense,drop,10.0,rule |z|,0.8506666666666667,0.050333333333333334,3000
+4,expense,drop,10.0,rule z (spike known),0.0013333333333333333,0.052333333333333336,3000
+4,expense,drop,10.0,rule -z (drop known),0.886,0.049666666666666665,3000
+4,expense,drop,10.0,rule timing |gap z|,0.059,0.059,3000
+4,expense,drop,10.0,rule timing gap z (late known),0.049666666666666665,0.049666666666666665,3000
+4,expense,drop,10.0,"autoencoder (window 5, latent 16)",0.5236666666666666,0.053,3000
+4,expense,drop,10.0,forecast |r|,0.84,0.04933333333333333,3000
+4,expense,drop,10.0,forecast r (spike known),0.0003333333333333333,0.052,3000
+4,expense,drop,10.0,forecast -r (drop known),0.896,0.051333333333333335,3000
+4,expense,drop,10.0,forecast timing |r_gap|,0.04733333333333333,0.04733333333333333,3000
+4,expense,drop,10.0,forecast timing r_gap (late known),0.051,0.051,3000
+4,expense,drop,10.0,masked |r|,0.8593333333333333,0.051333333333333335,3000
+4,expense,drop,10.0,masked r (spike known),0.0,0.05266666666666667,3000
+4,expense,drop,10.0,masked -r (drop known),0.889,0.048666666666666664,3000
+4,expense,drop,10.0,rule amount+timing,0.775,0.05333333333333334,3000
+4,expense,drop,10.0,forecast amount+timing,0.7456666666666667,0.049,3000
+4,expense,drop,10.0,hybrid rule+forecast,0.7466666666666667,0.04733333333333333,3000
+4,expense,late,3.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+4,expense,late,3.0,rule z (spike known),0.052333333333333336,0.052333333333333336,3000
+4,expense,late,3.0,rule -z (drop known),0.049666666666666665,0.049666666666666665,3000
+4,expense,late,3.0,rule timing |gap z|,0.042333333333333334,0.059,3000
+4,expense,late,3.0,rule timing gap z (late known),0.419,0.049666666666666665,3000
+4,expense,late,3.0,"autoencoder (window 5, latent 16)",0.053,0.053,3000
+4,expense,late,3.0,forecast |r|,0.049666666666666665,0.04933333333333333,3000
+4,expense,late,3.0,forecast r (spike known),0.050333333333333334,0.052,3000
+4,expense,late,3.0,forecast -r (drop known),0.054,0.051333333333333335,3000
+4,expense,late,3.0,forecast timing |r_gap|,0.191,0.04733333333333333,3000
+4,expense,late,3.0,forecast timing r_gap (late known),0.33566666666666667,0.051,3000
+4,expense,late,3.0,masked |r|,0.052,0.051333333333333335,3000
+4,expense,late,3.0,masked r (spike known),0.05266666666666667,0.05266666666666667,3000
+4,expense,late,3.0,masked -r (drop known),0.05,0.048666666666666664,3000
+4,expense,late,3.0,rule amount+timing,0.05733333333333333,0.05333333333333334,3000
+4,expense,late,3.0,forecast amount+timing,0.16233333333333333,0.049,3000
+4,expense,late,3.0,hybrid rule+forecast,0.129,0.04733333333333333,3000
+4,expense,late,7.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+4,expense,late,7.0,rule z (spike known),0.052333333333333336,0.052333333333333336,3000
+4,expense,late,7.0,rule -z (drop known),0.049666666666666665,0.049666666666666665,3000
+4,expense,late,7.0,rule timing |gap z|,0.4186666666666667,0.059,3000
+4,expense,late,7.0,rule timing gap z (late known),0.4876666666666667,0.049666666666666665,3000
+4,expense,late,7.0,"autoencoder (window 5, latent 16)",0.053,0.053,3000
+4,expense,late,7.0,forecast |r|,0.08166666666666667,0.04933333333333333,3000
+4,expense,late,7.0,forecast r (spike known),0.06566666666666666,0.052,3000
+4,expense,late,7.0,forecast -r (drop known),0.08466666666666667,0.051333333333333335,3000
+4,expense,late,7.0,forecast timing |r_gap|,0.356,0.04733333333333333,3000
+4,expense,late,7.0,forecast timing r_gap (late known),0.441,0.051,3000
+4,expense,late,7.0,masked |r|,0.051,0.051333333333333335,3000
+4,expense,late,7.0,masked r (spike known),0.05266666666666667,0.05266666666666667,3000
+4,expense,late,7.0,masked -r (drop known),0.049,0.048666666666666664,3000
+4,expense,late,7.0,rule amount+timing,0.06166666666666667,0.05333333333333334,3000
+4,expense,late,7.0,forecast amount+timing,0.365,0.049,3000
+4,expense,late,7.0,hybrid rule+forecast,0.373,0.04733333333333333,3000
+4,expense,late,14.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+4,expense,late,14.0,rule z (spike known),0.052333333333333336,0.052333333333333336,3000
+4,expense,late,14.0,rule -z (drop known),0.049666666666666665,0.049666666666666665,3000
+4,expense,late,14.0,rule timing |gap z|,0.413,0.059,3000
+4,expense,late,14.0,rule timing gap z (late known),0.557,0.049666666666666665,3000
+4,expense,late,14.0,"autoencoder (window 5, latent 16)",0.053,0.053,3000
+4,expense,late,14.0,forecast |r|,0.16166666666666665,0.04933333333333333,3000
+4,expense,late,14.0,forecast r (spike known),0.081,0.052,3000
+4,expense,late,14.0,forecast -r (drop known),0.15366666666666667,0.051333333333333335,3000
+4,expense,late,14.0,forecast timing |r_gap|,0.3863333333333333,0.04733333333333333,3000
+4,expense,late,14.0,forecast timing r_gap (late known),0.5203333333333333,0.051,3000
+4,expense,late,14.0,masked |r|,0.04766666666666667,0.051333333333333335,3000
+4,expense,late,14.0,masked r (spike known),0.05366666666666667,0.05266666666666667,3000
+4,expense,late,14.0,masked -r (drop known),0.04633333333333333,0.048666666666666664,3000
+4,expense,late,14.0,rule amount+timing,0.43366666666666664,0.05333333333333334,3000
+4,expense,late,14.0,forecast amount+timing,0.3963333333333333,0.049,3000
+4,expense,late,14.0,hybrid rule+forecast,0.4053333333333333,0.04733333333333333,3000
+4,expense,late,30.0,rule |z|,0.050333333333333334,0.050333333333333334,3000
+4,expense,late,30.0,rule z (spike known),0.052333333333333336,0.052333333333333336,3000
+4,expense,late,30.0,rule -z (drop known),0.049666666666666665,0.049666666666666665,3000
+4,expense,late,30.0,rule timing |gap z|,0.43133333333333335,0.059,3000
+4,expense,late,30.0,rule timing gap z (late known),0.767,0.049666666666666665,3000
+4,expense,late,30.0,"autoencoder (window 5, latent 16)",0.053,0.053,3000
+4,expense,late,30.0,forecast |r|,0.09766666666666667,0.04933333333333333,3000
+4,expense,late,30.0,forecast r (spike known),0.041666666666666664,0.052,3000
+4,expense,late,30.0,forecast -r (drop known),0.12266666666666666,0.051333333333333335,3000
+4,expense,late,30.0,forecast timing |r_gap|,0.45,0.04733333333333333,3000
+4,expense,late,30.0,forecast timing r_gap (late known),0.801,0.051,3000
+4,expense,late,30.0,masked |r|,0.05533333333333333,0.051333333333333335,3000
+4,expense,late,30.0,masked r (spike known),0.05266666666666667,0.05266666666666667,3000
+4,expense,late,30.0,masked -r (drop known),0.05466666666666667,0.048666666666666664,3000
+4,expense,late,30.0,rule amount+timing,0.43466666666666665,0.05333333333333334,3000
+4,expense,late,30.0,forecast amount+timing,0.4246666666666667,0.049,3000
+4,expense,late,30.0,hybrid rule+forecast,0.4256666666666667,0.04733333333333333,3000
+4,income,spike,1.5,rule |z|,0.038,0.042,3000
+4,income,spike,1.5,rule z (spike known),0.082,0.025666666666666667,3000
+4,income,spike,1.5,rule -z (drop known),0.036333333333333336,0.043666666666666666,3000
+4,income,spike,1.5,rule timing |gap z|,0.048,0.048,3000
+4,income,spike,1.5,rule timing gap z (late known),0.047,0.047,3000
+4,income,spike,1.5,"autoencoder (window 5, latent 16)",0.09966666666666667,0.050333333333333334,3000
+4,income,spike,1.5,forecast |r|,0.6393333333333333,0.044,3000
+4,income,spike,1.5,forecast r (spike known),0.7123333333333334,0.051,3000
+4,income,spike,1.5,forecast -r (drop known),0.028333333333333332,0.042,3000
+4,income,spike,1.5,forecast timing |r_gap|,0.049,0.049,3000
+4,income,spike,1.5,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,spike,1.5,masked |r|,0.5253333333333333,0.047,3000
+4,income,spike,1.5,masked r (spike known),0.5786666666666667,0.04633333333333333,3000
+4,income,spike,1.5,masked -r (drop known),0.036333333333333336,0.043666666666666666,3000
+4,income,spike,1.5,rule amount+timing,0.04133333333333333,0.04466666666666667,3000
+4,income,spike,1.5,forecast amount+timing,0.59,0.04933333333333333,3000
+4,income,spike,1.5,hybrid rule+forecast,0.537,0.042666666666666665,3000
+4,income,drop,1.5,rule |z|,0.051,0.042,3000
+4,income,drop,1.5,rule z (spike known),0.004,0.025666666666666667,3000
+4,income,drop,1.5,rule -z (drop known),0.05266666666666667,0.043666666666666666,3000
+4,income,drop,1.5,rule timing |gap z|,0.048,0.048,3000
+4,income,drop,1.5,rule timing gap z (late known),0.047,0.047,3000
+4,income,drop,1.5,"autoencoder (window 5, latent 16)",0.116,0.050333333333333334,3000
+4,income,drop,1.5,forecast |r|,0.6073333333333333,0.044,3000
+4,income,drop,1.5,forecast r (spike known),0.004333333333333333,0.051,3000
+4,income,drop,1.5,forecast -r (drop known),0.6436666666666667,0.042,3000
+4,income,drop,1.5,forecast timing |r_gap|,0.049,0.049,3000
+4,income,drop,1.5,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,drop,1.5,masked |r|,0.45566666666666666,0.047,3000
+4,income,drop,1.5,masked r (spike known),0.0023333333333333335,0.04633333333333333,3000
+4,income,drop,1.5,masked -r (drop known),0.6016666666666667,0.043666666666666666,3000
+4,income,drop,1.5,rule amount+timing,0.04833333333333333,0.04466666666666667,3000
+4,income,drop,1.5,forecast amount+timing,0.577,0.04933333333333333,3000
+4,income,drop,1.5,hybrid rule+forecast,0.5443333333333333,0.042666666666666665,3000
+4,income,spike,2.0,rule |z|,0.10333333333333333,0.042,3000
+4,income,spike,2.0,rule z (spike known),0.6963333333333334,0.025666666666666667,3000
+4,income,spike,2.0,rule -z (drop known),0.029333333333333333,0.043666666666666666,3000
+4,income,spike,2.0,rule timing |gap z|,0.048,0.048,3000
+4,income,spike,2.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,spike,2.0,"autoencoder (window 5, latent 16)",0.14866666666666667,0.050333333333333334,3000
+4,income,spike,2.0,forecast |r|,0.684,0.044,3000
+4,income,spike,2.0,forecast r (spike known),0.7606666666666667,0.051,3000
+4,income,spike,2.0,forecast -r (drop known),0.023333333333333334,0.042,3000
+4,income,spike,2.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,spike,2.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,spike,2.0,masked |r|,0.6043333333333333,0.047,3000
+4,income,spike,2.0,masked r (spike known),0.6446666666666667,0.04633333333333333,3000
+4,income,spike,2.0,masked -r (drop known),0.030333333333333334,0.043666666666666666,3000
+4,income,spike,2.0,rule amount+timing,0.03833333333333333,0.04466666666666667,3000
+4,income,spike,2.0,forecast amount+timing,0.629,0.04933333333333333,3000
+4,income,spike,2.0,hybrid rule+forecast,0.588,0.042666666666666665,3000
+4,income,drop,2.0,rule |z|,0.05633333333333333,0.042,3000
+4,income,drop,2.0,rule z (spike known),0.003,0.025666666666666667,3000
+4,income,drop,2.0,rule -z (drop known),0.6623333333333333,0.043666666666666666,3000
+4,income,drop,2.0,rule timing |gap z|,0.048,0.048,3000
+4,income,drop,2.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,drop,2.0,"autoencoder (window 5, latent 16)",0.139,0.050333333333333334,3000
+4,income,drop,2.0,forecast |r|,0.6736666666666666,0.044,3000
+4,income,drop,2.0,forecast r (spike known),0.004,0.051,3000
+4,income,drop,2.0,forecast -r (drop known),0.7366666666666667,0.042,3000
+4,income,drop,2.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,drop,2.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,drop,2.0,masked |r|,0.5596666666666666,0.047,3000
+4,income,drop,2.0,masked r (spike known),0.0013333333333333333,0.04633333333333333,3000
+4,income,drop,2.0,masked -r (drop known),0.6836666666666666,0.043666666666666666,3000
+4,income,drop,2.0,rule amount+timing,0.05466666666666667,0.04466666666666667,3000
+4,income,drop,2.0,forecast amount+timing,0.62,0.04933333333333333,3000
+4,income,drop,2.0,hybrid rule+forecast,0.5893333333333334,0.042666666666666665,3000
+4,income,spike,3.0,rule |z|,0.7086666666666667,0.042,3000
+4,income,spike,3.0,rule z (spike known),0.7076666666666667,0.025666666666666667,3000
+4,income,spike,3.0,rule -z (drop known),0.02,0.043666666666666666,3000
+4,income,spike,3.0,rule timing |gap z|,0.048,0.048,3000
+4,income,spike,3.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,spike,3.0,"autoencoder (window 5, latent 16)",0.194,0.050333333333333334,3000
+4,income,spike,3.0,forecast |r|,0.7303333333333333,0.044,3000
+4,income,spike,3.0,forecast r (spike known),0.8113333333333334,0.051,3000
+4,income,spike,3.0,forecast -r (drop known),0.016666666666666666,0.042,3000
+4,income,spike,3.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,spike,3.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,spike,3.0,masked |r|,0.6513333333333333,0.047,3000
+4,income,spike,3.0,masked r (spike known),0.6783333333333333,0.04633333333333333,3000
+4,income,spike,3.0,masked -r (drop known),0.021666666666666667,0.043666666666666666,3000
+4,income,spike,3.0,rule amount+timing,0.03766666666666667,0.04466666666666667,3000
+4,income,spike,3.0,forecast amount+timing,0.6593333333333333,0.04933333333333333,3000
+4,income,spike,3.0,hybrid rule+forecast,0.6163333333333333,0.042666666666666665,3000
+4,income,drop,3.0,rule |z|,0.667,0.042,3000
+4,income,drop,3.0,rule z (spike known),0.002,0.025666666666666667,3000
+4,income,drop,3.0,rule -z (drop known),0.7413333333333333,0.043666666666666666,3000
+4,income,drop,3.0,rule timing |gap z|,0.048,0.048,3000
+4,income,drop,3.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,drop,3.0,"autoencoder (window 5, latent 16)",0.16966666666666666,0.050333333333333334,3000
+4,income,drop,3.0,forecast |r|,0.725,0.044,3000
+4,income,drop,3.0,forecast r (spike known),0.0026666666666666666,0.051,3000
+4,income,drop,3.0,forecast -r (drop known),0.7806666666666666,0.042,3000
+4,income,drop,3.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,drop,3.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,drop,3.0,masked |r|,0.6563333333333333,0.047,3000
+4,income,drop,3.0,masked r (spike known),0.001,0.04633333333333333,3000
+4,income,drop,3.0,masked -r (drop known),0.7426666666666667,0.043666666666666666,3000
+4,income,drop,3.0,rule amount+timing,0.062,0.04466666666666667,3000
+4,income,drop,3.0,forecast amount+timing,0.6723333333333333,0.04933333333333333,3000
+4,income,drop,3.0,hybrid rule+forecast,0.625,0.042666666666666665,3000
+4,income,spike,5.0,rule |z|,0.7166666666666667,0.042,3000
+4,income,spike,5.0,rule z (spike known),0.7246666666666667,0.025666666666666667,3000
+4,income,spike,5.0,rule -z (drop known),0.013666666666666667,0.043666666666666666,3000
+4,income,spike,5.0,rule timing |gap z|,0.048,0.048,3000
+4,income,spike,5.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,spike,5.0,"autoencoder (window 5, latent 16)",0.24666666666666667,0.050333333333333334,3000
+4,income,spike,5.0,forecast |r|,0.7856666666666666,0.044,3000
+4,income,spike,5.0,forecast r (spike known),0.8683333333333333,0.051,3000
+4,income,spike,5.0,forecast -r (drop known),0.008666666666666666,0.042,3000
+4,income,spike,5.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,spike,5.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,spike,5.0,masked |r|,0.68,0.047,3000
+4,income,spike,5.0,masked r (spike known),0.698,0.04633333333333333,3000
+4,income,spike,5.0,masked -r (drop known),0.013666666666666667,0.043666666666666666,3000
+4,income,spike,5.0,rule amount+timing,0.038,0.04466666666666667,3000
+4,income,spike,5.0,forecast amount+timing,0.6996666666666667,0.04933333333333333,3000
+4,income,spike,5.0,hybrid rule+forecast,0.646,0.042666666666666665,3000
+4,income,drop,5.0,rule |z|,0.744,0.042,3000
+4,income,drop,5.0,rule z (spike known),0.001,0.025666666666666667,3000
+4,income,drop,5.0,rule -z (drop known),0.7466666666666667,0.043666666666666666,3000
+4,income,drop,5.0,rule timing |gap z|,0.048,0.048,3000
+4,income,drop,5.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,drop,5.0,"autoencoder (window 5, latent 16)",0.19066666666666668,0.050333333333333334,3000
+4,income,drop,5.0,forecast |r|,0.7643333333333333,0.044,3000
+4,income,drop,5.0,forecast r (spike known),0.0013333333333333333,0.051,3000
+4,income,drop,5.0,forecast -r (drop known),0.8263333333333334,0.042,3000
+4,income,drop,5.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,drop,5.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,drop,5.0,masked |r|,0.7136666666666667,0.047,3000
+4,income,drop,5.0,masked r (spike known),0.001,0.04633333333333333,3000
+4,income,drop,5.0,masked -r (drop known),0.7606666666666667,0.043666666666666666,3000
+4,income,drop,5.0,rule amount+timing,0.07133333333333333,0.04466666666666667,3000
+4,income,drop,5.0,forecast amount+timing,0.7163333333333334,0.04933333333333333,3000
+4,income,drop,5.0,hybrid rule+forecast,0.675,0.042666666666666665,3000
+4,income,spike,10.0,rule |z|,0.7286666666666667,0.042,3000
+4,income,spike,10.0,rule z (spike known),0.7443333333333333,0.025666666666666667,3000
+4,income,spike,10.0,rule -z (drop known),0.006333333333333333,0.043666666666666666,3000
+4,income,spike,10.0,rule timing |gap z|,0.048,0.048,3000
+4,income,spike,10.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,spike,10.0,"autoencoder (window 5, latent 16)",0.284,0.050333333333333334,3000
+4,income,spike,10.0,forecast |r|,0.852,0.044,3000
+4,income,spike,10.0,forecast r (spike known),0.9176666666666666,0.051,3000
+4,income,spike,10.0,forecast -r (drop known),0.005,0.042,3000
+4,income,spike,10.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,spike,10.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,spike,10.0,masked |r|,0.7006666666666667,0.047,3000
+4,income,spike,10.0,masked r (spike known),0.7336666666666667,0.04633333333333333,3000
+4,income,spike,10.0,masked -r (drop known),0.007333333333333333,0.043666666666666666,3000
+4,income,spike,10.0,rule amount+timing,0.6993333333333334,0.04466666666666667,3000
+4,income,spike,10.0,forecast amount+timing,0.761,0.04933333333333333,3000
+4,income,spike,10.0,hybrid rule+forecast,0.6863333333333334,0.042666666666666665,3000
+4,income,drop,10.0,rule |z|,0.7496666666666667,0.042,3000
+4,income,drop,10.0,rule z (spike known),0.001,0.025666666666666667,3000
+4,income,drop,10.0,rule -z (drop known),0.7543333333333333,0.043666666666666666,3000
+4,income,drop,10.0,rule timing |gap z|,0.048,0.048,3000
+4,income,drop,10.0,rule timing gap z (late known),0.047,0.047,3000
+4,income,drop,10.0,"autoencoder (window 5, latent 16)",0.20966666666666667,0.050333333333333334,3000
+4,income,drop,10.0,forecast |r|,0.8173333333333334,0.044,3000
+4,income,drop,10.0,forecast r (spike known),0.001,0.051,3000
+4,income,drop,10.0,forecast -r (drop known),0.8823333333333333,0.042,3000
+4,income,drop,10.0,forecast timing |r_gap|,0.049,0.049,3000
+4,income,drop,10.0,forecast timing r_gap (late known),0.04933333333333333,0.04933333333333333,3000
+4,income,drop,10.0,masked |r|,0.7323333333333333,0.047,3000
+4,income,drop,10.0,masked r (spike known),0.001,0.04633333333333333,3000
+4,income,drop,10.0,masked -r (drop known),0.7873333333333333,0.043666666666666666,3000
+4,income,drop,10.0,rule amount+timing,0.6673333333333333,0.04466666666666667,3000
+4,income,drop,10.0,forecast amount+timing,0.7533333333333333,0.04933333333333333,3000
+4,income,drop,10.0,hybrid rule+forecast,0.7273333333333334,0.042666666666666665,3000
+4,income,late,3.0,rule |z|,0.042,0.042,3000
+4,income,late,3.0,rule z (spike known),0.025666666666666667,0.025666666666666667,3000
+4,income,late,3.0,rule -z (drop known),0.043666666666666666,0.043666666666666666,3000
+4,income,late,3.0,rule timing |gap z|,0.04,0.048,3000
+4,income,late,3.0,rule timing gap z (late known),0.6043333333333333,0.047,3000
+4,income,late,3.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+4,income,late,3.0,forecast |r|,0.050333333333333334,0.044,3000
+4,income,late,3.0,forecast r (spike known),0.04733333333333333,0.051,3000
+4,income,late,3.0,forecast -r (drop known),0.057666666666666665,0.042,3000
+4,income,late,3.0,forecast timing |r_gap|,0.09966666666666667,0.049,3000
+4,income,late,3.0,forecast timing r_gap (late known),0.3313333333333333,0.04933333333333333,3000
+4,income,late,3.0,masked |r|,0.058333333333333334,0.047,3000
+4,income,late,3.0,masked r (spike known),0.049,0.04633333333333333,3000
+4,income,late,3.0,masked -r (drop known),0.043666666666666666,0.043666666666666666,3000
+4,income,late,3.0,rule amount+timing,0.035,0.04466666666666667,3000
+4,income,late,3.0,forecast amount+timing,0.041,0.04933333333333333,3000
+4,income,late,3.0,hybrid rule+forecast,0.03233333333333333,0.042666666666666665,3000
+4,income,late,7.0,rule |z|,0.042,0.042,3000
+4,income,late,7.0,rule z (spike known),0.025666666666666667,0.025666666666666667,3000
+4,income,late,7.0,rule -z (drop known),0.043666666666666666,0.043666666666666666,3000
+4,income,late,7.0,rule timing |gap z|,0.027333333333333334,0.048,3000
+4,income,late,7.0,rule timing gap z (late known),0.6973333333333334,0.047,3000
+4,income,late,7.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+4,income,late,7.0,forecast |r|,0.062,0.044,3000
+4,income,late,7.0,forecast r (spike known),0.060333333333333336,0.051,3000
+4,income,late,7.0,forecast -r (drop known),0.058666666666666666,0.042,3000
+4,income,late,7.0,forecast timing |r_gap|,0.2613333333333333,0.049,3000
+4,income,late,7.0,forecast timing r_gap (late known),0.5973333333333334,0.04933333333333333,3000
+4,income,late,7.0,masked |r|,0.05266666666666667,0.047,3000
+4,income,late,7.0,masked r (spike known),0.03666666666666667,0.04633333333333333,3000
+4,income,late,7.0,masked -r (drop known),0.046,0.043666666666666666,3000
+4,income,late,7.0,rule amount+timing,0.026333333333333334,0.04466666666666667,3000
+4,income,late,7.0,forecast amount+timing,0.22233333333333333,0.04933333333333333,3000
+4,income,late,7.0,hybrid rule+forecast,0.18566666666666667,0.042666666666666665,3000
+4,income,late,14.0,rule |z|,0.042,0.042,3000
+4,income,late,14.0,rule z (spike known),0.025666666666666667,0.025666666666666667,3000
+4,income,late,14.0,rule -z (drop known),0.043666666666666666,0.043666666666666666,3000
+4,income,late,14.0,rule timing |gap z|,0.008,0.048,3000
+4,income,late,14.0,rule timing gap z (late known),0.7716666666666666,0.047,3000
+4,income,late,14.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+4,income,late,14.0,forecast |r|,0.09766666666666667,0.044,3000
+4,income,late,14.0,forecast r (spike known),0.09833333333333333,0.051,3000
+4,income,late,14.0,forecast -r (drop known),0.05433333333333333,0.042,3000
+4,income,late,14.0,forecast timing |r_gap|,0.45666666666666667,0.049,3000
+4,income,late,14.0,forecast timing r_gap (late known),0.7453333333333333,0.04933333333333333,3000
+4,income,late,14.0,masked |r|,0.03833333333333333,0.047,3000
+4,income,late,14.0,masked r (spike known),0.013,0.04633333333333333,3000
+4,income,late,14.0,masked -r (drop known),0.047,0.043666666666666666,3000
+4,income,late,14.0,rule amount+timing,0.017666666666666667,0.04466666666666667,3000
+4,income,late,14.0,forecast amount+timing,0.363,0.04933333333333333,3000
+4,income,late,14.0,hybrid rule+forecast,0.30033333333333334,0.042666666666666665,3000
+4,income,late,30.0,rule |z|,0.042,0.042,3000
+4,income,late,30.0,rule z (spike known),0.025666666666666667,0.025666666666666667,3000
+4,income,late,30.0,rule -z (drop known),0.043666666666666666,0.043666666666666666,3000
+4,income,late,30.0,rule timing |gap z|,0.5696666666666667,0.048,3000
+4,income,late,30.0,rule timing gap z (late known),0.9593333333333334,0.047,3000
+4,income,late,30.0,"autoencoder (window 5, latent 16)",0.050333333333333334,0.050333333333333334,3000
+4,income,late,30.0,forecast |r|,0.08466666666666667,0.044,3000
+4,income,late,30.0,forecast r (spike known),0.07633333333333334,0.051,3000
+4,income,late,30.0,forecast -r (drop known),0.06633333333333333,0.042,3000
+4,income,late,30.0,forecast timing |r_gap|,0.6153333333333333,0.049,3000
+4,income,late,30.0,forecast timing r_gap (late known),0.9156666666666666,0.04933333333333333,3000
+4,income,late,30.0,masked |r|,0.06333333333333334,0.047,3000
+4,income,late,30.0,masked r (spike known),0.05566666666666667,0.04633333333333333,3000
+4,income,late,30.0,masked -r (drop known),0.05,0.043666666666666666,3000
+4,income,late,30.0,rule amount+timing,0.017666666666666667,0.04466666666666667,3000
+4,income,late,30.0,forecast amount+timing,0.5506666666666666,0.04933333333333333,3000
+4,income,late,30.0,hybrid rule+forecast,0.48733333333333334,0.042666666666666665,3000
